@@ -201,12 +201,12 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Paint"",
-                    ""type"": ""Button"",
+                    ""type"": ""Value"",
                     ""id"": ""4c8c88a8-c8fc-4961-aa43-d55f827d7d0b"",
-                    ""expectedControlType"": """",
+                    ""expectedControlType"": ""Axis"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 },
                 {
                     ""name"": ""GrabColor"",
@@ -233,7 +233,7 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""d5f02631-5ef8-4b90-a4f4-ba2a3ca87252"",
-                    ""path"": ""<XRController>{RightHand}/triggerButton"",
+                    ""path"": ""<XRController>{RightHand}/gripButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

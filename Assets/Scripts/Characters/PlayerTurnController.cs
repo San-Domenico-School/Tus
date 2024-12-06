@@ -31,7 +31,7 @@ public class PlayerTurnController : MonoBehaviour
         //controls.PlayerControl_RightHanded.Move.performed += ctx => PlayerMove(ctx.ReadValue<Vector2>());
         //controls.PlayerControl_RightHanded.Move.canceled += ctx => moveInput = Vector2.zero;
 
-        //controls.Headset.HeadsetRotation.performed += ctx => PlayerTurn(ctx.ReadValue<Vector3>());
+        controls.Headset.HeadsetRotation.performed += ctx => PlayerTurn(ctx.ReadValue<Vector3>());
 
         // reece: make input action then call playerturn with input vector3
     }
