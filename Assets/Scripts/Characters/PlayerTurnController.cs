@@ -4,50 +4,36 @@ using System.Collections;
 
 /**************************************************
  * Attached to: 
- * Purpose:
- * Author:
- * Version:
+ * Purpose: Turn "Head" sphere according to headset rotation
+ * Author: Reece
+ * Version: 1.0
  *************************************************/
 
 public class PlayerTurnController : MonoBehaviour
 {
-    [SerializeField] float moveSpeed;
     [SerializeField] float turnSpeed;
-
-    bool isLeftHanded;
 
     private TusInputAction controls;
     private Rigidbody rb;
-    float distToGround;
     
     private Vector3 turnInput = Vector3.zero;
-    private Vector2 moveInput = Vector2.zero;
-    private bool jumpInput = false;
     
     // Use this for initialization
     void Awake()
     {
         controls = new TusInputAction();
         rb = GetComponent<Rigidbody>();
-        distToGround = GetComponent<Collider>().bounds.extents.y;
     }
 
     void OnEnable()
     {
         controls.Enable();
-        if (!isLeftHanded)
-        {
-            controls.PlayerControl_RightHanded.Move.performed += ctx => PlayerMove(ctx.ReadValue<Vector2>());
-            controls.PlayerControl_RightHanded.Move.canceled += ctx => moveInput = Vector2.zero;
-            controls.PlayerControl_RightHanded.Jump.performed += ctx => PlayerJump();
-        }
-        else
-        {
-            controls.PlayerControl_LeftHanded.Move.performed += ctx => PlayerMove(ctx.ReadValue<Vector2>());
-            controls.PlayerControl_LeftHanded.Move.canceled += ctx => moveInput = Vector2.zero;
-            controls.PlayerControl_LeftHanded.Jump.performed += ctx => PlayerJump();
+        //controls.PlayerControl_RightHanded.Move.performed += ctx => PlayerMove(ctx.ReadValue<Vector2>());
+        //controls.PlayerControl_RightHanded.Move.canceled += ctx => moveInput = Vector2.zero;
 
-        }
+        controls.Headset.HeadsetRotation.performed += ctx => PlayerTurn(ctx.ReadValue<Vector3>());
+
+        // reece: make input action then call playerturn with input vector3
     }
 
     void OnDisable()
@@ -58,44 +44,18 @@ public class PlayerTurnController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (IsGrounded())
-        {
-            Vector3 moveVector = new Vector3(moveInput.x, 0, moveInput.y);
+        Vector3 turnVector = new Vector3(0, turnInput.y, 0);
 
-            Vector3 targetVelocity = moveVector * moveSpeed * moveVector.magnitude;
+        Quaternion rotationQuart = Quaternion.Euler(turnVector.x, turnVector.y, turnVector.z); // 0, y, 0
 
-            rb.velocity = new Vector3(targetVelocity.x, rb.velocity.y, targetVelocity.z);
-        }
+        rb.rotation = rotationQuart;
     }
 
-    //set movement vector if move within tolerance
-    void PlayerMove(Vector2 move)
+    //set camera rotation to vector (no tolerance, yet?)
+    void PlayerTurn(Vector3 turn)
     {
-        Debug.Log("called");
-        if (move.magnitude > 0.05)
-        {
-            moveInput = move;
-        }
-        else
-        {
-            moveInput = Vector2.zero;
-        }
-    }
+        Debug.Log("headset turn called");
 
-    //set camera rotation to vector
-    void PlayerTurn(Vector3 turnInput)
-    {
-        
-    }
-
-    //if touching ground, set jumpinput to true
-    void PlayerJump()
-    {
-        
-    }
-
-    bool IsGrounded()
-    {
-        return Physics.Raycast(GetComponent<Transform>().position, -Vector3.up, distToGround + 0.1f);
+        turnInput = turn;
     }
 }

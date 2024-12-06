@@ -451,6 +451,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Headset",
+            "id": "d58a8bff-5e65-42c5-a7ca-cd98f25e771f",
+            "actions": [
+                {
+                    "name": "HeadsetRotation",
+                    "type": "Value",
+                    "id": "bb0a4824-72e3-4feb-998f-ae95b86b22f6",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "b436d226-8fd4-4ce5-a3d3-7840345880d9",
+                    "path": "<XRController>/deviceRotation",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HeadsetRotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
