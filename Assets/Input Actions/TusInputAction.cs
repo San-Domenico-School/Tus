@@ -473,6 +473,34 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Headset"",
+            ""id"": ""d58a8bff-5e65-42c5-a7ca-cd98f25e771f"",
+            ""actions"": [
+                {
+                    ""name"": ""HeadsetRotation"",
+                    ""type"": ""Value"",
+                    ""id"": ""bb0a4824-72e3-4feb-998f-ae95b86b22f6"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""b436d226-8fd4-4ce5-a3d3-7840345880d9"",
+                    ""path"": ""<XRController>/deviceRotation"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HeadsetRotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -515,6 +543,9 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
         m_UINavigate_LeftHanded = asset.FindActionMap("UINavigate_LeftHanded", throwIfNotFound: true);
         m_UINavigate_LeftHanded_PauseToggle = m_UINavigate_LeftHanded.FindAction("PauseToggle", throwIfNotFound: true);
         m_UINavigate_LeftHanded_InterfaceInteract = m_UINavigate_LeftHanded.FindAction("InterfaceInteract", throwIfNotFound: true);
+        // Headset
+        m_Headset = asset.FindActionMap("Headset", throwIfNotFound: true);
+        m_Headset_HeadsetRotation = m_Headset.FindAction("HeadsetRotation", throwIfNotFound: true);
     }
 
     ~@TusInputAction()
@@ -529,6 +560,7 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
         UnityEngine.Debug.Assert(!m_NonDominantArm_LeftHanded.enabled, "This will cause a leak and performance issues, TusInputAction.NonDominantArm_LeftHanded.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_UINavigate_RightHanded.enabled, "This will cause a leak and performance issues, TusInputAction.UINavigate_RightHanded.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_UINavigate_LeftHanded.enabled, "This will cause a leak and performance issues, TusInputAction.UINavigate_LeftHanded.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_Headset.enabled, "This will cause a leak and performance issues, TusInputAction.Headset.Disable() has not been called.");
     }
 
     public void Dispose()
@@ -1110,6 +1142,52 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
         }
     }
     public UINavigate_LeftHandedActions @UINavigate_LeftHanded => new UINavigate_LeftHandedActions(this);
+
+    // Headset
+    private readonly InputActionMap m_Headset;
+    private List<IHeadsetActions> m_HeadsetActionsCallbackInterfaces = new List<IHeadsetActions>();
+    private readonly InputAction m_Headset_HeadsetRotation;
+    public struct HeadsetActions
+    {
+        private @TusInputAction m_Wrapper;
+        public HeadsetActions(@TusInputAction wrapper) { m_Wrapper = wrapper; }
+        public InputAction @HeadsetRotation => m_Wrapper.m_Headset_HeadsetRotation;
+        public InputActionMap Get() { return m_Wrapper.m_Headset; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(HeadsetActions set) { return set.Get(); }
+        public void AddCallbacks(IHeadsetActions instance)
+        {
+            if (instance == null || m_Wrapper.m_HeadsetActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_HeadsetActionsCallbackInterfaces.Add(instance);
+            @HeadsetRotation.started += instance.OnHeadsetRotation;
+            @HeadsetRotation.performed += instance.OnHeadsetRotation;
+            @HeadsetRotation.canceled += instance.OnHeadsetRotation;
+        }
+
+        private void UnregisterCallbacks(IHeadsetActions instance)
+        {
+            @HeadsetRotation.started -= instance.OnHeadsetRotation;
+            @HeadsetRotation.performed -= instance.OnHeadsetRotation;
+            @HeadsetRotation.canceled -= instance.OnHeadsetRotation;
+        }
+
+        public void RemoveCallbacks(IHeadsetActions instance)
+        {
+            if (m_Wrapper.m_HeadsetActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IHeadsetActions instance)
+        {
+            foreach (var item in m_Wrapper.m_HeadsetActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_HeadsetActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public HeadsetActions @Headset => new HeadsetActions(this);
     public interface IPlayerControl_RightHandedActions
     {
         void OnMove(InputAction.CallbackContext context);
@@ -1157,5 +1235,9 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
     {
         void OnPauseToggle(InputAction.CallbackContext context);
         void OnInterfaceInteract(InputAction.CallbackContext context);
+    }
+    public interface IHeadsetActions
+    {
+        void OnHeadsetRotation(InputAction.CallbackContext context);
     }
 }
