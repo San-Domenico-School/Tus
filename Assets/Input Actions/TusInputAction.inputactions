@@ -221,6 +221,28 @@
                 },
                 {
                     "name": "",
+                    "id": "f67d9f34-4461-43b2-9c1d-2f0c0fe558ca",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Paint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f89f4f9f-42c9-467a-ae59-f2ce08e7cfc1",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Paint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "07cb2f07-3cd7-46b8-9040-090c982d1790",
                     "path": "<XRController>{RightHand}/gripButton",
                     "interactions": "",
@@ -454,13 +476,13 @@
         },
         {
             "name": "Headset",
-            "id": "d58a8bff-5e65-42c5-a7ca-cd98f25e771f",
+            "id": "554f008d-863e-4af2-937d-7764bcfa43ae",
             "actions": [
                 {
                     "name": "HeadsetRotation",
                     "type": "Value",
-                    "id": "bb0a4824-72e3-4feb-998f-ae95b86b22f6",
-                    "expectedControlType": "",
+                    "id": "cf4ddd1e-2c36-488c-b402-df187c103e83",
+                    "expectedControlType": "Quaternion",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -469,8 +491,8 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "b436d226-8fd4-4ce5-a3d3-7840345880d9",
-                    "path": "<XRController>/deviceRotation",
+                    "id": "33b9e58e-3937-4ee2-a02f-1cf253a8034f",
+                    "path": "<OculusHMD>/deviceRotation",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

@@ -7,7 +7,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PaintbrushController : MonoBehaviour
+public class PaintbrushControllerOld : MonoBehaviour
 {
     private TusInputAction paintAction;
 
