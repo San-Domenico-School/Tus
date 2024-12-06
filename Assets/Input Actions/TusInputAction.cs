@@ -60,6 +60,17 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""a2a0a5cd-d78f-42b5-8212-4efef76188f1"",
+                    ""path"": ""<Mouse>/scroll"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""9b962e37-dae4-4f09-a421-905fe5ff3d01"",
                     ""path"": ""<XRController>{RightHand}/thumbstickClicked"",
                     ""interactions"": """",
