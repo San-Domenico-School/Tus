@@ -3,10 +3,10 @@ using UnityEngine.InputSystem;
 using System.Collections;
 
 /**************************************************
- * Attached to: 
- * Purpose:
- * Author:
- * Version:
+ * Attached to: Character
+ * Purpose: Move character based on joystick input
+ * Author: Nathaniel de Marcellus
+ * Version: 1.0
  *************************************************/
 
 public class PlayerMoveController : MonoBehaviour
@@ -20,6 +20,7 @@ public class PlayerMoveController : MonoBehaviour
     float distToGround;
     
     private Vector2 moveInput = Vector2.zero;
+    private bool isInBoundary = false;
     
     // Use this for initialization
     void Awake()
@@ -51,6 +52,22 @@ public class PlayerMoveController : MonoBehaviour
         controls.Disable();
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("InnerBorder"))
+        {
+            isInBoundary = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("InnerBorder"))
+        {
+            isInBoundary = false;
+        }
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -74,10 +91,16 @@ public class PlayerMoveController : MonoBehaviour
         {
             moveInput = Vector2.zero;
         }
+        if (isInBoundary)
+        {
+            moveInput /= 5;
+        }
     }
 
     bool IsGrounded()
     {
         return Physics.Raycast(GetComponent<Transform>().position, -Vector3.up, distToGround + 0.1f);
     }
+
+
 }
