@@ -15,21 +15,25 @@ public class PaintbrushController : MonoBehaviour
     [SerializeField] float rayMaxDistance = 30f;
     public float paintRemaining = 50f;
 
-    private void Awake()
-    {
-        paintAction = new TusInputAction();
-    }
 
     private void OnEnable()
     {
+        paintAction = new TusInputAction();
         paintAction.Enable();
-        paintAction.DominantArm_RightHanded.Paint.performed += ctx => HandlePainting(ctx.ReadValue<float>());
+
+        //paintAction.DominantArm_RightHanded.Paint.performed += ctx => HandlePainting(ctx.ReadValue<float>());
     }
 
-    private void HandlePainting(float percentagePressed)
+    private void Update() 
     {
-        Debug.Log("Active pressed");
+        if (paintAction.DominantArm_RightHanded.Paint.IsPressed())
+        {
+            HandlePainting();
+        }
+    }
 
+    private void HandlePainting()
+    {
         if (paintRemaining >= 0)
         {
             PaintObject();
