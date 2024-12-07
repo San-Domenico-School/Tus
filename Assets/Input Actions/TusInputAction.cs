@@ -233,7 +233,7 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""d5f02631-5ef8-4b90-a4f4-ba2a3ca87252"",
-                    ""path"": ""<XRController>{RightHand}/gripButton"",
+                    ""path"": ""<OculusTouchController>{RightHand}/trigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

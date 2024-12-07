@@ -30,7 +30,7 @@ public class PaintbrushController : MonoBehaviour
     private void HandlePainting(float x)
     {
         Debug.Log("Active pressed");
-        //testCube.SetActive(!testCube.activeSelf);
+        testCube.SetActive(!testCube.activeSelf);
 
         if (paintRemaining >= 0)
         {
