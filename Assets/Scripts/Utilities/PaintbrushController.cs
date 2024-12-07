@@ -6,7 +6,6 @@ using UnityEngine.InputSystem;
 public class PaintbrushController : MonoBehaviour
 {
     private TusInputAction paintAction;
-    public GameObject testCube;
 
     [SerializeField] GameObject fromObject;
     [SerializeField] Texture2D brush;
@@ -27,10 +26,9 @@ public class PaintbrushController : MonoBehaviour
         paintAction.DominantArm_RightHanded.Paint.performed += ctx => HandlePainting(ctx.ReadValue<float>());
     }
 
-    private void HandlePainting(float x)
+    private void HandlePainting(float percentagePressed)
     {
         Debug.Log("Active pressed");
-        testCube.SetActive(!testCube.activeSelf);
 
         if (paintRemaining >= 0)
         {
