@@ -22,7 +22,8 @@ public class PaintbrushController : MonoBehaviour
     [SerializeField] Color paintColor = Color.white;
     [SerializeField] float rayMaxDistance = 30f;
 
-    public float paintRemaining { get; set; }
+    //public float paintRemaining { get; set; } = 50;
+    public float paintRemaining = 50;
 
 
    private void Awake()
