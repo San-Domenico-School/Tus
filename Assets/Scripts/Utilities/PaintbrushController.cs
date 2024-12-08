@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class PaintbrushController : MonoBehaviour
 {
     private TusInputAction paintAction;
+    private bool isPainting;
 
     [SerializeField] GameObject fromObject;
     [SerializeField] Texture2D brush;
@@ -16,34 +17,38 @@ public class PaintbrushController : MonoBehaviour
     public float paintRemaining = 50f;
 
 
-    private void OnEnable()
+   private void Awake()
     {
         paintAction = new TusInputAction();
-        paintAction.Enable();
-
-        //paintAction.DominantArm_RightHanded.Paint.performed += ctx => HandlePainting(ctx.ReadValue<float>());
     }
 
-    private void Update() 
+    private void OnEnable()
     {
-        if (paintAction.DominantArm_RightHanded.Paint.IsPressed())
-        {
-            HandlePainting();
-        }
+        paintAction.Enable();
+        paintAction.DominantArm_RightHanded.Paint.performed += ctx => isPainting = true; 
+        paintAction.DominantArm_RightHanded.Paint.canceled += ctx => isPainting = false;
+    }
+
+    private void Update()
+    {
+        HandlePainting();
     }
 
     private void HandlePainting()
     {
-        if (paintRemaining >= 0)
+        if (isPainting)
         {
-            PaintObject();
-            paintRemaining -= Time.deltaTime;
+            if (paintRemaining >= 0)
+            {
+                PaintObject();
+                paintRemaining -= Time.deltaTime;
 
-            //Debug.Log(paintRemaining);
-        }
-        else
-        {
-            Debug.Log("PAINT RAN OUT!!!");
+                //Debug.Log(paintRemaining);
+            }
+            else
+            {
+                Debug.Log("PAINT RAN OUT!!!");
+            }
         }
     }
 
