@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 /**************************************************
- * Attached to: 
+ * Attached to: paint manager 
  * Purpose: shoot a ray out and paint the world at its location
  * Author: Seamus
  * Version: 1.1
@@ -22,7 +22,7 @@ public class PaintbrushController : MonoBehaviour
     [SerializeField] Color paintColor = Color.white;
     [SerializeField] float rayMaxDistance = 30f;
 
-    public float paintRemaining = 50f;
+    public float paintRemaining { get; set; }
 
 
    private void Awake()
