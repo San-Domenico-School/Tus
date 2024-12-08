@@ -3,6 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+/**************************************************
+ * Attached to: 
+ * Purpose: shoot a ray out and paint the world at its location
+ * Author: Seamus
+ * Version: 1.1
+ *************************************************/
+
 public class PaintbrushController : MonoBehaviour
 {
     private TusInputAction paintAction;
@@ -14,6 +21,7 @@ public class PaintbrushController : MonoBehaviour
     [SerializeField] float targetTexelDensity = 20f;
     [SerializeField] Color paintColor = Color.white;
     [SerializeField] float rayMaxDistance = 30f;
+
     public float paintRemaining = 50f;
 
 

@@ -3,6 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/**************************************************
+ * Attached to: nothing
+ * Purpose: a mix of helper methods that calcualte information about a gameObject
+ * Author: Seamus
+ * Version: 1.0
+ *************************************************/
+
 public static class ObjectStatisticsUtility
 {
 

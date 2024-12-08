@@ -4,6 +4,13 @@ using System.Threading.Tasks;
 using Unity.VisualScripting;
 using UnityEngine;
 
+/**************************************************
+ * Attached to: PrepairWorld 
+ * Purpose: add or create a texture for all objects that will be painted
+ * Author: Seamus 
+ * Version: 1.0
+ *************************************************/
+
 public class PrepairWorld : MonoBehaviour
 {
     [SerializeField] float texelDensity;
@@ -61,13 +68,12 @@ public class PrepairWorld : MonoBehaviour
 
     private void AddTextureToObjectsParallelly()
     {
-        
-
         Parallel.ForEach(paintableObjects, renderer =>
         {
             Debug.Log(gameObject.name);
         });
     }
+
     private void AddTextureToObjects()
     {
         foreach (GameObject gameObject in paintableObjects)
