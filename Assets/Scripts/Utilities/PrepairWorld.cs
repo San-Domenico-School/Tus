@@ -15,8 +15,7 @@ public class PrepairWorld : MonoBehaviour
 {
     [SerializeField] float texelDensity;
     [SerializeField] bool precomputeTextures = false;
-    [SerializeField] GameObject[] paintableObjects;
-
+     public GameObject[] paintableObjects;
     //private GameObject[] allPaintalbeObjects;
 
     private void Awake() 
@@ -26,6 +25,19 @@ public class PrepairWorld : MonoBehaviour
             AddTextureToObjects();
         }
     }
+
+
+    private void AddTextureToObjects()
+    {
+        foreach (GameObject gameObject in paintableObjects)
+        {
+            gameObject.GetComponent<Renderer>().material.mainTexture = ObjectStatisticsUtility.CreateObjectTexture(gameObject, texelDensity);
+        }
+    }
+}
+
+
+
     // private void Start() {
 
     //     AddTextureToObjectsParallelly();
@@ -65,20 +77,3 @@ public class PrepairWorld : MonoBehaviour
     //     }
     // }
 
-
-    private void AddTextureToObjectsParallelly()
-    {
-        Parallel.ForEach(paintableObjects, renderer =>
-        {
-            Debug.Log(gameObject.name);
-        });
-    }
-
-    private void AddTextureToObjects()
-    {
-        foreach (GameObject gameObject in paintableObjects)
-        {
-            gameObject.GetComponent<Renderer>().material.mainTexture = ObjectStatisticsUtility.CreateObjectTexture(gameObject, texelDensity);
-        }
-    }
-}
