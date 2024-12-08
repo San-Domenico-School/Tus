@@ -512,6 +512,45 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""PaintManager"",
+            ""id"": ""76963334-33ef-4c01-a7f6-f4e8b8e2b3e9"",
+            ""actions"": [
+                {
+                    ""name"": ""SelectPaintColor"",
+                    ""type"": ""Button"",
+                    ""id"": ""97617822-e42e-42be-86b4-2952ca9c4cc7"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""8dda5b91-023d-4df3-9c05-4c337fae1848"",
+                    ""path"": ""<OculusTouchController>{LeftHand}/primaryButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectPaintColor"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""69733e64-93fd-4532-9484-652d56156820"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectPaintColor"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -557,6 +596,9 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
         // Headset
         m_Headset = asset.FindActionMap("Headset", throwIfNotFound: true);
         m_Headset_HeadsetRotation = m_Headset.FindAction("HeadsetRotation", throwIfNotFound: true);
+        // PaintManager
+        m_PaintManager = asset.FindActionMap("PaintManager", throwIfNotFound: true);
+        m_PaintManager_SelectPaintColor = m_PaintManager.FindAction("SelectPaintColor", throwIfNotFound: true);
     }
 
     ~@TusInputAction()
@@ -572,6 +614,7 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
         UnityEngine.Debug.Assert(!m_UINavigate_RightHanded.enabled, "This will cause a leak and performance issues, TusInputAction.UINavigate_RightHanded.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_UINavigate_LeftHanded.enabled, "This will cause a leak and performance issues, TusInputAction.UINavigate_LeftHanded.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_Headset.enabled, "This will cause a leak and performance issues, TusInputAction.Headset.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_PaintManager.enabled, "This will cause a leak and performance issues, TusInputAction.PaintManager.Disable() has not been called.");
     }
 
     public void Dispose()
@@ -1199,6 +1242,52 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
         }
     }
     public HeadsetActions @Headset => new HeadsetActions(this);
+
+    // PaintManager
+    private readonly InputActionMap m_PaintManager;
+    private List<IPaintManagerActions> m_PaintManagerActionsCallbackInterfaces = new List<IPaintManagerActions>();
+    private readonly InputAction m_PaintManager_SelectPaintColor;
+    public struct PaintManagerActions
+    {
+        private @TusInputAction m_Wrapper;
+        public PaintManagerActions(@TusInputAction wrapper) { m_Wrapper = wrapper; }
+        public InputAction @SelectPaintColor => m_Wrapper.m_PaintManager_SelectPaintColor;
+        public InputActionMap Get() { return m_Wrapper.m_PaintManager; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(PaintManagerActions set) { return set.Get(); }
+        public void AddCallbacks(IPaintManagerActions instance)
+        {
+            if (instance == null || m_Wrapper.m_PaintManagerActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_PaintManagerActionsCallbackInterfaces.Add(instance);
+            @SelectPaintColor.started += instance.OnSelectPaintColor;
+            @SelectPaintColor.performed += instance.OnSelectPaintColor;
+            @SelectPaintColor.canceled += instance.OnSelectPaintColor;
+        }
+
+        private void UnregisterCallbacks(IPaintManagerActions instance)
+        {
+            @SelectPaintColor.started -= instance.OnSelectPaintColor;
+            @SelectPaintColor.performed -= instance.OnSelectPaintColor;
+            @SelectPaintColor.canceled -= instance.OnSelectPaintColor;
+        }
+
+        public void RemoveCallbacks(IPaintManagerActions instance)
+        {
+            if (m_Wrapper.m_PaintManagerActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IPaintManagerActions instance)
+        {
+            foreach (var item in m_Wrapper.m_PaintManagerActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_PaintManagerActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public PaintManagerActions @PaintManager => new PaintManagerActions(this);
     public interface IPlayerControl_RightHandedActions
     {
         void OnMove(InputAction.CallbackContext context);
@@ -1250,5 +1339,9 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
     public interface IHeadsetActions
     {
         void OnHeadsetRotation(InputAction.CallbackContext context);
+    }
+    public interface IPaintManagerActions
+    {
+        void OnSelectPaintColor(InputAction.CallbackContext context);
     }
 }

@@ -490,6 +490,45 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "PaintManager",
+            "id": "76963334-33ef-4c01-a7f6-f4e8b8e2b3e9",
+            "actions": [
+                {
+                    "name": "SelectPaintColor",
+                    "type": "Button",
+                    "id": "97617822-e42e-42be-86b4-2952ca9c4cc7",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "8dda5b91-023d-4df3-9c05-4c337fae1848",
+                    "path": "<OculusTouchController>{LeftHand}/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SelectPaintColor",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "69733e64-93fd-4532-9484-652d56156820",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SelectPaintColor",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

@@ -13,7 +13,9 @@ public class PaintbrushController : MonoBehaviour
     [SerializeField] float targetTexelDensity = 20f;
     [SerializeField] Color paintColor = Color.white;
     [SerializeField] float rayMaxDistance = 30f;
-    public float paintRemaining = 50f;
+    private bool isPainting;
+    private int paintColorIndex;
+    public float paintRemaining = 150f;
 
     private void Awake()
     {
@@ -23,24 +25,51 @@ public class PaintbrushController : MonoBehaviour
     private void OnEnable()
     {
         paintAction.Enable();
-        paintAction.DominantArm_RightHanded.Paint.performed += ctx => HandlePainting(ctx.ReadValue<float>());
+        paintAction.DominantArm_RightHanded.Paint.performed += ctx => isPainting = true;
+        paintAction.DominantArm_RightHanded.Paint.canceled += ctx => isPainting = false;
+        paintAction.PaintManager.SelectPaintColor.performed += ctx => TogglePaintColors();
     }
 
-    private void HandlePainting(float percentagePressed)
+    private void Update()
     {
-        Debug.Log("Active pressed");
+        DispensePaint();
+    }
 
-        if (paintRemaining >= 0)
+    private void TogglePaintColors()
+    {
+        paintColorIndex = ++paintColorIndex % 3;
+        switch(paintColorIndex)
         {
-            PaintObject();
-            paintRemaining -= Time.deltaTime;
+            case 0:
+                paintColor = Color.red;
+                break;
+            case 1:
+                paintColor = Color.yellow;
+                break;
+            case 2:
+                paintColor = Color.blue;
+                break;
+        }
+        Debug.Log(paintColor);
+    }
 
-            //Debug.Log(paintRemaining);
-        }
-        else
+    private void DispensePaint()
+    {
+        if (isPainting)
         {
-            Debug.Log("PAINT RAN OUT!!!");
+            if (paintRemaining >= 0)
+            {
+                PaintObject();
+                paintRemaining -= Time.deltaTime;
+
+                //Debug.Log(paintRemaining);
+            }
+            else
+            {
+                Debug.Log("PAINT RAN OUT!!!");
+            }
         }
+
     }
 
     private void PaintObject()
