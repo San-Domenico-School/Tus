@@ -22,7 +22,7 @@ public class PaintbrushController : MonoBehaviour
     [SerializeField] float rayMaxDistance = 30f;
 
     //public float paintRemaining { get; set; } = 50;
-    public float paintRemaining = 50;
+    public float paintRemaining = 500;
 
 
    private void Awake()
@@ -66,7 +66,7 @@ public class PaintbrushController : MonoBehaviour
         Physics.Raycast(fromObject.transform.position, fromObject.transform.forward, out hit, rayMaxDistance);
 
 
-        if (hit.transform == null)
+        if (hit.transform == null || !ObjectStatisticsUtility.HasRender(hit.transform.gameObject))
             return;
 
         Texture2D texture = ObjectStatisticsUtility.GetOrCreateObjectsTexture(hit.transform.gameObject, PrepairWorld.texelDensity);

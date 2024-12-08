@@ -98,4 +98,31 @@ public static class ObjectStatisticsUtility
         }
         return texture;
     }
+
+
+    public static bool HasRender(GameObject gameObject)
+    {
+        if (gameObject == null)
+            return false;
+        else if (gameObject.GetComponent<Renderer>() == null)
+            return false;
+        else if (gameObject.gameObject.GetComponent<Renderer>().material == null)
+            return false;
+        else 
+            return true;
+    }
+    
+    public static bool HasMainTexture(GameObject gameObject)
+    {
+        if (gameObject == null)
+            return false;
+        else if (gameObject.GetComponent<Renderer>() == null)
+            return false;
+        else if (gameObject.gameObject.GetComponent<Renderer>().material == null)
+            return false;
+        else if (gameObject.gameObject.GetComponent<Renderer>().material.mainTexture == null)
+            return false;
+        else 
+            return true;
+    }
 }

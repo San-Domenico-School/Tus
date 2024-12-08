@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -14,18 +15,27 @@ using UnityEngine;
 public class PrepairWorld : MonoBehaviour
 {
     [SerializeField] bool precomputeTextures = false;
-    public static float texelDensity = 10;
-    public static GameObject[] paintableObjects;
+    public static float texelDensity = 20;
+    public static GameObject[] paintableObjects { get; private set; }
 
 
     private void Awake() 
     {
+        GetAllPainableObjects();
+
         if (precomputeTextures)
         {
             AddTextureToObjects();
         }
+
     }
 
+    private void GetAllPainableObjects()
+    {
+        // gets all acive GameObject that have mainTextures
+        paintableObjects = GameObject.FindObjectsOfType<GameObject>().Where(go => go.activeSelf).ToArray().Where(go => ObjectStatisticsUtility.HasRender(go)).ToArray();
+
+    }
 
     private void AddTextureToObjects()
     {
@@ -34,7 +44,6 @@ public class PrepairWorld : MonoBehaviour
             gameObject.GetComponent<Renderer>().material.mainTexture = ObjectStatisticsUtility.CreateObjectTexture(gameObject, texelDensity);
         }
     }
-}
 
 
 
@@ -77,3 +86,4 @@ public class PrepairWorld : MonoBehaviour
     //     }
     // }
 
+}
