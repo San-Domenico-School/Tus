@@ -19,12 +19,42 @@ public class SaveLoadImagesManager : MonoBehaviour
     
     [SerializeField] GameObject prepairWorld;
 
+
+    private void OnEnable() 
+    {
+        LoadImages();
+    }
+
     private void OnApplicationQuit() 
     {
         SaveImages();
     }
 
-    //saves all the images on game object that can be painted on (list of object gotton from PrepairWorld)
+    // Load all the images onto the game objects 
+    private void LoadImages()
+    {
+        float texelDensity = prepairWorld.GetComponent<PrepairWorld>().texelDensity;
+
+        if (prepairWorld == null || prepairWorld.GetComponent<PrepairWorld>() == null)
+            return; 
+
+        foreach (GameObject gameObject in prepairWorld.GetComponent<PrepairWorld>().paintableObjects)
+        {
+            if (File.Exists(Path.Combine(saveImagesPath, gameObject.name)))
+            {
+                byte[] imageData = File.ReadAllBytes(Path.Combine(saveImagesPath, gameObject.name));
+                Texture2D objectTexture = new Texture2D(2,2);
+                ImageConversion.LoadImage(objectTexture, imageData);
+                gameObject.GetComponent<Renderer>().material.mainTexture = objectTexture;
+            }
+            else
+            {
+                gameObject.GetComponent<Renderer>().material.mainTexture = ObjectStatisticsUtility.CreateObjectTexture(gameObject, texelDensity);
+            }
+        }
+    }
+
+    // Saves all the images on game object that can be painted (in array of object gotton from PrepairWorld)
     private void SaveImages()
     {
         if (prepairWorld == null || prepairWorld.GetComponent<PrepairWorld>() == null)
@@ -40,21 +70,4 @@ public class SaveLoadImagesManager : MonoBehaviour
         }
     }
 
-    private void LoadImages()
-    {
-        if (prepairWorld == null || prepairWorld.GetComponent<PrepairWorld>() == null)
-            return; 
-
-        foreach (GameObject gameObject in prepairWorld.GetComponent<PrepairWorld>().paintableObjects)
-        {
-            if (gameObject.GetComponent<Renderer>().material.mainTexture == null)
-            {
-                gameObject.GetComponent<Renderer>().material.mainTexture = ObjectStatisticsUtility.CreateObjectTexture(gameObject, prepairWorld.GetComponent<PrepairWorld>().texelDensity);
-            }
-            else 
-            {
-                
-            }
-        }
-    }
 }
