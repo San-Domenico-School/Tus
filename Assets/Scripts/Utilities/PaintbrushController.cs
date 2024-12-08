@@ -18,7 +18,6 @@ public class PaintbrushController : MonoBehaviour
     [SerializeField] GameObject fromObject;
     [SerializeField] Texture2D brush;
     [SerializeField] float brushSize = .5f;
-    [SerializeField] float targetTexelDensity = 20f;
     [SerializeField] Color paintColor = Color.white;
     [SerializeField] float rayMaxDistance = 30f;
 
@@ -70,7 +69,7 @@ public class PaintbrushController : MonoBehaviour
         if (hit.transform == null)
             return;
 
-        Texture2D texture = ObjectStatisticsUtility.GetOrCreateObjectsTexture(hit.transform.gameObject, targetTexelDensity);
+        Texture2D texture = ObjectStatisticsUtility.GetOrCreateObjectsTexture(hit.transform.gameObject, PrepairWorld.texelDensity);
 
         PaintTexture(hit.textureCoord, texture);
     }

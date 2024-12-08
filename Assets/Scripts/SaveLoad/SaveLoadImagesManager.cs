@@ -17,8 +17,6 @@ public class SaveLoadImagesManager : MonoBehaviour
     //String saveImagesPath = Application.persistentDataPath; // use when builing for Quest
     String saveImagesPath = "C:/Users/happy/OneDrive/Documents/School Projects/Tus/Unity/Tus/Assets/Scripts/SaveLoad/TestSave"; // use when tesing with pc on Seamus computer 
     
-    [SerializeField] GameObject prepairWorld;
-
 
     private void OnEnable() 
     {
@@ -33,16 +31,13 @@ public class SaveLoadImagesManager : MonoBehaviour
     // Load all the images onto the game objects 
     private void LoadImages()
     {
-        float texelDensity = prepairWorld.GetComponent<PrepairWorld>().texelDensity;
+        float texelDensity = PrepairWorld.texelDensity;
 
-        if (prepairWorld == null || prepairWorld.GetComponent<PrepairWorld>() == null)
-            return; 
-
-        foreach (GameObject gameObject in prepairWorld.GetComponent<PrepairWorld>().paintableObjects)
+        foreach (GameObject gameObject in PrepairWorld.paintableObjects)
         {
-            if (File.Exists(Path.Combine(saveImagesPath, gameObject.name)))
+            if (File.Exists(Path.Combine(saveImagesPath, gameObject.name + ".png")))
             {
-                byte[] imageData = File.ReadAllBytes(Path.Combine(saveImagesPath, gameObject.name));
+                byte[] imageData = File.ReadAllBytes(Path.Combine(saveImagesPath, gameObject.name + ".png"));
                 Texture2D objectTexture = new Texture2D(2,2);
                 ImageConversion.LoadImage(objectTexture, imageData);
                 gameObject.GetComponent<Renderer>().material.mainTexture = objectTexture;
@@ -57,16 +52,13 @@ public class SaveLoadImagesManager : MonoBehaviour
     // Saves all the images on game object that can be painted (in array of object gotton from PrepairWorld)
     private void SaveImages()
     {
-        if (prepairWorld == null || prepairWorld.GetComponent<PrepairWorld>() == null)
-            return; 
-
-        foreach (GameObject gameObject in prepairWorld.GetComponent<PrepairWorld>().paintableObjects)
+        foreach (GameObject gameObject in PrepairWorld.paintableObjects)
         {
             if (gameObject.GetComponent<Renderer>().material.mainTexture == null)
                 return;
             
             Texture2D image = (Texture2D) gameObject.GetComponent<Renderer>().material.mainTexture;
-            File.WriteAllBytes(Path.Combine(saveImagesPath, gameObject.name), image.EncodeToPNG());
+            File.WriteAllBytes(Path.Combine(saveImagesPath, gameObject.name + ".png"), image.EncodeToPNG());
         }
     }
 

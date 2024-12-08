@@ -82,11 +82,14 @@ public static class ObjectStatisticsUtility
         Renderer renderer = gameObject.GetComponent<Renderer>();
         Texture2D texture;
 
+        // TODO - make it so if not texture already the newly created texture get saved
         if(renderer.material.mainTexture == null)
         {
-            //does not have a texture. Creates a new texture
+            // does not have a texture. Creates a new texture
+            // this created texture does not get saved
             renderer.material.mainTexture = ObjectStatisticsUtility.CreateObjectTexture(gameObject, texelDensity);
             texture = (Texture2D)renderer.material.mainTexture;
+            //PrepairWorld.paintableObjects.add
         }
         else
         {

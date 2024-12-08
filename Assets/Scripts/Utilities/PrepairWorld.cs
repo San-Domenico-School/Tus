@@ -14,9 +14,9 @@ using UnityEngine;
 public class PrepairWorld : MonoBehaviour
 {
     [SerializeField] bool precomputeTextures = false;
-    public float texelDensity = 10;
-     public GameObject[] paintableObjects;
-    //private GameObject[] allPaintalbeObjects;
+    public static float texelDensity = 10;
+    public static GameObject[] paintableObjects;
+
 
     private void Awake() 
     {
