@@ -13,8 +13,8 @@ using UnityEngine;
 
 public class PrepairWorld : MonoBehaviour
 {
-    [SerializeField] float texelDensity;
     [SerializeField] bool precomputeTextures = false;
+    public float texelDensity = 10;
      public GameObject[] paintableObjects;
     //private GameObject[] allPaintalbeObjects;
 
