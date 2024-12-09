@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 using System.Collections;
 
 /**************************************************
- * Attached to: 
+ * Attached to: Camera Offset
  * Purpose:
  * Author:
  * Version:
@@ -25,8 +25,8 @@ public class PlayerMoveController : MonoBehaviour
     void Awake()
     {
         controls = new TusInputAction();
-        rb = GetComponent<Rigidbody>();
-        distToGround = GetComponent<Collider>().bounds.extents.y;
+        rb = GetComponentInParent<Rigidbody>();
+        distToGround = GetComponentInParent<Collider>().bounds.extents.y;
     }
 
     void OnEnable()
@@ -51,28 +51,40 @@ public class PlayerMoveController : MonoBehaviour
         controls.Disable();
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        if (IsGrounded())
-        {
-            Vector3 moveVector = new Vector3(moveInput.x, 0, moveInput.y);
-            Vector3 targetVelocity = moveVector * moveSpeed * moveVector.magnitude;
-
-            rb.velocity = transform.TransformDirection(targetVelocity);
-        }
-    }
-
     // Set movement vector if move within tolerance
     void PlayerMove(Vector2 move)
     {
-        if (move.magnitude > 0.05)
+        // Gives tolerance to movement
+        if (move.magnitude > 0.05f)
         {
             moveInput = move;
         }
         else
         {
             moveInput = Vector2.zero;
+        }
+
+        if (IsGrounded())
+        {
+            // Use the camera's forward and right directions for movement
+            Transform cameraTransform = Camera.main.transform; // Access the camera
+            Vector3 forward = cameraTransform.forward;
+            Vector3 right = cameraTransform.right;
+
+            // Project forward and right onto the horizontal plane (ignore Y-axis)
+            forward.y = 0;
+            right.y = 0;
+            forward.Normalize();
+            right.Normalize();
+
+            // Combine forward and right directions with move input
+            Vector3 worldMoveDirection = (forward * moveInput.y + right * moveInput.x); // Swap x and y
+
+            // Apply movement speed
+            Vector3 targetVelocity = worldMoveDirection * moveSpeed;
+
+            // Set the Rigidbody's velocity, preserving the current y velocity
+            rb.velocity = new Vector3(targetVelocity.x, rb.velocity.y, targetVelocity.z);
         }
     }
 
