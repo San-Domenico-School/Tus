@@ -25,7 +25,7 @@ public class PaintbrushController : MonoBehaviour
     public float paintRemaining = 500;
 
 
-   private void Awake()
+    private void Awake()
     {
         paintAction = new TusInputAction();
     }

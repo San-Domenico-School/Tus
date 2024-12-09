@@ -216,6 +216,15 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Save"",
+                    ""type"": ""Button"",
+                    ""id"": ""96f2ba78-bb84-45a2-b0f9-b16efdb3ebd2"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -260,6 +269,17 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""GrabColor"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9edd979a-a180-481d-bb51-eb9960db903a"",
+                    ""path"": ""<XRController>{RightHand}/{PrimaryButton}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Save"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -535,6 +555,7 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
         m_DominantArm_RightHanded_ObjectInteract = m_DominantArm_RightHanded.FindAction("ObjectInteract", throwIfNotFound: true);
         m_DominantArm_RightHanded_Paint = m_DominantArm_RightHanded.FindAction("Paint", throwIfNotFound: true);
         m_DominantArm_RightHanded_GrabColor = m_DominantArm_RightHanded.FindAction("GrabColor", throwIfNotFound: true);
+        m_DominantArm_RightHanded_Save = m_DominantArm_RightHanded.FindAction("Save", throwIfNotFound: true);
         // DominantArm_LeftHanded
         m_DominantArm_LeftHanded = asset.FindActionMap("DominantArm_LeftHanded", throwIfNotFound: true);
         m_DominantArm_LeftHanded_ObjectInteract = m_DominantArm_LeftHanded.FindAction("ObjectInteract", throwIfNotFound: true);
@@ -836,6 +857,7 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
     private readonly InputAction m_DominantArm_RightHanded_ObjectInteract;
     private readonly InputAction m_DominantArm_RightHanded_Paint;
     private readonly InputAction m_DominantArm_RightHanded_GrabColor;
+    private readonly InputAction m_DominantArm_RightHanded_Save;
     public struct DominantArm_RightHandedActions
     {
         private @TusInputAction m_Wrapper;
@@ -843,6 +865,7 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
         public InputAction @ObjectInteract => m_Wrapper.m_DominantArm_RightHanded_ObjectInteract;
         public InputAction @Paint => m_Wrapper.m_DominantArm_RightHanded_Paint;
         public InputAction @GrabColor => m_Wrapper.m_DominantArm_RightHanded_GrabColor;
+        public InputAction @Save => m_Wrapper.m_DominantArm_RightHanded_Save;
         public InputActionMap Get() { return m_Wrapper.m_DominantArm_RightHanded; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -861,6 +884,9 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
             @GrabColor.started += instance.OnGrabColor;
             @GrabColor.performed += instance.OnGrabColor;
             @GrabColor.canceled += instance.OnGrabColor;
+            @Save.started += instance.OnSave;
+            @Save.performed += instance.OnSave;
+            @Save.canceled += instance.OnSave;
         }
 
         private void UnregisterCallbacks(IDominantArm_RightHandedActions instance)
@@ -874,6 +900,9 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
             @GrabColor.started -= instance.OnGrabColor;
             @GrabColor.performed -= instance.OnGrabColor;
             @GrabColor.canceled -= instance.OnGrabColor;
+            @Save.started -= instance.OnSave;
+            @Save.performed -= instance.OnSave;
+            @Save.canceled -= instance.OnSave;
         }
 
         public void RemoveCallbacks(IDominantArm_RightHandedActions instance)
@@ -1222,6 +1251,7 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
         void OnObjectInteract(InputAction.CallbackContext context);
         void OnPaint(InputAction.CallbackContext context);
         void OnGrabColor(InputAction.CallbackContext context);
+        void OnSave(InputAction.CallbackContext context);
     }
     public interface IDominantArm_LeftHandedActions
     {

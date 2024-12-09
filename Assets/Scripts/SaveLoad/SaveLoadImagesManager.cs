@@ -14,9 +14,20 @@ using System.IO;
 public class SaveLoadImagesManager : MonoBehaviour
 {
     String saveImagesPath;     
+    private TusInputAction paintAction;
+
+
+    private void Awake()
+    {
+        paintAction = new TusInputAction();
+    }
 
     private void Start() 
     {
+        paintAction.Enable();
+        paintAction.DominantArm_RightHanded.Save.performed += ctx => SaveImages();
+
+
         saveImagesPath = Application.persistentDataPath;// use when builing for Quest
         //saveImagesPath = "C:/Users/happy/OneDrive/Documents/School Projects/Tus/Unity/Tus/Assets/Scripts/SaveLoad/TestSave"; // use when tesing with pc on Seamus computer 
 
@@ -24,7 +35,9 @@ public class SaveLoadImagesManager : MonoBehaviour
         Debug.Log(saveImagesPath);
     }
 
-    private void OnApplicationQuit() 
+
+
+    private void OnDestroy() 
     {
         SaveImages();
     }
@@ -53,7 +66,6 @@ public class SaveLoadImagesManager : MonoBehaviour
                     return;
 
                 gameObject.GetComponent<Renderer>().material.mainTexture = ObjectStatisticsUtility.CreateObjectTexture(gameObject, texelDensity);
-                Debug.Log("adding new texture");
             
             }
         }
@@ -62,6 +74,7 @@ public class SaveLoadImagesManager : MonoBehaviour
     // Saves all the images on game object that can be painted (in array of object gotton from PrepairWorld)
     private void SaveImages()
     {
+        Debug.Log("save image");
         foreach (GameObject gameObject in PrepairWorld.paintableObjects)
         {
             if (!ObjectStatisticsUtility.HasMainTexture(gameObject))
