@@ -26,7 +26,7 @@ public class PlayerMoveController : MonoBehaviour
     void Awake()
     {
         controls = new TusInputAction();
-        rb = GetComponent<Rigidbody>();
+        rb = GetComponentInParent<Rigidbody>();
         distToGround = GetComponent<Collider>().bounds.extents.y;
     }
 
