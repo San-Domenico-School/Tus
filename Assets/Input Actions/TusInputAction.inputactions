@@ -510,6 +510,54 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Brush",
+            "id": "00cae094-d0b7-4f32-b0f2-80a7d7788172",
+            "actions": [
+                {
+                    "name": "RightHandRotation",
+                    "type": "Value",
+                    "id": "f151f2a3-3b3a-46f4-b008-a397c208e0b4",
+                    "expectedControlType": "Quaternion",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "RightHandLocation",
+                    "type": "Value",
+                    "id": "e277b63c-5970-423c-a203-52b2e968fa1b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "a11b0740-55a2-4b65-8bc5-97fb6b70d99b",
+                    "path": "<XRController>{RightHand}/deviceRotation",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightHandRotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "79f81fed-3ded-4b74-856d-aed4c2c57191",
+                    "path": "<XRController>{RightHand}/devicePosition",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightHandLocation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

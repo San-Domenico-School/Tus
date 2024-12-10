@@ -532,6 +532,54 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Brush"",
+            ""id"": ""00cae094-d0b7-4f32-b0f2-80a7d7788172"",
+            ""actions"": [
+                {
+                    ""name"": ""RightHandRotation"",
+                    ""type"": ""Value"",
+                    ""id"": ""f151f2a3-3b3a-46f4-b008-a397c208e0b4"",
+                    ""expectedControlType"": ""Quaternion"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""RightHandLocation"",
+                    ""type"": ""Value"",
+                    ""id"": ""e277b63c-5970-423c-a203-52b2e968fa1b"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""a11b0740-55a2-4b65-8bc5-97fb6b70d99b"",
+                    ""path"": ""<XRController>{RightHand}/deviceRotation"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RightHandRotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""79f81fed-3ded-4b74-856d-aed4c2c57191"",
+                    ""path"": ""<XRController>{RightHand}/devicePosition"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RightHandLocation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -578,6 +626,10 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
         // Headset
         m_Headset = asset.FindActionMap("Headset", throwIfNotFound: true);
         m_Headset_HeadsetRotation = m_Headset.FindAction("HeadsetRotation", throwIfNotFound: true);
+        // Brush
+        m_Brush = asset.FindActionMap("Brush", throwIfNotFound: true);
+        m_Brush_RightHandRotation = m_Brush.FindAction("RightHandRotation", throwIfNotFound: true);
+        m_Brush_RightHandLocation = m_Brush.FindAction("RightHandLocation", throwIfNotFound: true);
     }
 
     ~@TusInputAction()
@@ -593,6 +645,7 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
         UnityEngine.Debug.Assert(!m_UINavigate_RightHanded.enabled, "This will cause a leak and performance issues, TusInputAction.UINavigate_RightHanded.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_UINavigate_LeftHanded.enabled, "This will cause a leak and performance issues, TusInputAction.UINavigate_LeftHanded.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_Headset.enabled, "This will cause a leak and performance issues, TusInputAction.Headset.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_Brush.enabled, "This will cause a leak and performance issues, TusInputAction.Brush.Disable() has not been called.");
     }
 
     public void Dispose()
@@ -1228,6 +1281,60 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
         }
     }
     public HeadsetActions @Headset => new HeadsetActions(this);
+
+    // Brush
+    private readonly InputActionMap m_Brush;
+    private List<IBrushActions> m_BrushActionsCallbackInterfaces = new List<IBrushActions>();
+    private readonly InputAction m_Brush_RightHandRotation;
+    private readonly InputAction m_Brush_RightHandLocation;
+    public struct BrushActions
+    {
+        private @TusInputAction m_Wrapper;
+        public BrushActions(@TusInputAction wrapper) { m_Wrapper = wrapper; }
+        public InputAction @RightHandRotation => m_Wrapper.m_Brush_RightHandRotation;
+        public InputAction @RightHandLocation => m_Wrapper.m_Brush_RightHandLocation;
+        public InputActionMap Get() { return m_Wrapper.m_Brush; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(BrushActions set) { return set.Get(); }
+        public void AddCallbacks(IBrushActions instance)
+        {
+            if (instance == null || m_Wrapper.m_BrushActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_BrushActionsCallbackInterfaces.Add(instance);
+            @RightHandRotation.started += instance.OnRightHandRotation;
+            @RightHandRotation.performed += instance.OnRightHandRotation;
+            @RightHandRotation.canceled += instance.OnRightHandRotation;
+            @RightHandLocation.started += instance.OnRightHandLocation;
+            @RightHandLocation.performed += instance.OnRightHandLocation;
+            @RightHandLocation.canceled += instance.OnRightHandLocation;
+        }
+
+        private void UnregisterCallbacks(IBrushActions instance)
+        {
+            @RightHandRotation.started -= instance.OnRightHandRotation;
+            @RightHandRotation.performed -= instance.OnRightHandRotation;
+            @RightHandRotation.canceled -= instance.OnRightHandRotation;
+            @RightHandLocation.started -= instance.OnRightHandLocation;
+            @RightHandLocation.performed -= instance.OnRightHandLocation;
+            @RightHandLocation.canceled -= instance.OnRightHandLocation;
+        }
+
+        public void RemoveCallbacks(IBrushActions instance)
+        {
+            if (m_Wrapper.m_BrushActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IBrushActions instance)
+        {
+            foreach (var item in m_Wrapper.m_BrushActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_BrushActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public BrushActions @Brush => new BrushActions(this);
     public interface IPlayerControl_RightHandedActions
     {
         void OnMove(InputAction.CallbackContext context);
@@ -1280,5 +1387,10 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
     public interface IHeadsetActions
     {
         void OnHeadsetRotation(InputAction.CallbackContext context);
+    }
+    public interface IBrushActions
+    {
+        void OnRightHandRotation(InputAction.CallbackContext context);
+        void OnRightHandLocation(InputAction.CallbackContext context);
     }
 }
