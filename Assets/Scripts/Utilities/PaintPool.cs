@@ -12,6 +12,7 @@ using UnityEngine;
 public class PaintPool : MonoBehaviour
 {
     [SerializeField] GameObject paintManager;
+    [SerializeField] float addingPaintMultiplier;
     
     
     private void OnTriggerStay(Collider other) {
@@ -19,11 +20,11 @@ public class PaintPool : MonoBehaviour
         {
             if (paintManager.GetComponent<PaintbrushController>().paintRemaining < 100f)
             {
-                paintManager.GetComponent<PaintbrushController>().paintRemaining += 20 * Time.deltaTime;
+                paintManager.GetComponent<PaintbrushController>().paintRemaining += addingPaintMultiplier * Time.deltaTime;
             }
+
+            Debug.Log(paintManager.GetComponent<PaintbrushController>().paintRemaining);
         }
-        Debug.Log(paintManager.GetComponent<PaintbrushController>().paintRemaining);
-
-
     }
+    
 }

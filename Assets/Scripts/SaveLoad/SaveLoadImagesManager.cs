@@ -39,36 +39,42 @@ public class SaveLoadImagesManager : MonoBehaviour
         LoadImages();
     }
 
-
-
     private void OnDestroy() 
     {
         SaveImages();
     }
 
-    // Load all the images onto the game objects 
+
+    // Load all the images from drive onto the paintableObjects 
     private void LoadImages()
     {
 
         float texelDensity = SaveLoadImagesManager.texelDensity;
 
+        // Goes over all objects in paintableObjects
         foreach (GameObject gameObject in SaveLoadImagesManager.paintableObjects)
         {
 
-            if (File.Exists(Path.Combine(saveImagesPath, gameObject.name + ".png")))
+            if (File.Exists(Path.Combine(saveImagesPath, gameObject.name + ".png"))) // Check the game has already saved and the file exists
             {
+                // Load the images for disk
                 byte[] imageData = File.ReadAllBytes(Path.Combine(saveImagesPath, gameObject.name + ".png"));
+
+                // Converts to a Texture2D
                 Texture2D objectTexture = new Texture2D(2,2);
                 ImageConversion.LoadImage(objectTexture, imageData);
-                gameObject.GetComponent<Renderer>().material.mainTexture = objectTexture;
-                Debug.Log(Path.Combine(saveImagesPath, gameObject.name + ".png"));
 
-            }
-            else
+                // Sets the the loaded texture to the object's texture
+                gameObject.GetComponent<Renderer>().material.mainTexture = objectTexture;
+                //Debug.Log(Path.Combine(saveImagesPath, gameObject.name + ".png"));
+
+            } 
+            else // The texture does not exist 
             {
                 if (!ObjectStatisticsUtility.HasRender(gameObject))
                     return;
-
+                
+                // Creates a new texture
                 gameObject.GetComponent<Renderer>().material.mainTexture = ObjectStatisticsUtility.CreateObjectTexture(gameObject, texelDensity);
             
             }
@@ -79,24 +85,26 @@ public class SaveLoadImagesManager : MonoBehaviour
     // Saves all the images on game object that can be painted (in array of object gotton from PrepairWorld)
     private void SaveImages()
     {
-        Debug.Log("save image");
-        foreach (GameObject gameObject in PrepairWorld.paintableObjects)
+        // Goes over all objects in paintableObjects
+        foreach (GameObject gameObject in paintableObjects)
         {
             if (!ObjectStatisticsUtility.HasMainTexture(gameObject))
                 return;
             
+            // Saves the images to disk 
             Texture2D image = (Texture2D) gameObject.GetComponent<Renderer>().material.mainTexture;
             File.WriteAllBytes(Path.Combine(saveImagesPath, gameObject.name + ".png"), image.EncodeToPNG());
         }
     }
 
+    // Gets all active GameObject that have Renderer component 
     private void AddToArrayAllPaintableObjects()
     {
-        // gets all active GameObject that have mainTextures
         paintableObjects = GameObject.FindObjectsOfType<GameObject>().Where(go => go.activeSelf).ToArray().Where(go => ObjectStatisticsUtility.HasRender(go)).ToArray();
 
     }
 
+    // This does not need explication 
     private void CreateNewBlankTexture()
     {
         foreach (GameObject gameObject in paintableObjects)

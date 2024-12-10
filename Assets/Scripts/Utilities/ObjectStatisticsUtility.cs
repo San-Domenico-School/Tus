@@ -5,7 +5,7 @@ using UnityEngine;
 
 /**************************************************
  * Attached to: nothing
- * Purpose: a mix of helper methods that calcualte information about a gameObject
+ * Purpose: a mix of helper methods that calculate information about a gameObject
  * Author: Seamus
  * Version: 1.0
  *************************************************/
@@ -77,6 +77,7 @@ public static class ObjectStatisticsUtility
         return uvArea / 2;
     }
 
+    // Gets or creates a new texture for the given object 
     public static Texture2D GetOrCreateObjectsTexture(GameObject gameObject, float texelDensity)
     {
         Renderer renderer = gameObject.GetComponent<Renderer>();
@@ -99,7 +100,7 @@ public static class ObjectStatisticsUtility
         return texture;
     }
 
-
+    // Checks if the object has a Renderer component 
     public static bool HasRender(GameObject gameObject)
     {
         if (gameObject == null)
@@ -112,6 +113,7 @@ public static class ObjectStatisticsUtility
             return true;
     }
     
+    // Checks if the object has a MainTexture in its material  
     public static bool HasMainTexture(GameObject gameObject)
     {
         if (gameObject == null)

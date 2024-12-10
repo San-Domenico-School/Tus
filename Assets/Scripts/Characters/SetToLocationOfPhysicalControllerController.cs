@@ -6,7 +6,7 @@ using UnityEngine.InputSystem.Controls;
 
 /****************************************************************
  * Attached to: hand 
- * Purpose: make the hand be where the controle is in real life
+ * Purpose: make the hand be where the controls is in real life
  * Author: Seamus 
  * Version: 1.0
  ****************************************************************/
@@ -32,11 +32,13 @@ public class SetToLocationOfPhysicalControllerController : MonoBehaviour
 
     }
 
+    // Set the location of the object to the location of the controller IRL 
     private void HandleLocation(Vector3 location)
     {
         this.transform.position = location + xrRig.transform.position;
     }
    
+    // Set the rotation of the object to the Rotation of the controller IRL 
     private void HandleRotation(quaternion rotation)
     {
         this.transform.rotation = rotation * xrRig.transform.rotation;

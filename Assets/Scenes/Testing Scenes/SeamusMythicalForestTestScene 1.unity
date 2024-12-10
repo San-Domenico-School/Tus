@@ -1693,8 +1693,8 @@ Rigidbody:
   m_GameObject: {fileID: 186074792}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 3
-  m_AngularDrag: 2
+  m_Drag: 1111
+  m_AngularDrag: 111111
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -1709,7 +1709,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!4 &186074802 stripped
 Transform:
@@ -12884,7 +12884,7 @@ MonoBehaviour:
   brushSize: 0.5
   paintColor: {r: 0, g: 0.892854, b: 1, a: 1}
   rayMaxDistance: 10000
-  paintRemaining: 500
+  paintRemaining: 5000
 --- !u!1 &1647346249
 GameObject:
   m_ObjectHideFlags: 0

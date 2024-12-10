@@ -42,6 +42,8 @@ public class PaintbrushController : MonoBehaviour
         HandlePainting();
     }
 
+    // Called every update. Check if you are painting and if you have paint 
+    // Remove paint from paintRemaining
     private void HandlePainting()
     {
         if (isPainting)
@@ -60,16 +62,18 @@ public class PaintbrushController : MonoBehaviour
         }
     }
 
+    // Shoot a ray where the paint will be
     private void PaintObject()
     {
+        // Shoots ray for fromObject forward
         RaycastHit hit;
-        Physics.Raycast(fromObject.transform.position, fromObject.transform.forward, out hit, rayMaxDistance);
-
+        Physics.Raycast(fromObject.transform.position, fromObject.transform.forward, out hit, rayMaxDistance); 
 
         if (hit.transform == null || !ObjectStatisticsUtility.HasRender(hit.transform.gameObject))
             return;
 
-        Texture2D texture = ObjectStatisticsUtility.GetOrCreateObjectsTexture(hit.transform.gameObject, PrepairWorld.texelDensity);
+
+        Texture2D texture = ObjectStatisticsUtility.GetOrCreateObjectsTexture(hit.transform.gameObject, SaveLoadImagesManager.texelDensity);
 
         PaintTexture(hit.textureCoord, texture);
     }
@@ -77,9 +81,11 @@ public class PaintbrushController : MonoBehaviour
     //paints the texture at the UV cordate with diameter of the brushSize and shape of brush 
     private void PaintTexture(Vector2 uv, Texture2D texture)
     {
+        // UV to pixels 
         uv.x *= texture.width;
         uv.y *= texture.height;
 
+        // Calculate brushWidth
         int brushWidth = (int)(brush.width * brushSize);
         int brushHeight = (int)(brush.height * brushSize);
 
