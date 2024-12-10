@@ -4,6 +4,12 @@ using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem.Controls;
 
+/****************************************************************
+ * Attached to: hand 
+ * Purpose: make the hand be where the controle is in real life
+ * Author: Seamus 
+ * Version: 1.0
+ ****************************************************************/
 public class SetToLocationOfPhysicalControllerController : MonoBehaviour
 {
     private TusInputAction controllerLocation;
@@ -33,7 +39,6 @@ public class SetToLocationOfPhysicalControllerController : MonoBehaviour
    
     private void HandleRotation(quaternion rotation)
     {
-        this.transform.rotation = xrRig.transform.rotation;
-        Debug.Log("asdf");
+        this.transform.rotation = rotation * xrRig.transform.rotation;
     }
 }
