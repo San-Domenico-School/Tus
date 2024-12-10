@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.InputSystem.Controls;
 
 public class SetToLocationOfPhysicalControllerController : MonoBehaviour
 {
@@ -21,16 +22,18 @@ public class SetToLocationOfPhysicalControllerController : MonoBehaviour
         controllerRotation.Enable();
 
         controllerLocation.Brush.RightHandLocation.performed += ctx => HandleLocation(ctx.ReadValue<Vector3>());
-        controllerRotation.Brush.RightHandRotation.performed += ctx => HandleRotation(ctx.ReadValue<quaternion>());
+        controllerRotation.Brush.RightHandRotation.performed += ctx => HandleRotation(ctx.ReadValue<Quaternion>());
 
     }
 
-    private void HandleLocation(Vector3 Location)
+    private void HandleLocation(Vector3 location)
     {
-        this.transform.position = Location + xrRig.transform.position;
+        this.transform.position = location + xrRig.transform.position;
     }
-    private void HandleRotation(Quaternion rotation)
+   
+    private void HandleRotation(quaternion rotation)
     {
-        this.transform.rotation = rotation * xrRig.transform.rotation;
+        this.transform.rotation = xrRig.transform.rotation;
+        Debug.Log("asdf");
     }
 }
