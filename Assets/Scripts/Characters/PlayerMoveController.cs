@@ -93,7 +93,7 @@ public class PlayerMoveController : MonoBehaviour
         }
         if (isInBoundary)
         {
-            moveInput /= 5;
+            moveInput /= 3;
         }
     }
 
