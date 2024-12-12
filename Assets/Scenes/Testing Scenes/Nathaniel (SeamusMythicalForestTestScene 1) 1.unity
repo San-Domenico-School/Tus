@@ -1693,8 +1693,8 @@ Rigidbody:
   m_GameObject: {fileID: 186074792}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 1111
-  m_AngularDrag: 111111
+  m_Drag: 11
+  m_AngularDrag: 111
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -7486,7 +7486,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8853e5c226ed5fc4b8b56b88677cd0be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  precomputeTextures: 0
 --- !u!1 &937432946 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4961142279990863982, guid: ac6f057d1794ad24680548560790c27e,
