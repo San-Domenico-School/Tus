@@ -26,7 +26,9 @@ public class PlayerMoveController : MonoBehaviour
     void Awake()
     {
         controls = new TusInputAction();
-        rb = GetComponent<Rigidbody>();
+
+        rb = GetComponentInParent<Rigidbody>();
+
         distToGround = GetComponent<Collider>().bounds.extents.y;
     }
 
@@ -101,6 +103,7 @@ public class PlayerMoveController : MonoBehaviour
     {
         return Physics.Raycast(GetComponent<Transform>().position, -Vector3.up, distToGround + 0.1f);
     }
+
 
 
 }
