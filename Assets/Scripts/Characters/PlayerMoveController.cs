@@ -104,7 +104,7 @@ public class PlayerMoveController : MonoBehaviour
 
     void UpdateLocationFromHeadset(Vector3 newLoc)
     {
-        Vector3 xzLoc = new Vector3(newLoc.x, 0, newLoc.y);
+        Vector3 xzLoc = new Vector3(newLoc.x, 0, newLoc.z);
         transform.position = transform.position + xzLoc - headsetLocation;
         headsetLocation = xzLoc;
     }
