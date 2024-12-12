@@ -69,7 +69,8 @@ public class PaintbrushController : MonoBehaviour
         RaycastHit hit;
         Physics.Raycast(fromObject.transform.position, fromObject.transform.forward, out hit, rayMaxDistance); 
 
-        if (hit.transform == null || !ObjectStatisticsUtility.HasRender(hit.transform.gameObject))
+        // Checks if it has a transform, is on Paintable layer, has a render
+        if (hit.transform == null || !(hit.transform.gameObject.layer == 6) || !ObjectStatisticsUtility.HasRender(hit.transform.gameObject))
             return;
 
 

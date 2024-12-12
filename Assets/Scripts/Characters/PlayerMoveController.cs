@@ -1,12 +1,12 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
 
 /**************************************************
- * Attached to: Camera Offset
- * Purpose:
- * Author:
- * Version:
+ * Attached to: Character
+ * Purpose: Move character based on joystick input
+ * Author: Nathaniel de Marcellus
+ * Version: 1.0
  *************************************************/
 
 public class PlayerMoveController : MonoBehaviour
@@ -20,13 +20,14 @@ public class PlayerMoveController : MonoBehaviour
     float distToGround;
     
     private Vector2 moveInput = Vector2.zero;
+    private bool isInBoundary = false;
     
     // Use this for initialization
     void Awake()
     {
         controls = new TusInputAction();
-        rb = GetComponentInParent<Rigidbody>();
-        distToGround = GetComponentInParent<Collider>().bounds.extents.y;
+        rb = GetComponent<Rigidbody>();
+        distToGround = GetComponent<Collider>().bounds.extents.y;
     }
 
     void OnEnable()
@@ -51,11 +52,38 @@ public class PlayerMoveController : MonoBehaviour
         controls.Disable();
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("InnerBorder"))
+        {
+            isInBoundary = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("InnerBorder"))
+        {
+            isInBoundary = false;
+        }
+    }
+
+    // Update is called once per frame
+    void FixedUpdate()
+    {
+        if (IsGrounded())
+        {
+            Vector3 moveVector = new Vector3(moveInput.x, 0, moveInput.y);
+            Vector3 targetVelocity = moveVector * moveSpeed * moveVector.magnitude;
+
+            rb.velocity = transform.TransformDirection(targetVelocity);
+        }
+    }
+
     // Set movement vector if move within tolerance
     void PlayerMove(Vector2 move)
     {
-        // Gives tolerance to movement
-        if (move.magnitude > 0.05f)
+        if (move.magnitude > 0.05)
         {
             moveInput = move;
         }
@@ -63,28 +91,9 @@ public class PlayerMoveController : MonoBehaviour
         {
             moveInput = Vector2.zero;
         }
-
-        if (IsGrounded())
+        if (isInBoundary)
         {
-            // Use the camera's forward and right directions for movement
-            Transform cameraTransform = Camera.main.transform; // Access the camera
-            Vector3 forward = cameraTransform.forward;
-            Vector3 right = cameraTransform.right;
-
-            // Project forward and right onto the horizontal plane (ignore Y-axis)
-            forward.y = 0;
-            right.y = 0;
-            forward.Normalize();
-            right.Normalize();
-
-            // Combine forward and right directions with move input
-            Vector3 worldMoveDirection = (forward * moveInput.y + right * moveInput.x); // Swap x and y
-
-            // Apply movement speed
-            Vector3 targetVelocity = worldMoveDirection * moveSpeed;
-
-            // Set the Rigidbody's velocity, preserving the current y velocity
-            rb.velocity = new Vector3(targetVelocity.x, rb.velocity.y, targetVelocity.z);
+            moveInput /= 3;
         }
     }
 
@@ -92,4 +101,6 @@ public class PlayerMoveController : MonoBehaviour
     {
         return Physics.Raycast(GetComponent<Transform>().position, -Vector3.up, distToGround + 0.1f);
     }
+
+
 }
