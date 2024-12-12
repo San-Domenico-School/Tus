@@ -18,7 +18,9 @@ public class PlayerMoveController : MonoBehaviour
     private TusInputAction controls;
     private Rigidbody rb;
     float distToGround;
-    
+
+    private Vector3 headsetLocation = Vector3.zero;
+
     private Vector2 moveInput = Vector2.zero;
     private bool isInBoundary = false;
     
@@ -45,6 +47,7 @@ public class PlayerMoveController : MonoBehaviour
             controls.PlayerControl_LeftHanded.Move.canceled += ctx => moveInput = Vector2.zero;
 
         }
+        controls.Headset.HeadsetLocation.performed += ctx => UpdateLocationFromHeadset(ctx.ReadValue<Vector3>());
     }
 
     void OnDisable()
@@ -78,6 +81,8 @@ public class PlayerMoveController : MonoBehaviour
 
             rb.velocity = transform.TransformDirection(targetVelocity);
         }
+        transform.position = transform.position + headsetLocation;
+        headsetLocation = Vector3.zero;
     }
 
     // Set movement vector if move within tolerance
@@ -95,6 +100,12 @@ public class PlayerMoveController : MonoBehaviour
         {
             moveInput /= 3;
         }
+    }
+
+    void UpdateLocationFromHeadset(Vector3 newLoc)
+    {
+        transform.position = transform.position + newLoc - headsetLocation;
+        headsetLocation = newLoc;
     }
 
     bool IsGrounded()

@@ -506,6 +506,15 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""HeadsetLocation"",
+                    ""type"": ""Value"",
+                    ""id"": ""31ba6b26-aab4-471f-94c4-6bed54e264b0"",
+                    ""expectedControlType"": ""Vector3"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -517,6 +526,17 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""HeadsetRotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a3fc8ab0-ef6d-4355-9e65-e019ea631766"",
+                    ""path"": ""<OculusTouchController>/devicePosition"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HeadsetLocation"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -615,6 +635,7 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
         // Headset
         m_Headset = asset.FindActionMap("Headset", throwIfNotFound: true);
         m_Headset_HeadsetRotation = m_Headset.FindAction("HeadsetRotation", throwIfNotFound: true);
+        m_Headset_HeadsetLocation = m_Headset.FindAction("HeadsetLocation", throwIfNotFound: true);
         // Brush
         m_Brush = asset.FindActionMap("Brush", throwIfNotFound: true);
         m_Brush_RightHandRotation = m_Brush.FindAction("RightHandRotation", throwIfNotFound: true);
@@ -1229,11 +1250,13 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Headset;
     private List<IHeadsetActions> m_HeadsetActionsCallbackInterfaces = new List<IHeadsetActions>();
     private readonly InputAction m_Headset_HeadsetRotation;
+    private readonly InputAction m_Headset_HeadsetLocation;
     public struct HeadsetActions
     {
         private @TusInputAction m_Wrapper;
         public HeadsetActions(@TusInputAction wrapper) { m_Wrapper = wrapper; }
         public InputAction @HeadsetRotation => m_Wrapper.m_Headset_HeadsetRotation;
+        public InputAction @HeadsetLocation => m_Wrapper.m_Headset_HeadsetLocation;
         public InputActionMap Get() { return m_Wrapper.m_Headset; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1246,6 +1269,9 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
             @HeadsetRotation.started += instance.OnHeadsetRotation;
             @HeadsetRotation.performed += instance.OnHeadsetRotation;
             @HeadsetRotation.canceled += instance.OnHeadsetRotation;
+            @HeadsetLocation.started += instance.OnHeadsetLocation;
+            @HeadsetLocation.performed += instance.OnHeadsetLocation;
+            @HeadsetLocation.canceled += instance.OnHeadsetLocation;
         }
 
         private void UnregisterCallbacks(IHeadsetActions instance)
@@ -1253,6 +1279,9 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
             @HeadsetRotation.started -= instance.OnHeadsetRotation;
             @HeadsetRotation.performed -= instance.OnHeadsetRotation;
             @HeadsetRotation.canceled -= instance.OnHeadsetRotation;
+            @HeadsetLocation.started -= instance.OnHeadsetLocation;
+            @HeadsetLocation.performed -= instance.OnHeadsetLocation;
+            @HeadsetLocation.canceled -= instance.OnHeadsetLocation;
         }
 
         public void RemoveCallbacks(IHeadsetActions instance)
@@ -1376,6 +1405,7 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
     public interface IHeadsetActions
     {
         void OnHeadsetRotation(InputAction.CallbackContext context);
+        void OnHeadsetLocation(InputAction.CallbackContext context);
     }
     public interface IBrushActions
     {
