@@ -29,7 +29,7 @@ public class PlayerMoveController : MonoBehaviour
     {
         controls = new TusInputAction();
         rb = GetComponentInParent<Rigidbody>();
-        distToGround = GetComponent<Collider>().bounds.extents.y;
+        distToGround = GetComponentInParent<Collider>().bounds.extents.y;
     }
 
     void OnEnable()
