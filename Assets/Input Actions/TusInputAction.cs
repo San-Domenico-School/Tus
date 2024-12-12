@@ -50,18 +50,7 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""29b21090-3507-4123-add8-60852345a56b"",
-                    ""path"": ""<XRController>{RightHand}/thumbstick"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""a2a0a5cd-d78f-42b5-8212-4efef76188f1"",
-                    ""path"": ""<Mouse>/scroll"",
+                    ""path"": ""<OculusTouchController>{LeftHand}/thumbstick"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -109,7 +98,7 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""7a191dd5-cd65-4589-a51e-30c6abc3907c"",
-                    ""path"": ""<XRController>{LeftHand}/thumbstick"",
+                    ""path"": ""<OculusTouchController>{RightHand}/thumbstick"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
