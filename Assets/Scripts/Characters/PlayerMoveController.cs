@@ -104,8 +104,9 @@ public class PlayerMoveController : MonoBehaviour
 
     void UpdateLocationFromHeadset(Vector3 newLoc)
     {
-        transform.position = transform.position + newLoc - headsetLocation;
-        headsetLocation = newLoc;
+        Vector3 xzLoc = new Vector3(newLoc.x, 0, newLoc.y);
+        transform.position = transform.position + xzLoc - headsetLocation;
+        headsetLocation = xzLoc;
     }
 
     bool IsGrounded()
