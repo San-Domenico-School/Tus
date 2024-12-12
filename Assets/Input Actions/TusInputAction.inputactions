@@ -168,17 +168,26 @@
                 },
                 {
                     "name": "Paint",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "4c8c88a8-c8fc-4961-aa43-d55f827d7d0b",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "GrabColor",
+                    "type": "Button",
+                    "id": "45632db3-bfcd-498c-8749-2ee90529cb72",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "GrabColor",
+                    "name": "Save",
                     "type": "Button",
-                    "id": "45632db3-bfcd-498c-8749-2ee90529cb72",
+                    "id": "96f2ba78-bb84-45a2-b0f9-b16efdb3ebd2",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -200,7 +209,18 @@
                 {
                     "name": "",
                     "id": "d5f02631-5ef8-4b90-a4f4-ba2a3ca87252",
-                    "path": "<XRController>{RightHand}/triggerButton",
+                    "path": "<OculusTouchController>{RightHand}/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Paint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f67d9f34-4461-43b2-9c1d-2f0c0fe558ca",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -216,6 +236,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "GrabColor",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9edd979a-a180-481d-bb51-eb9960db903a",
+                    "path": "<XRController>{RightHand}/{PrimaryButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Save",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -443,12 +474,49 @@
         },
         {
             "name": "Headset",
-            "id": "d58a8bff-5e65-42c5-a7ca-cd98f25e771f",
+            "id": "554f008d-863e-4af2-937d-7764bcfa43ae",
             "actions": [
                 {
                     "name": "HeadsetRotation",
                     "type": "Value",
-                    "id": "bb0a4824-72e3-4feb-998f-ae95b86b22f6",
+                    "id": "cf4ddd1e-2c36-488c-b402-df187c103e83",
+                    "expectedControlType": "Quaternion",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "69d4fbdf-e5a6-4eb8-93de-f32985d3e9bb",
+                    "path": "<OculusHMD>/deviceRotation",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HeadsetRotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Brush",
+            "id": "00cae094-d0b7-4f32-b0f2-80a7d7788172",
+            "actions": [
+                {
+                    "name": "RightHandRotation",
+                    "type": "Value",
+                    "id": "f151f2a3-3b3a-46f4-b008-a397c208e0b4",
+                    "expectedControlType": "Quaternion",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "RightHandLocation",
+                    "type": "Value",
+                    "id": "e277b63c-5970-423c-a203-52b2e968fa1b",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -458,12 +526,23 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "b436d226-8fd4-4ce5-a3d3-7840345880d9",
-                    "path": "<XRController>/deviceRotation",
+                    "id": "a11b0740-55a2-4b65-8bc5-97fb6b70d99b",
+                    "path": "<XRController>{RightHand}/deviceRotation",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "HeadsetRotation",
+                    "action": "RightHandRotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "79f81fed-3ded-4b74-856d-aed4c2c57191",
+                    "path": "<XRController>{RightHand}/devicePosition",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightHandLocation",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
