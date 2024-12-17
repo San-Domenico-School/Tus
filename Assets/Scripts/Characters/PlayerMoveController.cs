@@ -89,6 +89,12 @@ public class PlayerMoveController : MonoBehaviour
             Vector3 moveVector = new Vector3(moveInput.x, 0, moveInput.y);
 
             Vector3 targetVelocity = worldMoveDirection * moveSpeed;
+
+            if (isInBoundary)
+            {
+                targetVelocity /= 3;
+            }
+
             rb.velocity = new Vector3(targetVelocity.x, rb.velocity.y, targetVelocity.z);
         }
     }
@@ -103,10 +109,6 @@ public class PlayerMoveController : MonoBehaviour
         else
         {
             moveInput = Vector2.zero;
-        }
-        if (isInBoundary)
-        {
-            moveInput /= 3;
         }
     }
 
