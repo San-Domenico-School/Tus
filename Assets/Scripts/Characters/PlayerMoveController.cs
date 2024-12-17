@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 using System.Collections;
 
 /**************************************************
- * Attached to: Character
+ * Attached to: Camera Offset
  * Purpose: Move character based on joystick input
  * Author: Nathaniel de Marcellus
  * Version: 1.0
@@ -18,7 +18,8 @@ public class PlayerMoveController : MonoBehaviour
     private TusInputAction controls;
     private Rigidbody rb;
     float distToGround;
-    
+
+
     private Vector2 moveInput = Vector2.zero;
     private bool isInBoundary = false;
     
@@ -28,8 +29,8 @@ public class PlayerMoveController : MonoBehaviour
         controls = new TusInputAction();
 
         rb = GetComponentInParent<Rigidbody>();
+        distToGround = GetComponentInParent<Collider>().bounds.extents.y;
 
-        distToGround = GetComponent<Collider>().bounds.extents.y;
     }
 
     void OnEnable()
@@ -73,12 +74,30 @@ public class PlayerMoveController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+
+        Transform cameraTransform = Camera.main.transform;
+        Vector3 forward = cameraTransform.forward;
+        Vector3 right = cameraTransform.right;
+
+        forward.y = 0;
+        right.y = 0;
+        forward.Normalize();
+        right.Normalize();
+
+        Vector3 worldMoveDirection = (forward * moveInput.y + right * moveInput.x);
+
         if (IsGrounded())
         {
             Vector3 moveVector = new Vector3(moveInput.x, 0, moveInput.y);
-            Vector3 targetVelocity = moveVector * moveSpeed * moveVector.magnitude;
 
-            rb.velocity = transform.TransformDirection(targetVelocity);
+            Vector3 targetVelocity = worldMoveDirection * moveSpeed;
+
+            if (isInBoundary)
+            {
+                targetVelocity /= 3;
+            }
+
+            rb.velocity = new Vector3(targetVelocity.x, rb.velocity.y, targetVelocity.z);
         }
     }
 
@@ -92,10 +111,6 @@ public class PlayerMoveController : MonoBehaviour
         else
         {
             moveInput = Vector2.zero;
-        }
-        if (isInBoundary)
-        {
-            moveInput /= 3;
         }
     }
 
