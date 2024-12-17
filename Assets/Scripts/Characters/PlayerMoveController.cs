@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 using System.Collections;
 
 /**************************************************
- * Attached to: Character
+ * Attached to: Camera Offset
  * Purpose: Move character based on joystick input
  * Author: Nathaniel de Marcellus
  * Version: 1.0
@@ -81,8 +81,8 @@ public class PlayerMoveController : MonoBehaviour
 
             rb.velocity = transform.TransformDirection(targetVelocity);
         }
-        transform.position = transform.position + headsetLocation;
-        headsetLocation = Vector3.zero;
+        // transform.position = transform.position + headsetLocation;
+        // headsetLocation = Vector3.zero;
     }
 
     // Set movement vector if move within tolerance
@@ -100,6 +100,16 @@ public class PlayerMoveController : MonoBehaviour
         {
             moveInput /= 3;
         }
+        Transform cameraTransform = Camera.main.transform;
+        Vector3 forward = cameraTransform.forward;
+        Vector3 right = cameraTransform.right;
+
+        forward.y = 0;
+        right.y = 0;
+        forward.Normalize();
+        right.Normalize();
+
+        moveInput = (forward * moveInput.y + right * moveInput.x);
     }
 
     void UpdateLocationFromHeadset(Vector3 newLoc)
