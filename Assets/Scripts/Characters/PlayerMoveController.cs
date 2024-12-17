@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
 
@@ -27,8 +27,10 @@ public class PlayerMoveController : MonoBehaviour
     void Awake()
     {
         controls = new TusInputAction();
+
         rb = GetComponentInParent<Rigidbody>();
         distToGround = GetComponentInParent<Collider>().bounds.extents.y;
+
     }
 
     void OnEnable()
@@ -116,6 +118,7 @@ public class PlayerMoveController : MonoBehaviour
     {
         return Physics.Raycast(GetComponent<Transform>().position, -Vector3.up, distToGround + 0.1f);
     }
+
 
 
 }
