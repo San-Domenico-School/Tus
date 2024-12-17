@@ -100,7 +100,7 @@ public class SaveLoadImagesManager : MonoBehaviour
     // Gets all active GameObject that have Renderer component 
     private void AddToArrayAllPaintableObjects()
     {
-        paintableObjects = GameObject.FindObjectsOfType<GameObject>().Where(go => go.activeSelf).ToArray().Where(go => ObjectStatisticsUtility.HasRender(go)).ToArray();
+        paintableObjects = GameObject.FindObjectsOfType<GameObject>().Where(go => go.layer == 6).ToArray().Where(go => ObjectStatisticsUtility.HasRender(go)).ToArray();
 
     }
 
