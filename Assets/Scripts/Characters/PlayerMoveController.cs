@@ -19,7 +19,6 @@ public class PlayerMoveController : MonoBehaviour
     private Rigidbody rb;
     float distToGround;
 
-    private Vector3 headsetLocation = Vector3.zero;
 
     private Vector2 moveInput = Vector2.zero;
     private bool isInBoundary = false;
@@ -47,7 +46,6 @@ public class PlayerMoveController : MonoBehaviour
             controls.PlayerControl_LeftHanded.Move.canceled += ctx => moveInput = Vector2.zero;
 
         }
-        controls.Headset.HeadsetLocation.performed += ctx => UpdateLocationFromHeadset(ctx.ReadValue<Vector3>());
     }
 
     void OnDisable()
@@ -110,13 +108,6 @@ public class PlayerMoveController : MonoBehaviour
         right.Normalize();
 
         moveInput = (forward * moveInput.y + right * moveInput.x);
-    }
-
-    void UpdateLocationFromHeadset(Vector3 newLoc)
-    {
-        Vector3 xzLoc = new Vector3(newLoc.x, 0, newLoc.z);
-        transform.position = transform.position + xzLoc - headsetLocation;
-        headsetLocation = xzLoc;
     }
 
     bool IsGrounded()

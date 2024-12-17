@@ -484,15 +484,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
-                },
-                {
-                    "name": "HeadsetLocation",
-                    "type": "Value",
-                    "id": "31ba6b26-aab4-471f-94c4-6bed54e264b0",
-                    "expectedControlType": "Vector3",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -504,17 +495,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "HeadsetRotation",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "a3fc8ab0-ef6d-4355-9e65-e019ea631766",
-                    "path": "<OculusTouchController>/devicePosition",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "HeadsetLocation",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
