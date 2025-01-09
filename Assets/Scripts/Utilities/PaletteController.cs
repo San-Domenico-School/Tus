@@ -66,6 +66,8 @@ public class PaletteController : MonoBehaviour
         float blue = (float)blues / mixedColors;
 
         currentColor = ConvertRYBtoUnityColor(red, yellow, blue);
+
+        selectedColorDisplay.GetComponent<MeshRenderer>().material.color = currentColor;
     }
 
     private static Color ConvertRYBtoUnityColor(float r, float y, float b)
