@@ -45,6 +45,10 @@ public class PaintbrushControllerForShader : MonoBehaviour
 
     private void Update()
     {
+        RaycastHit hit;
+        Physics.Raycast(fromObject.transform.position, fromObject.transform.forward, out hit, rayMaxDistance); 
+        
+        SetShader(hit);
         HandlePainting();
     }
 
@@ -87,6 +91,6 @@ public class PaintbrushControllerForShader : MonoBehaviour
 
     private void SetShader(RaycastHit hit)
     {
-        shaderMaterial.SetVector("_HitPoint", hit.point);
+        //shaderMaterial.SetVector("_HitPoint", new Vector3(1,1,1));
     }
 }
