@@ -45,10 +45,7 @@ public class PaintbrushControllerForShader : MonoBehaviour
 
     private void Update()
     {
-        RaycastHit hit;
-        Physics.Raycast(fromObject.transform.position, fromObject.transform.forward, out hit, rayMaxDistance); 
-        
-        SetShader(hit);
+        SetShader();
         HandlePainting();
     }
 
@@ -86,11 +83,11 @@ public class PaintbrushControllerForShader : MonoBehaviour
 
         //Texture2D texture = ObjectStatisticsUtility.GetOrCreateObjectsTexture(hit.transform.gameObject, SaveLoadImagesManager.texelDensity);
 
-        SetShader(hit);
+        //SetShader(hit);
     }
 
-    private void SetShader(RaycastHit hit)
+    private void SetShader()
     {
-        //shaderMaterial.SetVector("_HitPoint", new Vector3(1,1,1));
+        shaderMaterial.SetVector("_PaintColor", new Vector4(0.5f,0.5f,0.5f,1));
     }
 }
