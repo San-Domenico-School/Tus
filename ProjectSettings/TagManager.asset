@@ -6,6 +6,8 @@ TagManager:
   tags:
   - InnerBorder
   - Pool
+  - CinemachineTarget
+  - SceneManager
   layers:
   - Default
   - TransparentFX
