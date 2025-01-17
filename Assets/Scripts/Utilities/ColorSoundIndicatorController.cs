@@ -9,8 +9,9 @@ public class ColorSoundIndicatorController : MonoBehaviour
     AudioSource audioPlayer;
     MeshRenderer audioIndicator;
 
-    int updateCounter = 0;
-    int seconds = 0;
+    private float delay = 1.0f;
+
+    private bool isPlaying = false;
 
 
     // Start is called before the first frame update
@@ -19,9 +20,8 @@ public class ColorSoundIndicatorController : MonoBehaviour
         GameObject colorIndicator = transform.Find("Indicator_Color").gameObject;
         colorIndicator.GetComponent<MeshRenderer>().material.color = indicatorColor;
 
-        GameObject soundIndicator = transform.Find("Indicator_Light").gameObject;
-        audioIndicator.GetComponent<MeshRenderer>();
-        audioPlayer.GetComponent<AudioSource>();
+        audioIndicator = transform.Find("Indicator_Light").gameObject.GetComponent<MeshRenderer>();
+        audioPlayer = transform.Find("Indicator_Light").gameObject.GetComponent<AudioSource>();
     }
 
     // Update is called 50 times per second
@@ -30,5 +30,29 @@ public class ColorSoundIndicatorController : MonoBehaviour
         updateCounter += 1;
         seconds += updateCounter / 50;
         updateCounter %= 50;
+    }
+
+    void Play()
+    {
+        isPlaying = true;
+        audioPlayer.Play();
+        StartCoroutine(checkAudioPlaybackFinished());
+    }
+
+    private System.Collections.IEnumerator checkAudioPlaybackFinished()
+    {
+        while(audioPlayer.isPlaying)
+        {
+            yield return null;
+        }
+
+        yield return WaitForSeconds(delay);
+
+        isPlaying = false;
+    }
+
+    bool getIsPlaying()
+    {
+        return isPlaying;
     }
 }
