@@ -5,19 +5,24 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/Testing Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 0
-    path: Assets/Scenes/Testing Scenes/NathanielScene.unity
-    guid: d667c5aac92a744cd80610dd52349757
-  - enabled: 0
-    path: Assets/Scenes/Testing Scenes/SeamusMythicalForestTestScene 1.unity
-    guid: a88058be783ec0046a1591dbe3f6ee05
   - enabled: 1
-    path: Assets/Scenes/Testing Scenes/Nathaniel (SeamusMythicalForestTestScene 1)
-      1.unity
-    guid: c94cf78f2ae2e4c3d87076a9e66a0346
+    path: Assets/Scenes/TutorialScene.unity
+    guid: 08cf1b6ee47b042459bede4420d6d76a
+  - enabled: 1
+    path: Assets/Scenes/MythicalForest.unity
+    guid: cdb595cf1b6d24258b492a116afdbbdf
+  - enabled: 1
+    path: Assets/Scenes/CrystalCaves.unity
+    guid: c011ee544c3044378a91857e2094c8b7
+  - enabled: 1
+    path: Assets/Scenes/SkyArchipelago.unity
+    guid: 97e1cbba623b14f949dc678b2b789956
+  - enabled: 1
+    path: Assets/Scenes/Singing Canyons.unity
+    guid: 919ed55378203439b908dc41375063be
+  - enabled: 1
+    path: Assets/Scenes/Tower.unity
+    guid: 27a5e05983776459d900ca417406f607
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 03668d7564a2d43c49903a38c38f16ce,
       type: 2}

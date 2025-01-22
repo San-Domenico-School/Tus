@@ -13,8 +13,10 @@ public class PuzzleManager : MonoBehaviour
 {
     private GameObject referenceBlock;
     private GameObject playerBlock;
-    private float accuracyThreshold = 0.03f;  //0.20f = 80% accuracy required to complete the puzzle
+    private float accuracyThreshold = 0.99f;  //0.20f = 80% accuracy required to complete the puzzle
     public bool isMatched = false;  //holds the result of the color comparison
+    [SerializeField] private SceneTracker sceneTracker;
+    [SerializeField] private GameObject door;
 
     // Start is called before the first frame update
     void Start()
@@ -58,11 +60,15 @@ public class PuzzleManager : MonoBehaviour
         //check if the colors are within the threshold
         if (redAccuracy <= accuracyThreshold && greenAccuracy <= accuracyThreshold && blueAccuracy <= accuracyThreshold)
         {
+            /*
             //use for debugging
             Debug.Log($"Reference Block RGB: ({referenceColor.r}, {referenceColor.g}, {referenceColor.b})");
             Debug.Log($"Player Block RGB: ({playerColor.r}, {playerColor.g}, {playerColor.b})");
             Debug.Log("Matched");
+            */
 
+            sceneTracker.UnlockNextScene(0);
+            door.gameObject.SetActive(false);
             isMatched = true;
             return true;
         }
