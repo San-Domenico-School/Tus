@@ -14,10 +14,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Testing Scenes/SeamusMythicalForestTestScene 1.unity
     guid: a88058be783ec0046a1591dbe3f6ee05
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Testing Scenes/Nathaniel (SeamusMythicalForestTestScene 1)
       1.unity
     guid: c94cf78f2ae2e4c3d87076a9e66a0346
+  - enabled: 1
+    path: Assets/Scenes/Testing Scenes/AlmaPoolShader.unity
+    guid: 879aaac984748488f95779e09baca1f6
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 03668d7564a2d43c49903a38c38f16ce,
       type: 2}
