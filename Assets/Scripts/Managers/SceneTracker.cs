@@ -49,22 +49,24 @@ public class SceneTracker : MonoBehaviour
     // Load the appropriate scene based on the current scene index.
     public void ChangeScene()
     {
-        Debug.Log("chnage scene called");
+        Debug.Log("chanage scene called");
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
         if (currentSceneIndex == 0)
         {
-            LoadScene(1); // From tutorial to scene 1
+            LoadScene(1); // tutorial to scene 1
         }
         else if (currentSceneIndex >= 1 && currentSceneIndex <= 4)
         {
-            LoadScene(5); // From scenes 1-4 to the tower
+            LoadScene(5); // scenes 1-4 to the tower
         }
     }
 
     // Loads a scene and moves the player to the correct spawn position.
     private void LoadScene(int sceneIndex)
     {
+        Debug.Log("load scene called");
+        //load scene called
         if (sceneIndex >= 0 && sceneIndex < sceneAvailable.Length && sceneAvailable[sceneIndex])
         {
             SceneManager.LoadScene(sceneIndex);
