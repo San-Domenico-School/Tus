@@ -21,20 +21,14 @@ public class ColorSoundIndicatorController : MonoBehaviour
         colorIndicator.GetComponent<MeshRenderer>().material.color = indicatorColor;
 
         audioIndicator = transform.Find("Indicator_Light").gameObject.GetComponent<MeshRenderer>();
-        audioPlayer = transform.Find("Indicator_Light").gameObject.GetComponent<AudioSource>();
-    }
-
-    // Update is called 50 times per second
-    void FixedUpdate()
-    {
-        updateCounter += 1;
-        seconds += updateCounter / 50;
-        updateCounter %= 50;
+        audioIndicator.material.color = Color.grey;
+        audioPlayer = gameObject.GetComponent<AudioSource>();
     }
 
     void Play()
     {
         isPlaying = true;
+        audioIndicator.material.color = Color.green;
         audioPlayer.Play();
         StartCoroutine(checkAudioPlaybackFinished());
     }
@@ -46,9 +40,10 @@ public class ColorSoundIndicatorController : MonoBehaviour
             yield return null;
         }
 
-        yield return WaitForSeconds(delay);
+        yield return new WaitForSeconds(delay);
 
         isPlaying = false;
+        audioIndicator.material.color = Color.grey;
     }
 
     bool getIsPlaying()
