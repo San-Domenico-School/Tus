@@ -10,7 +10,7 @@ using UnityEngine.InputSystem;
  * Version: 1.1
  *************************************************/
 
-public class PaintbrushController : MonoBehaviour
+public class Painter : MonoBehaviour
 {
     private TusInputAction paintAction;
     private bool isPainting;
