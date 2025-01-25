@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 /**************************************************
@@ -14,10 +15,10 @@ public static class ObjectStatisticsUtility
 {
 
     //creates a texture based on the objects surface area and the amount of uv space taken up
-    public static Texture2D CreateObjectTexture(GameObject gameObject, float targetTexelDensity)
+    public static Texture2D CreateObjectTexture(Mesh mesh, float targetTexelDensity)
     {
-        float uvPercentage = CalculateObjectUVAreaPercentage(gameObject);
-        float objectArea = CalculateObjectArea(gameObject);
+        float uvPercentage = CalculateObjectUVAreaPercentage(mesh);
+        float objectArea = CalculateObjectArea(mesh);
 
         float fullTextureArea = objectArea + ((1 - uvPercentage) * objectArea);
 
@@ -29,17 +30,24 @@ public static class ObjectStatisticsUtility
         return new Texture2D(textureSize, textureSize);
     }
 
-    //calculates the area of the object in meters(1 unity unit) squared 
-    public static float CalculateObjectArea(GameObject gameObject)
+    public static Texture2D CreateObjectTexture(GameObject gameObject, float targetTexelDensity)
     {
-        float area = 0;
-        Mesh mesh = gameObject.GetComponent<MeshFilter>().mesh;
+        return CreateObjectTexture(gameObject.GetComponent<MeshFilter>().mesh, targetTexelDensity);
+    }
 
-        for (int i = 0; i < mesh.triangles.Length; i += 3)
+    //calculates the area of the object in meters(1 unity unit) squared 
+    public static float CalculateObjectArea(Mesh mesh)
+    {
+        Vector3[] vertices = mesh.vertices;
+        int[] triangles = mesh.triangles;
+
+        float area = 0;
+
+        for (int i = 0; i < triangles.Length; i += 3)
         {
-            Vector3 vertA = mesh.vertices[mesh.triangles[i]];
-            Vector3 vertB = mesh.vertices[mesh.triangles[i + 1]];
-            Vector3 vertC = mesh.vertices[mesh.triangles[i + 2]];
+            Vector3 vertA = vertices[triangles[i]];
+            Vector3 vertB = vertices[triangles[i + 1]];
+            Vector3 vertC = vertices[triangles[i + 2]];
 
             Vector3 vectorAB = vertB - vertA;
             Vector3 vectorAC = vertC - vertA;
@@ -48,17 +56,51 @@ public static class ObjectStatisticsUtility
 
             area += cross.magnitude;
         }
-        //Debug.Log(area);
-
+        //Debug.Log(area / 2);
         return area / 2;
     }
+    public static float CalculateObjectArea(GameObject gameObject)
+    {
+        return CalculateObjectArea(gameObject.GetComponent<MeshFilter>().mesh);
+    }
+
+    // public static float CalculateObjectAreaParallel(GameObject gameObject)
+    // {
+    //     Vector3[] vertices = gameObject.GetComponent<MeshFilter>().mesh.vertices;
+    //     int[] triangles = gameObject.GetComponent<MeshFilter>().mesh.triangles;
+        
+    //     float area = 0;
+    //     float[] result = new float[vertices.Length];
+
+    //     Parallel.For(0, triangles.Length, i => 
+    //     {
+    //         Vector3 vertA = vertices[triangles[i]];
+    //         Vector3 vertB = vertices[triangles[i + 1]];
+    //         Vector3 vertC = vertices[triangles[i + 2]];
+
+    //         Vector3 vectorAB = vertB - vertA;
+    //         Vector3 vectorAC = vertC - vertA;
+
+    //         Vector3 cross = Vector3.Cross(vectorAB, vectorAC);
+
+    //         result[i] = cross.magnitude;
+    //     });
+
+    //     foreach(float i in result)
+    //     {
+    //         area += i;
+    //     }
+
+    //     return area / 2;
+    // }
+
+
 
     //it gives you a number between 0 and 1 (its not actually %)
-    public static float CalculateObjectUVAreaPercentage(GameObject gameObject)
+    public static float CalculateObjectUVAreaPercentage(Mesh mesh)
     {
         float uvArea = 0;
 
-        Mesh mesh = gameObject.GetComponent<MeshFilter>().mesh;
         for (int i = 0; i < mesh.triangles.Length; i += 3)
         {
             Vector2 vertA = mesh.uv[mesh.triangles[i]];
@@ -72,10 +114,15 @@ public static class ObjectStatisticsUtility
 
             uvArea += cross.magnitude;
         }
-
-
         return uvArea / 2;
     }
+
+    public static float CalculateObjectUVAreaPercentage(GameObject gameObject)
+    {
+        return CalculateObjectUVAreaPercentage(gameObject.GetComponent<MeshFilter>().mesh);
+    }
+
+
 
     // Gets or creates a new texture for the given object 
     public static Texture2D GetOrCreateObjectsTexture(GameObject gameObject, float texelDensity)
@@ -88,7 +135,7 @@ public static class ObjectStatisticsUtility
         {
             // does not have a texture. Creates a new texture
             // this created texture does not get saved
-            renderer.material.mainTexture = ObjectStatisticsUtility.CreateObjectTexture(gameObject, texelDensity);
+            renderer.material.mainTexture = CreateObjectTexture(gameObject, texelDensity);
             texture = (Texture2D)renderer.material.mainTexture;
             //PrepairWorld.paintableObjects.add
         }
