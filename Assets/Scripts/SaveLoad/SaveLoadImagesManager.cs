@@ -17,7 +17,7 @@ public class SaveLoadImagesManager : MonoBehaviour
     String saveImagesPath;     
     private TusInputAction paintAction;
     public static float texelDensity = 20;
-    public static GameObject[] paintableObjects { get; private set; }
+    public static GameObject[] PaintableObjects { get; private set; }
 
 
     private void Awake()
@@ -28,6 +28,8 @@ public class SaveLoadImagesManager : MonoBehaviour
     private void Start() 
     {
         AddToArrayAllPaintableObjects();
+        //CreateNewBlankTexture();
+
 
         paintAction.Enable();
         paintAction.DominantArm_RightHanded.Save.performed += ctx => SaveImages();
@@ -48,11 +50,8 @@ public class SaveLoadImagesManager : MonoBehaviour
     // Load all the images from drive onto the paintableObjects 
     private void LoadImages()
     {
-
-        float texelDensity = SaveLoadImagesManager.texelDensity;
-
-        // Goes over all objects in paintableObjects
-        foreach (GameObject gameObject in SaveLoadImagesManager.paintableObjects)
+        // Goes over all objects in PaintableObjects
+        foreach (GameObject gameObject in SaveLoadImagesManager.PaintableObjects)
         {
 
             if (File.Exists(Path.Combine(saveImagesPath, gameObject.name + ".png"))) // Check the game has already saved and the file exists
@@ -76,8 +75,9 @@ public class SaveLoadImagesManager : MonoBehaviour
                 
                 // Creates a new texture
                 gameObject.GetComponent<Renderer>().material.mainTexture = ObjectStatisticsUtility.CreateObjectTexture(gameObject, texelDensity);
-            
             }
+            Debug.Log(gameObject.GetComponent<Renderer>().material.mainTexture.dimension);
+
         }
     }
 
@@ -86,7 +86,7 @@ public class SaveLoadImagesManager : MonoBehaviour
     private void SaveImages()
     {
         // Goes over all objects in paintableObjects
-        foreach (GameObject gameObject in paintableObjects)
+        foreach (GameObject gameObject in PaintableObjects)
         {
             if (!ObjectStatisticsUtility.HasMainTexture(gameObject))
                 return;
@@ -100,14 +100,16 @@ public class SaveLoadImagesManager : MonoBehaviour
     // Gets all active GameObject that have Renderer component 
     private void AddToArrayAllPaintableObjects()
     {
-        paintableObjects = GameObject.FindObjectsOfType<GameObject>().Where(go => go.layer == 6).ToArray().Where(go => ObjectStatisticsUtility.HasRender(go)).ToArray();
+        PaintableObjects = GameObject.FindObjectsOfType<GameObject>()
+                            .Where(go => go.layer == 6).ToArray()
+                            .Where(go => ObjectStatisticsUtility.HasRender(go)).ToArray();
 
     }
 
     // This does not need explication 
     private void CreateNewBlankTexture()
     {
-        foreach (GameObject gameObject in paintableObjects)
+        foreach (GameObject gameObject in PaintableObjects)
         {
             gameObject.GetComponent<Renderer>().material.mainTexture = ObjectStatisticsUtility.CreateObjectTexture(gameObject, texelDensity);
         }
