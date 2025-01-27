@@ -13,27 +13,34 @@ using UnityEngine;
 
 public static class ObjectStatisticsUtility
 {
-
     //creates a texture based on the objects surface area and the amount of uv space taken up
-    public static Texture2D CreateObjectTexture(Mesh mesh, float targetTexelDensity)
+    public static Texture2D CreateObjectTexture(float uvRatio, float objectArea, float targetTexelDensity)
     {
-        float uvPercentage = CalculateObjectUVAreaPercentage(mesh);
-        float objectArea = CalculateObjectArea(mesh);
-
-        float fullTextureArea = objectArea + ((1 - uvPercentage) * objectArea);
+        float fullTextureArea = objectArea + ((1 - uvRatio) * objectArea);
 
         int textureSize = (int)Math.Round(Math.Sqrt(fullTextureArea) * targetTexelDensity);
         textureSize = Mathf.Max(1, textureSize); // Ensure textureSize is at least 1
 
-        Debug.Log($"objectArea: {objectArea}, uvPercentage: {uvPercentage}, fullTextureArea: {fullTextureArea}, textureSize: {textureSize}");
+        Debug.Log($"objectArea: {objectArea}, uvPercentage: {uvRatio}, fullTextureArea: {fullTextureArea}, textureSize: {textureSize}");
 
         return new Texture2D(textureSize, textureSize);
     }
-
     public static Texture2D CreateObjectTexture(GameObject gameObject, float targetTexelDensity)
     {
-        return CreateObjectTexture(gameObject.GetComponent<MeshFilter>().mesh, targetTexelDensity);
+        float uvRatio = GetOrCalculateObjectUVAreaRatio(gameObject);
+        float objectArea = GetOrCalculateObjectArea(gameObject);
+
+        return CreateObjectTexture(uvRatio, objectArea, targetTexelDensity);
+
     }
+    public static Texture2D CreateObjectTexture(Mesh mesh, float targetTexelDensity)
+    {
+        float uvRatio = CalculateObjectUVAreaRatio(mesh);
+        float objectArea = CalculateObjectArea(mesh);
+
+        return CreateObjectTexture(uvRatio, objectArea, targetTexelDensity);
+    }
+
 
     //calculates the area of the object in meters(1 unity unit) squared 
     public static float CalculateObjectArea(Mesh mesh)
@@ -59,10 +66,33 @@ public static class ObjectStatisticsUtility
         //Debug.Log(area / 2);
         return area / 2;
     }
+
     public static float CalculateObjectArea(GameObject gameObject)
     {
         return CalculateObjectArea(gameObject.GetComponent<MeshFilter>().mesh);
     }
+
+    public static float GetOrCalculateObjectArea(GameObject gameObject)
+    {
+    if (gameObject.GetComponent<PaintableObject>() == null)
+        {
+            Debug.LogError("object does not have a PaintableObject component");
+            return 0;
+        }
+
+        if(gameObject.GetComponent<PaintableObject>().surfaceArea == -1)
+        {
+            float area = CalculateObjectArea(gameObject);
+
+            gameObject.GetComponent<PaintableObject>().surfaceArea = area;
+            return area;
+        }
+        else 
+        {
+            return gameObject.GetComponent<PaintableObject>().surfaceArea;
+        }
+    }
+
 
     // public static float CalculateObjectAreaParallel(GameObject gameObject)
     // {
@@ -97,7 +127,7 @@ public static class ObjectStatisticsUtility
 
 
     //it gives you a number between 0 and 1 (its not actually %)
-    public static float CalculateObjectUVAreaPercentage(Mesh mesh)
+    public static float CalculateObjectUVAreaRatio(Mesh mesh)
     {
         float uvArea = 0;
 
@@ -117,10 +147,32 @@ public static class ObjectStatisticsUtility
         return uvArea / 2;
     }
 
-    public static float CalculateObjectUVAreaPercentage(GameObject gameObject)
+    public static float CalculateObjectUVAreaRatio(GameObject gameObject)
     {
-        return CalculateObjectUVAreaPercentage(gameObject.GetComponent<MeshFilter>().mesh);
+        return CalculateObjectUVAreaRatio(gameObject.GetComponent<MeshFilter>().mesh);
     }
+
+    public static float GetOrCalculateObjectUVAreaRatio(GameObject gameObject)
+    {
+        if (gameObject.GetComponent<PaintableObject>() == null)
+        {
+            Debug.LogError("object does not have a PaintableObject component");
+            return 0;
+        }
+
+        if(gameObject.GetComponent<PaintableObject>().uvRatio == -1)
+        {
+            float uvRatio = CalculateObjectUVAreaRatio(gameObject);
+            gameObject.GetComponent<PaintableObject>().uvRatio = uvRatio;
+
+            return uvRatio;
+        }
+        else 
+        {
+            return gameObject.GetComponent<PaintableObject>().uvRatio;
+        }
+    }
+    
 
 
 
@@ -137,7 +189,7 @@ public static class ObjectStatisticsUtility
             // this created texture does not get saved
             renderer.material.mainTexture = CreateObjectTexture(gameObject, texelDensity);
             texture = (Texture2D)renderer.material.mainTexture;
-            //PrepairWorld.paintableObjects.add
+            //PrepareWorld.paintableObjects.add
         }
         else
         {

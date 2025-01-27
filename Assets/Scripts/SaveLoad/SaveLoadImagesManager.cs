@@ -1,10 +1,10 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 /**************************************************
  * Attached to: SaveManager
@@ -13,6 +13,7 @@ using System.Threading.Tasks;
  * Version: 1.0
  *************************************************/
 
+[ExecuteInEditMode]
 public class SaveLoadImagesManager : MonoBehaviour
 {
     String saveImagesPath;     
@@ -37,7 +38,7 @@ public class SaveLoadImagesManager : MonoBehaviour
 
 
         saveImagesPath = Application.persistentDataPath;// use when building for Quest
-        //saveImagesPath = "C:/Users/happy/OneDrive/Documents/School Projects/Tus/Unity/Tus/Assets/Scripts/SaveLoad/TestSave"; // use when tesing with pc on Seamus computer 
+        //saveImagesPath = "C:/Users/happy/OneDrive/Documents/School Projects/Tus/Unity/Tus/Assets/Scripts/SaveLoad/TestSave"; // use when testing with pc on Seamus computer 
 
         LoadImages();
     }
@@ -52,7 +53,7 @@ public class SaveLoadImagesManager : MonoBehaviour
     private void LoadImages()
     {
         // Goes over all objects in PaintableObjects
-        foreach (GameObject gameObject in SaveLoadImagesManager.PaintableObjects)
+        foreach (GameObject gameObject in PaintableObjects)
         {
 
             if (File.Exists(Path.Combine(saveImagesPath, gameObject.name + ".png"))) // Check the game has already saved and the file exists
@@ -77,52 +78,51 @@ public class SaveLoadImagesManager : MonoBehaviour
                 // Creates a new texture
                 gameObject.GetComponent<Renderer>().material.mainTexture = ObjectStatisticsUtility.CreateObjectTexture(gameObject, texelDensity);
             }
-            Debug.Log(gameObject.GetComponent<Renderer>().material.mainTexture.dimension);
-
         }
     }
+    
 
-    private void LoadImagesParallel()
-    {
-        String[] names = new String[PaintableObjects.Length];
-        Texture[] textures = new Texture[PaintableObjects.Length];
-        Mesh[] meshes = new Mesh[PaintableObjects.Length];
+    // private void LoadImagesParallel()
+    // {
+    //     String[] names = new String[PaintableObjects.Length];
+    //     Texture[] textures = new Texture[PaintableObjects.Length];
+    //     Mesh[] meshes = new Mesh[PaintableObjects.Length];
         
-        for (int i = 0; i < PaintableObjects.Length; i++)
-        {
-            names[i] = PaintableObjects[i].name;
-            meshes[i] = PaintableObjects[i].GetComponent<MeshFilter>().mesh;
-        }
+    //     for (int i = 0; i < PaintableObjects.Length; i++)
+    //     {
+    //         names[i] = PaintableObjects[i].name;
+    //         meshes[i] = PaintableObjects[i].GetComponent<MeshFilter>().mesh;
+    //     }
 
-        Parallel.For(0, PaintableObjects.Length, i => 
-        {
-            if (File.Exists(Path.Combine(saveImagesPath, names[i] + ".png"))) // Check the game has already saved and the file exists
-            {
-                // Load the images for disk
-                byte[] imageData = File.ReadAllBytes(Path.Combine(saveImagesPath, names[i] + ".png"));
+    //     Parallel.For(0, PaintableObjects.Length, i => 
+    //     {
+    //         if (File.Exists(Path.Combine(saveImagesPath, names[i] + ".png"))) // Check the game has already saved and the file exists
+    //         {
+    //             // Load the images for disk
+    //             byte[] imageData = File.ReadAllBytes(Path.Combine(saveImagesPath, names[i] + ".png"));
 
-                // Converts to a Texture2D
-                Texture2D objectTexture = new Texture2D(2,2);
-                ImageConversion.LoadImage(objectTexture, imageData);
+    //             // Converts to a Texture2D
+    //             Texture2D objectTexture = new Texture2D(2,2);
+    //             ImageConversion.LoadImage(objectTexture, imageData);
 
-                textures[i] = objectTexture;
+    //             textures[i] = objectTexture;
 
-            } 
-            else // The texture does not exist 
-            {
-                textures[i] = ObjectStatisticsUtility.CreateObjectTexture(meshes[i], texelDensity);
-            }
-        });
+    //         } 
+    //         else // The texture does not exist 
+    //         {
+    //             textures[i] = ObjectStatisticsUtility.CreateObjectTexture(meshes[i], texelDensity);
+    //         }
+    //     });
 
-        for (int i = 0; i < PaintableObjects.Length; i++)
-        {
-            PaintableObjects[i].GetComponent<Renderer>().material.mainTexture = textures[i];
-            Debug.Log(textures[i].dimension);
-        }
-    }
+    //     for (int i = 0; i < PaintableObjects.Length; i++)
+    //     {
+    //         PaintableObjects[i].GetComponent<Renderer>().material.mainTexture = textures[i];
+    //         Debug.Log(textures[i].dimension);
+    //     }
+    // }
 
     // TODO make async https://discussions.unity.com/t/save-rendertexture-or-texture2d-as-image-file-utility/891718/14 
-    // Saves all the images on game object that can be painted (in array of object gotton from PrepairWorld)
+    // Saves all the images on game object that can be painted (in array of object gotten from PrepareWorld)
     private void SaveImages()
     {
         // Goes over all objects in paintableObjects
@@ -138,16 +138,20 @@ public class SaveLoadImagesManager : MonoBehaviour
     }
 
     // Gets all active GameObject that have Renderer component 
-    private void AddToArrayAllPaintableObjects()
+    public GameObject[] AddToArrayAllPaintableObjects()
     {
-        PaintableObjects = GameObject.FindObjectsOfType<GameObject>()
-                            .Where(go => go.layer == 6).ToArray()
-                            .Where(go => ObjectStatisticsUtility.HasRender(go)).ToArray();
+        GameObject[] gameObjects;
 
+        gameObjects = GameObject.FindObjectsOfType<GameObject>()
+                                .Where(go => go.layer == 6).ToArray()
+                                .Where(go => ObjectStatisticsUtility.HasRender(go)).ToArray();
+
+        PaintableObjects = gameObjects;
+        return gameObjects;
     }
 
     // This does not need explication 
-    private void CreateNewBlankTexture()
+    public void CreateNewBlankTexture()
     {
         foreach (GameObject gameObject in PaintableObjects)
         {
@@ -155,4 +159,44 @@ public class SaveLoadImagesManager : MonoBehaviour
         }
     }
 
+
+    public void SetPaintAbleObjectFields(GameObject[] gameObjects)
+    {
+        foreach (GameObject gameObject in gameObjects)
+        {
+            if (gameObject.GetComponent<PaintableObject>() == null)
+                continue;
+                
+            gameObject.GetComponent<PaintableObject>().surfaceArea = ObjectStatisticsUtility.CalculateObjectArea(gameObject);
+            gameObject.GetComponent<PaintableObject>().uvRatio = ObjectStatisticsUtility.CalculateObjectUVAreaRatio(gameObject);
+
+        }
+    }
+
 }
+
+#if UNITY_EDITOR
+[CustomEditor(typeof(SaveLoadImagesManager))]
+class SerializedSaveLoadImagesManager : Editor
+{
+    public override void OnInspectorGUI()
+    {
+        SaveLoadImagesManager SLIM = target as SaveLoadImagesManager;
+        base.OnInspectorGUI();
+
+        if (GUILayout.Button("Calculate Paintable Fields"))
+        {
+            GameObject[] gameObjects = SLIM.AddToArrayAllPaintableObjects();
+
+            SLIM.SetPaintAbleObjectFields(gameObjects);
+
+            Debug.Log(gameObjects.Length);
+        }
+
+        if (GUILayout.Button("Reset Textures"))
+        {
+            SLIM.CreateNewBlankTexture();
+        }
+    }
+}
+#endif
