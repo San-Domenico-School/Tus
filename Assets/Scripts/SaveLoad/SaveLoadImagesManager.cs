@@ -18,7 +18,7 @@ public class SaveLoadImagesManager : MonoBehaviour
 {
     String saveImagesPath;     
     private TusInputAction paintAction;
-    public static float texelDensity = 20;
+    public static float texelDensity = 2000;
     public static GameObject[] PaintableObjects { get; private set; }
 
 
@@ -29,13 +29,11 @@ public class SaveLoadImagesManager : MonoBehaviour
 
     private void Start() 
     {
-        AddToArrayAllPaintableObjects();
-        //CreateNewBlankTexture();
-
-
         paintAction.Enable();
         paintAction.DominantArm_RightHanded.Save.performed += ctx => SaveImages();
 
+        AddToArrayAllPaintableObjects();
+        //CreateNewBlankTexture();
 
         saveImagesPath = Application.persistentDataPath;// use when building for Quest
         //saveImagesPath = "C:/Users/happy/OneDrive/Documents/School Projects/Tus/Unity/Tus/Assets/Scripts/SaveLoad/TestSave"; // use when testing with pc on Seamus computer 
@@ -66,7 +64,7 @@ public class SaveLoadImagesManager : MonoBehaviour
                 ImageConversion.LoadImage(objectTexture, imageData);
 
                 // Sets the the loaded texture to the object's texture
-                gameObject.GetComponent<Renderer>().material.mainTexture = objectTexture;
+                gameObject.GetComponent<Renderer>().sharedMaterial.mainTexture = objectTexture;
                 //Debug.Log(Path.Combine(saveImagesPath, gameObject.name + ".png"));
 
             } 
@@ -76,7 +74,7 @@ public class SaveLoadImagesManager : MonoBehaviour
                     return;
                 
                 // Creates a new texture
-                gameObject.GetComponent<Renderer>().material.mainTexture = ObjectStatisticsUtility.CreateObjectTexture(gameObject, texelDensity);
+                gameObject.GetComponent<Renderer>().sharedMaterial.mainTexture = ObjectStatisticsUtility.CreateObjectTexture(gameObject, texelDensity);
             }
         }
     }
@@ -132,7 +130,7 @@ public class SaveLoadImagesManager : MonoBehaviour
                 return;
             
             // Saves the images to disk 
-            Texture2D image = (Texture2D) gameObject.GetComponent<Renderer>().material.mainTexture;
+            Texture2D image = (Texture2D) gameObject.GetComponent<Renderer>().sharedMaterial.mainTexture;
             File.WriteAllBytes(Path.Combine(saveImagesPath, gameObject.name + ".png"), image.EncodeToPNG());
         }
     }
@@ -155,7 +153,7 @@ public class SaveLoadImagesManager : MonoBehaviour
     {
         foreach (GameObject gameObject in PaintableObjects)
         {
-            gameObject.GetComponent<Renderer>().material.mainTexture = ObjectStatisticsUtility.CreateObjectTexture(gameObject, texelDensity);
+            gameObject.GetComponent<Renderer>().sharedMaterial.mainTexture = ObjectStatisticsUtility.CreateObjectTexture(gameObject, texelDensity);
         }
     }
 
@@ -189,8 +187,6 @@ class SerializedSaveLoadImagesManager : Editor
             GameObject[] gameObjects = SLIM.AddToArrayAllPaintableObjects();
 
             SLIM.SetPaintAbleObjectFields(gameObjects);
-
-            Debug.Log(gameObjects.Length);
         }
 
         if (GUILayout.Button("Reset Textures"))

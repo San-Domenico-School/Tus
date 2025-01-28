@@ -69,7 +69,7 @@ public static class ObjectStatisticsUtility
 
     public static float CalculateObjectArea(GameObject gameObject)
     {
-        return CalculateObjectArea(gameObject.GetComponent<MeshFilter>().mesh);
+        return CalculateObjectArea(gameObject.GetComponent<MeshFilter>().sharedMesh);
     }
 
     public static float GetOrCalculateObjectArea(GameObject gameObject)
@@ -77,7 +77,7 @@ public static class ObjectStatisticsUtility
     if (gameObject.GetComponent<PaintableObject>() == null)
         {
             Debug.LogError("object does not have a PaintableObject component");
-            return 0;
+            return -1;
         }
 
         if(gameObject.GetComponent<PaintableObject>().surfaceArea == -1)
@@ -149,7 +149,7 @@ public static class ObjectStatisticsUtility
 
     public static float CalculateObjectUVAreaRatio(GameObject gameObject)
     {
-        return CalculateObjectUVAreaRatio(gameObject.GetComponent<MeshFilter>().mesh);
+        return CalculateObjectUVAreaRatio(gameObject.GetComponent<MeshFilter>().sharedMesh);
     }
 
     public static float GetOrCalculateObjectUVAreaRatio(GameObject gameObject)
@@ -157,7 +157,7 @@ public static class ObjectStatisticsUtility
         if (gameObject.GetComponent<PaintableObject>() == null)
         {
             Debug.LogError("object does not have a PaintableObject component");
-            return 0;
+            return -1;
         }
 
         if(gameObject.GetComponent<PaintableObject>().uvRatio == -1)
@@ -206,7 +206,7 @@ public static class ObjectStatisticsUtility
             return false;
         else if (gameObject.GetComponent<Renderer>() == null)
             return false;
-        else if (gameObject.gameObject.GetComponent<Renderer>().material == null)
+        else if (gameObject.gameObject.GetComponent<Renderer>().sharedMaterial == null)
             return false;
         else 
             return true;
@@ -219,9 +219,9 @@ public static class ObjectStatisticsUtility
             return false;
         else if (gameObject.GetComponent<Renderer>() == null)
             return false;
-        else if (gameObject.gameObject.GetComponent<Renderer>().material == null)
+        else if (gameObject.gameObject.GetComponent<Renderer>().sharedMaterial == null)
             return false;
-        else if (gameObject.gameObject.GetComponent<Renderer>().material.mainTexture == null)
+        else if (gameObject.gameObject.GetComponent<Renderer>().sharedMaterial.mainTexture == null)
             return false;
         else 
             return true;

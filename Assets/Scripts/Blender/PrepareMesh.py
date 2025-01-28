@@ -46,7 +46,7 @@ selected_objects = bpy.context.selected_objects
 
 
 
-# Aplly rotation and scale 
+# Aplly rotation and scale and cut up
 for obj in selected_objects :
     bpy.ops.object.transform_apply(location=False, rotation=True, scale=True)
      
@@ -60,6 +60,9 @@ for obj in selected_objects :
     x_segments = calculateNumberOfSegments(o, x)
     y_segments = calculateNumberOfSegments(o, y)
     z_segments = calculateNumberOfSegments(o, z)
+    
+    if x_segments == 1 or y_segments == 1 or z_segments == 1 :
+        continue
 
     slice(bm, o, x, x_segments)
     slice(bm, o, y, y_segments)
