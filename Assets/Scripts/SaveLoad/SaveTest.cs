@@ -29,7 +29,7 @@ public class SaveTest : MonoBehaviour
     
     private void SaveTexture()
     {
-        Texture2D image = (Texture2D) gameObjectWithTexture.GetComponent<Renderer>().material.mainTexture;
+        Texture2D image = (Texture2D) gameObjectWithTexture.GetComponent<Renderer>().sharedMaterial.mainTexture;
         
         System.IO.File.WriteAllBytes(filePath, image.EncodeToPNG());
     }

@@ -18,12 +18,13 @@ public class SaveLoadImagesManager : MonoBehaviour
 {
     String saveImagesPath;     
     private TusInputAction paintAction;
-    public static float texelDensity = 2000;
+    public static float texelDensity = 20;
     public static GameObject[] PaintableObjects { get; private set; }
 
 
     private void Awake()
     {
+        AddToArrayAllPaintableObjects();
         paintAction = new TusInputAction();
     }
 
@@ -32,13 +33,17 @@ public class SaveLoadImagesManager : MonoBehaviour
         paintAction.Enable();
         paintAction.DominantArm_RightHanded.Save.performed += ctx => SaveImages();
 
-        AddToArrayAllPaintableObjects();
         //CreateNewBlankTexture();
 
         saveImagesPath = Application.persistentDataPath;// use when building for Quest
         //saveImagesPath = "C:/Users/happy/OneDrive/Documents/School Projects/Tus/Unity/Tus/Assets/Scripts/SaveLoad/TestSave"; // use when testing with pc on Seamus computer 
 
-        LoadImages();
+        
+        
+        if (Application.isPlaying)
+        {
+            LoadImages();
+        }
     }
 
     private void OnDestroy() 
@@ -64,7 +69,7 @@ public class SaveLoadImagesManager : MonoBehaviour
                 ImageConversion.LoadImage(objectTexture, imageData);
 
                 // Sets the the loaded texture to the object's texture
-                gameObject.GetComponent<Renderer>().sharedMaterial.mainTexture = objectTexture;
+                gameObject.GetComponent<Renderer>().material.mainTexture = objectTexture;
                 //Debug.Log(Path.Combine(saveImagesPath, gameObject.name + ".png"));
 
             } 
@@ -74,7 +79,7 @@ public class SaveLoadImagesManager : MonoBehaviour
                     return;
                 
                 // Creates a new texture
-                gameObject.GetComponent<Renderer>().sharedMaterial.mainTexture = ObjectStatisticsUtility.CreateObjectTexture(gameObject, texelDensity);
+                gameObject.GetComponent<Renderer>().material.mainTexture = ObjectStatisticsUtility.CreateObjectTexture(gameObject, texelDensity);
             }
         }
     }
@@ -114,7 +119,7 @@ public class SaveLoadImagesManager : MonoBehaviour
 
     //     for (int i = 0; i < PaintableObjects.Length; i++)
     //     {
-    //         PaintableObjects[i].GetComponent<Renderer>().material.mainTexture = textures[i];
+    //         PaintableObjects[i].GetComponent<Renderer>().sharedMaterial.mainTexture = textures[i];
     //         Debug.Log(textures[i].dimension);
     //     }
     // }
