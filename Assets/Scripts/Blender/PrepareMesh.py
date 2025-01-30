@@ -102,6 +102,14 @@ for obj in objs:
     # Exit edit mode
     bpy.ops.object.mode_set(mode='OBJECT')
 
+selected_objects = bpy.context.selected_objects
+
+bpy.ops.object.mode_set(mode='EDIT')
+bpy.ops.mesh.remove_doubles(threshold=0.0001)
+bpy.ops.object.mode_set(mode='OBJECT')
+
+bpy.ops.object.origin_set(type='ORIGIN_CURSOR')
+
 
 
 [o.select_set(True) for o in selected_objects]
