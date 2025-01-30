@@ -15,11 +15,8 @@ public class SceneTracker : MonoBehaviour
      *************************/
 
     public static SceneTracker Instance;
-
     // Array to track available scenes
     private bool[] sceneAvailable = new bool[6] { true, false, false, false, false, true };
-    // Array to store spawn locations for each scene
-    private Vector3[] spawnLocations = new Vector3[6];
 
     private void Awake()
     {
@@ -42,7 +39,7 @@ public class SceneTracker : MonoBehaviour
             int nextSceneIndex = currentSceneIndex + 1;
             sceneAvailable[nextSceneIndex] = true;
 
-          //  Debug.Log("Scene {nextSceneIndex} is now available!");
+          //Debug.Log("Scene {nextSceneIndex} is now available!");
         }
     }
 
@@ -54,7 +51,9 @@ public class SceneTracker : MonoBehaviour
 
         if (currentSceneIndex == 0)
         {
+            gameObject.SetActive(false);
             LoadScene(1); // tutorial to scene 1
+            gameObject.SetActive(true);
         }
         else if (currentSceneIndex >= 1 && currentSceneIndex <= 4)
         {
@@ -72,7 +71,7 @@ public class SceneTracker : MonoBehaviour
             SceneManager.LoadScene(sceneIndex);
             
             // Move player to the correct spawn location
-            SceneManager.sceneLoaded += OnSceneLoaded;
+            SceneManager.sceneLoaded += OnSceneLoaded; 
         }
         else
         {
@@ -80,23 +79,26 @@ public class SceneTracker : MonoBehaviour
         }
     }
 
-   
+
     // Callback to position the player after a scene is loaded.
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        int sceneIndex = scene.buildIndex;
-
         GameObject player = GameObject.FindWithTag("Player");
-        if (player != null)
+        GameObject spawnPoint = GameObject.Find("PlayerSpawnpoint");
+
+        if (player != null && spawnPoint != null)
         {
-            player.transform.position = spawnLocations[sceneIndex];
-            Debug.Log($"Player moved to spawn position for scene {sceneIndex}: {spawnLocations[sceneIndex]}");
+            player.transform.position = spawnPoint.transform.position;
+            Debug.Log($"Player moved to spawn point at {spawnPoint.transform.position:F6}");
         }
         else
         {
-            Debug.LogWarning("Player object not found in the scene.");
+            if (player == null)
+                Debug.LogWarning("Player not found in the scene.");
+            if (spawnPoint == null)
+                Debug.LogWarning("Spawnpoint not found in the scene.");
         }
 
-        SceneManager.sceneLoaded -= OnSceneLoaded;
+        SceneManager.sceneLoaded -= OnSceneLoaded; // Remove event listener to prevent duplication.
     }
 }
