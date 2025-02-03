@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2182666179447740327}
   - component: {fileID: 9140696189655911212}
+  - component: {fileID: 8605448549702117060}
   m_Layer: 0
   m_Name: Nathaniel_Color_Sound_Indicator
   m_TagString: Untagged
@@ -130,6 +131,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8605448549702117060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3792767333810373070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5d7d796d022547eb84703969b0266cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  indicatorColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &5859553161376783387
 GameObject:
   m_ObjectHideFlags: 0

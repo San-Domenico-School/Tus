@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ColorSoundIndicatorController : MonoBehaviour
 {
-    [SerializeField] Color indicatorColor;
+    [SerializeField] Material indicatorColor;
 
     AudioSource audioPlayer;
     MeshRenderer audioIndicator;
@@ -18,11 +18,13 @@ public class ColorSoundIndicatorController : MonoBehaviour
     void Start()
     {
         GameObject colorIndicator = transform.Find("Indicator_Color").gameObject;
-        colorIndicator.GetComponent<MeshRenderer>().material.color = indicatorColor;
+        colorIndicator.GetComponent<MeshRenderer>().material = indicatorColor;
 
         audioIndicator = transform.Find("Indicator_Light").gameObject.GetComponent<MeshRenderer>();
         audioIndicator.material.color = Color.grey;
         audioPlayer = gameObject.GetComponent<AudioSource>();
+
+        Play();
     }
 
     void Play()
