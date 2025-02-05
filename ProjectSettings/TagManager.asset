@@ -6,6 +6,7 @@ TagManager:
   tags:
   - InnerBorder
   - Pool
+  - RedButton
   layers:
   - Default
   - TransparentFX

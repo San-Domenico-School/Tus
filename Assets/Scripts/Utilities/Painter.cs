@@ -12,6 +12,8 @@ using UnityEngine.InputSystem;
 
 public class Painter : MonoBehaviour
 {
+
+    public static Painter Instance;
     private TusInputAction paintAction;
     private bool isPainting;
 
@@ -28,6 +30,15 @@ public class Painter : MonoBehaviour
     private void Awake()
     {
         paintAction = new TusInputAction();
+
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else if (Instance != this)
+        {
+            Destroy(this);
+        }
     }
 
     private void OnEnable()
@@ -40,6 +51,16 @@ public class Painter : MonoBehaviour
     private void Update()
     {
         HandlePainting();
+    }
+
+
+    public Color GetPaintColor()
+    {
+        return paintColor;
+    }
+    public void SetPaintColor(Color color)
+    {
+        paintColor = color;
     }
 
     // Called every update. Check if you are painting and if you have paint 

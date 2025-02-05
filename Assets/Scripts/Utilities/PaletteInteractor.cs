@@ -10,6 +10,8 @@ using UnityEngine;
  *************************************************/
 public class PaletteInteractor : MonoBehaviour
 {
+    [SerializeField] GameObject PaintManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,11 +24,30 @@ public class PaletteInteractor : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (CompareTag("RedButton"))
+        if (other.gameObject.CompareTag("RedButton"))
         {
-            
+            other.gameObject.GetComponent<Renderer>().material.color = Color.blue;
+            PaletteController.Instance.addRed();
+            PaintManager.GetComponent<Painter>().SetPaintColor(PaletteController.Instance.GetCurrentColor());
+
+        }
+
+        if (other.gameObject.CompareTag("BlueButton"))
+        {
+            PaletteController.Instance.addBlue();
+        }
+
+        if (other.gameObject.CompareTag("YellowButton"))
+        {
+            PaletteController.Instance.addYellow();
+        }
+
+        if (other.gameObject.CompareTag("ResetButton"))
+        {
+            PaletteController.Instance.resetColors();
         }
     }
+
 }
