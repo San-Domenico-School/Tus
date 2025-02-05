@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class SceneTracker : MonoBehaviour
 {
     /**************************
-     *This script is on the SceneTracker. it keeps  
+     *This script is on the SceneManager. it keeps  
      *track of what levels are unlocked based of 
      *previous puzzle completion. It is DDOL and is
      *in control of changing the scene
@@ -15,6 +15,8 @@ public class SceneTracker : MonoBehaviour
      *************************/
 
     public static SceneTracker Instance;
+    [SerializeField] private GameObject testBox;
+
     // Array to track available scenes
     private bool[] sceneAvailable = new bool[6] { true, false, false, false, false, true };
 
@@ -23,12 +25,23 @@ public class SceneTracker : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
             Destroy(gameObject);
         }
+    }
+
+    private void Start()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
+    // This is just to test the trigger in VR by change box color
+    public void TestBox()
+    {
+        Debug.Log(testBox.GetComponent<Renderer>().material.color);
+        testBox.GetComponent<Renderer>().material.color = Color.black;
     }
 
     // Unlock the next scene after completing the current scene's puzzle.    
@@ -39,21 +52,19 @@ public class SceneTracker : MonoBehaviour
             int nextSceneIndex = currentSceneIndex + 1;
             sceneAvailable[nextSceneIndex] = true;
 
-          //Debug.Log("Scene {nextSceneIndex} is now available!");
+            Debug.Log("Scene {nextSceneIndex} is now available!");
         }
     }
+
 
     // Load the appropriate scene based on the current scene index.
     public void ChangeScene()
     {
-        Debug.Log("chanage scene called");
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
         if (currentSceneIndex == 0)
         {
-            gameObject.SetActive(false);
             LoadScene(1); // tutorial to scene 1
-            gameObject.SetActive(true);
         }
         else if (currentSceneIndex >= 1 && currentSceneIndex <= 4)
         {
@@ -64,7 +75,10 @@ public class SceneTracker : MonoBehaviour
     // Loads a scene and moves the player to the correct spawn position.
     private void LoadScene(int sceneIndex)
     {
-        Debug.Log("load scene called");
+        // Use test box to as debug statement
+        TestBox();
+
+        /* Don't Load Scenes yet.  Test these later.
         //load scene called
         if (sceneIndex >= 0 && sceneIndex < sceneAvailable.Length && sceneAvailable[sceneIndex])
         {
@@ -77,7 +91,8 @@ public class SceneTracker : MonoBehaviour
         {
             Debug.LogWarning($"Scene {sceneIndex} is not available or out of range.");
         }
-    }
+        */
+    } 
 
 
     // Callback to position the player after a scene is loaded.
