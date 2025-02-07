@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Testing Scenes/NathanielScene.unity
     guid: d667c5aac92a744cd80610dd52349757
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Testing Scenes/SeamusMythicalForestTestScene 1.unity
     guid: a88058be783ec0046a1591dbe3f6ee05
   - enabled: 0
@@ -25,9 +25,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Testing Scenes/new Seamus forest optimazation test.unity
     guid: 8958681ecf1602b4cb2700a9419245f3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Testing Scenes/new new Seamus optamazatoin test scen.unity
     guid: faa22204622c87c4fbbe6374ca7ed791
+  - enabled: 1
+    path: Assets/Scenes/Testing Scenes/TeddyPoolRefilTest.unity
+    guid: 21d6c1647aba04e79a13983cd721a9bd
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 03668d7564a2d43c49903a38c38f16ce,
       type: 2}

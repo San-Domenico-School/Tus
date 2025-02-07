@@ -5,7 +5,7 @@ using UnityEngine;
 /**************************************************
  * Attached to: paint pools
  * Purpose: add more paint to paintRemaining in the PaintbrushController
- * Author: Seamus 
+ * Author: Seamus/Teddy 
  * Version: 1.0
  *************************************************/
 
@@ -15,8 +15,9 @@ public class PaintPool : MonoBehaviour
     [SerializeField] float addingPaintMultiplier;
     
     
-    private void OnTriggerStay(Collider other) {
-        if (other.gameObject.CompareTag("Player"))
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("Hand"))
         {
             if (paintManager.GetComponent<PaintbrushController>().paintRemaining < 100f)
             {
@@ -24,6 +25,7 @@ public class PaintPool : MonoBehaviour
             }
 
             Debug.Log(paintManager.GetComponent<PaintbrushController>().paintRemaining);
+            Debug.Log("this called");
         }
     }
     
