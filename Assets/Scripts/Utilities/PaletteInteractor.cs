@@ -11,6 +11,7 @@ using UnityEngine;
 public class PaletteInteractor : MonoBehaviour
 {
     [SerializeField] GameObject PaintManager;
+    [SerializeField] GameObject RedButton;
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +31,8 @@ public class PaletteInteractor : MonoBehaviour
         {
             other.gameObject.GetComponent<Renderer>().material.color = Color.blue;
             PaletteController.Instance.addRed();
-            PaintManager.GetComponent<Painter>().SetPaintColor(PaletteController.Instance.GetCurrentColor());
+            //PaintManager.GetComponent<Painter>().SetPaintColor(PaletteController.Instance.GetCurrentColor());
+            PaintManager.GetComponent<Painter>().paintColor = new Color(1, 1, 1, 1);
 
         }
 

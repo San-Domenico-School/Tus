@@ -20,7 +20,7 @@ public class Painter : MonoBehaviour
     [SerializeField] GameObject fromObject;
     [SerializeField] Texture2D brush;
     [SerializeField] float brushSize = .5f;
-    [SerializeField] Color paintColor = Color.white;
+    [SerializeField] public Color paintColor = Color.white;
     [SerializeField] float rayMaxDistance = 30f;
 
     //public float paintRemaining { get; set; } = 50;
@@ -58,9 +58,10 @@ public class Painter : MonoBehaviour
     {
         return paintColor;
     }
-    public void SetPaintColor(Color color)
+    public void SetPaintColor(Color color, Collider other)
     {
-        paintColor = color;
+        paintColor = new Color(1, 0, 0, 1);
+        other.gameObject.GetComponent<Renderer>().material.color = Color.blue;
     }
 
     // Called every update. Check if you are painting and if you have paint 
@@ -120,7 +121,9 @@ public class Painter : MonoBehaviour
                 int currentTextureY = (int)(uv.y + y - (brushHeight / 2));
 
                 Color brushColor = brush.GetPixel((int)(x / brushSize), (int)(y / brushSize));
-                brushColor = Color.Lerp(texture.GetPixel(currentTextureX, currentTextureY), paintColor, brushColor.r);
+                //brushColor = Color.Lerp(texture.GetPixel(currentTextureX, currentTextureY), paintColor, brushColor.r);
+                brushColor = paintColor;
+
                 //brushColor = brush.GetPixel((int)(x / brushSize), (int)(y / brushSize));
                 texture.SetPixel(currentTextureX, currentTextureY, brushColor);
             }

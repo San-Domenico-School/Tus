@@ -13924,7 +13924,7 @@ MonoBehaviour:
   fromObject: {fileID: 1944470537}
   brush: {fileID: 2800000, guid: 7d5c502cfdc6c324983b6535a20f9e33, type: 3}
   brushSize: 0.5
-  paintColor: {r: 0, g: 0.96855354, b: 1, a: 1}
+  paintColor: {r: 0.054378804, g: 0.3085506, b: 0.8867924, a: 1}
   rayMaxDistance: 10000
   paintRemaining: 5000
 --- !u!1 &1647346249
@@ -16294,7 +16294,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fef05ef75fe54b4d8126a07987436e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PaintManager: {fileID: 0}
+  PaintManager: {fileID: 1636323955}
+  RedButton: {fileID: 303875846}
 --- !u!65 &1944470543
 BoxCollider:
   m_ObjectHideFlags: 0
