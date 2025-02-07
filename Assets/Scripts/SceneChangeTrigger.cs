@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerSceneMove : MonoBehaviour
 {
-    //[SerializeField] private SceneTracker sceneTracker;
+    [SerializeField] private SceneTracker sceneTracker;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -13,6 +13,7 @@ public class PlayerSceneMove : MonoBehaviour
         {
             Debug.Log("Player entered trigger zone.");
             SceneTracker.Instance.ChangeScene(); // Call the ChangeScene method in SceneTracker
+            Debug.Log("colision check");
         }
     }
 }

@@ -38,7 +38,7 @@ public class SceneTracker : MonoBehaviour
     }
 
     // This is just to test the trigger in VR by change box color
-    public void TestBox()
+    public void TestBox(Color color)
     {
         Debug.Log(testBox.GetComponent<Renderer>().material.color);
         testBox.GetComponent<Renderer>().material.color = Color.black;
@@ -61,6 +61,8 @@ public class SceneTracker : MonoBehaviour
     public void ChangeScene()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        TestBox(Color.white);
+        Debug.Log("changeScene called");
 
         if (currentSceneIndex == 0)
         {
@@ -76,9 +78,10 @@ public class SceneTracker : MonoBehaviour
     private void LoadScene(int sceneIndex)
     {
         // Use test box to as debug statement
-        TestBox();
+        TestBox(Color.yellow);
+        Debug.Log("load scene called");
 
-        /* Don't Load Scenes yet.  Test these later.
+        // Don't Load Scenes yet.  Test these later.
         //load scene called
         if (sceneIndex >= 0 && sceneIndex < sceneAvailable.Length && sceneAvailable[sceneIndex])
         {
@@ -91,7 +94,6 @@ public class SceneTracker : MonoBehaviour
         {
             Debug.LogWarning($"Scene {sceneIndex} is not available or out of range.");
         }
-        */
     } 
 
 
