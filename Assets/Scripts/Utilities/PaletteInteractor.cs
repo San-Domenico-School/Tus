@@ -27,12 +27,15 @@ public class PaletteInteractor : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("outside " +PaintManager);
+
         if (other.gameObject.CompareTag("RedButton"))
         {
+            // TODO make these lines of code not throw an error 
             other.gameObject.GetComponent<Renderer>().material.color = Color.blue;
             PaletteController.Instance.addRed();
-            //PaintManager.GetComponent<Painter>().SetPaintColor(PaletteController.Instance.GetCurrentColor());
-            PaintManager.GetComponent<Painter>().paintColor = new Color(1, 1, 1, 1);
+            PaintManager.GetComponent<Painter>().SetPaintColor(PaletteController.Instance.GetCurrentColor());
+            //PaintManager.GetComponent<Painter>().SetPaintColor(new Color(1, 1, 1, 1));
 
         }
 

@@ -58,10 +58,9 @@ public class Painter : MonoBehaviour
     {
         return paintColor;
     }
-    public void SetPaintColor(Color color, Collider other)
+    public void SetPaintColor(Color color)
     {
-        paintColor = new Color(1, 0, 0, 1);
-        other.gameObject.GetComponent<Renderer>().material.color = Color.blue;
+        paintColor = color;
     }
 
     // Called every update. Check if you are painting and if you have paint 
@@ -121,8 +120,7 @@ public class Painter : MonoBehaviour
                 int currentTextureY = (int)(uv.y + y - (brushHeight / 2));
 
                 Color brushColor = brush.GetPixel((int)(x / brushSize), (int)(y / brushSize));
-                //brushColor = Color.Lerp(texture.GetPixel(currentTextureX, currentTextureY), paintColor, brushColor.r);
-                brushColor = paintColor;
+                brushColor = Color.Lerp(texture.GetPixel(currentTextureX, currentTextureY), paintColor, brushColor.r);
 
                 //brushColor = brush.GetPixel((int)(x / brushSize), (int)(y / brushSize));
                 texture.SetPixel(currentTextureX, currentTextureY, brushColor);
