@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ColorSoundIndicatorController : MonoBehaviour
+public class ColorSoundEntryController : MonoBehaviour
 {
-    [SerializeField] Material indicatorColor;
+    [SerializeField] Material TargetMat;
+    Color TargetColor;
 
     AudioSource audioPlayer;
     MeshRenderer audioIndicator;
@@ -17,8 +18,10 @@ public class ColorSoundIndicatorController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        this.TargetColor = TargetMat.color;
+
         GameObject colorIndicator = transform.Find("Indicator_Color").gameObject;
-        colorIndicator.GetComponent<MeshRenderer>().material = indicatorColor;
+        colorIndicator.GetComponent<MeshRenderer>().material.color = Color.grey;
 
         audioIndicator = transform.Find("Indicator_Light").gameObject.GetComponent<MeshRenderer>();
         audioIndicator.material.color = Color.grey;
@@ -49,5 +52,21 @@ public class ColorSoundIndicatorController : MonoBehaviour
     public bool getIsPlaying()
     {
         return isPlaying;
+    }
+
+    public bool ColorIsCorrect()
+    {
+        GameObject colorIndicator = transform.Find("Indicator_Color").gameObject;
+        Color indicatorColor = colorIndicator.GetComponent<MeshRenderer>().material.color;
+        float r = Mathf.Abs(TargetColor.r - indicatorColor.r);
+        float g = Mathf.Abs(TargetColor.g - indicatorColor.g);
+        float b = Mathf.Abs(TargetColor.b - indicatorColor.b);
+
+        // being little more forgiving with color here - if two colors are more accurate one can be further off
+        if (r + g + b < 50)
+        {
+            return true;
+        }
+        return false;
     }
 }
