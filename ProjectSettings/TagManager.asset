@@ -7,6 +7,9 @@ TagManager:
   - InnerBorder
   - Pool
   - RedButton
+  - BlueButton
+  - YellowButton
+  - ResetButton
   layers:
   - Default
   - TransparentFX

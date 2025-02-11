@@ -41,17 +41,23 @@ public class PaletteInteractor : MonoBehaviour
 
         if (other.gameObject.CompareTag("BlueButton"))
         {
+            other.gameObject.GetComponent<Renderer>().material.color = Color.blue;
             PaletteController.Instance.addBlue();
+            PaintManager.GetComponent<Painter>().SetPaintColor(PaletteController.Instance.GetCurrentColor());
         }
 
         if (other.gameObject.CompareTag("YellowButton"))
         {
+            other.gameObject.GetComponent<Renderer>().material.color = Color.blue;
             PaletteController.Instance.addYellow();
+            PaintManager.GetComponent<Painter>().SetPaintColor(PaletteController.Instance.GetCurrentColor());
         }
 
         if (other.gameObject.CompareTag("ResetButton"))
         {
             PaletteController.Instance.resetColors();
+            other.gameObject.GetComponent<Renderer>().material.color = Color.blue;
+            PaintManager.GetComponent<Painter>().SetPaintColor(PaletteController.Instance.GetCurrentColor());
         }
     }
 
