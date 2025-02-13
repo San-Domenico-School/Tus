@@ -8,6 +8,7 @@ TagManager:
   - Pool
   - CinemachineTarget
   - SceneManager
+  - SceneChangeTrigger
   layers:
   - Default
   - TransparentFX

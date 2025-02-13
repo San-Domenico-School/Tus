@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Testing Scenes/Nathaniel (SeamusMythicalForestTestScene 1)
       1.unity
     guid: c94cf78f2ae2e4c3d87076a9e66a0346
+  - enabled: 1
+    path: Assets/Scenes/CrystalCaves.unity
+    guid: c011ee544c3044378a91857e2094c8b7
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 03668d7564a2d43c49903a38c38f16ce,
       type: 2}

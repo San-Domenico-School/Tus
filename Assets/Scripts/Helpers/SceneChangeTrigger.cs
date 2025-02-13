@@ -6,6 +6,12 @@ public class PlayerSceneMove : MonoBehaviour
 {
     [SerializeField] private SceneTracker sceneTracker;
 
+    private void OnEnable()
+    {
+        sceneTracker = GameObject.FindWithTag("SceneManager").GetComponent<SceneTracker>();
+        Debug.Log("onEnable Called");
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         // Check if the player triggered the zone
