@@ -6,8 +6,13 @@ TagManager:
   tags:
   - InnerBorder
   - Pool
+  - RedButton
+  - BlueButton
+  - YellowButton
+  - ResetButton
   - CinemachineTarget
   - SceneManager
+
   layers:
   - Default
   - TransparentFX

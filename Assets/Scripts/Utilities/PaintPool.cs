@@ -18,12 +18,12 @@ public class PaintPool : MonoBehaviour
     private void OnTriggerStay(Collider other) {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (paintManager.GetComponent<PaintbrushController>().paintRemaining < 100f)
+            if (paintManager.GetComponent<Painter>().paintRemaining < 100f)
             {
-                paintManager.GetComponent<PaintbrushController>().paintRemaining += addingPaintMultiplier * Time.deltaTime;
+                paintManager.GetComponent<Painter>().paintRemaining += addingPaintMultiplier * Time.deltaTime;
             }
 
-            Debug.Log(paintManager.GetComponent<PaintbrushController>().paintRemaining);
+            Debug.Log(paintManager.GetComponent<Painter>().paintRemaining);
         }
     }
     

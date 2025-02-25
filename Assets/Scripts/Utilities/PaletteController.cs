@@ -12,6 +12,8 @@ using UnityEngine.InputSystem;
 
 public class PaletteController : MonoBehaviour
 {
+    public static PaletteController Instance;
+
     [SerializeField] Camera camera;
 
     private GameObject selectedColorDisplay;
@@ -30,7 +32,20 @@ public class PaletteController : MonoBehaviour
 
     // current color on palette
     private Color currentColor;
-    
+
+
+    private void Awake()
+    {
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+        else if(Instance != this)
+        {
+            Destroy(this);
+        }
+    }
+
 
     // Start is called before the first frame update
     void Start()
