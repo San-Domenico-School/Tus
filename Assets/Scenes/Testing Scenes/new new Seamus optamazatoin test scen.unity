@@ -6969,6 +6969,12 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 7578616598809652249, guid: 9f07a5e3209492d428633767e0592dbf, type: 3}
+--- !u!1 &722048237 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5143061301442995351, guid: 200da0d5814e8c14489e8b3d911079dc,
+    type: 3}
+  m_PrefabInstance: {fileID: 1756725880}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &722358861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13701,6 +13707,12 @@ MonoBehaviour:
   surfaceArea: 5.495394
   uvRatio: 0.21953143
   textureSize: -1
+--- !u!1 &1407503754 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6394752062362848651, guid: eb96ecfe2319b8b448fa2563ed3d30c3,
+    type: 3}
+  m_PrefabInstance: {fileID: 2063983090}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1409249160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37776,10 +37788,55 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1369036935530559146, guid: 200da0d5814e8c14489e8b3d911079dc,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2226685059020432389, guid: 200da0d5814e8c14489e8b3d911079dc,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411029003854658124, guid: 200da0d5814e8c14489e8b3d911079dc,
+        type: 3}
+      propertyPath: m_TagString
+      value: ResetButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 3535039813406330530, guid: 200da0d5814e8c14489e8b3d911079dc,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4933368228721779046, guid: 200da0d5814e8c14489e8b3d911079dc,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4962216096476099356, guid: 200da0d5814e8c14489e8b3d911079dc,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 5143061301442995351, guid: 200da0d5814e8c14489e8b3d911079dc,
+        type: 3}
+      propertyPath: m_TagString
+      value: RedButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 6293790609365570394, guid: 200da0d5814e8c14489e8b3d911079dc,
+        type: 3}
+      propertyPath: m_TagString
+      value: YellowButton
+      objectReference: {fileID: 0}
     - target: {fileID: 6518320356840822820, guid: 200da0d5814e8c14489e8b3d911079dc,
         type: 3}
       propertyPath: m_Name
       value: XRRig
+      objectReference: {fileID: 0}
+    - target: {fileID: 7561886228845395508, guid: 200da0d5814e8c14489e8b3d911079dc,
+        type: 3}
+      propertyPath: m_TagString
+      value: BlueButton
       objectReference: {fileID: 0}
     - target: {fileID: 7621707012019927956, guid: 200da0d5814e8c14489e8b3d911079dc,
         type: 3}
@@ -37831,10 +37888,27 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9170216388897614749, guid: 200da0d5814e8c14489e8b3d911079dc,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6124875480397551446, guid: 200da0d5814e8c14489e8b3d911079dc,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1871521987}
+    - targetCorrespondingSourceObject: {fileID: 6124875480397551446, guid: 200da0d5814e8c14489e8b3d911079dc,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1871521988}
+    - targetCorrespondingSourceObject: {fileID: 6124875480397551446, guid: 200da0d5814e8c14489e8b3d911079dc,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1871521989}
   m_SourcePrefab: {fileID: 100100000, guid: 200da0d5814e8c14489e8b3d911079dc, type: 3}
 --- !u!114 &1759995955
 MonoBehaviour:
@@ -40388,6 +40462,12 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 6729100763236456882, guid: 9f07a5e3209492d428633767e0592dbf, type: 3}
+--- !u!1 &1871521980 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6124875480397551446, guid: 200da0d5814e8c14489e8b3d911079dc,
+    type: 3}
+  m_PrefabInstance: {fileID: 1756725880}
+  m_PrefabAsset: {fileID: 0}
 --- !u!64 &1871521983
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -40410,6 +40490,68 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6328900333409884096, guid: 9f07a5e3209492d428633767e0592dbf, type: 3}
+--- !u!114 &1871521987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871521980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fef05ef75fe54b4d8126a07987436e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PaintManager: {fileID: 1407503754}
+  RedButton: {fileID: 722048237}
+--- !u!65 &1871521988
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871521980}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.1, y: 0.1, z: 0.1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &1871521989
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871521980}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!64 &1871610948
 MeshCollider:
   m_ObjectHideFlags: 0
