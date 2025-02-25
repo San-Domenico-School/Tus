@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class PlayerSceneMove : MonoBehaviour
 {
+    /***********************
+     * This script is on the sceneChangeTrigger
+     * and tells the sceneManager when to 
+     * change the current scene loaded.
+     * This gameobject should also have a trigger attached to it 
+     * Teddy F 2/14/25
+     **********************/
+
     [SerializeField] private SceneTracker sceneTracker;
 
     private void OnEnable()
