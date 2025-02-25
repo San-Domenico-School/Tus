@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Testing Scenes/NathanielScene.unity
     guid: d667c5aac92a744cd80610dd52349757
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Testing Scenes/TeddyTutorialTestScene.unity
     guid: cfd597cb5a5e6443498d824b9d75a8e2
   - enabled: 1
@@ -24,7 +24,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Testing Scenes/Nathaniel (SeamusMythicalForestTestScene 1)
       1.unity
     guid: c94cf78f2ae2e4c3d87076a9e66a0346
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Testing Scenes/LoganPaintBrushScene.unity
     guid: 8acfde7d17baf4ecfadc2e11a716cf88
   m_configObjects:

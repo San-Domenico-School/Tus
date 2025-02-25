@@ -25,14 +25,12 @@ public class PaletteInteractor : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        Debug.Log("outside " +PaintManager);
 
         if (other.gameObject.CompareTag("RedButton"))
         {
             // TODO make these lines of code not throw an error 
-            other.gameObject.GetComponent<Renderer>().material.color = Color.blue;
             PaletteController.Instance.addRed();
             PaintManager.GetComponent<Painter>().SetPaintColor(PaletteController.Instance.GetCurrentColor());
             //PaintManager.GetComponent<Painter>().SetPaintColor(new Color(1, 1, 1, 1));
@@ -41,14 +39,12 @@ public class PaletteInteractor : MonoBehaviour
 
         if (other.gameObject.CompareTag("BlueButton"))
         {
-            other.gameObject.GetComponent<Renderer>().material.color = Color.blue;
             PaletteController.Instance.addBlue();
             PaintManager.GetComponent<Painter>().SetPaintColor(PaletteController.Instance.GetCurrentColor());
         }
 
         if (other.gameObject.CompareTag("YellowButton"))
         {
-            other.gameObject.GetComponent<Renderer>().material.color = Color.blue;
             PaletteController.Instance.addYellow();
             PaintManager.GetComponent<Painter>().SetPaintColor(PaletteController.Instance.GetCurrentColor());
         }
@@ -56,7 +52,6 @@ public class PaletteInteractor : MonoBehaviour
         if (other.gameObject.CompareTag("ResetButton"))
         {
             PaletteController.Instance.resetColors();
-            other.gameObject.GetComponent<Renderer>().material.color = Color.blue;
             PaintManager.GetComponent<Painter>().SetPaintColor(PaletteController.Instance.GetCurrentColor());
         }
     }

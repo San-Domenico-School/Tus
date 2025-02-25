@@ -16,6 +16,8 @@ public class SetToLocationOfPhysicalControllerController : MonoBehaviour
     private TusInputAction controllerRotation;
     [SerializeField] GameObject xrRig;
 
+    [SerializeField] bool isRightHand = true;
+
     private void Awake() 
     {
         controllerLocation = new TusInputAction();
@@ -27,9 +29,16 @@ public class SetToLocationOfPhysicalControllerController : MonoBehaviour
         controllerLocation.Enable();
         controllerRotation.Enable();
 
-        controllerLocation.Brush.RightHandLocation.performed += ctx => HandleLocation(ctx.ReadValue<Vector3>());
-        controllerRotation.Brush.RightHandRotation.performed += ctx => HandleRotation(ctx.ReadValue<Quaternion>());
-
+        if (isRightHand)
+        {
+            controllerLocation.Brush.RightHandLocation.performed += ctx => HandleLocation(ctx.ReadValue<Vector3>());
+            controllerRotation.Brush.RightHandRotation.performed += ctx => HandleRotation(ctx.ReadValue<Quaternion>());
+        }
+        else
+        {
+            controllerLocation.Palette.LeftHandLocation.performed += ctx => HandleLocation(ctx.ReadValue<Vector3>());
+            controllerRotation.Palette.LeftHandRotation.performed += ctx => HandleRotation(ctx.ReadValue<Quaternion>());
+        }
     }
 
     // Set the location of the object to the location of the controller IRL 
