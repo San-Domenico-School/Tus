@@ -37918,6 +37918,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: XRRig
       objectReference: {fileID: 0}
+    - target: {fileID: 6734762704849301342, guid: 200da0d5814e8c14489e8b3d911079dc,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6734762704849301342, guid: 200da0d5814e8c14489e8b3d911079dc,
+        type: 3}
+      propertyPath: m_ProvidesContacts
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7621707012019927956, guid: 200da0d5814e8c14489e8b3d911079dc,
         type: 3}
       propertyPath: m_LocalPosition.x

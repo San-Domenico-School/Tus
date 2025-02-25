@@ -112,15 +112,15 @@ public class PaintbrushControllerTeddy : MonoBehaviour
 
     //teddys part here
     //controls paint refill from collision with paint pool
-    private void OnCollisionStay(Collision other)
+    private void OnCollisionEnter(Collision other)
     {
         Debug.Log("collision called");
-       // if (Collision.smth goes here (""))
+        if (other.gameObject.CompareTag("Pool"))
         {
             if (paintRemaining < 100f)
             {
                 paintRemaining += addingPaintMultiplier * Time.deltaTime;
-                Debug.Log("this called");
+                Debug.Log("paint added");
             }
         }
     }
