@@ -10,15 +10,17 @@ using UnityEngine.InputSystem;
  * Version: 1.1
  *************************************************/
 
-public class PaintbrushController : MonoBehaviour
+public class Painter : MonoBehaviour
 {
+
+    public static Painter Instance;
     private TusInputAction paintAction;
     private bool isPainting;
 
     [SerializeField] GameObject fromObject;
     [SerializeField] Texture2D brush;
     [SerializeField] float brushSize = .5f;
-    [SerializeField] Color paintColor = Color.white;
+    [SerializeField] public Color paintColor = Color.white;
     [SerializeField] float rayMaxDistance = 30f;
 
     //public float paintRemaining { get; set; } = 50;
@@ -28,6 +30,15 @@ public class PaintbrushController : MonoBehaviour
     private void Awake()
     {
         paintAction = new TusInputAction();
+
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else if (Instance != this)
+        {
+            Destroy(this);
+        }
     }
 
     private void OnEnable()
@@ -40,6 +51,16 @@ public class PaintbrushController : MonoBehaviour
     private void Update()
     {
         HandlePainting();
+    }
+
+
+    public Color GetPaintColor()
+    {
+        return paintColor;
+    }
+    public void SetPaintColor(Color color)
+    {
+        paintColor = color;
     }
 
     // Called every update. Check if you are painting and if you have paint 
@@ -100,6 +121,7 @@ public class PaintbrushController : MonoBehaviour
 
                 Color brushColor = brush.GetPixel((int)(x / brushSize), (int)(y / brushSize));
                 brushColor = Color.Lerp(texture.GetPixel(currentTextureX, currentTextureY), paintColor, brushColor.r);
+
                 //brushColor = brush.GetPixel((int)(x / brushSize), (int)(y / brushSize));
                 texture.SetPixel(currentTextureX, currentTextureY, brushColor);
             }
