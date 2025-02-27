@@ -70,5 +70,9 @@ public class SoundPuzzleController : MonoBehaviour
                 isMatched = false;
             }
         }
+        if (isMatched)
+        {
+            transform.GetChild(0).GetComponent<MeshRenderer>().material.color = Color.yellow;
+        }
     }
 }
