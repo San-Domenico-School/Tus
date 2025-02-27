@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class PlayerSceneMove : MonoBehaviour
 {
-    [SerializeField] private SceneTracker sceneTracker;
+    private SceneTracker sceneTracker;
+
+    private void OnEnable()
+    {
+        sceneTracker = GameObject.FindWithTag("SceneManager").GetComponent<SceneTracker>();
+        Debug.Log("onEnable Called");
+    }
 
     private void OnTriggerEnter(Collider other)
     {
