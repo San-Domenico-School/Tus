@@ -61,33 +61,33 @@ public class PaletteController : MonoBehaviour
     }
 
     // get player click input to control palette 
-    void Update()
-    {
-        if (Mouse.current.leftButton.wasPressedThisFrame)
-        {
-            Ray ray = camera.ScreenPointToRay(Mouse.current.position.ReadValue());
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit))
-            {
-                if (hit.collider.gameObject == redButton)
-                {
-                    addRed();
-                }
-                if (hit.collider.gameObject == yellowButton)
-                {
-                    addYellow();
-                }
-                if (hit.collider.gameObject == blueButton)
-                {
-                    addBlue();
-                }
-                if (hit.collider.gameObject == resetButton)
-                {
-                    resetColors();
-                }
-            }
-        }
-    }
+    // void Update()
+    // {
+    //     if (Mouse.current.leftButton.wasPressedThisFrame)
+    //     {
+    //         Ray ray = camera.ScreenPointToRay(Mouse.current.position.ReadValue());
+    //         RaycastHit hit;
+    //         if (Physics.Raycast(ray, out hit))
+    //         {
+    //             if (hit.collider.gameObject == redButton)
+    //             {
+    //                 addRed();
+    //             }
+    //             if (hit.collider.gameObject == yellowButton)
+    //             {
+    //                 addYellow();
+    //             }
+    //             if (hit.collider.gameObject == blueButton)
+    //             {
+    //                 addBlue();
+    //             }
+    //             if (hit.collider.gameObject == resetButton)
+    //             {
+    //                 resetColors();
+    //             }
+    //         }
+    //     }
+    // }
 
     // mutators to increase paint levels
     public void addRed()
