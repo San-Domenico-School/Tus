@@ -13701,6 +13701,12 @@ MonoBehaviour:
   surfaceArea: 5.495394
   uvRatio: 0.21953143
   textureSize: -1
+--- !u!1 &1407503754 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6394752062362848651, guid: eb96ecfe2319b8b448fa2563ed3d30c3,
+    type: 3}
+  m_PrefabInstance: {fileID: 2063983090}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1409249160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37776,15 +37782,15 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5296940183523577070, guid: 200da0d5814e8c14489e8b3d911079dc,
+        type: 3}
+      propertyPath: PaintManager
+      value: 
+      objectReference: {fileID: 1407503754}
     - target: {fileID: 6518320356840822820, guid: 200da0d5814e8c14489e8b3d911079dc,
         type: 3}
       propertyPath: m_Name
       value: XRRig
-      objectReference: {fileID: 0}
-    - target: {fileID: 6518320356840822820, guid: 200da0d5814e8c14489e8b3d911079dc,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7621707012019927956, guid: 200da0d5814e8c14489e8b3d911079dc,
         type: 3}
@@ -37799,7 +37805,7 @@ PrefabInstance:
     - target: {fileID: 7621707012019927956, guid: 200da0d5814e8c14489e8b3d911079dc,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10
+      value: -4.05
       objectReference: {fileID: 0}
     - target: {fileID: 7621707012019927956, guid: 200da0d5814e8c14489e8b3d911079dc,
         type: 3}
