@@ -83,4 +83,4 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
 # MacOS Finder files
-.DS_Store
+*/.DS_Store
