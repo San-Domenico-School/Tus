@@ -18,7 +18,7 @@ public class SceneTracker : MonoBehaviour
     [SerializeField] private GameObject testBox;
 
     // Array to track available scenes
-    private bool[] sceneAvailable = new bool[6] { true, false, false, false, false, true };
+    public bool[] sceneAvailable = new bool[6] { true, false, false, false, false, true };
 
     private void Awake()
     {
@@ -75,7 +75,7 @@ public class SceneTracker : MonoBehaviour
     }
 
     // Loads a scene and moves the player to the correct spawn position.
-    private void LoadScene(int sceneIndex)
+    public void LoadScene(int sceneIndex)
     {
         // Use test box to as debug statement
         TestBox(Color.yellow);
