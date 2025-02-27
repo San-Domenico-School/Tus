@@ -62,12 +62,12 @@ public class SoundPuzzleController : MonoBehaviour
                 }
             }
         }
-        isMatched = true;
+        isMatched = false;
         for (int i = 0; i < 5; ++i)
         {
-            if (!selectors[i].GetComponent<ColorSoundEntryController>().ColorIsCorrect())
+            if (selectors[i].GetComponent<ColorSoundEntryController>().ColorIsCorrect())
             {
-                isMatched = false;
+                isMatched = true;
             }
         }
         if (isMatched)

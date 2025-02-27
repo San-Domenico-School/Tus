@@ -63,7 +63,7 @@ public class ColorSoundEntryController : MonoBehaviour
         float b = Mathf.Abs(TargetColor.b - indicatorColor.b);
 
         // being little more forgiving with color here - if two colors are more accurate one can be further off
-        if (r + g + b < 50)
+        if (r + g + b < 0.3)
         {
             return true;
         }
