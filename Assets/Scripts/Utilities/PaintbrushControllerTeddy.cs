@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 /**************************************************
  * Attached to: paint manager 
  * Purpose: shoot a ray out and paint the world at its location
- * and also controlls paint refill action
+ * and also controlls part of paint refill action
  * Author: Seamus/Teddy
  * Version: 1.2
  *************************************************/
@@ -21,7 +21,7 @@ public class PaintbrushControllerTeddy : MonoBehaviour
     [SerializeField] float brushSize = .5f;
     [SerializeField] Color paintColor = Color.white;
     [SerializeField] float rayMaxDistance = 30f;
-    [SerializeField] GameObject[] pools;
+    [SerializeField] GameObject[] pools; 
 
     //public float paintRemaining { get; set; } = 50;
     public float paintRemaining = 500;
@@ -111,17 +111,14 @@ public class PaintbrushControllerTeddy : MonoBehaviour
     }
 
     //teddys part here
-    //controls paint refill from collision with paint pool
-    private void OnCollisionEnter(Collision other)
+    //controls paint refill and this gets called by the hand
+    //when there is a collision with a object with the Pool tag 
+    public void RefillPaint()
     {
-        Debug.Log("collision called");
-        if (other.gameObject.CompareTag("Pool"))
+        if (paintRemaining < 100f)
         {
-            if (paintRemaining < 100f)
-            {
-                paintRemaining += addingPaintMultiplier * Time.deltaTime;
-                Debug.Log("paint added");
-            }
+            paintRemaining += addingPaintMultiplier * Time.deltaTime;
+            Debug.Log("RefillPaint called: paintRemaining = " + paintRemaining);
         }
     }
 }
