@@ -196,6 +196,6 @@ public class PaletteController : MonoBehaviour
         // scale for color saturation
         float scale = 255.0f / Mathf.Max(r, g, b);
 
-        return new Color(r / 255.0f * scale, g / 255.0f * scale, b / 255.0f * scale);
+        return new Color(r * scale, g * scale, b * scale);
     }
 }
