@@ -12,7 +12,11 @@ TagManager:
   - ResetButton
   - CinemachineTarget
   - SceneManager
+<<<<<<< Updated upstream
 
+=======
+  - NPC
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX

@@ -129,7 +129,7 @@ public class SaveLoadImagesManager : MonoBehaviour
     private void SaveImages()
     {
         // Goes over all objects in paintableObjects
-        foreach (GameObject gameObject in PaintableObjects)
+            foreach (GameObject gameObject in PaintableObjects)
         {
             if (!ObjectStatisticsUtility.HasMainTexture(gameObject))
                 return;
