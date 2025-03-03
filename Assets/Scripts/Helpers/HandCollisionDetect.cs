@@ -6,10 +6,11 @@ public class HandCollisionDetect : MonoBehaviour
 {
     [SerializeField] private PaintbrushControllerTeddy paintManager;
 
-    private void OnTriggerEnter()
+    private void OnCollisionStay(Collision collision)
     {
-        Debug.Log("collision detected");
-        if (gameObject.CompareTag("Pool"))
+        Debug.Log("Collision detected with: " + collision.gameObject.name);
+        // Check if the object we're colliding with has the tag "Pool"
+        if (collision.gameObject.CompareTag("Pool"))
         {
             if (paintManager != null)
             {

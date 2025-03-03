@@ -117,7 +117,7 @@ public class PaintbrushControllerTeddy : MonoBehaviour
     {
         if (paintRemaining < 100f)
         {
-            paintRemaining += addingPaintMultiplier * Time.deltaTime;
+            paintRemaining += addingPaintMultiplier * 20 * Time.deltaTime;
             Debug.Log("RefillPaint called: paintRemaining = " + paintRemaining);
         }
     }
