@@ -53,9 +53,10 @@ ExportedObj/
 *.opendb
 *.VC.db
 
-# Uncompressed Texture Files
+# Uncompressed Texture and Audio Files
 *.tif
 *.tiff
+*.mp3
 
 # Unity3D generated meta files
 *.pidb.meta
@@ -82,4 +83,4 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
 # MacOS Finder files
-.DS_Store
+*.[Dd][Ss]_[Ss]tore
