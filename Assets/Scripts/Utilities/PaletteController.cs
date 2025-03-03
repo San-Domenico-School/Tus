@@ -14,8 +14,6 @@ public class PaletteController : MonoBehaviour
 {
     public static PaletteController Instance;
 
-    [SerializeField] Camera camera;
-
     private GameObject selectedColorDisplay;
     private GameObject redButton;
     private GameObject yellowButton;
@@ -193,8 +191,13 @@ public class PaletteController : MonoBehaviour
         g += w;
         b += w;
 
+        // normalize values to the range 0..1
+        r /= 255.0f;
+        g /= 255.0f;
+        b /= 255.0f;
+
         // scale for color saturation
-        float scale = 255.0f / Mathf.Max(r, g, b);
+        float scale = 1.0f / Mathf.Max(r, g, b);
 
         return new Color(r * scale, g * scale, b * scale);
     }
