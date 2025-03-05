@@ -22,10 +22,16 @@ public class Painter : MonoBehaviour
     [SerializeField] float brushSize = .5f;
     [SerializeField] public Color paintColor = Color.white;
     [SerializeField] float rayMaxDistance = 30f;
+<<<<<<< HEAD:Assets/Scripts/Utilities/PaintbrushController.cs
+    private bool isPainting;
+    private int paintColorIndex;
+    public float paintRemaining = 150f;
+=======
 
     //public float paintRemaining { get; set; } = 50;
     public float paintRemaining = 500;
 
+>>>>>>> main:Assets/Scripts/Utilities/Painter.cs
 
     private void Awake()
     {
@@ -44,12 +50,42 @@ public class Painter : MonoBehaviour
     private void OnEnable()
     {
         paintAction.Enable();
+<<<<<<< HEAD:Assets/Scripts/Utilities/PaintbrushController.cs
+        paintAction.DominantArm_RightHanded.Paint.performed += ctx => isPainting = true;
+        paintAction.DominantArm_RightHanded.Paint.canceled += ctx => isPainting = false;
+        paintAction.PaintManager.SelectPaintColor.performed += ctx => TogglePaintColors();
+=======
         paintAction.DominantArm_RightHanded.Paint.performed += ctx => isPainting = true; 
         paintAction.DominantArm_RightHanded.Paint.canceled += ctx => isPainting = false;
+>>>>>>> main:Assets/Scripts/Utilities/Painter.cs
     }
 
     private void Update()
     {
+<<<<<<< HEAD:Assets/Scripts/Utilities/PaintbrushController.cs
+        DispensePaint();
+    }
+
+    private void TogglePaintColors()
+    {
+        paintColorIndex = ++paintColorIndex % 3;
+        switch(paintColorIndex)
+        {
+            case 0:
+                paintColor = Color.red;
+                break;
+            case 1:
+                paintColor = Color.yellow;
+                break;
+            case 2:
+                paintColor = Color.blue;
+                break;
+        }
+        Debug.Log(paintColor);
+    }
+
+    private void DispensePaint()
+=======
         HandlePainting();
     }
 
@@ -66,6 +102,7 @@ public class Painter : MonoBehaviour
     // Called every update. Check if you are painting and if you have paint 
     // Remove paint from paintRemaining
     private void HandlePainting()
+>>>>>>> main:Assets/Scripts/Utilities/Painter.cs
     {
         if (isPainting)
         {
@@ -81,6 +118,7 @@ public class Painter : MonoBehaviour
                 Debug.Log("PAINT RAN OUT!!!");
             }
         }
+
     }
 
     // Shoot a ray where the paint will be
