@@ -50,18 +50,7 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""29b21090-3507-4123-add8-60852345a56b"",
-                    ""path"": ""<XRController>{RightHand}/thumbstick"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""a2a0a5cd-d78f-42b5-8212-4efef76188f1"",
-                    ""path"": ""<Mouse>/scroll"",
+                    ""path"": ""<OculusTouchController>{LeftHand}/thumbstick"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -109,7 +98,7 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""7a191dd5-cd65-4589-a51e-30c6abc3907c"",
-                    ""path"": ""<XRController>{LeftHand}/thumbstick"",
+                    ""path"": ""<OculusTouchController>{RightHand}/thumbstick"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -216,6 +205,15 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Save"",
+                    ""type"": ""Button"",
+                    ""id"": ""96f2ba78-bb84-45a2-b0f9-b16efdb3ebd2"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -260,6 +258,17 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""GrabColor"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9edd979a-a180-481d-bb51-eb9960db903a"",
+                    ""path"": ""<XRController>{RightHand}/{PrimaryButton}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Save"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -514,39 +523,96 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
             ]
         },
         {
-            ""name"": ""PaintManager"",
-            ""id"": ""76963334-33ef-4c01-a7f6-f4e8b8e2b3e9"",
+            ""name"": ""Brush"",
+            ""id"": ""00cae094-d0b7-4f32-b0f2-80a7d7788172"",
             ""actions"": [
                 {
-                    ""name"": ""SelectPaintColor"",
-                    ""type"": ""Button"",
-                    ""id"": ""97617822-e42e-42be-86b4-2952ca9c4cc7"",
+                    ""name"": ""RightHandRotation"",
+                    ""type"": ""Value"",
+                    ""id"": ""f151f2a3-3b3a-46f4-b008-a397c208e0b4"",
+                    ""expectedControlType"": ""Quaternion"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""RightHandLocation"",
+                    ""type"": ""Value"",
+                    ""id"": ""e277b63c-5970-423c-a203-52b2e968fa1b"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""8dda5b91-023d-4df3-9c05-4c337fae1848"",
-                    ""path"": ""<OculusTouchController>{LeftHand}/primaryButton"",
+                    ""id"": ""a11b0740-55a2-4b65-8bc5-97fb6b70d99b"",
+                    ""path"": ""<XRController>{RightHand}/deviceRotation"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""SelectPaintColor"",
+                    ""action"": ""RightHandRotation"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""69733e64-93fd-4532-9484-652d56156820"",
-                    ""path"": ""<Mouse>/leftButton"",
+                    ""id"": ""79f81fed-3ded-4b74-856d-aed4c2c57191"",
+                    ""path"": ""<XRController>{RightHand}/devicePosition"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""SelectPaintColor"",
+                    ""action"": ""RightHandLocation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Palette"",
+            ""id"": ""eff2a565-32be-40d5-888c-20f3643934ec"",
+            ""actions"": [
+                {
+                    ""name"": ""LeftHandRotation"",
+                    ""type"": ""Value"",
+                    ""id"": ""c7077929-8dcb-47d4-b9af-d9843b5729fe"",
+                    ""expectedControlType"": ""Quaternion"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""LeftHandLocation"",
+                    ""type"": ""Value"",
+                    ""id"": ""3a722f95-b42b-4421-aad1-d0eb2b685e47"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""1827fa0a-3e4d-494d-bf2c-2c50c8e2a018"",
+                    ""path"": ""<XRController>{LeftHand}/deviceRotation"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LeftHandRotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c6fb7bfc-853a-4bf5-9073-09a757067e90"",
+                    ""path"": ""<XRController>{LeftHand}/devicePosition"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LeftHandLocation"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -574,6 +640,7 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
         m_DominantArm_RightHanded_ObjectInteract = m_DominantArm_RightHanded.FindAction("ObjectInteract", throwIfNotFound: true);
         m_DominantArm_RightHanded_Paint = m_DominantArm_RightHanded.FindAction("Paint", throwIfNotFound: true);
         m_DominantArm_RightHanded_GrabColor = m_DominantArm_RightHanded.FindAction("GrabColor", throwIfNotFound: true);
+        m_DominantArm_RightHanded_Save = m_DominantArm_RightHanded.FindAction("Save", throwIfNotFound: true);
         // DominantArm_LeftHanded
         m_DominantArm_LeftHanded = asset.FindActionMap("DominantArm_LeftHanded", throwIfNotFound: true);
         m_DominantArm_LeftHanded_ObjectInteract = m_DominantArm_LeftHanded.FindAction("ObjectInteract", throwIfNotFound: true);
@@ -596,9 +663,14 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
         // Headset
         m_Headset = asset.FindActionMap("Headset", throwIfNotFound: true);
         m_Headset_HeadsetRotation = m_Headset.FindAction("HeadsetRotation", throwIfNotFound: true);
-        // PaintManager
-        m_PaintManager = asset.FindActionMap("PaintManager", throwIfNotFound: true);
-        m_PaintManager_SelectPaintColor = m_PaintManager.FindAction("SelectPaintColor", throwIfNotFound: true);
+        // Brush
+        m_Brush = asset.FindActionMap("Brush", throwIfNotFound: true);
+        m_Brush_RightHandRotation = m_Brush.FindAction("RightHandRotation", throwIfNotFound: true);
+        m_Brush_RightHandLocation = m_Brush.FindAction("RightHandLocation", throwIfNotFound: true);
+        // Palette
+        m_Palette = asset.FindActionMap("Palette", throwIfNotFound: true);
+        m_Palette_LeftHandRotation = m_Palette.FindAction("LeftHandRotation", throwIfNotFound: true);
+        m_Palette_LeftHandLocation = m_Palette.FindAction("LeftHandLocation", throwIfNotFound: true);
     }
 
     ~@TusInputAction()
@@ -614,7 +686,8 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
         UnityEngine.Debug.Assert(!m_UINavigate_RightHanded.enabled, "This will cause a leak and performance issues, TusInputAction.UINavigate_RightHanded.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_UINavigate_LeftHanded.enabled, "This will cause a leak and performance issues, TusInputAction.UINavigate_LeftHanded.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_Headset.enabled, "This will cause a leak and performance issues, TusInputAction.Headset.Disable() has not been called.");
-        UnityEngine.Debug.Assert(!m_PaintManager.enabled, "This will cause a leak and performance issues, TusInputAction.PaintManager.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_Brush.enabled, "This will cause a leak and performance issues, TusInputAction.Brush.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_Palette.enabled, "This will cause a leak and performance issues, TusInputAction.Palette.Disable() has not been called.");
     }
 
     public void Dispose()
@@ -879,6 +952,7 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
     private readonly InputAction m_DominantArm_RightHanded_ObjectInteract;
     private readonly InputAction m_DominantArm_RightHanded_Paint;
     private readonly InputAction m_DominantArm_RightHanded_GrabColor;
+    private readonly InputAction m_DominantArm_RightHanded_Save;
     public struct DominantArm_RightHandedActions
     {
         private @TusInputAction m_Wrapper;
@@ -886,6 +960,7 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
         public InputAction @ObjectInteract => m_Wrapper.m_DominantArm_RightHanded_ObjectInteract;
         public InputAction @Paint => m_Wrapper.m_DominantArm_RightHanded_Paint;
         public InputAction @GrabColor => m_Wrapper.m_DominantArm_RightHanded_GrabColor;
+        public InputAction @Save => m_Wrapper.m_DominantArm_RightHanded_Save;
         public InputActionMap Get() { return m_Wrapper.m_DominantArm_RightHanded; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -904,6 +979,9 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
             @GrabColor.started += instance.OnGrabColor;
             @GrabColor.performed += instance.OnGrabColor;
             @GrabColor.canceled += instance.OnGrabColor;
+            @Save.started += instance.OnSave;
+            @Save.performed += instance.OnSave;
+            @Save.canceled += instance.OnSave;
         }
 
         private void UnregisterCallbacks(IDominantArm_RightHandedActions instance)
@@ -917,6 +995,9 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
             @GrabColor.started -= instance.OnGrabColor;
             @GrabColor.performed -= instance.OnGrabColor;
             @GrabColor.canceled -= instance.OnGrabColor;
+            @Save.started -= instance.OnSave;
+            @Save.performed -= instance.OnSave;
+            @Save.canceled -= instance.OnSave;
         }
 
         public void RemoveCallbacks(IDominantArm_RightHandedActions instance)
@@ -1243,51 +1324,113 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
     }
     public HeadsetActions @Headset => new HeadsetActions(this);
 
-    // PaintManager
-    private readonly InputActionMap m_PaintManager;
-    private List<IPaintManagerActions> m_PaintManagerActionsCallbackInterfaces = new List<IPaintManagerActions>();
-    private readonly InputAction m_PaintManager_SelectPaintColor;
-    public struct PaintManagerActions
+    // Brush
+    private readonly InputActionMap m_Brush;
+    private List<IBrushActions> m_BrushActionsCallbackInterfaces = new List<IBrushActions>();
+    private readonly InputAction m_Brush_RightHandRotation;
+    private readonly InputAction m_Brush_RightHandLocation;
+    public struct BrushActions
     {
         private @TusInputAction m_Wrapper;
-        public PaintManagerActions(@TusInputAction wrapper) { m_Wrapper = wrapper; }
-        public InputAction @SelectPaintColor => m_Wrapper.m_PaintManager_SelectPaintColor;
-        public InputActionMap Get() { return m_Wrapper.m_PaintManager; }
+        public BrushActions(@TusInputAction wrapper) { m_Wrapper = wrapper; }
+        public InputAction @RightHandRotation => m_Wrapper.m_Brush_RightHandRotation;
+        public InputAction @RightHandLocation => m_Wrapper.m_Brush_RightHandLocation;
+        public InputActionMap Get() { return m_Wrapper.m_Brush; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(PaintManagerActions set) { return set.Get(); }
-        public void AddCallbacks(IPaintManagerActions instance)
+        public static implicit operator InputActionMap(BrushActions set) { return set.Get(); }
+        public void AddCallbacks(IBrushActions instance)
         {
-            if (instance == null || m_Wrapper.m_PaintManagerActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_PaintManagerActionsCallbackInterfaces.Add(instance);
-            @SelectPaintColor.started += instance.OnSelectPaintColor;
-            @SelectPaintColor.performed += instance.OnSelectPaintColor;
-            @SelectPaintColor.canceled += instance.OnSelectPaintColor;
+            if (instance == null || m_Wrapper.m_BrushActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_BrushActionsCallbackInterfaces.Add(instance);
+            @RightHandRotation.started += instance.OnRightHandRotation;
+            @RightHandRotation.performed += instance.OnRightHandRotation;
+            @RightHandRotation.canceled += instance.OnRightHandRotation;
+            @RightHandLocation.started += instance.OnRightHandLocation;
+            @RightHandLocation.performed += instance.OnRightHandLocation;
+            @RightHandLocation.canceled += instance.OnRightHandLocation;
         }
 
-        private void UnregisterCallbacks(IPaintManagerActions instance)
+        private void UnregisterCallbacks(IBrushActions instance)
         {
-            @SelectPaintColor.started -= instance.OnSelectPaintColor;
-            @SelectPaintColor.performed -= instance.OnSelectPaintColor;
-            @SelectPaintColor.canceled -= instance.OnSelectPaintColor;
+            @RightHandRotation.started -= instance.OnRightHandRotation;
+            @RightHandRotation.performed -= instance.OnRightHandRotation;
+            @RightHandRotation.canceled -= instance.OnRightHandRotation;
+            @RightHandLocation.started -= instance.OnRightHandLocation;
+            @RightHandLocation.performed -= instance.OnRightHandLocation;
+            @RightHandLocation.canceled -= instance.OnRightHandLocation;
         }
 
-        public void RemoveCallbacks(IPaintManagerActions instance)
+        public void RemoveCallbacks(IBrushActions instance)
         {
-            if (m_Wrapper.m_PaintManagerActionsCallbackInterfaces.Remove(instance))
+            if (m_Wrapper.m_BrushActionsCallbackInterfaces.Remove(instance))
                 UnregisterCallbacks(instance);
         }
 
-        public void SetCallbacks(IPaintManagerActions instance)
+        public void SetCallbacks(IBrushActions instance)
         {
-            foreach (var item in m_Wrapper.m_PaintManagerActionsCallbackInterfaces)
+            foreach (var item in m_Wrapper.m_BrushActionsCallbackInterfaces)
                 UnregisterCallbacks(item);
-            m_Wrapper.m_PaintManagerActionsCallbackInterfaces.Clear();
+            m_Wrapper.m_BrushActionsCallbackInterfaces.Clear();
             AddCallbacks(instance);
         }
     }
-    public PaintManagerActions @PaintManager => new PaintManagerActions(this);
+    public BrushActions @Brush => new BrushActions(this);
+
+    // Palette
+    private readonly InputActionMap m_Palette;
+    private List<IPaletteActions> m_PaletteActionsCallbackInterfaces = new List<IPaletteActions>();
+    private readonly InputAction m_Palette_LeftHandRotation;
+    private readonly InputAction m_Palette_LeftHandLocation;
+    public struct PaletteActions
+    {
+        private @TusInputAction m_Wrapper;
+        public PaletteActions(@TusInputAction wrapper) { m_Wrapper = wrapper; }
+        public InputAction @LeftHandRotation => m_Wrapper.m_Palette_LeftHandRotation;
+        public InputAction @LeftHandLocation => m_Wrapper.m_Palette_LeftHandLocation;
+        public InputActionMap Get() { return m_Wrapper.m_Palette; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(PaletteActions set) { return set.Get(); }
+        public void AddCallbacks(IPaletteActions instance)
+        {
+            if (instance == null || m_Wrapper.m_PaletteActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_PaletteActionsCallbackInterfaces.Add(instance);
+            @LeftHandRotation.started += instance.OnLeftHandRotation;
+            @LeftHandRotation.performed += instance.OnLeftHandRotation;
+            @LeftHandRotation.canceled += instance.OnLeftHandRotation;
+            @LeftHandLocation.started += instance.OnLeftHandLocation;
+            @LeftHandLocation.performed += instance.OnLeftHandLocation;
+            @LeftHandLocation.canceled += instance.OnLeftHandLocation;
+        }
+
+        private void UnregisterCallbacks(IPaletteActions instance)
+        {
+            @LeftHandRotation.started -= instance.OnLeftHandRotation;
+            @LeftHandRotation.performed -= instance.OnLeftHandRotation;
+            @LeftHandRotation.canceled -= instance.OnLeftHandRotation;
+            @LeftHandLocation.started -= instance.OnLeftHandLocation;
+            @LeftHandLocation.performed -= instance.OnLeftHandLocation;
+            @LeftHandLocation.canceled -= instance.OnLeftHandLocation;
+        }
+
+        public void RemoveCallbacks(IPaletteActions instance)
+        {
+            if (m_Wrapper.m_PaletteActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IPaletteActions instance)
+        {
+            foreach (var item in m_Wrapper.m_PaletteActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_PaletteActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public PaletteActions @Palette => new PaletteActions(this);
     public interface IPlayerControl_RightHandedActions
     {
         void OnMove(InputAction.CallbackContext context);
@@ -1311,6 +1454,7 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
         void OnObjectInteract(InputAction.CallbackContext context);
         void OnPaint(InputAction.CallbackContext context);
         void OnGrabColor(InputAction.CallbackContext context);
+        void OnSave(InputAction.CallbackContext context);
     }
     public interface IDominantArm_LeftHandedActions
     {
@@ -1340,8 +1484,14 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
     {
         void OnHeadsetRotation(InputAction.CallbackContext context);
     }
-    public interface IPaintManagerActions
+    public interface IBrushActions
     {
-        void OnSelectPaintColor(InputAction.CallbackContext context);
+        void OnRightHandRotation(InputAction.CallbackContext context);
+        void OnRightHandLocation(InputAction.CallbackContext context);
+    }
+    public interface IPaletteActions
+    {
+        void OnLeftHandRotation(InputAction.CallbackContext context);
+        void OnLeftHandLocation(InputAction.CallbackContext context);
     }
 }
