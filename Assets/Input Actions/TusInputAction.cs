@@ -569,6 +569,54 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Palette"",
+            ""id"": ""eff2a565-32be-40d5-888c-20f3643934ec"",
+            ""actions"": [
+                {
+                    ""name"": ""LeftHandRotation"",
+                    ""type"": ""Value"",
+                    ""id"": ""c7077929-8dcb-47d4-b9af-d9843b5729fe"",
+                    ""expectedControlType"": ""Quaternion"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""LeftHandLocation"",
+                    ""type"": ""Value"",
+                    ""id"": ""3a722f95-b42b-4421-aad1-d0eb2b685e47"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""1827fa0a-3e4d-494d-bf2c-2c50c8e2a018"",
+                    ""path"": ""<XRController>{LeftHand}/deviceRotation"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LeftHandRotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c6fb7bfc-853a-4bf5-9073-09a757067e90"",
+                    ""path"": ""<XRController>{LeftHand}/devicePosition"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LeftHandLocation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -619,6 +667,10 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
         m_Brush = asset.FindActionMap("Brush", throwIfNotFound: true);
         m_Brush_RightHandRotation = m_Brush.FindAction("RightHandRotation", throwIfNotFound: true);
         m_Brush_RightHandLocation = m_Brush.FindAction("RightHandLocation", throwIfNotFound: true);
+        // Palette
+        m_Palette = asset.FindActionMap("Palette", throwIfNotFound: true);
+        m_Palette_LeftHandRotation = m_Palette.FindAction("LeftHandRotation", throwIfNotFound: true);
+        m_Palette_LeftHandLocation = m_Palette.FindAction("LeftHandLocation", throwIfNotFound: true);
     }
 
     ~@TusInputAction()
@@ -635,6 +687,7 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
         UnityEngine.Debug.Assert(!m_UINavigate_LeftHanded.enabled, "This will cause a leak and performance issues, TusInputAction.UINavigate_LeftHanded.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_Headset.enabled, "This will cause a leak and performance issues, TusInputAction.Headset.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_Brush.enabled, "This will cause a leak and performance issues, TusInputAction.Brush.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_Palette.enabled, "This will cause a leak and performance issues, TusInputAction.Palette.Disable() has not been called.");
     }
 
     public void Dispose()
@@ -1324,6 +1377,60 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
         }
     }
     public BrushActions @Brush => new BrushActions(this);
+
+    // Palette
+    private readonly InputActionMap m_Palette;
+    private List<IPaletteActions> m_PaletteActionsCallbackInterfaces = new List<IPaletteActions>();
+    private readonly InputAction m_Palette_LeftHandRotation;
+    private readonly InputAction m_Palette_LeftHandLocation;
+    public struct PaletteActions
+    {
+        private @TusInputAction m_Wrapper;
+        public PaletteActions(@TusInputAction wrapper) { m_Wrapper = wrapper; }
+        public InputAction @LeftHandRotation => m_Wrapper.m_Palette_LeftHandRotation;
+        public InputAction @LeftHandLocation => m_Wrapper.m_Palette_LeftHandLocation;
+        public InputActionMap Get() { return m_Wrapper.m_Palette; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(PaletteActions set) { return set.Get(); }
+        public void AddCallbacks(IPaletteActions instance)
+        {
+            if (instance == null || m_Wrapper.m_PaletteActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_PaletteActionsCallbackInterfaces.Add(instance);
+            @LeftHandRotation.started += instance.OnLeftHandRotation;
+            @LeftHandRotation.performed += instance.OnLeftHandRotation;
+            @LeftHandRotation.canceled += instance.OnLeftHandRotation;
+            @LeftHandLocation.started += instance.OnLeftHandLocation;
+            @LeftHandLocation.performed += instance.OnLeftHandLocation;
+            @LeftHandLocation.canceled += instance.OnLeftHandLocation;
+        }
+
+        private void UnregisterCallbacks(IPaletteActions instance)
+        {
+            @LeftHandRotation.started -= instance.OnLeftHandRotation;
+            @LeftHandRotation.performed -= instance.OnLeftHandRotation;
+            @LeftHandRotation.canceled -= instance.OnLeftHandRotation;
+            @LeftHandLocation.started -= instance.OnLeftHandLocation;
+            @LeftHandLocation.performed -= instance.OnLeftHandLocation;
+            @LeftHandLocation.canceled -= instance.OnLeftHandLocation;
+        }
+
+        public void RemoveCallbacks(IPaletteActions instance)
+        {
+            if (m_Wrapper.m_PaletteActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IPaletteActions instance)
+        {
+            foreach (var item in m_Wrapper.m_PaletteActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_PaletteActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public PaletteActions @Palette => new PaletteActions(this);
     public interface IPlayerControl_RightHandedActions
     {
         void OnMove(InputAction.CallbackContext context);
@@ -1381,5 +1488,10 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
     {
         void OnRightHandRotation(InputAction.CallbackContext context);
         void OnRightHandLocation(InputAction.CallbackContext context);
+    }
+    public interface IPaletteActions
+    {
+        void OnLeftHandRotation(InputAction.CallbackContext context);
+        void OnLeftHandLocation(InputAction.CallbackContext context);
     }
 }
