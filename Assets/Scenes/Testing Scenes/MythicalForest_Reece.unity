@@ -228,7 +228,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 98f03e47a761d420696ad6462f673db6, type: 2}
+  - {fileID: 2100000, guid: 823b6587efa9347daa87267f68ed97c8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -710,7 +710,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6125db37fb54a4b15838d52b52aad792, type: 2}
+  - {fileID: 2100000, guid: 48257b3a9f6c947fb880d8e878de8f0c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -912,7 +912,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8313b7f851584554aa895abc637c721f, type: 2}
+  - {fileID: 2100000, guid: 5e023de0e54d141a69c1007f8448249f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1183,7 +1183,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 93bd74aaf3854f54f9869f860012f605, type: 2}
+  - {fileID: 2100000, guid: 64278e7e6ff6549d691e1d3c65510a73, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1356,7 +1356,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cd7d7e41bfc941b4fa680c42ee84a319, type: 2}
+  - {fileID: 2100000, guid: 1ed4fd30f792846e590400400715d504, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1554,13 +1554,13 @@ MonoBehaviour:
   fromObject: {fileID: 426407149}
   rayMaxDistance: 30
   DisplayBlock: {fileID: 437370610}
-  red: {fileID: 2100000, guid: 8313b7f851584554aa895abc637c721f, type: 2}
-  blue: {fileID: 2100000, guid: 93bd74aaf3854f54f9869f860012f605, type: 2}
-  green: {fileID: 2100000, guid: cd7d7e41bfc941b4fa680c42ee84a319, type: 2}
-  yellow: {fileID: 2100000, guid: 98f03e47a761d420696ad6462f673db6, type: 2}
-  black: {fileID: -2039218799539206217, guid: 7ab6f3b0fd1a6ba41b2a47766c16613f, type: 3}
-  loseColor: {fileID: 2100000, guid: 0564bccafee1c4d0fab37105e9166ed3, type: 2}
-  winColor: {fileID: 2100000, guid: 4a23e4f6d4c6942e6a3d047c0d41b9e6, type: 2}
+  red: {fileID: 2100000, guid: 5e023de0e54d141a69c1007f8448249f, type: 2}
+  blue: {fileID: 2100000, guid: 64278e7e6ff6549d691e1d3c65510a73, type: 2}
+  green: {fileID: 2100000, guid: 1ed4fd30f792846e590400400715d504, type: 2}
+  yellow: {fileID: 2100000, guid: 823b6587efa9347daa87267f68ed97c8, type: 2}
+  black: {fileID: 2100000, guid: 48257b3a9f6c947fb880d8e878de8f0c, type: 2}
+  loseColor: {fileID: 2100000, guid: 3564cc688ee6e4459b632c178fe7bfdf, type: 2}
+  winColor: {fileID: 2100000, guid: 65930e79da7fc4827b7e5fb621da6230, type: 2}
   puzzleCompleted: 0
 --- !u!4 &2087869815
 Transform:
