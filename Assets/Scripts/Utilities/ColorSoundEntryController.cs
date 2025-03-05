@@ -21,7 +21,7 @@ public class ColorSoundEntryController : MonoBehaviour
         this.TargetColor = TargetMat.color;
 
         GameObject colorIndicator = transform.Find("Indicator_Color").gameObject;
-        colorIndicator.GetComponent<MeshRenderer>().material.color = Color.grey;
+        colorIndicator.GetComponent<MeshRenderer>().material.color = Color.white;
 
         audioIndicator = transform.Find("Indicator_Light").gameObject.GetComponent<MeshRenderer>();
         audioIndicator.material.color = Color.grey;
