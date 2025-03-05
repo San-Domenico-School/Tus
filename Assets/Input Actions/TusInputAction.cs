@@ -219,17 +219,6 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""d441e861-6090-43a0-b758-e96194bb9c45"",
-                    ""path"": ""<XRController>{LeftHand}/triggerButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ObjectInteract"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""d5f02631-5ef8-4b90-a4f4-ba2a3ca87252"",
                     ""path"": ""<OculusTouchController>{RightHand}/trigger"",
                     ""interactions"": """",
@@ -269,6 +258,17 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Save"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""81f9e755-35fa-4d07-b3b0-7f9c8bb4cc9b"",
+                    ""path"": ""<OculusTouchController>{LeftHand}/triggerPressed"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ObjectInteract"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
