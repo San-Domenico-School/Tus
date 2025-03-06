@@ -74,7 +74,7 @@ public static class ObjectStatisticsUtility
 
     public static float GetOrCalculateObjectArea(GameObject gameObject)
     {
-    if (gameObject.GetComponent<PaintableObject>() == null)
+        if (gameObject.GetComponent<PaintableObject>() == null)
         {
             Debug.LogError("object does not have a PaintableObject component");
             return -1;
