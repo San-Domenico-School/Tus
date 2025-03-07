@@ -12,7 +12,7 @@ TagManager:
   - ResetButton
   - CinemachineTarget
   - SceneManager
-
+  - Hand
   layers:
   - Default
   - TransparentFX
@@ -20,7 +20,7 @@ TagManager:
   - 
   - Water
   - UI
-  - Paintable
+  - 
   - 
   - 
   - 
