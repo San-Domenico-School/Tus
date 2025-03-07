@@ -31,7 +31,10 @@ public class ColorSoundEntryController : MonoBehaviour
     public void Play()
     {
         isPlaying = true;
-        audioIndicator.material.color = Color.green;
+        if (!ColorIsCorrect())
+        {
+            audioIndicator.material.color = Color.green;
+        }
         audioPlayer.Play();
         StartCoroutine(checkAudioPlaybackFinished());
     }
@@ -46,7 +49,10 @@ public class ColorSoundEntryController : MonoBehaviour
         yield return new WaitForSeconds(delay);
 
         isPlaying = false;
-        audioIndicator.material.color = Color.grey;
+        if (!ColorIsCorrect())
+        {
+            audioIndicator.material.color = Color.grey;
+        }
     }
 
     public bool getIsPlaying()
@@ -65,6 +71,7 @@ public class ColorSoundEntryController : MonoBehaviour
         // being little more forgiving with color here - if two colors are more accurate one can be further off
         if (r + g + b < 0.3)
         {
+            audioIndicator.material.color = Color.blue;
             return true;
         }
         return false;
