@@ -35,6 +35,10 @@ public class ColorSoundEntryController : MonoBehaviour
         {
             audioIndicator.material.color = Color.green;
         }
+        else
+        {
+            audioIndicator.material.color = Color.cyan;
+        }
         audioPlayer.Play();
         StartCoroutine(checkAudioPlaybackFinished());
     }
@@ -53,6 +57,10 @@ public class ColorSoundEntryController : MonoBehaviour
         {
             audioIndicator.material.color = Color.grey;
         }
+        else
+        {
+            audioIndicator.material.color = Color.blue;
+        }
     }
 
     public bool getIsPlaying()
@@ -63,7 +71,7 @@ public class ColorSoundEntryController : MonoBehaviour
     public bool ColorIsCorrect()
     {
         GameObject colorIndicator = transform.Find("Indicator_Color").gameObject;
-        Color indicatorColor = colorIndicator.GetComponent<MeshRenderer>().material.color;
+        Color indicatorColor = colorIndicator.GetComponent<PaintableObject>().lastPaintedColor;
         float r = Mathf.Abs(TargetColor.r - indicatorColor.r);
         float g = Mathf.Abs(TargetColor.g - indicatorColor.g);
         float b = Mathf.Abs(TargetColor.b - indicatorColor.b);
@@ -71,8 +79,23 @@ public class ColorSoundEntryController : MonoBehaviour
         // being little more forgiving with color here - if two colors are more accurate one can be further off
         if (r + g + b < 0.3)
         {
-            audioIndicator.material.color = Color.blue;
+            if (isPlaying)
+            {
+                audioIndicator.material.color = Color.cyan;
+            }
+            else
+            {
+                audioIndicator.material.color = Color.blue;
+            }
             return true;
+        }
+        if (isPlaying)
+        {
+            audioIndicator.material.color = Color.green;
+        }
+        else
+        {
+            audioIndicator.material.color = Color.grey;
         }
         return false;
     }

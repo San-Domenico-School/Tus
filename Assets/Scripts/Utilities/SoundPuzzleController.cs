@@ -15,7 +15,6 @@ public class SoundPuzzleController : MonoBehaviour
     private int index = 0;
     
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         if (wait > 0)
@@ -62,17 +61,13 @@ public class SoundPuzzleController : MonoBehaviour
                 }
             }
         }
-        isMatched = false;
+        isMatched = true;
         for (int i = 0; i < 5; ++i)
         {
-            if (selectors[i].GetComponent<ColorSoundEntryController>().ColorIsCorrect())
+            if (!selectors[i].GetComponent<ColorSoundEntryController>().ColorIsCorrect())
             {
-                isMatched = true;
+                isMatched = false;
             }
-        }
-        if (isMatched)
-        {
-            transform.GetChild(0).GetComponent<MeshRenderer>().material.color = Color.yellow;
         }
     }
 }
