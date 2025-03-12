@@ -32,7 +32,7 @@ public class Altair : MonoBehaviour
     //if player touch the altar then the paint brush is placed on it
     private void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.tag == "Right Hand")
+        if(other.gameObject.tag == "Player")
         {
             if(inProx == false)
             {
