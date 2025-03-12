@@ -12,7 +12,8 @@ TagManager:
   - ResetButton
   - CinemachineTarget
   - SceneManager
-
+  - BrushSizeUp
+  - BrushSizeDown
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - 
   - Water
   - UI
-  - Paintable
+  - 
   - 
   - 
   - 
