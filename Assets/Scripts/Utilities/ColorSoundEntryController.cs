@@ -5,6 +5,7 @@ using UnityEngine;
 public class ColorSoundEntryController : MonoBehaviour
 {
     [SerializeField] Material TargetMat;
+    [SerializeField] GameObject colorIndicator;
     Color TargetColor;
 
     AudioSource audioPlayer;
@@ -70,7 +71,8 @@ public class ColorSoundEntryController : MonoBehaviour
 
     public bool ColorIsCorrect()
     {
-        GameObject colorIndicator = transform.Find("Indicator_Color").gameObject;
+        // GameObject colorIndicator = transform.Find("Indicator_Color").gameObject;
+        Debug.Log(colorIndicator);
         Color indicatorColor = colorIndicator.GetComponent<PaintableObject>().lastPaintedColor;
         float r = Mathf.Abs(TargetColor.r - indicatorColor.r);
         float g = Mathf.Abs(TargetColor.g - indicatorColor.g);

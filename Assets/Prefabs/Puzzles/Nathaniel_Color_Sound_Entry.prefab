@@ -144,6 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TargetMat: {fileID: 0}
+  colorIndicator: {fileID: 8434451552179781727}
 --- !u!1 &5859553161376783387
 GameObject:
   m_ObjectHideFlags: 0
