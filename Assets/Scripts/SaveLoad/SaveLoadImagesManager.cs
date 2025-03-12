@@ -39,7 +39,6 @@ public class SaveLoadImagesManager : MonoBehaviour
         //saveImagesPath = "C:/Users/happy/OneDrive/Documents/School Projects/Tus/Unity/Tus/Assets/Scripts/SaveLoad/TestSave"; // use when testing with pc on Seamus computer 
 
         
-        
         if (Application.isPlaying)
         {
             LoadImages();
@@ -48,13 +47,21 @@ public class SaveLoadImagesManager : MonoBehaviour
 
     private void OnDestroy() 
     {
-        SaveImages();
+        if (Application.isPlaying)
+        {
+            SaveImages();
+        }
     }
 
 
     // Load all the images from drive onto the paintableObjects 
     private void LoadImages()
     {
+        if (PaintableObjects == null)
+        {
+            AddToArrayAllPaintableObjects();
+        }
+
         // Goes over all objects in PaintableObjects
         foreach (GameObject gameObject in PaintableObjects)
         {
@@ -71,17 +78,21 @@ public class SaveLoadImagesManager : MonoBehaviour
                 // Sets the the loaded texture to the object's texture
                 gameObject.GetComponent<Renderer>().material.mainTexture = objectTexture;
                 //Debug.Log(Path.Combine(saveImagesPath, gameObject.name + ".png"));
-
+                Debug.Log("existing texture");
             } 
             else // The texture does not exist 
             {
                 if (!ObjectStatisticsUtility.HasRender(gameObject))
                     return;
                 
+                Debug.Log("create new texture");
                 // Creates a new texture
                 gameObject.GetComponent<Renderer>().material.mainTexture = ObjectStatisticsUtility.CreateObjectTexture(gameObject, texelDensity);
+                
+                SaveImages();
             }
         }
+
     }
     
 

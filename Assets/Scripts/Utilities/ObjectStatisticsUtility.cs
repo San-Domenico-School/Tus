@@ -21,9 +21,21 @@ public static class ObjectStatisticsUtility
         int textureSize = (int)Math.Round(Math.Sqrt(fullTextureArea) * targetTexelDensity);
         textureSize = Mathf.Max(1, textureSize); // Ensure textureSize is at least 1
 
-        Debug.Log($"objectArea: {objectArea}, uvPercentage: {uvRatio}, fullTextureArea: {fullTextureArea}, textureSize: {textureSize}");
+        // Debug.Log($"objectArea: {objectArea}, uvPercentage: {uvRatio}, fullTextureArea: {fullTextureArea}, textureSize: {textureSize}");
 
-        return new Texture2D(textureSize, textureSize);
+
+        Texture2D texture = new Texture2D(textureSize, textureSize);
+
+        Color[] pixels = texture.GetPixels();
+
+        for (int i = 0; i < textureSize * textureSize; i++)
+        {
+           pixels[i] = new Color(0.18f,0.18f,0.18f,1);
+        }
+
+        texture.SetPixels(pixels);
+
+        return texture;
     }
     public static Texture2D CreateObjectTexture(GameObject gameObject, float targetTexelDensity)
     {
