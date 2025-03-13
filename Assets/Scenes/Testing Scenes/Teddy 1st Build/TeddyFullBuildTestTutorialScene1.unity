@@ -1896,8 +1896,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8caca2cd5603dfc43ba98a37ff996cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  surfaceArea: 0.06753193
-  uvRatio: 0.72852254
+  surfaceArea: 20
+  uvRatio: 0.9
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &3104994216308696092
@@ -1964,8 +1964,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8caca2cd5603dfc43ba98a37ff996cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  surfaceArea: 0.060106166
-  uvRatio: 0.95360357
+  surfaceArea: 20
+  uvRatio: 0.9
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!23 &3771584426065502097
@@ -2257,8 +2257,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8caca2cd5603dfc43ba98a37ff996cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  surfaceArea: 0.06753194
-  uvRatio: 0.7285226
+  surfaceArea: 20
+  uvRatio: 0.9
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!33 &4876933052523727771
@@ -2318,8 +2318,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8caca2cd5603dfc43ba98a37ff996cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  surfaceArea: 0.06010617
-  uvRatio: 0.9536036
+  surfaceArea: 20
+  uvRatio: 0.9
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &5148817237529245371
@@ -2411,8 +2411,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8caca2cd5603dfc43ba98a37ff996cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  surfaceArea: 0.0009735416
-  uvRatio: 0.79068345
+  surfaceArea: 20
+  uvRatio: 0.9
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!33 &5240576298017283521
@@ -2457,8 +2457,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8caca2cd5603dfc43ba98a37ff996cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  surfaceArea: 0.079490595
-  uvRatio: 0.8575304
+  surfaceArea: 20
+  uvRatio: 0.9
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!23 &5247738787953693107
@@ -2660,8 +2660,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8caca2cd5603dfc43ba98a37ff996cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  surfaceArea: 0.00084335986
-  uvRatio: 0.75744784
+  surfaceArea: 20
+  uvRatio: 0.9
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &5811517545756596287
@@ -2713,8 +2713,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8caca2cd5603dfc43ba98a37ff996cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  surfaceArea: 0.06010616
-  uvRatio: 0.95360357
+  surfaceArea: 20
+  uvRatio: 0.9
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!33 &5856826776756291259
@@ -2767,84 +2767,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1001 &6178628741454777692
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2995935463050656960, guid: 6c6b54ffa408b47748326cb1bd0edd5d,
-        type: 3}
-      propertyPath: sceneTracker
-      value: 
-      objectReference: {fileID: 1860408873}
-    - target: {fileID: 4112975564680693679, guid: 6c6b54ffa408b47748326cb1bd0edd5d,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 11.52
-      objectReference: {fileID: 0}
-    - target: {fileID: 4112975564680693679, guid: 6c6b54ffa408b47748326cb1bd0edd5d,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4112975564680693679, guid: 6c6b54ffa408b47748326cb1bd0edd5d,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -5.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 4112975564680693679, guid: 6c6b54ffa408b47748326cb1bd0edd5d,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4112975564680693679, guid: 6c6b54ffa408b47748326cb1bd0edd5d,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4112975564680693679, guid: 6c6b54ffa408b47748326cb1bd0edd5d,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4112975564680693679, guid: 6c6b54ffa408b47748326cb1bd0edd5d,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4112975564680693679, guid: 6c6b54ffa408b47748326cb1bd0edd5d,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4112975564680693679, guid: 6c6b54ffa408b47748326cb1bd0edd5d,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4112975564680693679, guid: 6c6b54ffa408b47748326cb1bd0edd5d,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8612641979332334119, guid: 6c6b54ffa408b47748326cb1bd0edd5d,
-        type: 3}
-      propertyPath: m_Name
-      value: TutorialScene
-      objectReference: {fileID: 0}
-    - target: {fileID: 8612641979332334119, guid: 6c6b54ffa408b47748326cb1bd0edd5d,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6c6b54ffa408b47748326cb1bd0edd5d, type: 3}
 --- !u!4 &6220737284839255445
 Transform:
   m_ObjectHideFlags: 0
@@ -3031,8 +2953,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8caca2cd5603dfc43ba98a37ff996cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  surfaceArea: 0.06010616
-  uvRatio: 0.9536035
+  surfaceArea: 20
+  uvRatio: 0.9
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!33 &6714904530588021327
@@ -3201,8 +3123,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8caca2cd5603dfc43ba98a37ff996cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  surfaceArea: 0.06753194
-  uvRatio: 0.7285224
+  surfaceArea: 20
+  uvRatio: 0.9
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!23 &7339356832812947592
@@ -3336,8 +3258,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8caca2cd5603dfc43ba98a37ff996cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  surfaceArea: 0.060106173
-  uvRatio: 0.95360345
+  surfaceArea: 20
+  uvRatio: 0.9
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!23 &7817347735084885232
@@ -3416,8 +3338,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8caca2cd5603dfc43ba98a37ff996cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  surfaceArea: 0.079490595
-  uvRatio: 0.85753036
+  surfaceArea: 20
+  uvRatio: 0.9
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!33 &7925061790077179386
@@ -3462,8 +3384,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8caca2cd5603dfc43ba98a37ff996cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  surfaceArea: 0.067531936
-  uvRatio: 0.72852236
+  surfaceArea: 20
+  uvRatio: 0.9
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!23 &8159597649340561140
@@ -3594,8 +3516,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8caca2cd5603dfc43ba98a37ff996cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  surfaceArea: 0.060106173
-  uvRatio: 0.95360345
+  surfaceArea: 20
+  uvRatio: 0.9
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!23 &8443713293154447136
@@ -3682,8 +3604,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8caca2cd5603dfc43ba98a37ff996cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  surfaceArea: 0.060106166
-  uvRatio: 0.9536033
+  surfaceArea: 20
+  uvRatio: 0.9
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &8559935170691803236
@@ -3740,8 +3662,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8caca2cd5603dfc43ba98a37ff996cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  surfaceArea: 0.012009803
-  uvRatio: 0.6723838
+  surfaceArea: 20
+  uvRatio: 0.9
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &8616562854094782008
@@ -3808,8 +3730,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8caca2cd5603dfc43ba98a37ff996cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  surfaceArea: 0.06010618
-  uvRatio: 0.9536034
+  surfaceArea: 20
+  uvRatio: 0.9
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &8627100715471889103
@@ -3866,8 +3788,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8caca2cd5603dfc43ba98a37ff996cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  surfaceArea: 0.000032956952
-  uvRatio: 0.43047744
+  surfaceArea: 20
+  uvRatio: 0.9
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!33 &8773229787339833832
@@ -3912,8 +3834,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8caca2cd5603dfc43ba98a37ff996cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  surfaceArea: 0.06753192
-  uvRatio: 0.72852224
+  surfaceArea: 20
+  uvRatio: 0.9
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &8780584842462697706
@@ -3965,8 +3887,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8caca2cd5603dfc43ba98a37ff996cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  surfaceArea: 0.06753196
-  uvRatio: 0.7285224
+  surfaceArea: 20
+  uvRatio: 0.9
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &8789216747248074205
@@ -4062,8 +3984,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8caca2cd5603dfc43ba98a37ff996cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  surfaceArea: 0.060106162
-  uvRatio: 0.9536035
+  surfaceArea: 20
+  uvRatio: 0.9
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!23 &9077926074268396486
@@ -4142,8 +4064,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8caca2cd5603dfc43ba98a37ff996cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  surfaceArea: 0.017244276
-  uvRatio: 0.56880784
+  surfaceArea: 20
+  uvRatio: 0.9
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &9126143272784795473
@@ -4195,8 +4117,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8caca2cd5603dfc43ba98a37ff996cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  surfaceArea: 0.082145885
-  uvRatio: 0.88617504
+  surfaceArea: 20
+  uvRatio: 0.9
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &9202942787803130195
@@ -4253,8 +4175,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8caca2cd5603dfc43ba98a37ff996cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  surfaceArea: 0.08214589
-  uvRatio: 0.8861755
+  surfaceArea: 20
+  uvRatio: 0.9
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &9221866245104166675
@@ -4306,8 +4228,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8caca2cd5603dfc43ba98a37ff996cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  surfaceArea: 0.039611712
-  uvRatio: 0.53612894
+  surfaceArea: 20
+  uvRatio: 0.9
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1660057539 &9223372036854775807
@@ -4315,7 +4237,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1123713366}
-  - {fileID: 6178628741454777692}
   - {fileID: 109588308}
   - {fileID: 1860408874}
   - {fileID: 1568700121}
