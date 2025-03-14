@@ -158,7 +158,7 @@ PrefabInstance:
     - target: {fileID: 7621707012019927956, guid: 200da0d5814e8c14489e8b3d911079dc,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.36
+      value: 2.23
       objectReference: {fileID: 0}
     - target: {fileID: 7621707012019927956, guid: 200da0d5814e8c14489e8b3d911079dc,
         type: 3}
@@ -830,7 +830,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81abb5ff8ffaa4b03ac2c8d5e6a1c457, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testBox: {fileID: 699511636}
   sceneAvailable: 010000000001
 --- !u!4 &1860408874
 Transform:
@@ -1899,7 +1898,6 @@ MonoBehaviour:
   surfaceArea: 20
   uvRatio: 0.9
   textureSize: -1
-  lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &3104994216308696092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1909,7 +1907,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6298101630463801014}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ba1ae9889e3644a799486e142a7ffa5, type: 3}
+  m_Script: {fileID: 11500000, guid: 3f5b6c9d15a914069a4b3287eb7fc66f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isMatched: 0
@@ -1967,7 +1965,6 @@ MonoBehaviour:
   surfaceArea: 20
   uvRatio: 0.9
   textureSize: -1
-  lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!23 &3771584426065502097
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2260,7 +2257,6 @@ MonoBehaviour:
   surfaceArea: 20
   uvRatio: 0.9
   textureSize: -1
-  lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!33 &4876933052523727771
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2321,7 +2317,6 @@ MonoBehaviour:
   surfaceArea: 20
   uvRatio: 0.9
   textureSize: -1
-  lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &5148817237529245371
 GameObject:
   m_ObjectHideFlags: 0
@@ -2414,7 +2409,6 @@ MonoBehaviour:
   surfaceArea: 20
   uvRatio: 0.9
   textureSize: -1
-  lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!33 &5240576298017283521
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2460,7 +2454,6 @@ MonoBehaviour:
   surfaceArea: 20
   uvRatio: 0.9
   textureSize: -1
-  lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!23 &5247738787953693107
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2663,7 +2656,6 @@ MonoBehaviour:
   surfaceArea: 20
   uvRatio: 0.9
   textureSize: -1
-  lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &5811517545756596287
 Transform:
   m_ObjectHideFlags: 0
@@ -2716,7 +2708,6 @@ MonoBehaviour:
   surfaceArea: 20
   uvRatio: 0.9
   textureSize: -1
-  lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!33 &5856826776756291259
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2956,7 +2947,6 @@ MonoBehaviour:
   surfaceArea: 20
   uvRatio: 0.9
   textureSize: -1
-  lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!33 &6714904530588021327
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3126,7 +3116,6 @@ MonoBehaviour:
   surfaceArea: 20
   uvRatio: 0.9
   textureSize: -1
-  lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!23 &7339356832812947592
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3261,7 +3250,6 @@ MonoBehaviour:
   surfaceArea: 20
   uvRatio: 0.9
   textureSize: -1
-  lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!23 &7817347735084885232
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3341,7 +3329,6 @@ MonoBehaviour:
   surfaceArea: 20
   uvRatio: 0.9
   textureSize: -1
-  lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!33 &7925061790077179386
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3387,7 +3374,6 @@ MonoBehaviour:
   surfaceArea: 20
   uvRatio: 0.9
   textureSize: -1
-  lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!23 &8159597649340561140
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3473,7 +3459,6 @@ MonoBehaviour:
   surfaceArea: 0.00059999985
   uvRatio: 0.5933306
   textureSize: -1
-  lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!33 &8436024265798172903
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3519,7 +3504,6 @@ MonoBehaviour:
   surfaceArea: 20
   uvRatio: 0.9
   textureSize: -1
-  lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!23 &8443713293154447136
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3607,7 +3591,6 @@ MonoBehaviour:
   surfaceArea: 20
   uvRatio: 0.9
   textureSize: -1
-  lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &8559935170691803236
 GameObject:
   m_ObjectHideFlags: 0
@@ -3665,7 +3648,6 @@ MonoBehaviour:
   surfaceArea: 20
   uvRatio: 0.9
   textureSize: -1
-  lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &8616562854094782008
 Transform:
   m_ObjectHideFlags: 0
@@ -3733,7 +3715,6 @@ MonoBehaviour:
   surfaceArea: 20
   uvRatio: 0.9
   textureSize: -1
-  lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &8627100715471889103
 GameObject:
   m_ObjectHideFlags: 0
@@ -3791,7 +3772,6 @@ MonoBehaviour:
   surfaceArea: 20
   uvRatio: 0.9
   textureSize: -1
-  lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!33 &8773229787339833832
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3837,7 +3817,6 @@ MonoBehaviour:
   surfaceArea: 20
   uvRatio: 0.9
   textureSize: -1
-  lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &8780584842462697706
 Transform:
   m_ObjectHideFlags: 0
@@ -3890,7 +3869,6 @@ MonoBehaviour:
   surfaceArea: 20
   uvRatio: 0.9
   textureSize: -1
-  lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &8789216747248074205
 Transform:
   m_ObjectHideFlags: 0
@@ -3987,7 +3965,6 @@ MonoBehaviour:
   surfaceArea: 20
   uvRatio: 0.9
   textureSize: -1
-  lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!23 &9077926074268396486
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4067,7 +4044,6 @@ MonoBehaviour:
   surfaceArea: 20
   uvRatio: 0.9
   textureSize: -1
-  lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &9126143272784795473
 Transform:
   m_ObjectHideFlags: 0
@@ -4120,7 +4096,6 @@ MonoBehaviour:
   surfaceArea: 20
   uvRatio: 0.9
   textureSize: -1
-  lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &9202942787803130195
 GameObject:
   m_ObjectHideFlags: 0
@@ -4178,7 +4153,6 @@ MonoBehaviour:
   surfaceArea: 20
   uvRatio: 0.9
   textureSize: -1
-  lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &9221866245104166675
 Transform:
   m_ObjectHideFlags: 0
@@ -4231,7 +4205,6 @@ MonoBehaviour:
   surfaceArea: 20
   uvRatio: 0.9
   textureSize: -1
-  lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
