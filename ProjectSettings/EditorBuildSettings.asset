@@ -27,10 +27,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Testing Scenes/LoganPaintBrushScene.unity
     guid: 8acfde7d17baf4ecfadc2e11a716cf88
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Testing Scenes/Nathaniel new new new new Seamus optamazatoin
       test scen 1 scene.unity
     guid: 7afb07939a5234b0da7d49cd61819b2f
+  - enabled: 1
+    path: Assets/Scenes/Testing Scenes/SeamusCanionTest.unity
+    guid: 734cb75b24710d642a560ab8a8354ced
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 03668d7564a2d43c49903a38c38f16ce,
       type: 2}

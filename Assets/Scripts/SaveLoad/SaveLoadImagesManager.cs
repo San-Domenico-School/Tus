@@ -2,6 +2,8 @@ using System;
 using UnityEngine;
 using System.IO;
 using System.Linq;
+using UnityEngine.Rendering;
+
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -16,7 +18,6 @@ using UnityEditor;
 [ExecuteInEditMode]
 public class SaveLoadImagesManager : MonoBehaviour
 {
-    String saveImagesPath;     
     private TusInputAction paintAction;
     public static float texelDensity = 20;
     public static GameObject[] PaintableObjects { get; private set; }
@@ -35,9 +36,7 @@ public class SaveLoadImagesManager : MonoBehaviour
 
         //CreateNewBlankTexture();
 
-        saveImagesPath = Application.persistentDataPath;// use when building for Quest
         //saveImagesPath = "C:/Users/happy/OneDrive/Documents/School Projects/Tus/Unity/Tus/Assets/Scripts/SaveLoad/TestSave"; // use when testing with pc on Seamus computer 
-
         
         if (Application.isPlaying)
         {
@@ -65,11 +64,10 @@ public class SaveLoadImagesManager : MonoBehaviour
         // Goes over all objects in PaintableObjects
         foreach (GameObject gameObject in PaintableObjects)
         {
-
-            if (File.Exists(Path.Combine(saveImagesPath, gameObject.name + ".png"))) // Check the game has already saved and the file exists
+            if (File.Exists(GetImageFilePath(gameObject))) // Check the game has already saved and the file exists
             {
                 // Load the images for disk
-                byte[] imageData = File.ReadAllBytes(Path.Combine(saveImagesPath, gameObject.name + ".png"));
+                byte[] imageData = File.ReadAllBytes(GetImageFilePath(gameObject));
 
                 // Converts to a Texture2D
                 Texture2D objectTexture = new Texture2D(2,2);
@@ -77,15 +75,12 @@ public class SaveLoadImagesManager : MonoBehaviour
 
                 // Sets the the loaded texture to the object's texture
                 gameObject.GetComponent<Renderer>().material.mainTexture = objectTexture;
-                //Debug.Log(Path.Combine(saveImagesPath, gameObject.name + ".png"));
-                Debug.Log("existing texture");
             } 
             else // The texture does not exist 
             {
                 if (!ObjectStatisticsUtility.HasRender(gameObject))
                     return;
                 
-                Debug.Log("create new texture");
                 // Creates a new texture
                 gameObject.GetComponent<Renderer>().material.mainTexture = ObjectStatisticsUtility.CreateObjectTexture(gameObject, texelDensity);
                 
@@ -137,6 +132,7 @@ public class SaveLoadImagesManager : MonoBehaviour
 
     // TODO make async https://discussions.unity.com/t/save-rendertexture-or-texture2d-as-image-file-utility/891718/14 
     // Saves all the images on game object that can be painted (in array of object gotten from PrepareWorld)
+    
     private void SaveImages()
     {
         // Goes over all objects in paintableObjects
@@ -147,7 +143,7 @@ public class SaveLoadImagesManager : MonoBehaviour
             
             // Saves the images to disk 
             Texture2D image = (Texture2D) gameObject.GetComponent<Renderer>().sharedMaterial.mainTexture;
-            File.WriteAllBytes(Path.Combine(saveImagesPath, gameObject.name + ".png"), image.EncodeToPNG());
+            File.WriteAllBytes(GetImageFilePath(gameObject), image.EncodeToPNG());
         }
     }
 
@@ -185,6 +181,24 @@ public class SaveLoadImagesManager : MonoBehaviour
             gameObject.GetComponent<PaintableObject>().uvRatio = ObjectStatisticsUtility.CalculateObjectUVAreaRatio(gameObject);
 
         }
+    }
+
+    public string GetImageFilePath(GameObject gameObject)
+    {
+        string id = "";
+
+        Transform activeParent = gameObject.transform; 
+        int number = 0;
+        while (activeParent != null && number < 5)
+        {
+            id += activeParent.name;
+            activeParent = activeParent.parent;
+            number++;
+        }
+
+        string path = Path.Combine(Application.persistentDataPath, id + ".png");
+        Debug.Log(path);
+        return path;
     }
 
 }
