@@ -189,7 +189,7 @@ public class SaveLoadImagesManager : MonoBehaviour
 
         Transform activeParent = gameObject.transform; 
         int number = 0;
-        while (activeParent != null && number < 5)
+        while (activeParent != null )
         {
             id += activeParent.name;
             activeParent = activeParent.parent;

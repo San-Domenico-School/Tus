@@ -30,7 +30,7 @@ public static class ObjectStatisticsUtility
 
         for (int i = 0; i < textureSize * textureSize; i++)
         {
-           pixels[i] = new Color(0.18f,0.18f,0.18f,1);
+           pixels[i] = new Color(0.5f,0.5f,0.5f,1);
         }
 
         texture.SetPixels(pixels);
