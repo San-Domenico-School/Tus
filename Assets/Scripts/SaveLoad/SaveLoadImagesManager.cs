@@ -61,7 +61,6 @@ public class SaveLoadImagesManager : MonoBehaviour
             AddToArrayAllPaintableObjects();
         }
 
-        // Goes over all objects in PaintableObjects
         foreach (GameObject gameObject in PaintableObjects)
         {
             if (File.Exists(GetImageFilePath(gameObject))) // Check the game has already saved and the file exists
@@ -78,16 +77,12 @@ public class SaveLoadImagesManager : MonoBehaviour
             } 
             else // The texture does not exist 
             {
-                if (!ObjectStatisticsUtility.HasRender(gameObject))
-                    return;
-                
                 // Creates a new texture
                 gameObject.GetComponent<Renderer>().material.mainTexture = ObjectStatisticsUtility.CreateObjectTexture(gameObject, texelDensity);
                 
-                SaveImages();
             }
         }
-
+        SaveImages();
     }
     
 
@@ -138,9 +133,6 @@ public class SaveLoadImagesManager : MonoBehaviour
         // Goes over all objects in paintableObjects
         foreach (GameObject gameObject in PaintableObjects)
         {
-            if (!ObjectStatisticsUtility.HasMainTexture(gameObject))
-                return;
-            
             // Saves the images to disk 
             Texture2D image = (Texture2D) gameObject.GetComponent<Renderer>().sharedMaterial.mainTexture;
             File.WriteAllBytes(GetImageFilePath(gameObject), image.EncodeToPNG());
@@ -160,9 +152,9 @@ public class SaveLoadImagesManager : MonoBehaviour
         return gameObjects;
     }
 
-    // This does not need explication 
     public void CreateNewBlankTexture()
     {
+        
         foreach (GameObject gameObject in PaintableObjects)
         {
             gameObject.GetComponent<Renderer>().sharedMaterial.mainTexture = ObjectStatisticsUtility.CreateObjectTexture(gameObject, texelDensity);
@@ -188,16 +180,15 @@ public class SaveLoadImagesManager : MonoBehaviour
         string id = "";
 
         Transform activeParent = gameObject.transform; 
-        int number = 0;
-        while (activeParent != null )
+        int i = 0; // probably don't need a max iterations   
+        while (activeParent != null && i < 10)
         {
             id += activeParent.name;
             activeParent = activeParent.parent;
-            number++;
+            i++;
         }
 
         string path = Path.Combine(Application.persistentDataPath, id + ".png");
-        Debug.Log(path);
         return path;
     }
 

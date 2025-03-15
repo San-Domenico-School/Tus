@@ -1287,7 +1287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   surfaceArea: 10.394751
-  uvRatio: 0.53626007
+  uvRatio: 0.53625995
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &40314863
@@ -1564,6 +1564,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SaveManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 3636473082203366052, guid: f29c12b8b91526947bcec735a81de801,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2493,7 +2498,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   surfaceArea: 5.342149
-  uvRatio: 0.72927207
+  uvRatio: 0.15553123
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &94500300 stripped
@@ -3180,8 +3185,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8caca2cd5603dfc43ba98a37ff996cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  surfaceArea: 309.07788
-  uvRatio: 0.5320338
+  surfaceArea: 309.07785
+  uvRatio: 0.53203374
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &110614577
@@ -4595,7 +4600,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   surfaceArea: 0.062618606
-  uvRatio: 0.1701377
+  uvRatio: 0.18007131
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &184467801
@@ -6117,7 +6122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   surfaceArea: 11.895176
-  uvRatio: 0.72927207
+  uvRatio: 0.067741066
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &235773795 stripped
@@ -8394,8 +8399,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8caca2cd5603dfc43ba98a37ff996cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  surfaceArea: -1
-  uvRatio: -1
+  surfaceArea: 157.67038
+  uvRatio: 0.87874746
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!65 &332727977
@@ -11435,8 +11440,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8caca2cd5603dfc43ba98a37ff996cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  surfaceArea: 261.57315
-  uvRatio: 0.9481859
+  surfaceArea: 261.3753
+  uvRatio: 0.94818604
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &459621083 stripped
@@ -11682,7 +11687,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   surfaceArea: 11.895176
-  uvRatio: 0.72927207
+  uvRatio: 0.067741066
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &477404339
@@ -11986,7 +11991,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   surfaceArea: 2.0532973
-  uvRatio: 0.72927207
+  uvRatio: 0.44280383
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &488102831
@@ -12909,8 +12914,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8caca2cd5603dfc43ba98a37ff996cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  surfaceArea: 137.88165
-  uvRatio: 0.5745221
+  surfaceArea: 135.72047
+  uvRatio: 0.57452214
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!64 &532076183
@@ -13306,7 +13311,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   surfaceArea: 0.062618606
-  uvRatio: 0.1701377
+  uvRatio: 0.18007131
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &552286963
@@ -15856,7 +15861,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   surfaceArea: 5.342149
-  uvRatio: 0.72927207
+  uvRatio: 0.15553123
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!64 &668222342
@@ -40486,7 +40491,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   surfaceArea: 855.0027
-  uvRatio: 0.5629871
+  uvRatio: 0.58843786
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!64 &740344103
@@ -42476,7 +42481,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   surfaceArea: 26.714945
-  uvRatio: 0.72927207
+  uvRatio: 0.1576927
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!64 &791840781
@@ -43033,8 +43038,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8caca2cd5603dfc43ba98a37ff996cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  surfaceArea: -1
-  uvRatio: -1
+  surfaceArea: 157.67038
+  uvRatio: 0.87874746
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!65 &804079514
@@ -43557,7 +43562,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   surfaceArea: 7.675838
-  uvRatio: 0.68849295
+  uvRatio: 0.7085375
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!64 &819159351
@@ -44662,7 +44667,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   surfaceArea: 7.675838
-  uvRatio: 0.68849295
+  uvRatio: 0.7085375
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!64 &847916192
@@ -49297,7 +49302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   surfaceArea: 53.869926
-  uvRatio: 0.6283972
+  uvRatio: 0.4812457
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!64 &975572439
@@ -50777,6 +50782,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PaintManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6394752062362848651, guid: eb96ecfe2319b8b448fa2563ed3d30c3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -55644,7 +55654,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   surfaceArea: 1.2901624
-  uvRatio: 0.34204713
+  uvRatio: 0.34204528
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!64 &1152782098
@@ -55972,7 +55982,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   surfaceArea: 5.342149
-  uvRatio: 0.72927207
+  uvRatio: 0.15553123
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!64 &1158235134
@@ -73327,7 +73337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   surfaceArea: 2.0532973
-  uvRatio: 0.72927207
+  uvRatio: 0.44280383
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!64 &1243296090
@@ -77785,7 +77795,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   surfaceArea: 790.78937
-  uvRatio: 0.6283972
+  uvRatio: 0.65975237
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!64 &1368962511
@@ -80683,7 +80693,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   surfaceArea: 643.51355
-  uvRatio: 0.5486183
+  uvRatio: 0.5722474
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!64 &1464137154
@@ -81362,8 +81372,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8caca2cd5603dfc43ba98a37ff996cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  surfaceArea: 222.84604
-  uvRatio: 0.5376083
+  surfaceArea: 222.6277
+  uvRatio: 0.53760827
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!64 &1487648056
@@ -84205,7 +84215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   surfaceArea: 82.16498
-  uvRatio: 0.6283972
+  uvRatio: 0.30461162
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!64 &1560984187
@@ -84587,7 +84597,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   surfaceArea: 5.342149
-  uvRatio: 0.72927207
+  uvRatio: 0.15553123
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!64 &1569517985
@@ -91521,7 +91531,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   surfaceArea: 1221.1967
-  uvRatio: 0.5629871
+  uvRatio: 0.5890434
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!64 &1747117278
@@ -99614,7 +99624,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   surfaceArea: 63.993546
-  uvRatio: 0.6283972
+  uvRatio: 0.39858836
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!64 &1977920489
@@ -103667,8 +103677,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8caca2cd5603dfc43ba98a37ff996cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  surfaceArea: 184.9721
-  uvRatio: 0.483183
+  surfaceArea: 180.74658
+  uvRatio: 0.48318306
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!64 &2096732866
@@ -104144,7 +104154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   surfaceArea: 26.714945
-  uvRatio: 0.72927207
+  uvRatio: 0.1576927
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!64 &2104026995
@@ -105340,7 +105350,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   surfaceArea: 26.714945
-  uvRatio: 0.72927207
+  uvRatio: 0.1576927
   textureSize: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!64 &2129811429
