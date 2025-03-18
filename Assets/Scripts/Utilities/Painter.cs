@@ -26,7 +26,6 @@ public class Painter : MonoBehaviour
     //public float paintRemaining { get; set; } = 50;
     public float paintRemaining = 500;
 
-
     private void Awake()
     {
         paintAction = new TusInputAction();
@@ -49,7 +48,7 @@ public class Painter : MonoBehaviour
     }
 
     private void Update()
-    {
+    { 
         HandlePainting();
     }
 
@@ -58,6 +57,7 @@ public class Painter : MonoBehaviour
     {
         return paintColor;
     }
+
     public void SetPaintColor(Color color)
     {
         paintColor = color;
@@ -81,6 +81,7 @@ public class Painter : MonoBehaviour
                 Debug.Log("PAINT RAN OUT!!!");
             }
         }
+
     }
 
     // Shoot a ray where the paint will be
@@ -98,6 +99,8 @@ public class Painter : MonoBehaviour
         Texture2D texture = ObjectStatisticsUtility.GetOrCreateObjectsTexture(hit.transform.gameObject, SaveLoadImagesManager.texelDensity);
 
         PaintTexture(hit.textureCoord, texture);
+
+        hit.transform.gameObject.GetComponent<PaintableObject>().lastPaintedColor = paintColor;
     }
 
     //paints the texture at the UV cordate with diameter of the brushSize and shape of brush 
@@ -120,8 +123,9 @@ public class Painter : MonoBehaviour
                 int currentTextureY = (int)(uv.y + y - (brushHeight / 2));
 
                 Color brushColor = brush.GetPixel((int)(x / brushSize), (int)(y / brushSize));
-                brushColor = Color.Lerp(texture.GetPixel(currentTextureX, currentTextureY), paintColor, brushColor.r);
-
+                //brushColor = Color.Lerp(texture.GetPixel(currentTextureX, currentTextureY), paintColor, brushColor.r);
+                Debug.Log(texture.GetPixel(currentTextureX, currentTextureY));
+                brushColor = paintColor;
                 //brushColor = brush.GetPixel((int)(x / brushSize), (int)(y / brushSize));
                 texture.SetPixel(currentTextureX, currentTextureY, brushColor);
             }
