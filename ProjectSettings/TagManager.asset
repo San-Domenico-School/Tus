@@ -12,7 +12,6 @@ TagManager:
   - ResetButton
   - CinemachineTarget
   - SceneManager
-
   layers:
   - Default
   - TransparentFX
