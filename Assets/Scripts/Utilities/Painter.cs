@@ -8,12 +8,15 @@ using UnityEngine.InputSystem;
  * Purpose: shoot a ray out and paint the world at its location
  * Author: Seamus
  * Version: 1.1
+ * Modified by Nathaniel - 3/18/2025 - added PainterActive bool and functionality
  *************************************************/
 
 public class Painter : MonoBehaviour
 {
 
+    
     public static Painter Instance;
+    public bool PainterActive = true;
     private TusInputAction paintAction;
     private bool isPainting;
 
@@ -64,10 +67,11 @@ public class Painter : MonoBehaviour
     }
 
     // Called every update. Check if you are painting and if you have paint 
+    // also check if you can paint
     // Remove paint from paintRemaining
     private void HandlePainting()
     {
-        if (isPainting)
+        if (isPainting && PainterActive)
         {
             if (paintRemaining >= 0)
             {
