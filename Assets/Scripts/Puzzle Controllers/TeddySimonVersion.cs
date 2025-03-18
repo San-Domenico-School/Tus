@@ -187,10 +187,11 @@ public class TeddySimonVersion : MonoBehaviour
     {
         objectRenderer.material = winColor;
         puzzleCompleted = true;
-        sceneTracker.UnlockNextScene(2);
+        sceneTracker.UnlockNextScene(1);
 
         doorRenderer.enabled = false;
         doorCollider.enabled = false;
+        Debug.Log("win method ran");
     }
 
     public void Lose()
