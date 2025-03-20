@@ -1,13 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 /**************************************************
  * Attached to: paint manager 
  * Purpose: shoot a ray out and paint the world at its location
- * Author: Seamus
- * Version: 1.1
+ * Author: Seamus/Teddy
+ * Version: 1.2
  *************************************************/
 
 public class Painter : MonoBehaviour
@@ -128,5 +128,21 @@ public class Painter : MonoBehaviour
         }
 
         texture.Apply();
+    }
+
+    private void OnSceneLoaded()
+    {
+        // Find the GameObject called "Right Hand" in the scene
+        GameObject rightHand = GameObject.Find("Right Hand");
+
+        if (rightHand != null)
+        {
+            // Assign it to the 'fromObject' field
+            fromObject = rightHand;
+        }
+        else
+        {
+            Debug.Log("Right Hand not found in the scene.");
+        }
     }
 }
