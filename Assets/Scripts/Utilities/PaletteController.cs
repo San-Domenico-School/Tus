@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 /**************************************************
  * Attached to: Paint Palette
@@ -47,8 +48,17 @@ public class PaletteController : MonoBehaviour
     }
 
 
-    // Start is called before the first frame update
-    void Start()
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         selectedColorDisplay = transform.Find("SelectedColor").gameObject;
         redButton = transform.Find("Red").gameObject;

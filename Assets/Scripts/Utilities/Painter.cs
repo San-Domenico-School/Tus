@@ -16,8 +16,8 @@ public class Painter : MonoBehaviour
     public static Painter Instance;
     private TusInputAction paintAction;
     private bool isPainting;
+    private GameObject fromObject;
 
-    [SerializeField] GameObject fromObject;
     [SerializeField] Texture2D brush;
     [SerializeField] float brushSize = .5f;
     [SerializeField] public Color paintColor = Color.white;
@@ -46,6 +46,7 @@ public class Painter : MonoBehaviour
         paintAction.Enable();
         paintAction.DominantArm_RightHanded.Paint.performed += ctx => isPainting = true; 
         paintAction.DominantArm_RightHanded.Paint.canceled += ctx => isPainting = false;
+        fromObject = GameObject.Find("Right hand");
     }
 
     private void Update()
