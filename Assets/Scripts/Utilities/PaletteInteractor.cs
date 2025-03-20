@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /**************************************************
  * Attached to: paint brush
@@ -10,8 +11,7 @@ using UnityEngine;
  *************************************************/
 public class PaletteInteractor : MonoBehaviour
 {
-    [SerializeField] GameObject PaintManager;
-    [SerializeField] GameObject RedButton;
+    public Painter PaintManager;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +23,12 @@ public class PaletteInteractor : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void OnSceneLoaded()
+    {
+        PaintManager = GameObject.FindObjectOfType<Painter>();
+
     }
 
     private void OnTriggerStay(Collider other)
