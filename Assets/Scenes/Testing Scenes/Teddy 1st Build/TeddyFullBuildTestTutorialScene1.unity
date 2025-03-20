@@ -3022,6 +3022,7 @@ GameObject:
   - component: {fileID: 8277738429697844228}
   - component: {fileID: 3882683126116516572}
   - component: {fileID: 8277738429697844229}
+  - component: {fileID: 8277738429697844230}
   m_Layer: 6
   m_Name: playerBlock
   m_TagString: Untagged
@@ -3459,6 +3460,28 @@ MonoBehaviour:
   surfaceArea: 0.00059999985
   uvRatio: 0.5933306
   textureSize: -1
+--- !u!64 &8277738429697844230
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6937853292968714208}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1949172348841189468, guid: c585e8116cc684e22bfd5601af3d511c, type: 3}
 --- !u!33 &8436024265798172903
 MeshFilter:
   m_ObjectHideFlags: 0
