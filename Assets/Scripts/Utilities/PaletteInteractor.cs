@@ -27,7 +27,7 @@ public class PaletteInteractor : MonoBehaviour
 
     void OnSceneLoaded()
     {
-        PaintManager = GameObject.FindObjectOfType<Painter>();
+        PaintManager = GameObject.Find("PaintManager").GetComponent<Painter>();
 
     }
 
