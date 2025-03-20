@@ -8,12 +8,15 @@ using UnityEngine.InputSystem;
  * Purpose: shoot a ray out and paint the world at its location
  * Author: Seamus
  * Version: 1.1
+ * Modified by Nathaniel - 3/18/2025 - added PainterActive bool and functionality
  *************************************************/
 
 public class Painter : MonoBehaviour
 {
 
+    
     public static Painter Instance;
+    public bool PainterActive = true;
     private TusInputAction paintAction;
     private bool isPainting;
 
@@ -25,6 +28,17 @@ public class Painter : MonoBehaviour
 
     //public float paintRemaining { get; set; } = 50;
     public float paintRemaining = 500;
+
+    public Color GetPaintColor()
+    {
+        return paintColor;
+    }
+
+    public void SetPaintColor(Color color)
+    {
+        paintColor = color;
+    }
+
 
     private void Awake()
     {
@@ -52,29 +66,17 @@ public class Painter : MonoBehaviour
         HandlePainting();
     }
 
-
-    public Color GetPaintColor()
-    {
-        return paintColor;
-    }
-
-    public void SetPaintColor(Color color)
-    {
-        paintColor = color;
-    }
-
     // Called every update. Check if you are painting and if you have paint 
+    // also check if you can paint
     // Remove paint from paintRemaining
     private void HandlePainting()
     {
-        if (isPainting)
+        if (isPainting && PainterActive)
         {
             if (paintRemaining >= 0)
             {
                 PaintObject();
                 paintRemaining -= Time.deltaTime;
-
-                //Debug.Log(paintRemaining);
             }
             else
             {
@@ -124,7 +126,7 @@ public class Painter : MonoBehaviour
 
                 Color brushColor = brush.GetPixel((int)(x / brushSize), (int)(y / brushSize));
                 brushColor = Color.Lerp(texture.GetPixel(currentTextureX, currentTextureY), paintColor, brushColor.r);
-
+                //Debug.Log(texture.GetPixel(currentTextureX, currentTextureY));
                 //brushColor = brush.GetPixel((int)(x / brushSize), (int)(y / brushSize));
                 texture.SetPixel(currentTextureX, currentTextureY, brushColor);
             }
