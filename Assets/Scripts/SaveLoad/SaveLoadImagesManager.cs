@@ -18,7 +18,7 @@ public class SaveLoadImagesManager : MonoBehaviour
 {
     String saveImagesPath;     
     private TusInputAction paintAction;
-    public static float texelDensity = 20;
+    public static float texelDensity = 10;
     public static GameObject[] PaintableObjects { get; private set; }
 
 
