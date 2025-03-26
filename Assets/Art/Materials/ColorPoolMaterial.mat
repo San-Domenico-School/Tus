@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: ColorPoolMaterial
-  m_Shader: {fileID: -6465566751694194690, guid: f18836ec60576be43a60c892de088ceb,
+  m_Shader: {fileID: -6465566751694194690, guid: 806b4967d7a79492cb3839535201dabe,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
