@@ -17,6 +17,7 @@ public class SimonPuzzle : MonoBehaviour
     [SerializeField] public float rayMaxDistance = 30f;
     [SerializeField] public GameObject DisplayBlock;
     [SerializeField] public GameObject DoorPart;
+    [SerializeField] public SceneTracker sceneTracker;
     //[SerializeField] private GameObject testBlock;
 
     public Material red;
@@ -184,6 +185,7 @@ public class SimonPuzzle : MonoBehaviour
     {
         objectRenderer.material = winColor;
         puzzleCompleted = true;
+        sceneTracker.UnlockNextScene(0);
 
         doorRenderer.enabled = false;
         doorCollider.enabled = false;

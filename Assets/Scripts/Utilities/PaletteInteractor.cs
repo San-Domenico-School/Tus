@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /**************************************************
  * Attached to: paint brush
@@ -10,19 +11,22 @@ using UnityEngine;
  *************************************************/
 public class PaletteInteractor : MonoBehaviour
 {
-    [SerializeField] GameObject PaintManager;
-    [SerializeField] GameObject RedButton;
+    private Painter paintManager;
 
-    // Start is called before the first frame update
-    void Start()
+    private void OnEnable()
     {
-        
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
     {
-        
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        paintManager = GameObject.FindObjectOfType<Painter>();
+        Debug.Log("Pallete Added");
     }
 
     private void OnTriggerStay(Collider other)
@@ -32,7 +36,7 @@ public class PaletteInteractor : MonoBehaviour
         {
             // TODO make these lines of code not throw an error 
             PaletteController.Instance.addRed();
-            PaintManager.GetComponent<Painter>().SetPaintColor(PaletteController.Instance.GetCurrentColor());
+            paintManager.GetComponent<Painter>().SetPaintColor(PaletteController.Instance.GetCurrentColor());
             //PaintManager.GetComponent<Painter>().SetPaintColor(new Color(1, 1, 1, 1));
 
         }
@@ -40,19 +44,19 @@ public class PaletteInteractor : MonoBehaviour
         if (other.gameObject.CompareTag("BlueButton"))
         {
             PaletteController.Instance.addBlue();
-            PaintManager.GetComponent<Painter>().SetPaintColor(PaletteController.Instance.GetCurrentColor());
+            paintManager.GetComponent<Painter>().SetPaintColor(PaletteController.Instance.GetCurrentColor());
         }
 
         if (other.gameObject.CompareTag("YellowButton"))
         {
             PaletteController.Instance.addYellow();
-            PaintManager.GetComponent<Painter>().SetPaintColor(PaletteController.Instance.GetCurrentColor());
+            paintManager.GetComponent<Painter>().SetPaintColor(PaletteController.Instance.GetCurrentColor());
         }
 
         if (other.gameObject.CompareTag("ResetButton"))
         {
             PaletteController.Instance.resetColors();
-            PaintManager.GetComponent<Painter>().SetPaintColor(PaletteController.Instance.GetCurrentColor());
+            paintManager.GetComponent<Painter>().SetPaintColor(PaletteController.Instance.GetCurrentColor());
         }
     }
 
