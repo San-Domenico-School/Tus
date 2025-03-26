@@ -47,13 +47,13 @@ public class SceneTracker : MonoBehaviour
     // Unlock the next scene after completing the current scene's puzzle.    
     public void UnlockNextScene(int currentSceneIndex)
     {
-        Debug.Log(currentSceneIndex);
+//        Debug.Log(currentSceneIndex);
         if (currentSceneIndex >= 0 && currentSceneIndex < 5)
         {
             int nextSceneIndex = currentSceneIndex + 1;
             sceneAvailable[nextSceneIndex] = true;
 
-            Debug.Log("Scene {nextSceneIndex} is now available!");
+//            Debug.Log("Scene {nextSceneIndex} is now available!");
         }
     }
 

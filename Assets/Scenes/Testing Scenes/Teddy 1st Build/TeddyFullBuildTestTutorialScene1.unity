@@ -749,6 +749,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f29c12b8b91526947bcec735a81de801, type: 3}
+--- !u!1 &1170101279 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7470449889448176824, guid: c0b7f68c46b7c4765980352d818a28d8,
+    type: 3}
+  m_PrefabInstance: {fileID: 2029707077}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1396328877 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 195406834298541427, guid: eb96ecfe2319b8b448fa2563ed3d30c3,
@@ -887,6 +893,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Puzzle (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1812663084447252388, guid: c0b7f68c46b7c4765980352d818a28d8,
+        type: 3}
+      propertyPath: fromObject
+      value: 
+      objectReference: {fileID: 109588309}
+    - target: {fileID: 1812663084447252388, guid: c0b7f68c46b7c4765980352d818a28d8,
+        type: 3}
+      propertyPath: DisplayBlock
+      value: 
+      objectReference: {fileID: 1170101279}
+    - target: {fileID: 1812663084447252388, guid: c0b7f68c46b7c4765980352d818a28d8,
+        type: 3}
+      propertyPath: sceneTracker
+      value: 
+      objectReference: {fileID: 1860408873}
     - target: {fileID: 5272751910356934971, guid: c0b7f68c46b7c4765980352d818a28d8,
         type: 3}
       propertyPath: m_LocalPosition.x

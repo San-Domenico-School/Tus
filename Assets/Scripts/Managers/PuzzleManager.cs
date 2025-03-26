@@ -70,12 +70,12 @@ public class PuzzleManager : MonoBehaviour
             sceneTracker.UnlockNextScene(0);
             isMatched = true;
             door.gameObject.SetActive(false);
-            Debug.Log("DOOR SET DEACTTIVE");
+//            Debug.Log("DOOR SET DEACTTIVE");
             return true;
         }
         else
         {
-            Debug.Log("Not Matched"); //debugging
+//            Debug.Log("Not Matched"); //debugging
             isMatched = false;
             return false;
         }
