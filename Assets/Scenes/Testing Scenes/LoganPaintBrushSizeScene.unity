@@ -14477,6 +14477,18 @@ MonoBehaviour:
   fromObject: {fileID: 1756725882}
   brush: {fileID: 2800000, guid: 7d5c502cfdc6c324983b6535a20f9e33, type: 3}
   brushSize: 0.5
+--- !u!114 &1407503756 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 195406834298541427, guid: eb96ecfe2319b8b448fa2563ed3d30c3,
+    type: 3}
+  m_PrefabInstance: {fileID: 2063983090}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407503754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d3e15533804d421f9e6af368d4f2025, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1409249160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38695,7 +38707,7 @@ PrefabInstance:
         type: 3}
       propertyPath: PaintManager
       value: 
-      objectReference: {fileID: 1407503754}
+      objectReference: {fileID: 1407503756}
     - target: {fileID: 6518320356840822820, guid: 200da0d5814e8c14489e8b3d911079dc,
         type: 3}
       propertyPath: m_Name
@@ -46593,6 +46605,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1554194965659603411, guid: 63b10c9f02e49407a919bac19e5b0e4d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5356823428044703200, guid: 63b10c9f02e49407a919bac19e5b0e4d,
         type: 3}

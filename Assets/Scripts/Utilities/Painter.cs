@@ -22,9 +22,9 @@ public class Painter : MonoBehaviour
 
     [SerializeField] GameObject fromObject;
     [SerializeField] Texture2D brush;
-    [SerializeField] float brushSize = .5f;
     [SerializeField] public Color paintColor = Color.white;
     [SerializeField] float rayMaxDistance = 30f;
+    private float brushSize;
 
     //public float paintRemaining { get; set; } = 50;
     public float paintRemaining = 500;
@@ -43,6 +43,7 @@ public class Painter : MonoBehaviour
     private void Awake()
     {
         paintAction = new TusInputAction();
+        brushSize = PaintSizer.Instance.GetCurrentSize();
 
         if (Instance == null)
         {
@@ -110,7 +111,7 @@ public class Painter : MonoBehaviour
     {
         // UV to pixels 
         uv.x *= texture.width;
-        uv.y *= texture.height;
+            uv.y *= texture.height;
 
         // Calculate brushWidth
         int brushWidth = (int)(brush.width * brushSize);

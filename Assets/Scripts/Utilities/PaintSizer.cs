@@ -65,7 +65,9 @@ public class PaintSizer : MonoBehaviour
 
     public float increaseSize()
     {
-        return ++brushSize;
+        brushSize++;
+        currentSize = brushSize;
+        return currentSize;
     }
 
     public float decreaseSize()
@@ -75,7 +77,8 @@ public class PaintSizer : MonoBehaviour
             brushSize--;
         }
 
-        return brushSize;
+         currentSize = brushSize;
+        return currentSize;
     }
 
     //paints the texture at the UV cordate with diameter of the brushSize and shape of brush 
@@ -88,6 +91,22 @@ public class PaintSizer : MonoBehaviour
         // Calculate brushWidth
         int brushWidth = (int)(brush.width * brushSize);
         int brushHeight = (int)(brush.height * brushSize);
+
+        //paints the paintColor where the r value of the brush is 255
+        for (int x = 0; x < brushWidth; x++)
+        {
+            for (int y = 0; y < brushHeight; y++)
+            {
+                int currentTextureX = (int)(uv.x + x - (brushWidth / 2));
+                int currentTextureY = (int)(uv.y + y - (brushHeight / 2));
+
+                Color brushColor = brush.GetPixel((int)(x / brushSize), (int)(y / brushSize));
+                //brushColor = Color.Lerp(texture.GetPixel(currentTextureX, currentTextureY), paintColor, brushColor.r);
+                //Debug.Log(texture.GetPixel(currentTextureX, currentTextureY));
+                //brushColor = brush.GetPixel((int)(x / brushSize), (int)(y / brushSize));
+                texture.SetPixel(currentTextureX, currentTextureY, brushColor);
+            }
+        }
 
         texture.Apply();
     }

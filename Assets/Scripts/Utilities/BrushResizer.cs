@@ -17,12 +17,14 @@ public class BrushResizer : MonoBehaviour
     {
         if (other.gameObject.CompareTag("BrushSizeUp"))
         {
-            PaintManager.GetComponent<PaintSizer>().SetBrushSize(PaintSizer.Instance.increaseSize());
+            PaintSizer.Instance.increaseSize();
+            PaintManager.GetComponent<PaintSizer>().SetBrushSize(PaintSizer.Instance.GetCurrentSize());
         }
 
         if (other.gameObject.CompareTag("BrushSizeDown"))
         {
-            PaintManager.GetComponent<PaintSizer>().SetBrushSize(PaintSizer.Instance.decreaseSize());
+            PaintSizer.Instance.decreaseSize();
+            PaintManager.GetComponent<PaintSizer>().SetBrushSize(PaintSizer.Instance.GetCurrentSize());
         }
     }
 }
