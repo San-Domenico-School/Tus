@@ -13,11 +13,15 @@ using UnityEngine.InputSystem;
 
 public class SimonPuzzle : MonoBehaviour
 {
-    [SerializeField] public GameObject fromObject;
+    //[SerializeField] public GameObject fromObject;
     [SerializeField] public float rayMaxDistance = 30f;
     [SerializeField] public GameObject DisplayBlock;
     [SerializeField] public GameObject DoorPart;
-    //[SerializeField] private GameObject testBlock;
+    [SerializeField] public GameObject testBlock;
+
+    private SceneTracker sceneTracker = GameObject.Find("SceneManager").GetComponent<SceneTracker>();
+    private GameObject fromObject = GameObject.Find("Right Hand");
+
 
     public Material red;
     public Material blue;
@@ -136,38 +140,38 @@ public class SimonPuzzle : MonoBehaviour
             color = "Black";
         }
 
-        //GameObject markerBlock = Instantiate(testBlock);
+        GameObject markerBlock = Instantiate(testBlock);
 
-        //markerBlock.transform.position = new Vector3(1, 4 + (displayCounter), 1);
-        //markerBlock.transform.localScale = new Vector3(1, 1, 3);
+        markerBlock.transform.position = new Vector3(1, 4 + (displayCounter), 1);
+        markerBlock.transform.localScale = new Vector3(1, 1, 3);
 
         if (color == "Red")
         {
             objectRenderer.material = red;
-            //markerBlock.GetComponent<Renderer>().material = red;
+            markerBlock.GetComponent<Renderer>().material = red;
         }
         else if (color == "Blue")
         {
             objectRenderer.material = blue;
-            //markerBlock.GetComponent<Renderer>().material = blue;
+            markerBlock.GetComponent<Renderer>().material = blue;
         }
         else if (color == "Green")
         {
             objectRenderer.material = green;
-            //markerBlock.GetComponent<Renderer>().material = green;
+            markerBlock.GetComponent<Renderer>().material = green;
         }
         else if (color == "Yellow")
         {
             objectRenderer.material = yellow;
-            //markerBlock.GetComponent<Renderer>().material = yellow;
+            markerBlock.GetComponent<Renderer>().material = yellow;
         }
         else if (color == "Black")
         {
             objectRenderer.material = black;
-            //markerBlock.GetComponent<Renderer>().material = black;
+            markerBlock.GetComponent<Renderer>().material = black;
         }
 
-        //Destroy(markerBlock, 1);
+        Destroy(markerBlock, 1);
 
         displayCounter++;
 
@@ -207,10 +211,10 @@ public class SimonPuzzle : MonoBehaviour
             if (hit.transform == null)
                 return;
 
-            //GameObject markerBlock = Instantiate(testBlock);
+            GameObject markerBlock = Instantiate(testBlock);
 
-            //markerBlock.transform.position = new Vector3(8 + (actionCount), 4, 4);
-            //markerBlock.transform.localScale = new Vector3(1, 1, 1);
+            markerBlock.transform.position = new Vector3(8 + (actionCount), 4, 4);
+            markerBlock.transform.localScale = new Vector3(1, 1, 1);
 
             actionCount += 1;
 
@@ -218,7 +222,7 @@ public class SimonPuzzle : MonoBehaviour
 
             if (hit.transform.gameObject.name == "SimonRed")
             {
-                //markerBlock.GetComponent<Renderer>().material = red;
+                markerBlock.GetComponent<Renderer>().material = red;
 
                 if (gameActions[madeActions.Count] == "Red")
                 {
@@ -231,7 +235,7 @@ public class SimonPuzzle : MonoBehaviour
             }
             else if (hit.transform.gameObject.name == "SimonBlue")
             {
-                //markerBlock.GetComponent<Renderer>().material = blue;
+                markerBlock.GetComponent<Renderer>().material = blue;
 
                 if (gameActions[madeActions.Count] == "Blue")
                 {
@@ -245,7 +249,7 @@ public class SimonPuzzle : MonoBehaviour
             }
             else if (hit.transform.gameObject.name == "SimonGreen")
             {
-                //markerBlock.GetComponent<Renderer>().material = green;
+                markerBlock.GetComponent<Renderer>().material = green;
 
                 if (gameActions[madeActions.Count] == "Green")
                 {
@@ -259,7 +263,7 @@ public class SimonPuzzle : MonoBehaviour
             }
             else if (hit.transform.gameObject.name == "SimonYellow")
             {
-                //markerBlock.GetComponent<Renderer>().material = yellow;
+                markerBlock.GetComponent<Renderer>().material = yellow;
 
                 if (gameActions[madeActions.Count] == "Yellow")
                 {
@@ -276,7 +280,7 @@ public class SimonPuzzle : MonoBehaviour
                 if (runningDisplay == false)
                 {
                     madeActions = new List<string>();
-                    //markerBlock.GetComponent<Renderer>().material = black;
+                    markerBlock.GetComponent<Renderer>().material = black;
 
                     displayCounter = 0;
                     InvokeRepeating("DisplayChallenge", 0, 1);
