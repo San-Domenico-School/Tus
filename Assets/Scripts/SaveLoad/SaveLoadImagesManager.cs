@@ -2,6 +2,8 @@ using System;
 using UnityEngine;
 using System.IO;
 using System.Linq;
+using UnityEngine.SceneManagement;
+
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -18,7 +20,7 @@ public class SaveLoadImagesManager : MonoBehaviour
 {
     String saveImagesPath;     
     private TusInputAction paintAction;
-    public static float texelDensity = 20;
+    public static float texelDensity = 10;
     public static GameObject[] PaintableObjects { get; private set; }
 
 
@@ -59,10 +61,10 @@ public class SaveLoadImagesManager : MonoBehaviour
         foreach (GameObject gameObject in PaintableObjects)
         {
 
-            if (File.Exists(Path.Combine(saveImagesPath, gameObject.name + ".png"))) // Check the game has already saved and the file exists
+            if (File.Exists(Path.Combine(saveImagesPath, GetObjectsImageFileName(gameObject.transform)))) // Check the game has already saved and the file exists
             {
                 // Load the images for disk
-                byte[] imageData = File.ReadAllBytes(Path.Combine(saveImagesPath, gameObject.name + ".png"));
+                byte[] imageData = File.ReadAllBytes(Path.Combine(saveImagesPath, GetObjectsImageFileName(gameObject.transform)));
 
                 // Converts to a Texture2D
                 Texture2D objectTexture = new Texture2D(2,2);
@@ -70,7 +72,7 @@ public class SaveLoadImagesManager : MonoBehaviour
 
                 // Sets the the loaded texture to the object's texture
                 gameObject.GetComponent<Renderer>().material.mainTexture = objectTexture;
-                //Debug.Log(Path.Combine(saveImagesPath, gameObject.name + ".png"));
+                //Debug.Log(Path.Combine(saveImagesPath, GetObjectsImageFileName(gameObject)));
 
             } 
             else // The texture does not exist 
@@ -136,7 +138,7 @@ public class SaveLoadImagesManager : MonoBehaviour
             
             // Saves the images to disk 
             Texture2D image = (Texture2D) gameObject.GetComponent<Renderer>().sharedMaterial.mainTexture;
-            File.WriteAllBytes(Path.Combine(saveImagesPath, gameObject.name + ".png"), image.EncodeToPNG());
+            File.WriteAllBytes(Path.Combine(saveImagesPath, GetObjectsImageFileName(gameObject.transform)), image.EncodeToPNG());
         }
     }
 
@@ -160,6 +162,7 @@ public class SaveLoadImagesManager : MonoBehaviour
         {
             gameObject.GetComponent<Renderer>().sharedMaterial.mainTexture = ObjectStatisticsUtility.CreateObjectTexture(gameObject, texelDensity);
         }
+        SaveImages();
     }
 
 
@@ -174,6 +177,21 @@ public class SaveLoadImagesManager : MonoBehaviour
             gameObject.GetComponent<PaintableObject>().uvRatio = ObjectStatisticsUtility.CalculateObjectUVAreaRatio(gameObject);
 
         }
+    }
+
+    private string GetObjectsImageFileName(Transform transform)
+    {
+        string name = SceneManager.GetActiveScene().name;
+
+        while (transform != null)
+        {
+            name += transform.name; 
+            transform = transform.parent;
+        }
+        name += ".png";
+        Debug.Log(Path.Combine(saveImagesPath, name));
+
+        return name;
     }
 
 }

@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
+using Unity.VisualScripting;
 using UnityEngine;
 
 /**************************************************
@@ -30,7 +32,10 @@ public static class ObjectStatisticsUtility
         float uvRatio = GetOrCalculateObjectUVAreaRatio(gameObject);
         float objectArea = GetOrCalculateObjectArea(gameObject);
 
-        return CreateObjectTexture(uvRatio, objectArea, targetTexelDensity);
+        Texture2D objectTexture = CreateObjectTexture(uvRatio, objectArea, targetTexelDensity);
+        gameObject.GetComponent<PaintableObject>().textureSize = objectTexture.width;
+
+        return objectTexture;
 
     }
     public static Texture2D CreateObjectTexture(Mesh mesh, float targetTexelDensity)
