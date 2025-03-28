@@ -1,5 +1,7 @@
 using System;
 using UnityEngine;
+using UnityEngine.Rendering;
+using Unity.Collections;
 using System.IO;
 using System.Linq;
 using UnityEngine.SceneManagement;
@@ -131,15 +133,48 @@ public class SaveLoadImagesManager : MonoBehaviour
     private void SaveImages()
     {
         // Goes over all objects in paintableObjects
-        foreach (GameObject gameObject in PaintableObjects)
+        if (PaintableObjects != null)
         {
-            if (!ObjectStatisticsUtility.HasMainTexture(gameObject))
-                return;
-            
-            // Saves the images to disk 
-            Texture2D image = (Texture2D) gameObject.GetComponent<Renderer>().sharedMaterial.mainTexture;
-            File.WriteAllBytes(Path.Combine(saveImagesPath, GetObjectsImageFileName(gameObject.transform)), image.EncodeToPNG());
+            foreach (GameObject gameObject in PaintableObjects)
+            {
+                if (!ObjectStatisticsUtility.HasMainTexture(gameObject))
+                    return;
+
+                // Saves the images to disk 
+                Texture2D image = (Texture2D)gameObject.GetComponent<Renderer>().sharedMaterial.mainTexture;
+                //File.WriteAllBytes(Path.Combine(saveImagesPath, GetObjectsImageFileName(gameObject.transform)), image.EncodeToPNG());
+                SaveTextureToFile(image, Path.Combine(saveImagesPath, GetObjectsImageFileName(gameObject.transform)));
+            }
         }
+    }
+
+    static public void SaveTextureToFile(Texture source, string filePath)
+    {
+        // check that the input we're getting is something we can handle:
+        if (!(source is Texture2D || source is RenderTexture))
+        {
+            return;
+        }
+
+        // create a native array to receive data from the GPU:
+        var narray = new NativeArray<byte>(source.width * source.height * 4, Allocator.Persistent, NativeArrayOptions.UninitializedMemory);
+
+        // request the texture data back from the GPU:
+        var request = AsyncGPUReadback.RequestIntoNativeArray(ref narray, source, 0, (AsyncGPUReadbackRequest request) =>
+        {
+            // if the readback was successful, encode and write the results to disk
+            if (!request.hasError)
+            {
+                NativeArray<byte> encoded;
+
+                encoded = ImageConversion.EncodeNativeArrayToPNG(narray, source.graphicsFormat, (uint)source.width, (uint)source.height);
+
+                File.WriteAllBytes(filePath, encoded.ToArray());
+                encoded.Dispose();
+            }
+
+            narray.Dispose();
+        });
     }
 
     // Gets all active GameObject that have Renderer component 
@@ -155,7 +190,7 @@ public class SaveLoadImagesManager : MonoBehaviour
         return gameObjects;
     }
 
-    // This does not need explication 
+    // This does not need explanation
     public void CreateNewBlankTexture()
     {
         foreach (GameObject gameObject in PaintableObjects)
@@ -166,7 +201,7 @@ public class SaveLoadImagesManager : MonoBehaviour
     }
 
 
-    public void SetPaintAbleObjectFields(GameObject[] gameObjects)
+    public void SetPaintableObjectFields(GameObject[] gameObjects)
     {
         foreach (GameObject gameObject in gameObjects)
         {
@@ -209,7 +244,7 @@ class SerializedSaveLoadImagesManager : Editor
         {
             GameObject[] gameObjects = SLIM.AddToArrayAllPaintableObjects();
 
-            SLIM.SetPaintAbleObjectFields(gameObjects);
+            SLIM.SetPaintableObjectFields(gameObjects);
         }
 
         if (GUILayout.Button("Reset Textures"))
