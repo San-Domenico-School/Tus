@@ -15,10 +15,10 @@ public class SceneTracker : MonoBehaviour
      *************************/
 
     public static SceneTracker Instance;
-    [SerializeField] private GameObject testBox;
+    //[SerializeField] private GameObject testBox;
 
     // Array to track available scenes
-    private bool[] sceneAvailable = new bool[6] { true, false, false, false, false, true };
+    public bool[] sceneAvailable = new bool[6] { true, false, false, false, false, true };
 
     private void Awake()
     {
@@ -40,13 +40,14 @@ public class SceneTracker : MonoBehaviour
     // This is just to test the trigger in VR by change box color
     public void TestBox(Color color)
     {
-        Debug.Log(testBox.GetComponent<Renderer>().material.color);
-        testBox.GetComponent<Renderer>().material.color = Color.black;
+        //Debug.Log(testBox.GetComponent<Renderer>().material.color);
+       //testBox.GetComponent<Renderer>().material.color = Color.black;
     }
 
     // Unlock the next scene after completing the current scene's puzzle.    
     public void UnlockNextScene(int currentSceneIndex)
     {
+        Debug.Log(currentSceneIndex);
         if (currentSceneIndex >= 0 && currentSceneIndex < 5)
         {
             int nextSceneIndex = currentSceneIndex + 1;
@@ -75,7 +76,7 @@ public class SceneTracker : MonoBehaviour
     }
 
     // Loads a scene and moves the player to the correct spawn position.
-    private void LoadScene(int sceneIndex)
+    public void LoadScene(int sceneIndex)
     {
         // Use test box to as debug statement
         TestBox(Color.yellow);
