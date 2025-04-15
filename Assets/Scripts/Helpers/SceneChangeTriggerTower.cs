@@ -4,7 +4,6 @@ using UnityEngine;
 //Tuan Le
 //1/28/2025
 //Different Door Triggers
-//on empty collider
 public class SceneChangeTriggerTower : MonoBehaviour
 {
 
@@ -22,15 +21,12 @@ public class SceneChangeTriggerTower : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
-        //Debug.Log("It wurkkignn gg!!!!");
         // Check if the player triggered the zone
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.CompareTag("Player"))
         {
             sceneTracker.LoadScene(sceneNum); // Call the ChangeScene method in SceneTracker
-            
-            
         }
     }
 }

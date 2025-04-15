@@ -13,7 +13,7 @@ public class PuzzleManager : MonoBehaviour
 {
     private GameObject referenceBlock;
     private GameObject playerBlock;
-    private float accuracyThreshold = 0.99f;  //0.20f = 80% accuracy required to complete the puzzle
+    private float accuracyThreshold = 0.30f;  //0.20f = 80% accuracy required to complete the puzzle
     public bool isMatched = false;  //holds the result of the color comparison
     [SerializeField] private SceneTracker sceneTracker;
     [SerializeField] private GameObject door;

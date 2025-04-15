@@ -86,7 +86,7 @@ public class PlayerMoveController : MonoBehaviour
 
         Vector3 worldMoveDirection = (forward * moveInput.y + right * moveInput.x);
 
-        if (true)//(IsGrounded())
+        if (IsGrounded())
         {
             Vector3 moveVector = new Vector3(moveInput.x, 0, moveInput.y);
 
@@ -116,7 +116,7 @@ public class PlayerMoveController : MonoBehaviour
 
     bool IsGrounded()
     {
-        return Physics.Raycast(GetComponent<Transform>().position, -Vector3.up, distToGround + 0.5f);
+        return Physics.Raycast(GetComponent<Transform>().position, -Vector3.up, distToGround + 0.1f);
     }
 
 
