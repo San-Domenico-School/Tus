@@ -19,7 +19,7 @@ public class PaintSizer : MonoBehaviour
 
     [SerializeField] GameObject fromObject;
     [SerializeField] Texture2D brush;
-    [SerializeField] float brushSize = .5f;
+    public static float brushSize = .5f;
 
     private float currentSize;
 
