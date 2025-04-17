@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using System.IO;
 using System.Linq;
-using UnityEngine.SceneManagement;
+using UnityEngine.Rendering;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -18,9 +18,8 @@ using UnityEditor;
 [ExecuteInEditMode]
 public class SaveLoadImagesManager : MonoBehaviour
 {
-    String saveImagesPath;     
     private TusInputAction paintAction;
-    public static float texelDensity = 10;
+    public static float texelDensity = 20;
     public static GameObject[] PaintableObjects { get; private set; }
 
 
@@ -37,10 +36,7 @@ public class SaveLoadImagesManager : MonoBehaviour
 
         //CreateNewBlankTexture();
 
-        saveImagesPath = Application.persistentDataPath;// use when building for Quest
         //saveImagesPath = "C:/Users/happy/OneDrive/Documents/School Projects/Tus/Unity/Tus/Assets/Scripts/SaveLoad/TestSave"; // use when testing with pc on Seamus computer 
-
-        
         
         if (Application.isPlaying)
         {
@@ -50,21 +46,27 @@ public class SaveLoadImagesManager : MonoBehaviour
 
     private void OnDestroy() 
     {
-        SaveImages();
+        if (Application.isPlaying)
+        {
+            SaveImages();
+        }
     }
 
 
     // Load all the images from drive onto the paintableObjects 
     private void LoadImages()
     {
-        // Goes over all objects in PaintableObjects
+        if (PaintableObjects == null)
+        {
+            AddToArrayAllPaintableObjects();
+        }
+
         foreach (GameObject gameObject in PaintableObjects)
         {
-
-            if (File.Exists(Path.Combine(saveImagesPath, GetObjectsImageFileName(gameObject.transform)))) // Check the game has already saved and the file exists
+            if (File.Exists(GetImageFilePath(gameObject))) // Check the game has already saved and the file exists
             {
                 // Load the images for disk
-                byte[] imageData = File.ReadAllBytes(Path.Combine(saveImagesPath, GetObjectsImageFileName(gameObject.transform)));
+                byte[] imageData = File.ReadAllBytes(GetImageFilePath(gameObject));
 
                 // Converts to a Texture2D
                 Texture2D objectTexture = new Texture2D(2,2);
@@ -72,18 +74,15 @@ public class SaveLoadImagesManager : MonoBehaviour
 
                 // Sets the the loaded texture to the object's texture
                 gameObject.GetComponent<Renderer>().material.mainTexture = objectTexture;
-                //Debug.Log(Path.Combine(saveImagesPath, GetObjectsImageFileName(gameObject)));
-
             } 
             else // The texture does not exist 
             {
-                if (!ObjectStatisticsUtility.HasRender(gameObject))
-                    return;
-                
                 // Creates a new texture
                 gameObject.GetComponent<Renderer>().material.mainTexture = ObjectStatisticsUtility.CreateObjectTexture(gameObject, texelDensity);
+                
             }
         }
+        SaveImages();
     }
     
 
@@ -128,17 +127,15 @@ public class SaveLoadImagesManager : MonoBehaviour
 
     // TODO make async https://discussions.unity.com/t/save-rendertexture-or-texture2d-as-image-file-utility/891718/14 
     // Saves all the images on game object that can be painted (in array of object gotten from PrepareWorld)
+    
     private void SaveImages()
     {
         // Goes over all objects in paintableObjects
         foreach (GameObject gameObject in PaintableObjects)
         {
-            if (!ObjectStatisticsUtility.HasMainTexture(gameObject))
-                return;
-            
             // Saves the images to disk 
             Texture2D image = (Texture2D) gameObject.GetComponent<Renderer>().sharedMaterial.mainTexture;
-            File.WriteAllBytes(Path.Combine(saveImagesPath, GetObjectsImageFileName(gameObject.transform)), image.EncodeToPNG());
+            File.WriteAllBytes(GetImageFilePath(gameObject), image.EncodeToPNG());
         }
     }
 
@@ -155,14 +152,13 @@ public class SaveLoadImagesManager : MonoBehaviour
         return gameObjects;
     }
 
-    // This does not need explication 
     public void CreateNewBlankTexture()
     {
+        
         foreach (GameObject gameObject in PaintableObjects)
         {
             gameObject.GetComponent<Renderer>().sharedMaterial.mainTexture = ObjectStatisticsUtility.CreateObjectTexture(gameObject, texelDensity);
         }
-        SaveImages();
     }
 
 
@@ -179,19 +175,21 @@ public class SaveLoadImagesManager : MonoBehaviour
         }
     }
 
-    private string GetObjectsImageFileName(Transform transform)
+    public string GetImageFilePath(GameObject gameObject)
     {
-        string name = SceneManager.GetActiveScene().name;
+        string id = "";
 
-        while (transform != null)
+        Transform activeParent = gameObject.transform; 
+        int i = 0; // probably don't need a max iterations   
+        while (activeParent != null && i < 10)
         {
-            name += transform.name; 
-            transform = transform.parent;
+            id += activeParent.name;
+            activeParent = activeParent.parent;
+            i++;
         }
-        name += ".png";
-        Debug.Log(Path.Combine(saveImagesPath, name));
 
-        return name;
+        string path = Path.Combine(Application.persistentDataPath, id + ".png");
+        return path;
     }
 
 }

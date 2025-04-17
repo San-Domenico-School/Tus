@@ -13,12 +13,16 @@ using UnityEngine.InputSystem;
 
 public class SimonPuzzle : MonoBehaviour
 {
-    [SerializeField] public GameObject fromObject;
+    //[SerializeField] public GameObject fromObject;
     [SerializeField] public float rayMaxDistance = 30f;
     [SerializeField] public GameObject DisplayBlock;
     [SerializeField] public GameObject DoorPart;
-    [SerializeField] public SceneTracker sceneTracker;
-    //[SerializeField] private GameObject testBlock;
+    [SerializeField] public GameObject testBlock;
+    //[SerializeField] public GameObject fromObject;
+
+    private SceneTracker sceneTracker;
+    private GameObject fromObject;
+
 
     public Material red;
     public Material blue;
@@ -64,7 +68,7 @@ public class SimonPuzzle : MonoBehaviour
         objectRenderer = DisplayBlock.GetComponent<Renderer>();
         doorRenderer = DoorPart.GetComponent<MeshRenderer>();
         doorCollider = DoorPart.GetComponent<Collider>();
-    }
+}
 
     private void CreateSimonOrder()
     {
@@ -93,7 +97,8 @@ public class SimonPuzzle : MonoBehaviour
 
     void Start()
     {
-        
+        fromObject = GameObject.Find("Right Hand");
+        sceneTracker = GameObject.Find("SceneManager").GetComponent<SceneTracker>();
     }
 
     // Update is called once per frame
@@ -155,12 +160,12 @@ public class SimonPuzzle : MonoBehaviour
         else if (color == "Green")
         {
             objectRenderer.material = green;
-            //markerBlock.GetComponent<Renderer>().material = green;
+           // markerBlock.GetComponent<Renderer>().material = green;
         }
         else if (color == "Yellow")
         {
             objectRenderer.material = yellow;
-            //markerBlock.GetComponent<Renderer>().material = yellow;
+           // markerBlock.GetComponent<Renderer>().material = yellow;
         }
         else if (color == "Black")
         {
@@ -185,7 +190,6 @@ public class SimonPuzzle : MonoBehaviour
     {
         objectRenderer.material = winColor;
         puzzleCompleted = true;
-        sceneTracker.UnlockNextScene(0);
 
         doorRenderer.enabled = false;
         doorCollider.enabled = false;
@@ -211,8 +215,8 @@ public class SimonPuzzle : MonoBehaviour
 
             //GameObject markerBlock = Instantiate(testBlock);
 
-            //markerBlock.transform.position = new Vector3(8 + (actionCount), 4, 4);
-            //markerBlock.transform.localScale = new Vector3(1, 1, 1);
+            //markerBlock.transform.position = new Vector3(8 + (actionCount), 4+actionCount, 4);
+           // markerBlock.transform.localScale = new Vector3(1, 1, 1);
 
             actionCount += 1;
 

@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
 
 /**************************************************
  * Attached to: Paint Palette
@@ -14,8 +13,6 @@ using UnityEngine.SceneManagement;
 public class PaletteController : MonoBehaviour
 {
     public static PaletteController Instance;
-
-    [SerializeField] Camera camera;
 
     private GameObject selectedColorDisplay;
     private GameObject redButton;
@@ -48,17 +45,8 @@ public class PaletteController : MonoBehaviour
     }
 
 
-    private void OnEnable()
-    {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-
-    private void OnDisable()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
-
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    // Start is called before the first frame update
+    void Start()
     {
         selectedColorDisplay = transform.Find("SelectedColor").gameObject;
         redButton = transform.Find("Red").gameObject;
@@ -151,9 +139,9 @@ public class PaletteController : MonoBehaviour
         float yellow = (float)yellows / mixedColors * 255.0f;
         float blue = (float)blues / mixedColors * 255.0f;
 
-//        Debug.Log(red);
-//        Debug.Log(yellow);
-//        Debug.Log(blue);
+        // Debug.Log(red);
+        // Debug.Log(yellow);
+        // Debug.Log(blue);
 
         currentColor = ConvertRYBtoUnityColor(red, yellow, blue);
 
@@ -203,9 +191,14 @@ public class PaletteController : MonoBehaviour
         g += w;
         b += w;
 
-        // scale for color saturation
-        float scale = 255.0f / Mathf.Max(r, g, b);
+        // normalize values to the range 0..1
+        r /= 255.0f;
+        g /= 255.0f;
+        b /= 255.0f;
 
-        return new Color(r / 255.0f * scale, g / 255.0f * scale, b / 255.0f * scale);
+        // scale for color saturation
+        float scale = 1.0f / Mathf.Max(r, g, b);
+
+        return new Color(r * scale, g * scale, b * scale);
     }
 }
