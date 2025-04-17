@@ -15,13 +15,13 @@ public class PaintSizer : MonoBehaviour
 
     public static PaintSizer Instance;
     private TusInputAction paintAction;
-    private bool isPainting;
+    
 
     [SerializeField] GameObject fromObject;
     [SerializeField] Texture2D brush;
-    public static float brushSize = .5f;
+    public static float brushSize = 0.5f;
 
-    private float currentSize;
+    private float currentSize = brushSize;
 
     private void Awake()
     {
@@ -35,13 +35,6 @@ public class PaintSizer : MonoBehaviour
         {
             Destroy(this);
         }
-    }
-
-    private void OnEnable()
-    {
-        paintAction.Enable();
-        paintAction.DominantArm_RightHanded.Paint.performed += ctx => isPainting = true;
-        paintAction.DominantArm_RightHanded.Paint.canceled += ctx => isPainting = false;
     }
 
     private void Update()
