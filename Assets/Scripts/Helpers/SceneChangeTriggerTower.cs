@@ -29,8 +29,7 @@ public class SceneChangeTriggerTower : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             sceneTracker.LoadScene(sceneNum); // Call the ChangeScene method in SceneTracker
-            
-            
+            Debug.Log("load scene called");
         }
     }
 }

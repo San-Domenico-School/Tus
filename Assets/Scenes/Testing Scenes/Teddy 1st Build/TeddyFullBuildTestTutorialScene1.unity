@@ -428,17 +428,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: a287d01a4ba63444fa71edf57795794f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5
+      value: -2.98
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a287d01a4ba63444fa71edf57795794f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.3
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a287d01a4ba63444fa71edf57795794f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 18.7
+      value: 21.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a287d01a4ba63444fa71edf57795794f,
         type: 3}
@@ -983,7 +983,7 @@ Transform:
   m_GameObject: {fileID: 699511636}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 30.09, y: 0.57, z: 38.42}
+  m_LocalPosition: {x: 30.09, y: 0.57, z: 45.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2000,8 +2000,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81abb5ff8ffaa4b03ac2c8d5e6a1c457, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testBox: {fileID: 699511636}
-  sceneAvailable: 010000000001
+  sceneAvailable: 010000000101
 --- !u!4 &1860408874
 Transform:
   m_ObjectHideFlags: 0
