@@ -19,7 +19,7 @@ public class Painter : MonoBehaviour
     private GameObject fromObject;
 
     [SerializeField] Texture2D brush;
-    [SerializeField] float brushSize = .5f;
+    [SerializeField] public static float brushSize = 0.5f;
     [SerializeField] public Color paintColor = Color.white;
     [SerializeField] float rayMaxDistance = 30f;
 
