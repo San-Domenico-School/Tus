@@ -93,8 +93,8 @@ public class TeddySimonVersion : MonoBehaviour
 
     void Start()
     {
-        sceneTracker = GameObject.Find("SceneManager").GetComponent<SceneTracker>();
-        fromObject = GameObject.Find("Left Hand");
+        sceneTracker = GameObject.FindWithTag("SceneManager").GetComponent<SceneTracker>();
+        fromObject = GameObject.FindWithTag("Hand");
     }
 
     // Update is called once per frame

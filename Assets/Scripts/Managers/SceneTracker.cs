@@ -15,10 +15,10 @@ public class SceneTracker : MonoBehaviour
      *************************/
 
     public static SceneTracker Instance;
-   //[SerializeField] private GameObject testBox;
+    //[SerializeField] private GameObject testBox;
 
     // Array to track available scenes
-    public bool[] sceneAvailable = new bool[6] { true, false, false, false, true, true };
+    public bool[] sceneAvailable = new bool[6] { true, false, false, false, false, true };
 
     private void Awake()
     {
@@ -41,12 +41,13 @@ public class SceneTracker : MonoBehaviour
     public void TestBox(Color color)
     {
         //Debug.Log(testBox.GetComponent<Renderer>().material.color);
-        //testBox.GetComponent<Renderer>().material.color = Color.black;
+       //testBox.GetComponent<Renderer>().material.color = Color.black;
     }
 
     // Unlock the next scene after completing the current scene's puzzle.    
     public void UnlockNextScene(int currentSceneIndex)
     {
+        Debug.Log(currentSceneIndex);
         if (currentSceneIndex >= 0 && currentSceneIndex < 5)
         {
             int nextSceneIndex = currentSceneIndex + 1;

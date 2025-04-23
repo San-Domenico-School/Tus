@@ -7,6 +7,7 @@ using UnityEngine;
 /// it will be responsible for managing the puzzle, its blocks, and the player's progress
 /// Teddy Fleitas
 /// December 21, 2024
+/// most recent update as of 4/23/25
 /// </summary>
 
 public class PuzzleManager : MonoBehaviour

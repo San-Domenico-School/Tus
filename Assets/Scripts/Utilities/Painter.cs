@@ -1,13 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 /**************************************************
  * Attached to: paint manager 
  * Purpose: shoot a ray out and paint the world at its location
- * Author: Seamus
- * Version: 1.1
+ * Author: Seamus/Teddy
+ * Version: 1.2
  *************************************************/
 
 public class Painter : MonoBehaviour
@@ -16,25 +16,15 @@ public class Painter : MonoBehaviour
     public static Painter Instance;
     private TusInputAction paintAction;
     private bool isPainting;
+    private GameObject fromObject;
 
-    [SerializeField] GameObject fromObject;
     [SerializeField] Texture2D brush;
-    [SerializeField] float brushSize = .5f;
+    [SerializeField] public static float brushSize = 0.5f;
     [SerializeField] public Color paintColor = Color.white;
     [SerializeField] float rayMaxDistance = 30f;
 
     //public float paintRemaining { get; set; } = 50;
     public float paintRemaining = 500;
-
-    public Color GetPaintColor()
-    {
-        return paintColor;
-    }
-
-    public void SetPaintColor(Color color)
-    {
-        paintColor = color;
-    }
 
 
     private void Awake()
@@ -49,8 +39,6 @@ public class Painter : MonoBehaviour
         {
             Destroy(this);
         }
-
-        fromObject = GameObject.Find("Right Hand");
     }
 
     private void OnEnable()
@@ -58,11 +46,22 @@ public class Painter : MonoBehaviour
         paintAction.Enable();
         paintAction.DominantArm_RightHanded.Paint.performed += ctx => isPainting = true; 
         paintAction.DominantArm_RightHanded.Paint.canceled += ctx => isPainting = false;
+        fromObject = GameObject.Find("Right hand");
     }
 
     private void Update()
-    { 
+    {
         HandlePainting();
+    }
+
+
+    public Color GetPaintColor()
+    {
+        return paintColor;
+    }
+    public void SetPaintColor(Color color)
+    {
+        paintColor = color;
     }
 
     // Called every update. Check if you are painting and if you have paint 
@@ -75,13 +74,14 @@ public class Painter : MonoBehaviour
             {
                 PaintObject();
                 paintRemaining -= Time.deltaTime;
+
+                //Debug.Log(paintRemaining);
             }
             else
             {
                 Debug.Log("PAINT RAN OUT!!!");
             }
         }
-
     }
 
     // Shoot a ray where the paint will be
@@ -99,8 +99,6 @@ public class Painter : MonoBehaviour
         Texture2D texture = ObjectStatisticsUtility.GetOrCreateObjectsTexture(hit.transform.gameObject, SaveLoadImagesManager.texelDensity);
 
         PaintTexture(hit.textureCoord, texture);
-
-        hit.transform.gameObject.GetComponent<PaintableObject>().lastPaintedColor = paintColor;
     }
 
     //paints the texture at the UV cordate with diameter of the brushSize and shape of brush 
@@ -124,12 +122,28 @@ public class Painter : MonoBehaviour
 
                 Color brushColor = brush.GetPixel((int)(x / brushSize), (int)(y / brushSize));
                 brushColor = Color.Lerp(texture.GetPixel(currentTextureX, currentTextureY), paintColor, brushColor.r);
-                //Debug.Log(texture.GetPixel(currentTextureX, currentTextureY));
+
                 //brushColor = brush.GetPixel((int)(x / brushSize), (int)(y / brushSize));
                 texture.SetPixel(currentTextureX, currentTextureY, brushColor);
             }
         }
 
         texture.Apply();
+    }
+
+    private void OnSceneLoaded()
+    {
+        // Find the GameObject called "Right Hand" in the scene
+        GameObject rightHand = GameObject.Find("Right Hand");
+
+        if (rightHand != null)
+        {
+            // Assign it to the 'fromObject' field
+            fromObject = rightHand;
+        }
+        else
+        {
+            Debug.Log("Right Hand not found in the scene.");
+        }
     }
 }
