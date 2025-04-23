@@ -99,6 +99,8 @@ public class Painter : MonoBehaviour
         Texture2D texture = ObjectStatisticsUtility.GetOrCreateObjectsTexture(hit.transform.gameObject, SaveLoadImagesManager.texelDensity);
 
         PaintTexture(hit.textureCoord, texture);
+
+        hit.transform.gameObject.GetComponent<PaintableObject>().lastPaintedColor = paintColor;
     }
 
     //paints the texture at the UV cordate with diameter of the brushSize and shape of brush 
