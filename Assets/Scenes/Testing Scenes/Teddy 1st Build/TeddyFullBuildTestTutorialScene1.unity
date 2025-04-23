@@ -390,6 +390,7 @@ MonoBehaviour:
   surfaceArea: 601.0619
   uvRatio: 0.9536034
   textureSize: -1
+  paintRT: {fileID: 0}
 --- !u!64 &284541016
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -427,6 +428,7 @@ MonoBehaviour:
   surfaceArea: 821.45886
   uvRatio: 0.88617504
   textureSize: -1
+  paintRT: {fileID: 0}
 --- !u!64 &327390648
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -464,6 +466,7 @@ MonoBehaviour:
   surfaceArea: 120.09804
   uvRatio: 0.6723838
   textureSize: -1
+  paintRT: {fileID: 0}
 --- !u!64 &345383746
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1191,6 +1194,7 @@ MonoBehaviour:
   surfaceArea: 675.31946
   uvRatio: 0.7285224
   textureSize: -1
+  paintRT: {fileID: 0}
 --- !u!64 &347263996
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1228,6 +1232,7 @@ MonoBehaviour:
   surfaceArea: 0.32956955
   uvRatio: 0.43047744
   textureSize: -1
+  paintRT: {fileID: 0}
 --- !u!64 &347263998
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1265,6 +1270,7 @@ MonoBehaviour:
   surfaceArea: 9.7354145
   uvRatio: 0.79068345
   textureSize: -1
+  paintRT: {fileID: 0}
 --- !u!64 &347264000
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1302,6 +1308,7 @@ MonoBehaviour:
   surfaceArea: 675.31934
   uvRatio: 0.7285226
   textureSize: -1
+  paintRT: {fileID: 0}
 --- !u!64 &409913157
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1347,6 +1354,11 @@ PrefabInstance:
       propertyPath: paintRemaining
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 195406834298541427, guid: eb96ecfe2319b8b448fa2563ed3d30c3,
+        type: 3}
+      propertyPath: paintBlitMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 9d78b66c9531d4f86bbd77bbc8c904fd, type: 2}
     - target: {fileID: 5605939253535904705, guid: eb96ecfe2319b8b448fa2563ed3d30c3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1422,6 +1434,7 @@ MonoBehaviour:
   surfaceArea: 821.4591
   uvRatio: 0.8861755
   textureSize: -1
+  paintRT: {fileID: 0}
 --- !u!64 &661807926
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1564,6 +1577,7 @@ MonoBehaviour:
   surfaceArea: 601.0615
   uvRatio: 0.9536035
   textureSize: -1
+  paintRT: {fileID: 0}
 --- !u!64 &714046057
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1601,6 +1615,7 @@ MonoBehaviour:
   surfaceArea: 601.06165
   uvRatio: 0.95360357
   textureSize: -1
+  paintRT: {fileID: 0}
 --- !u!64 &845723166
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1638,6 +1653,7 @@ MonoBehaviour:
   surfaceArea: 396.11713
   uvRatio: 0.53612894
   textureSize: -1
+  paintRT: {fileID: 0}
 --- !u!64 &853023352
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1675,6 +1691,7 @@ MonoBehaviour:
   surfaceArea: 601.0617
   uvRatio: 0.9536035
   textureSize: -1
+  paintRT: {fileID: 0}
 --- !u!64 &929899755
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1712,6 +1729,7 @@ MonoBehaviour:
   surfaceArea: 675.31934
   uvRatio: 0.72852224
   textureSize: -1
+  paintRT: {fileID: 0}
 --- !u!64 &964250604
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1749,6 +1767,7 @@ MonoBehaviour:
   surfaceArea: 675.31934
   uvRatio: 0.72852236
   textureSize: -1
+  paintRT: {fileID: 0}
 --- !u!64 &1036481316
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1786,6 +1805,7 @@ MonoBehaviour:
   surfaceArea: 601.0618
   uvRatio: 0.9536036
   textureSize: -1
+  paintRT: {fileID: 0}
 --- !u!64 &1086497861
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2009,6 +2029,7 @@ MonoBehaviour:
   surfaceArea: 601.06177
   uvRatio: 0.9536033
   textureSize: -1
+  paintRT: {fileID: 0}
 --- !u!64 &1170978435
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2046,6 +2067,7 @@ MonoBehaviour:
   surfaceArea: 601.06177
   uvRatio: 0.95360345
   textureSize: -1
+  paintRT: {fileID: 0}
 --- !u!64 &1206233552
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2095,6 +2117,7 @@ MonoBehaviour:
   surfaceArea: 172.44275
   uvRatio: 0.56880784
   textureSize: -1
+  paintRT: {fileID: 0}
 --- !u!64 &1445948841
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2132,6 +2155,7 @@ MonoBehaviour:
   surfaceArea: 601.06177
   uvRatio: 0.95360357
   textureSize: -1
+  paintRT: {fileID: 0}
 --- !u!64 &1479133775
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2237,6 +2261,7 @@ MonoBehaviour:
   surfaceArea: 794.90607
   uvRatio: 0.8575304
   textureSize: -1
+  paintRT: {fileID: 0}
 --- !u!64 &1718589447
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2274,6 +2299,7 @@ MonoBehaviour:
   surfaceArea: 601.06177
   uvRatio: 0.95360345
   textureSize: -1
+  paintRT: {fileID: 0}
 --- !u!64 &1725980261
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2311,6 +2337,7 @@ MonoBehaviour:
   surfaceArea: 794.906
   uvRatio: 0.85753036
   textureSize: -1
+  paintRT: {fileID: 0}
 --- !u!64 &1807482828
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2348,6 +2375,7 @@ MonoBehaviour:
   surfaceArea: 675.3193
   uvRatio: 0.72852254
   textureSize: -1
+  paintRT: {fileID: 0}
 --- !u!64 &1825317555
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2430,6 +2458,7 @@ MonoBehaviour:
   surfaceArea: 8.433599
   uvRatio: 0.75744784
   textureSize: -1
+  paintRT: {fileID: 0}
 --- !u!64 &2078346892
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2467,6 +2496,7 @@ MonoBehaviour:
   surfaceArea: 675.3196
   uvRatio: 0.7285224
   textureSize: -1
+  paintRT: {fileID: 0}
 --- !u!64 &2100896869
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2726,6 +2756,7 @@ MonoBehaviour:
   surfaceArea: 5.999999
   uvRatio: 0.5933306
   textureSize: -1
+  paintRT: {fileID: 0}
 --- !u!64 &8277738429697844230
 MeshCollider:
   m_ObjectHideFlags: 0
