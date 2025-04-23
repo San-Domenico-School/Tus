@@ -4,7 +4,7 @@ Shader "Unlit/PaintShader"
         _MainTex ("Previous", 2D) = "white" {}
         _PaintUV ("Paint UV", Vector) = (0,0,0,0)
         _Radius ("Radius", Float) = 0.05
-        _PaintColor ("Paint Color", Color) = (1,0,0,1)
+        _PaintColor ("Paint Color", Color) = (1,1,0,1)
     }
     SubShader {
         Tags { "RenderType"="Opaque" }
@@ -24,7 +24,7 @@ Shader "Unlit/PaintShader"
             float4 frag(v2f_img i) : SV_Target {
                 float2 uv = i.uv;
                 float dist = distance(uv, _PaintUV.xy);
-                float mask = smoothstep(_Radius, _Radius * 0.8, dist);
+                float mask = smoothstep(_Radius * 0.8, _Radius, dist);
                 float4 baseColor = tex2D(_MainTex, uv);
                 return lerp(_PaintColor, baseColor, mask);
             }

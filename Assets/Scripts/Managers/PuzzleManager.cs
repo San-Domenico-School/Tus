@@ -74,7 +74,7 @@ public class PuzzleManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Not Matched"); //debugging
+            //Debug.Log("Not Matched"); //debugging
             isMatched = false;
             return false;
         }

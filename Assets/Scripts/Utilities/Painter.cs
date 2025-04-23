@@ -64,6 +64,7 @@ public class Painter : MonoBehaviour
     public void SetPaintColor(Color color)
     {
         paintColor = color;
+        paintBlitMaterial.SetColor("_PaintColor", Color.blue);
     }
 
     // Called every update. Check if you are painting and if you have paint 
@@ -96,9 +97,6 @@ public class Painter : MonoBehaviour
         // Checks if it has a transform, is on Paintable layer, has a render
         if (hit.transform == null || !(hit.transform.gameObject.layer == 6) || !ObjectStatisticsUtility.HasRender(hit.transform.gameObject))
             return;
-
-
-        Texture2D texture = ObjectStatisticsUtility.GetOrCreateObjectsTexture(hit.transform.gameObject, SaveLoadImagesManager.texelDensity);
 
         PaintTexture(hit.textureCoord, hit.transform.GetComponent<PaintableObject>());
     }

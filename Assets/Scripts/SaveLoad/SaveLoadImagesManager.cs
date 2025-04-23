@@ -32,6 +32,7 @@ public class SaveLoadImagesManager : MonoBehaviour
 
     private void Start() 
     {
+
         paintAction.Enable();
         paintAction.DominantArm_RightHanded.Save.performed += ctx => SaveImages();
 
@@ -57,6 +58,9 @@ public class SaveLoadImagesManager : MonoBehaviour
     // Load all the images from drive onto the paintableObjects 
     private void LoadImages()
     {
+        if (PaintableObjects == null) 
+            return;
+
         // Goes over all objects in PaintableObjects
         foreach (GameObject gameObject in PaintableObjects)
         {
@@ -130,6 +134,9 @@ public class SaveLoadImagesManager : MonoBehaviour
     // Saves all the images on game object that can be painted (in array of object gotten from PrepareWorld)
     private void SaveImages()
     {
+        if (PaintableObjects == null) 
+            return;
+            
         // Goes over all objects in paintableObjects
         foreach (GameObject gameObject in PaintableObjects)
         {
@@ -143,7 +150,7 @@ public class SaveLoadImagesManager : MonoBehaviour
     }
 
     // Gets all active GameObject that have Renderer component 
-    public GameObject[] AddToArrayAllPaintableObjects()
+    public void AddToArrayAllPaintableObjects()
     {
         GameObject[] gameObjects;
 
@@ -152,7 +159,6 @@ public class SaveLoadImagesManager : MonoBehaviour
                                 .Where(go => ObjectStatisticsUtility.HasRender(go)).ToArray();
 
         PaintableObjects = gameObjects;
-        return gameObjects;
     }
 
     // This does not need explication 
@@ -166,9 +172,9 @@ public class SaveLoadImagesManager : MonoBehaviour
     }
 
 
-    public void SetPaintAbleObjectFields(GameObject[] gameObjects)
+    public void SetPaintAbleObjectFields()
     {
-        foreach (GameObject gameObject in gameObjects)
+        foreach (GameObject gameObject in PaintableObjects)
         {
             if (gameObject.GetComponent<PaintableObject>() == null)
                 continue;
@@ -189,7 +195,7 @@ public class SaveLoadImagesManager : MonoBehaviour
             transform = transform.parent;
         }
         name += ".png";
-        Debug.Log(Path.Combine(saveImagesPath, name));
+        // Debug.Log(Path.Combine(saveImagesPath, name));
 
         return name;
     }
@@ -207,9 +213,9 @@ class SerializedSaveLoadImagesManager : Editor
 
         if (GUILayout.Button("Calculate Paintable Fields"))
         {
-            GameObject[] gameObjects = SLIM.AddToArrayAllPaintableObjects();
+            SLIM.AddToArrayAllPaintableObjects();
 
-            SLIM.SetPaintAbleObjectFields(gameObjects);
+            SLIM.SetPaintAbleObjectFields();
         }
 
         if (GUILayout.Button("Reset Textures"))
