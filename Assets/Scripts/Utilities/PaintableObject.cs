@@ -24,7 +24,7 @@ public class PaintableObject : MonoBehaviour
 
         RenderTexture active = RenderTexture.active;
         RenderTexture.active = paintRT;
-        GL.Clear(true, true, Color.green);
+        GL.Clear(true, true, Color.gray);
         RenderTexture.active = active;
 
         gameObject.GetComponent<MeshRenderer>().material.mainTexture = paintRT;

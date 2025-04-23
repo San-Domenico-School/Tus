@@ -64,7 +64,6 @@ public class Painter : MonoBehaviour
     public void SetPaintColor(Color color)
     {
         paintColor = color;
-        paintBlitMaterial.SetColor("_PaintColor", Color.blue);
     }
 
     // Called every update. Check if you are painting and if you have paint 
@@ -108,7 +107,7 @@ public class Painter : MonoBehaviour
 
         paintBlitMaterial.SetVector("_PaintUV", new Vector4(uv.x, uv.y, 0, 0));
         paintBlitMaterial.SetFloat("_Radius", 0.03f);
-        paintBlitMaterial.SetColor("_PaintColor", Color.red);
+        paintBlitMaterial.SetColor("_PaintColor", paintColor);
 
         RenderTexture temp = RenderTexture.GetTemporary(rt.width, rt.height);
         Graphics.Blit(rt, temp);

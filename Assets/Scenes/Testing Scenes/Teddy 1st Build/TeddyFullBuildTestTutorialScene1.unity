@@ -1341,21 +1341,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 195406834298541427, guid: eb96ecfe2319b8b448fa2563ed3d30c3,
         type: 3}
-      propertyPath: brushSize
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 195406834298541427, guid: eb96ecfe2319b8b448fa2563ed3d30c3,
-        type: 3}
-      propertyPath: fromObject
-      value: 
-      objectReference: {fileID: 109588309}
-    - target: {fileID: 195406834298541427, guid: eb96ecfe2319b8b448fa2563ed3d30c3,
-        type: 3}
-      propertyPath: paintRemaining
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 195406834298541427, guid: eb96ecfe2319b8b448fa2563ed3d30c3,
-        type: 3}
       propertyPath: paintBlitMaterial
       value: 
       objectReference: {fileID: 2100000, guid: 9d78b66c9531d4f86bbd77bbc8c904fd, type: 2}
