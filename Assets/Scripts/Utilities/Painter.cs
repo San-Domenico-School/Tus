@@ -5,42 +5,48 @@ using UnityEngine.SceneManagement;
 
 /**************************************************
  * Attached to: paint manager 
- * Purpose: shoot a ray out and paint the world at its location
- * Author: Seamus/Teddy
- * Version: 1.2
+ * Purpose: paint
+ * Author: Seamus/Teddy/Nat
+ * Version: 2.0
  *************************************************/
 
 public class Painter : MonoBehaviour
 {
+    //public static Painter Instance;
+    public float paintRemaining = 500;
+    public Color paintColor = Color.white;
 
-    public static Painter Instance;
-    private TusInputAction paintAction;
-    private bool isPainting;
-    private GameObject fromObject;
-
-    [SerializeField] Texture2D brush;
-    [SerializeField] float brushSize = .5f;
-    [SerializeField] public Color paintColor = Color.white;
+    [SerializeField] float brushSize = 1f;
     [SerializeField] float rayMaxDistance = 30f;
-
     [SerializeField] private Material paintBlitMaterial;
 
-    //public float paintRemaining { get; set; } = 50;
-    public float paintRemaining = 500;
+    
+    private GameObject fromObject;
+    private TusInputAction paintAction;
+    private bool isPainting;
 
+
+    public Color GetPaintColor()
+    {
+        return paintColor;
+    }
+    public void SetPaintColor(Color color)
+    {
+        paintColor = color;
+    }
 
     private void Awake()
     {
         paintAction = new TusInputAction();
 
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else if (Instance != this)
-        {
-            Destroy(this);
-        }
+        // if (Instance == null)
+        // {
+        //     Instance = this;
+        // }
+        // else if (Instance != this)
+        // {
+        //     Destroy(this);
+        // }
     }
 
     private void OnEnable()
@@ -53,47 +59,20 @@ public class Painter : MonoBehaviour
 
     private void Update()
     {
-        HandlePainting();
-    }
-
-
-    public Color GetPaintColor()
-    {
-        return paintColor;
-    }
-    public void SetPaintColor(Color color)
-    {
-        paintColor = color;
-    }
-
-    // Called every update. Check if you are painting and if you have paint 
-    // Remove paint from paintRemaining
-    private void HandlePainting()
-    {
-        if (isPainting)
+        if (isPainting && paintRemaining > 0)
         {
-            if (paintRemaining >= 0)
-            {
-                PaintObject();
-                paintRemaining -= Time.deltaTime;
-
-                //Debug.Log(paintRemaining);
-            }
-            else
-            {
-                Debug.Log("PAINT RAN OUT!!!");
-            }
+            PaintObject();
+            paintRemaining -= Time.deltaTime; // every second lose one paint unit
         }
     }
 
-    // Shoot a ray where the paint will be
     private void PaintObject()
     {
         // Shoots ray for fromObject forward
         RaycastHit hit;
         Physics.Raycast(fromObject.transform.position, fromObject.transform.forward, out hit, rayMaxDistance); 
 
-        // Checks if it has a transform, is on Paintable layer, has a render
+        // Checks if what it hit exist and is paintable
         if (hit.transform == null || !ObjectStatisticsUtility.IsPaintable(hit.transform.gameObject))
             return;
 
@@ -103,18 +82,19 @@ public class Painter : MonoBehaviour
     //paints the texture at the UV cordate with diameter of the brushSize and shape of brush 
     private void PaintTexture(Vector2 uv, PaintableObject paintable)
     {
-        RenderTexture rt = paintable.paintRT;
+        RenderTexture renderTexture = paintable.paintRT;
 
-        paintBlitMaterial.SetVector("_PaintUV", new Vector4(uv.x, uv.y, 0, 0));
+        paintBlitMaterial.SetVector("_PaintUV", new Vector2(uv.x, uv.y));
         paintBlitMaterial.SetFloat("_Radius", 0.03f);
         paintBlitMaterial.SetColor("_PaintColor", paintColor);
 
-        RenderTexture temp = RenderTexture.GetTemporary(rt.width, rt.height);
-        Graphics.Blit(rt, temp);
-        Graphics.Blit(temp, rt, paintBlitMaterial);
+        RenderTexture temp = RenderTexture.GetTemporary(renderTexture.width, renderTexture.height);
+        Graphics.Blit(renderTexture, temp);
+        Graphics.Blit(temp, renderTexture, paintBlitMaterial);
         RenderTexture.ReleaseTemporary(temp);
     }
 
+    // does this do anything
     private void OnSceneLoaded()
     {
         // Find the GameObject called "Right Hand" in the scene

@@ -3,7 +3,7 @@ Shader "Unlit/PaintShader"
     Properties {
         _MainTex ("Previous", 2D) = "white" {}
         _PaintUV ("Paint UV", Vector) = (0,0,0,0)
-        _Radius ("Radius", Float) = 0.05
+        _Radius ("Radius", float) = 0.05
         _PaintColor ("Paint Color", Color) = (1,1,0,1)
     }
     SubShader {
