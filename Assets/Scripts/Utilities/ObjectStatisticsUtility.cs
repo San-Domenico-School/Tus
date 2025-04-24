@@ -99,38 +99,6 @@ public static class ObjectStatisticsUtility
     }
 
 
-    // public static float CalculateObjectAreaParallel(GameObject gameObject)
-    // {
-    //     Vector3[] vertices = gameObject.GetComponent<MeshFilter>().mesh.vertices;
-    //     int[] triangles = gameObject.GetComponent<MeshFilter>().mesh.triangles;
-        
-    //     float area = 0;
-    //     float[] result = new float[vertices.Length];
-
-    //     Parallel.For(0, triangles.Length, i => 
-    //     {
-    //         Vector3 vertA = vertices[triangles[i]];
-    //         Vector3 vertB = vertices[triangles[i + 1]];
-    //         Vector3 vertC = vertices[triangles[i + 2]];
-
-    //         Vector3 vectorAB = vertB - vertA;
-    //         Vector3 vectorAC = vertC - vertA;
-
-    //         Vector3 cross = Vector3.Cross(vectorAB, vectorAC);
-
-    //         result[i] = cross.magnitude;
-    //     });
-
-    //     foreach(float i in result)
-    //     {
-    //         area += i;
-    //     }
-
-    //     return area / 2;
-    // }
-
-
-
     //it gives you a number between 0 and 1 (its not actually %)
     public static float CalculateObjectUVAreaRatio(Mesh mesh)
     {
@@ -207,28 +175,23 @@ public static class ObjectStatisticsUtility
     // Checks if the object has a Renderer component 
     public static bool HasRender(GameObject gameObject)
     {
-        if (gameObject == null)
-            return false;
-        else if (gameObject.GetComponent<Renderer>() == null)
-            return false;
-        else if (gameObject.gameObject.GetComponent<Renderer>().sharedMaterial == null)
-            return false;
-        else 
-            return true;
+        return gameObject != null &&
+            gameObject.GetComponent<Renderer>() != null &&
+            gameObject.GetComponent<Renderer>().sharedMaterial != null;
     }
     
     // Checks if the object has a MainTexture in its material  
     public static bool HasMainTexture(GameObject gameObject)
-    {
-        if (gameObject == null)
-            return false;
-        else if (gameObject.GetComponent<Renderer>() == null)
-            return false;
-        else if (gameObject.gameObject.GetComponent<Renderer>().sharedMaterial == null)
-            return false;
-        else if (gameObject.gameObject.GetComponent<Renderer>().sharedMaterial.mainTexture == null)
-            return false;
-        else 
-            return true;
+    { 
+        return HasRender(gameObject) && 
+            gameObject.GetComponent<Renderer>().sharedMaterial.mainTexture != null;
+    }
+
+    public static bool IsPaintable(GameObject gameObject)
+    { 
+        return gameObject != null && 
+            gameObject.layer == 6 &&
+            HasRender(gameObject) &&
+            gameObject.GetComponent<PaintableObject>() != null;
     }
 }

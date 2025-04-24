@@ -41,8 +41,6 @@ public class SaveLoadImagesManager : MonoBehaviour
         saveImagesPath = Application.persistentDataPath;// use when building for Quest
         //saveImagesPath = "C:/Users/happy/OneDrive/Documents/School Projects/Tus/Unity/Tus/Assets/Scripts/SaveLoad/TestSave"; // use when testing with pc on Seamus computer 
 
-        
-        
         if (Application.isPlaying)
         {
             LoadImages();
@@ -152,13 +150,7 @@ public class SaveLoadImagesManager : MonoBehaviour
     // Gets all active GameObject that have Renderer component 
     public void AddToArrayAllPaintableObjects()
     {
-        GameObject[] gameObjects;
-
-        gameObjects = GameObject.FindObjectsOfType<GameObject>()
-                                .Where(go => go.layer == 6).ToArray()
-                                .Where(go => ObjectStatisticsUtility.HasRender(go)).ToArray();
-
-        PaintableObjects = gameObjects;
+        PaintableObjects = GameObject.FindObjectsOfType<GameObject>().Where(go => ObjectStatisticsUtility.IsPaintable(go)).ToArray();
     }
 
     // This does not need explication 

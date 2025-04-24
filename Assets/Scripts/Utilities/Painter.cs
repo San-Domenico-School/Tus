@@ -94,7 +94,7 @@ public class Painter : MonoBehaviour
         Physics.Raycast(fromObject.transform.position, fromObject.transform.forward, out hit, rayMaxDistance); 
 
         // Checks if it has a transform, is on Paintable layer, has a render
-        if (hit.transform == null || !(hit.transform.gameObject.layer == 6) || !ObjectStatisticsUtility.HasRender(hit.transform.gameObject))
+        if (hit.transform == null || !ObjectStatisticsUtility.IsPaintable(hit.transform.gameObject))
             return;
 
         PaintTexture(hit.textureCoord, hit.transform.GetComponent<PaintableObject>());
