@@ -116,7 +116,7 @@ public class PlayerMoveController : MonoBehaviour
 
     bool IsGrounded()
     {
-        return Physics.Raycast(GetComponent<Transform>().position, -Vector3.up, distToGround + 0.1f);
+        return true;
     }
 
 
