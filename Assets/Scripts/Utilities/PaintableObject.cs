@@ -11,7 +11,7 @@ public class PaintableObject : MonoBehaviour
 
     private void Start()
     {
-        InitPaintLayer(gameObject.GetComponent<MeshRenderer>().material.mainTexture as Texture2D);
+        //InitPaintLayer(gameObject.GetComponent<MeshRenderer>().material.mainTexture as Texture2D);
     }
 
     void InitPaintLayer(Texture2D texture)

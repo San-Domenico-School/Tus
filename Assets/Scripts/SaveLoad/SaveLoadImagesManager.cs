@@ -59,9 +59,9 @@ public class SaveLoadImagesManager : MonoBehaviour
         if (PaintableObjects == null) 
             return;
 
-        // Goes over all objects in PaintableObjects
         foreach (GameObject gameObject in PaintableObjects)
         {
+            Texture2D texture2D;
 
             if (File.Exists(Path.Combine(saveImagesPath, GetObjectsImageFileName(gameObject.transform)))) // Check the game has already saved and the file exists
             {
@@ -72,10 +72,8 @@ public class SaveLoadImagesManager : MonoBehaviour
                 Texture2D objectTexture = new Texture2D(2,2);
                 ImageConversion.LoadImage(objectTexture, imageData);
 
-                // Sets the the loaded texture to the object's texture
-                gameObject.GetComponent<Renderer>().material.mainTexture = objectTexture;
+                texture2D = objectTexture;
                 //Debug.Log(Path.Combine(saveImagesPath, GetObjectsImageFileName(gameObject)));
-
             } 
             else // The texture does not exist 
             {
@@ -83,8 +81,21 @@ public class SaveLoadImagesManager : MonoBehaviour
                     return;
                 
                 // Creates a new texture
-                gameObject.GetComponent<Renderer>().material.mainTexture = ObjectStatisticsUtility.CreateObjectTexture(gameObject, texelDensity);
+                texture2D = ObjectStatisticsUtility.CreateObjectTexture(gameObject, texelDensity);
             }
+
+            RenderTexture paintRT = new RenderTexture(texture2D.width, texture2D.height, 0, RenderTextureFormat.ARGB32);
+            paintRT.Create();
+
+            RenderTexture active = RenderTexture.active;
+            RenderTexture.active = paintRT;
+            GL.Clear(true, true, Color.gray);
+            Graphics.Blit(texture2D, paintRT);
+            RenderTexture.active = active;
+
+            gameObject.GetComponent<MeshRenderer>().material.mainTexture = paintRT;
+            gameObject.GetComponent<PaintableObject>().paintRT = paintRT;
+            
         }
     }
     
@@ -142,9 +153,19 @@ public class SaveLoadImagesManager : MonoBehaviour
                 return;
             
             // Saves the images to disk 
-            Texture2D image = (Texture2D) gameObject.GetComponent<Renderer>().sharedMaterial.mainTexture;
+            Texture2D image =  ToTexture2D((RenderTexture) gameObject.GetComponent<Renderer>().sharedMaterial.mainTexture);
             File.WriteAllBytes(Path.Combine(saveImagesPath, GetObjectsImageFileName(gameObject.transform)), image.EncodeToPNG());
         }
+    }
+
+    private Texture2D ToTexture2D(RenderTexture renderTexture)
+    {
+        Texture2D texture = new Texture2D(renderTexture.width, renderTexture.height, TextureFormat.RGB24, false);
+        // ReadPixels looks at the active RenderTexture.
+        RenderTexture.active = renderTexture;
+        texture.ReadPixels(new Rect(0, 0, renderTexture.width, renderTexture.height), 0, 0);
+        texture.Apply();
+        return texture;
     }
 
     // Gets all active GameObject that have Renderer component 
