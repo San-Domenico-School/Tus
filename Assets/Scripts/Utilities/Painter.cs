@@ -15,8 +15,7 @@ public class Painter : MonoBehaviour
     //public static Painter Instance;
     public float paintRemaining = 500;
     public Color paintColor = Color.white;
-
-    [SerializeField] float brushSize = 1f;
+    public static float brushSize = 1f;
     [SerializeField] float rayMaxDistance = 30f;
     [SerializeField] private Material paintBlitMaterial;
 
