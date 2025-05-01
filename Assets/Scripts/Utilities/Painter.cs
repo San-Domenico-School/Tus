@@ -85,8 +85,9 @@ public class Painter : MonoBehaviour
         RenderTexture renderTexture = paintable.paintRT;
 
         paintBlitMaterial.SetVector("_PaintUV", new Vector2(uv.x, uv.y));
-        paintBlitMaterial.SetFloat("_Radius", 0.03f);
+        paintBlitMaterial.SetFloat("_Radius", 1f);
         paintBlitMaterial.SetColor("_PaintColor", paintColor);
+        paintBlitMaterial.SetFloat("_ObjectArea", Mathf.Sqrt(paintable.fullTextureArea));
 
         RenderTexture temp = RenderTexture.GetTemporary(renderTexture.width, renderTexture.height);
         Graphics.Blit(renderTexture, temp);

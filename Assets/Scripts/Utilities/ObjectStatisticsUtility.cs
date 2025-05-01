@@ -20,7 +20,7 @@ public static class ObjectStatisticsUtility
     {
         float fullTextureArea = objectArea + ((1 - uvRatio) * objectArea);
 
-        int textureSize = (int)Math.Round(Math.Sqrt(fullTextureArea) * targetTexelDensity);
+        int textureSize = (int) Math.Round(Math.Sqrt(fullTextureArea) * targetTexelDensity);
         textureSize = Mathf.Max(1, textureSize); // Ensure textureSize is at least 1
 
         Debug.Log($"objectArea: {objectArea}, uvPercentage: {uvRatio}, fullTextureArea: {fullTextureArea}, textureSize: {textureSize}");
@@ -34,6 +34,7 @@ public static class ObjectStatisticsUtility
 
         Texture2D objectTexture = CreateObjectTexture(uvRatio, objectArea, targetTexelDensity);
         gameObject.GetComponent<PaintableObject>().textureSize = objectTexture.width;
+        gameObject.GetComponent<PaintableObject>().fullTextureArea = objectArea + ((1 - uvRatio) * objectArea);
 
         return objectTexture;
 
