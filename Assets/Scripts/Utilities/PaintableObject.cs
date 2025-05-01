@@ -7,8 +7,6 @@ public class PaintableObject : MonoBehaviour
     [SerializeField] public float uvRatio = -1;
     [SerializeField] public int textureSize = -1;
 
-
     public Color lastPaintedColor;
-
 }
 

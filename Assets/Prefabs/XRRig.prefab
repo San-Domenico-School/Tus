@@ -355,7 +355,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6483710995260162257}
   - component: {fileID: 2392043640283124222}
-  - component: {fileID: 5296940183523577070}
   - component: {fileID: 2223822257873893186}
   - component: {fileID: 8208227091370824931}
   m_Layer: 0
@@ -395,20 +394,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xrRig: {fileID: 6518320356840822820}
   isRightHand: 1
---- !u!114 &5296940183523577070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6124875480397551446}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fef05ef75fe54b4d8126a07987436e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PaintManager: {fileID: 0}
-  RedButton: {fileID: 5143061301442995351}
 --- !u!65 &2223822257873893186
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -702,12 +687,6 @@ PrefabInstance:
 --- !u!4 &670244181374657985 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 958725513135377143, guid: 11cf4b84172994769a04a5c682b008d3,
-    type: 3}
-  m_PrefabInstance: {fileID: 289141108532981558}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &5143061301442995351 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4854017622095907745, guid: 11cf4b84172994769a04a5c682b008d3,
     type: 3}
   m_PrefabInstance: {fileID: 289141108532981558}
   m_PrefabAsset: {fileID: 0}

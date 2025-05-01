@@ -27,9 +27,30 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Testing Scenes/LoganPaintBrushScene.unity
     guid: 8acfde7d17baf4ecfadc2e11a716cf88
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Testing Scenes/TowerTestScene.unity
     guid: 8ace5ef7e50a9bc428f130356adf9680
+  - enabled: 0
+    path: Assets/Scenes/Testing Scenes/Teddy 1st Build/TeddyFullBuildTestTutorialScene1.unity
+    guid: 448c8ae1659934fefbc34248a00f4e4e
+  - enabled: 0
+    path: Assets/Scenes/Testing Scenes/Teddy 1st Build/TeddyFullBuildTestMythicalForest1.unity
+    guid: f2b05466aaaa3490b8bc1ece93231c45
+  - enabled: 0
+    path: Assets/Scenes/Testing Scenes/Teddy 1st Build/TeddyFullBuildTestCrystalCaverns1.unity
+    guid: b6a4128c317a54ebdbd86e4d8982398c
+  - enabled: 0
+    path: Assets/Scenes/Testing Scenes/Teddy 1st Build/TeddyFullBuildTestSkyArchipelago1.unity
+    guid: 9e6f233cd31aa44eaa55fc1fcd1091a2
+  - enabled: 0
+    path: Assets/Scenes/Testing Scenes/Teddy 1st Build/TeddyFullBuildTestSingingCanyons1.unity
+    guid: 2d8f483da6f014bdca4fb94db7108511
+  - enabled: 0
+    path: Assets/Scenes/Testing Scenes/Teddy 1st Build/TeddyFullBuildTestTower1.unity
+    guid: bf04222233f424fc7b513b3d377729cc
+  - enabled: 1
+    path: Assets/Scenes/Testing Scenes/LoganPaintBrushSizeScene.unity
+    guid: e9a2ce476740942fa9cc426ce7f21506
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 03668d7564a2d43c49903a38c38f16ce,
       type: 2}

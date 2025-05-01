@@ -5,17 +5,19 @@ using UnityEngine.InputSystem;
 
 
 /**************************************************
- * Attached to: idk
+ * Attached to: Simon puzzle empty gameobject
  * Purpose: simon puzzle interact / game
  * Author: reece
- * Version: 1.0
+ * Version: 1.2
  *************************************************/
 
 public class SimonPuzzle : MonoBehaviour
 {
-    [SerializeField] GameObject fromObject;
-    [SerializeField] float rayMaxDistance = 30f;
-    [SerializeField] GameObject DisplayBlock;
+    [SerializeField] public GameObject fromObject;
+    [SerializeField] public float rayMaxDistance = 30f;
+    [SerializeField] public GameObject DisplayBlock;
+    [SerializeField] public GameObject DoorPart;
+    [SerializeField] public SceneTracker sceneTracker;
     //[SerializeField] private GameObject testBlock;
 
     public Material red;
@@ -39,7 +41,9 @@ public class SimonPuzzle : MonoBehaviour
 
     //GameObject ColorDisplay = GameObject.Find("PuzzleColor");
 
-    Renderer objectRenderer;
+    private Renderer objectRenderer;
+    private MeshRenderer doorRenderer;
+    private Collider doorCollider;
 
     // Start is called before the first frame update
 
@@ -58,6 +62,8 @@ public class SimonPuzzle : MonoBehaviour
         //controls.DominantArm_RightHanded.ObjectInteract.performed += ctx => Interact()
 
         objectRenderer = DisplayBlock.GetComponent<Renderer>();
+        doorRenderer = DoorPart.GetComponent<MeshRenderer>();
+        doorCollider = DoorPart.GetComponent<Collider>();
     }
 
     private void CreateSimonOrder()
@@ -93,7 +99,7 @@ public class SimonPuzzle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     // Dynamic input action methods
@@ -179,6 +185,10 @@ public class SimonPuzzle : MonoBehaviour
     {
         objectRenderer.material = winColor;
         puzzleCompleted = true;
+        sceneTracker.UnlockNextScene(0);
+
+        doorRenderer.enabled = false;
+        doorCollider.enabled = false;
     }
 
     public void Lose()
