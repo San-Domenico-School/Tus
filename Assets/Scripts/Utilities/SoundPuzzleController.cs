@@ -17,47 +17,50 @@ public class SoundPuzzleController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (wait > 0)
+        if (!isMatched)
         {
-            wait += 1;
-            wait %= 30;
-        }
-        else
-        {
-            if (playindicators)
+            if (wait > 0)
             {
-                if (!indicators[index].GetComponent<ColorSoundIndicatorController>().getIsPlaying() && lastplayedindex != index)
-                {
-                    indicators[index].GetComponent<ColorSoundIndicatorController>().Play();
-                    lastplayedindex = index;
-                }
-                else if (!indicators[index].GetComponent<ColorSoundIndicatorController>().getIsPlaying())
-                {
-                    index += 1;
-                    if (index > 4)
-                    {
-                        index = 0;
-                        playindicators = !playindicators;
-                    }
-                    wait = 1;
-                }
+                wait += 1;
+                wait %= 30;
             }
             else
             {
-                if (!selectors[index].GetComponent<ColorSoundEntryController>().getIsPlaying() && lastplayedindex != index)
+                if (playindicators)
                 {
-                    selectors[index].GetComponent<ColorSoundEntryController>().Play();
-                    lastplayedindex = index;
-                }
-                else if (!selectors[index].GetComponent<ColorSoundEntryController>().getIsPlaying())
-                {
-                    index += 1;
-                    if (index > 4)
+                    if (!indicators[index].GetComponent<ColorSoundIndicatorController>().getIsPlaying() && lastplayedindex != index)
                     {
-                        index = 0;
-                        playindicators = !playindicators;
+                        indicators[index].GetComponent<ColorSoundIndicatorController>().Play();
+                        lastplayedindex = index;
                     }
-                    wait = 1;
+                    else if (!indicators[index].GetComponent<ColorSoundIndicatorController>().getIsPlaying())
+                    {
+                        index += 1;
+                        if (index > 4)
+                        {
+                            index = 0;
+                            playindicators = !playindicators;
+                        }
+                        wait = 1;
+                    }
+                }
+                else
+                {
+                    if (!selectors[index].GetComponent<ColorSoundEntryController>().getIsPlaying() && lastplayedindex != index)
+                    {
+                        selectors[index].GetComponent<ColorSoundEntryController>().Play();
+                        lastplayedindex = index;
+                    }
+                    else if (!selectors[index].GetComponent<ColorSoundEntryController>().getIsPlaying())
+                    {
+                        index += 1;
+                        if (index > 4)
+                        {
+                            index = 0;
+                            playindicators = !playindicators;
+                        }
+                        wait = 1;
+                    }
                 }
             }
         }
