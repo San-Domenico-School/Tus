@@ -554,6 +554,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5012324190245564418}
     m_Modifications:
+    - target: {fileID: 646589091490986469, guid: 11cf4b84172994769a04a5c682b008d3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 765210125803277610, guid: 11cf4b84172994769a04a5c682b008d3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.14
+      objectReference: {fileID: 0}
     - target: {fileID: 958725513135377143, guid: 11cf4b84172994769a04a5c682b008d3,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -639,6 +649,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: ResetButton
       objectReference: {fileID: 0}
+    - target: {fileID: 2922185946058793686, guid: 11cf4b84172994769a04a5c682b008d3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.14
+      objectReference: {fileID: 0}
     - target: {fileID: 3822931240804196756, guid: 11cf4b84172994769a04a5c682b008d3,
         type: 3}
       propertyPath: m_IsTrigger
@@ -659,6 +674,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: YellowButton
       objectReference: {fileID: 0}
+    - target: {fileID: 6144632953707161632, guid: 11cf4b84172994769a04a5c682b008d3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.14
+      objectReference: {fileID: 0}
     - target: {fileID: 7726626141266578276, guid: 11cf4b84172994769a04a5c682b008d3,
         type: 3}
       propertyPath: camera
@@ -673,6 +693,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ColorSelector
+      objectReference: {fileID: 0}
+    - target: {fileID: 8857912298118954591, guid: 11cf4b84172994769a04a5c682b008d3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.14
       objectReference: {fileID: 0}
     - target: {fileID: 8881128659560629419, guid: 11cf4b84172994769a04a5c682b008d3,
         type: 3}
