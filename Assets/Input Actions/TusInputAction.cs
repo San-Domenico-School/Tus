@@ -207,12 +207,21 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Save"",
+                    ""name"": ""BrushSizeUp"",
                     ""type"": ""Button"",
-                    ""id"": ""96f2ba78-bb84-45a2-b0f9-b16efdb3ebd2"",
+                    ""id"": ""5371f215-3d2d-4907-a081-c6fde6638d67"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""BrushSizeDown"",
+                    ""type"": ""Button"",
+                    ""id"": ""cb2f4f5e-1f79-4246-bca9-78e60819c9a2"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": ""Hold"",
                     ""initialStateCheck"": false
                 }
             ],
@@ -252,23 +261,34 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""9edd979a-a180-481d-bb51-eb9960db903a"",
-                    ""path"": ""<XRController>{RightHand}/{PrimaryButton}"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Save"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""81f9e755-35fa-4d07-b3b0-7f9c8bb4cc9b"",
                     ""path"": ""<OculusTouchController>{LeftHand}/triggerPressed"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""ObjectInteract"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9aec3955-84cc-4a38-9b14-2daccd27ff74"",
+                    ""path"": ""<OculusTouchController>{RightHand}/secondaryButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BrushSizeUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6474db46-8a41-45bd-a639-b827a8ac0611"",
+                    ""path"": ""<OculusTouchController>{RightHand}/primaryButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BrushSizeDown"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -382,6 +402,24 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Save"",
+                    ""type"": ""Button"",
+                    ""id"": ""23f67002-6426-4c07-945f-328a893494dc"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Clear"",
+                    ""type"": ""Button"",
+                    ""id"": ""2b92d426-6107-4ef6-a51e-c4b0fba3e1a0"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -393,6 +431,28 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""BrushResize"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b90d2617-8b97-403d-958f-ff4fca69750a"",
+                    ""path"": ""<OculusTouchController>{LeftHand}/primaryButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Save"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cbbc328b-12e9-47a8-a050-afe53cb4b3eb"",
+                    ""path"": ""<OculusTouchController>{LeftHand}/secondaryButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Clear"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -640,7 +700,8 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
         m_DominantArm_RightHanded_ObjectInteract = m_DominantArm_RightHanded.FindAction("ObjectInteract", throwIfNotFound: true);
         m_DominantArm_RightHanded_Paint = m_DominantArm_RightHanded.FindAction("Paint", throwIfNotFound: true);
         m_DominantArm_RightHanded_GrabColor = m_DominantArm_RightHanded.FindAction("GrabColor", throwIfNotFound: true);
-        m_DominantArm_RightHanded_Save = m_DominantArm_RightHanded.FindAction("Save", throwIfNotFound: true);
+        m_DominantArm_RightHanded_BrushSizeUp = m_DominantArm_RightHanded.FindAction("BrushSizeUp", throwIfNotFound: true);
+        m_DominantArm_RightHanded_BrushSizeDown = m_DominantArm_RightHanded.FindAction("BrushSizeDown", throwIfNotFound: true);
         // DominantArm_LeftHanded
         m_DominantArm_LeftHanded = asset.FindActionMap("DominantArm_LeftHanded", throwIfNotFound: true);
         m_DominantArm_LeftHanded_ObjectInteract = m_DominantArm_LeftHanded.FindAction("ObjectInteract", throwIfNotFound: true);
@@ -652,6 +713,8 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
         // NonDominantArm_LeftHanded
         m_NonDominantArm_LeftHanded = asset.FindActionMap("NonDominantArm_LeftHanded", throwIfNotFound: true);
         m_NonDominantArm_LeftHanded_BrushResize = m_NonDominantArm_LeftHanded.FindAction("BrushResize", throwIfNotFound: true);
+        m_NonDominantArm_LeftHanded_Save = m_NonDominantArm_LeftHanded.FindAction("Save", throwIfNotFound: true);
+        m_NonDominantArm_LeftHanded_Clear = m_NonDominantArm_LeftHanded.FindAction("Clear", throwIfNotFound: true);
         // UINavigate_RightHanded
         m_UINavigate_RightHanded = asset.FindActionMap("UINavigate_RightHanded", throwIfNotFound: true);
         m_UINavigate_RightHanded_PauseToggle = m_UINavigate_RightHanded.FindAction("PauseToggle", throwIfNotFound: true);
@@ -952,7 +1015,8 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
     private readonly InputAction m_DominantArm_RightHanded_ObjectInteract;
     private readonly InputAction m_DominantArm_RightHanded_Paint;
     private readonly InputAction m_DominantArm_RightHanded_GrabColor;
-    private readonly InputAction m_DominantArm_RightHanded_Save;
+    private readonly InputAction m_DominantArm_RightHanded_BrushSizeUp;
+    private readonly InputAction m_DominantArm_RightHanded_BrushSizeDown;
     public struct DominantArm_RightHandedActions
     {
         private @TusInputAction m_Wrapper;
@@ -960,7 +1024,8 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
         public InputAction @ObjectInteract => m_Wrapper.m_DominantArm_RightHanded_ObjectInteract;
         public InputAction @Paint => m_Wrapper.m_DominantArm_RightHanded_Paint;
         public InputAction @GrabColor => m_Wrapper.m_DominantArm_RightHanded_GrabColor;
-        public InputAction @Save => m_Wrapper.m_DominantArm_RightHanded_Save;
+        public InputAction @BrushSizeUp => m_Wrapper.m_DominantArm_RightHanded_BrushSizeUp;
+        public InputAction @BrushSizeDown => m_Wrapper.m_DominantArm_RightHanded_BrushSizeDown;
         public InputActionMap Get() { return m_Wrapper.m_DominantArm_RightHanded; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -979,9 +1044,12 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
             @GrabColor.started += instance.OnGrabColor;
             @GrabColor.performed += instance.OnGrabColor;
             @GrabColor.canceled += instance.OnGrabColor;
-            @Save.started += instance.OnSave;
-            @Save.performed += instance.OnSave;
-            @Save.canceled += instance.OnSave;
+            @BrushSizeUp.started += instance.OnBrushSizeUp;
+            @BrushSizeUp.performed += instance.OnBrushSizeUp;
+            @BrushSizeUp.canceled += instance.OnBrushSizeUp;
+            @BrushSizeDown.started += instance.OnBrushSizeDown;
+            @BrushSizeDown.performed += instance.OnBrushSizeDown;
+            @BrushSizeDown.canceled += instance.OnBrushSizeDown;
         }
 
         private void UnregisterCallbacks(IDominantArm_RightHandedActions instance)
@@ -995,9 +1063,12 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
             @GrabColor.started -= instance.OnGrabColor;
             @GrabColor.performed -= instance.OnGrabColor;
             @GrabColor.canceled -= instance.OnGrabColor;
-            @Save.started -= instance.OnSave;
-            @Save.performed -= instance.OnSave;
-            @Save.canceled -= instance.OnSave;
+            @BrushSizeUp.started -= instance.OnBrushSizeUp;
+            @BrushSizeUp.performed -= instance.OnBrushSizeUp;
+            @BrushSizeUp.canceled -= instance.OnBrushSizeUp;
+            @BrushSizeDown.started -= instance.OnBrushSizeDown;
+            @BrushSizeDown.performed -= instance.OnBrushSizeDown;
+            @BrushSizeDown.canceled -= instance.OnBrushSizeDown;
         }
 
         public void RemoveCallbacks(IDominantArm_RightHandedActions instance)
@@ -1128,11 +1199,15 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_NonDominantArm_LeftHanded;
     private List<INonDominantArm_LeftHandedActions> m_NonDominantArm_LeftHandedActionsCallbackInterfaces = new List<INonDominantArm_LeftHandedActions>();
     private readonly InputAction m_NonDominantArm_LeftHanded_BrushResize;
+    private readonly InputAction m_NonDominantArm_LeftHanded_Save;
+    private readonly InputAction m_NonDominantArm_LeftHanded_Clear;
     public struct NonDominantArm_LeftHandedActions
     {
         private @TusInputAction m_Wrapper;
         public NonDominantArm_LeftHandedActions(@TusInputAction wrapper) { m_Wrapper = wrapper; }
         public InputAction @BrushResize => m_Wrapper.m_NonDominantArm_LeftHanded_BrushResize;
+        public InputAction @Save => m_Wrapper.m_NonDominantArm_LeftHanded_Save;
+        public InputAction @Clear => m_Wrapper.m_NonDominantArm_LeftHanded_Clear;
         public InputActionMap Get() { return m_Wrapper.m_NonDominantArm_LeftHanded; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1145,6 +1220,12 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
             @BrushResize.started += instance.OnBrushResize;
             @BrushResize.performed += instance.OnBrushResize;
             @BrushResize.canceled += instance.OnBrushResize;
+            @Save.started += instance.OnSave;
+            @Save.performed += instance.OnSave;
+            @Save.canceled += instance.OnSave;
+            @Clear.started += instance.OnClear;
+            @Clear.performed += instance.OnClear;
+            @Clear.canceled += instance.OnClear;
         }
 
         private void UnregisterCallbacks(INonDominantArm_LeftHandedActions instance)
@@ -1152,6 +1233,12 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
             @BrushResize.started -= instance.OnBrushResize;
             @BrushResize.performed -= instance.OnBrushResize;
             @BrushResize.canceled -= instance.OnBrushResize;
+            @Save.started -= instance.OnSave;
+            @Save.performed -= instance.OnSave;
+            @Save.canceled -= instance.OnSave;
+            @Clear.started -= instance.OnClear;
+            @Clear.performed -= instance.OnClear;
+            @Clear.canceled -= instance.OnClear;
         }
 
         public void RemoveCallbacks(INonDominantArm_LeftHandedActions instance)
@@ -1454,7 +1541,8 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
         void OnObjectInteract(InputAction.CallbackContext context);
         void OnPaint(InputAction.CallbackContext context);
         void OnGrabColor(InputAction.CallbackContext context);
-        void OnSave(InputAction.CallbackContext context);
+        void OnBrushSizeUp(InputAction.CallbackContext context);
+        void OnBrushSizeDown(InputAction.CallbackContext context);
     }
     public interface IDominantArm_LeftHandedActions
     {
@@ -1469,6 +1557,8 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
     public interface INonDominantArm_LeftHandedActions
     {
         void OnBrushResize(InputAction.CallbackContext context);
+        void OnSave(InputAction.CallbackContext context);
+        void OnClear(InputAction.CallbackContext context);
     }
     public interface IUINavigate_RightHandedActions
     {
