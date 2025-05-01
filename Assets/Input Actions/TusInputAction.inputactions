@@ -185,12 +185,21 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Save",
+                    "name": "BrushSizeUp",
                     "type": "Button",
-                    "id": "96f2ba78-bb84-45a2-b0f9-b16efdb3ebd2",
+                    "id": "5371f215-3d2d-4907-a081-c6fde6638d67",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "BrushSizeDown",
+                    "type": "Button",
+                    "id": "cb2f4f5e-1f79-4246-bca9-78e60819c9a2",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Hold",
                     "initialStateCheck": false
                 }
             ],
@@ -230,23 +239,34 @@
                 },
                 {
                     "name": "",
-                    "id": "9edd979a-a180-481d-bb51-eb9960db903a",
-                    "path": "<XRController>{RightHand}/{PrimaryButton}",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Save",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "81f9e755-35fa-4d07-b3b0-7f9c8bb4cc9b",
                     "path": "<OculusTouchController>{LeftHand}/triggerPressed",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "ObjectInteract",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9aec3955-84cc-4a38-9b14-2daccd27ff74",
+                    "path": "<OculusTouchController>{RightHand}/secondaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "BrushSizeUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6474db46-8a41-45bd-a639-b827a8ac0611",
+                    "path": "<OculusTouchController>{RightHand}/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "BrushSizeDown",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -360,6 +380,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Save",
+                    "type": "Button",
+                    "id": "23f67002-6426-4c07-945f-328a893494dc",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Clear",
+                    "type": "Button",
+                    "id": "2b92d426-6107-4ef6-a51e-c4b0fba3e1a0",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -371,6 +409,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "BrushResize",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b90d2617-8b97-403d-958f-ff4fca69750a",
+                    "path": "<OculusTouchController>{LeftHand}/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Save",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cbbc328b-12e9-47a8-a050-afe53cb4b3eb",
+                    "path": "<OculusTouchController>{LeftHand}/secondaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Clear",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

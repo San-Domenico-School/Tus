@@ -33,7 +33,8 @@ public class SaveLoadImagesManager : MonoBehaviour
     private void Start() 
     {
         paintAction.Enable();
-        paintAction.DominantArm_RightHanded.Save.performed += ctx => SaveImages();
+        paintAction.NonDominantArm_LeftHanded.Save.performed += ctx => SaveImages();
+        paintAction.NonDominantArm_LeftHanded.Clear.performed += ctx => CreateNewBlankTexture();
 
         //CreateNewBlankTexture();
 
