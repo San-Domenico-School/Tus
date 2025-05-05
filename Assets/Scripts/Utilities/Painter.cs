@@ -1,13 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 /**************************************************
  * Attached to: paint manager 
  * Purpose: shoot a ray out and paint the world at its location
- * Author: Seamus
- * Version: 1.1
+ * Author: Seamus/Teddy
+ * Version: 1.2
  *************************************************/
 
 public class Painter : MonoBehaviour
@@ -16,10 +16,10 @@ public class Painter : MonoBehaviour
     public static Painter Instance;
     private TusInputAction paintAction;
     private bool isPainting;
+    private GameObject fromObject;
 
-    [SerializeField] GameObject fromObject;
     [SerializeField] Texture2D brush;
-    [SerializeField] float brushSize = .5f;
+    [SerializeField] public static float brushSize = 0.5f;
     [SerializeField] public Color paintColor = Color.white;
     [SerializeField] float rayMaxDistance = 30f;
 
@@ -46,6 +46,7 @@ public class Painter : MonoBehaviour
         paintAction.Enable();
         paintAction.DominantArm_RightHanded.Paint.performed += ctx => isPainting = true; 
         paintAction.DominantArm_RightHanded.Paint.canceled += ctx => isPainting = false;
+        fromObject = GameObject.Find("Right hand");
     }
 
     private void Update()
@@ -98,6 +99,8 @@ public class Painter : MonoBehaviour
         Texture2D texture = ObjectStatisticsUtility.GetOrCreateObjectsTexture(hit.transform.gameObject, SaveLoadImagesManager.texelDensity);
 
         PaintTexture(hit.textureCoord, texture);
+
+        hit.transform.gameObject.GetComponent<PaintableObject>().lastPaintedColor = paintColor;
     }
 
     //paints the texture at the UV cordate with diameter of the brushSize and shape of brush 
@@ -128,5 +131,21 @@ public class Painter : MonoBehaviour
         }
 
         texture.Apply();
+    }
+
+    private void OnSceneLoaded()
+    {
+        // Find the GameObject called "Right Hand" in the scene
+        GameObject rightHand = GameObject.Find("Right Hand");
+
+        if (rightHand != null)
+        {
+            // Assign it to the 'fromObject' field
+            fromObject = rightHand;
+        }
+        else
+        {
+            Debug.Log("Right Hand not found in the scene.");
+        }
     }
 }
