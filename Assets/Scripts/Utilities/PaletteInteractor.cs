@@ -26,7 +26,12 @@ public class PaletteInteractor : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         paintManager = GameObject.FindObjectOfType<Painter>();
-        Debug.Log("Pallete Added");
+        GameObject simonPuzzle = GameObject.Find("SimonV2");
+        if (simonPuzzle != null)
+        {
+            
+        }
+            Debug.Log("Pallete Added");
     }
 
     private void OnTriggerStay(Collider other)

@@ -13,12 +13,11 @@ using UnityEngine.InputSystem;
 
 public class SimonPuzzle : MonoBehaviour
 {
-    [SerializeField] public GameObject fromObject;
     [SerializeField] public float rayMaxDistance = 30f;
     [SerializeField] public GameObject DisplayBlock;
-    [SerializeField] public GameObject DoorPart;
-    [SerializeField] public SceneTracker sceneTracker;
-    //[SerializeField] private GameObject testBlock;
+
+    private SceneTracker sceneTracker;
+    private GameObject fromObject;
 
     public Material red;
     public Material blue;
@@ -42,8 +41,6 @@ public class SimonPuzzle : MonoBehaviour
     //GameObject ColorDisplay = GameObject.Find("PuzzleColor");
 
     private Renderer objectRenderer;
-    private MeshRenderer doorRenderer;
-    private Collider doorCollider;
 
     // Start is called before the first frame update
 
@@ -62,8 +59,6 @@ public class SimonPuzzle : MonoBehaviour
         //controls.DominantArm_RightHanded.ObjectInteract.performed += ctx => Interact()
 
         objectRenderer = DisplayBlock.GetComponent<Renderer>();
-        doorRenderer = DoorPart.GetComponent<MeshRenderer>();
-        doorCollider = DoorPart.GetComponent<Collider>();
     }
 
     private void CreateSimonOrder()
@@ -93,7 +88,8 @@ public class SimonPuzzle : MonoBehaviour
 
     void Start()
     {
-        
+        fromObject = GameObject.Find("Right Hand");
+        sceneTracker = GameObject.Find("SceneManager").GetComponent<SceneTracker>();
     }
 
     // Update is called once per frame
@@ -105,6 +101,7 @@ public class SimonPuzzle : MonoBehaviour
     // Dynamic input action methods
     public void OnPuzzleClick(InputAction.CallbackContext ctx)
     {
+        objectRenderer.material = winColor;
         if (ctx.performed) Interact();
     }
 
@@ -186,9 +183,6 @@ public class SimonPuzzle : MonoBehaviour
         objectRenderer.material = winColor;
         puzzleCompleted = true;
         sceneTracker.UnlockNextScene(0);
-
-        doorRenderer.enabled = false;
-        doorCollider.enabled = false;
     }
 
     public void Lose()

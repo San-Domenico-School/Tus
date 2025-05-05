@@ -350,10 +350,6 @@ MonoBehaviour:
     m_ActionName: DominantArm_RightHanded/GrabColor
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 96f2ba78-bb84-45a2-b0f9-b16efdb3ebd2
-    m_ActionName: DominantArm_RightHanded/Save
-  - m_PersistentCalls:
-      m_Calls: []
     m_ActionId: e9b1975f-ec20-491d-81f4-e78994d9dca9
     m_ActionName: DominantArm_LeftHanded/ObjectInteract
   - m_PersistentCalls:
@@ -408,6 +404,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 3a722f95-b42b-4421-aad1-d0eb2b685e47
     m_ActionName: Palette/LeftHandLocation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5371f215-3d2d-4907-a081-c6fde6638d67
+    m_ActionName: DominantArm_RightHanded/BrushSizeUp
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: cb2f4f5e-1f79-4246-bca9-78e60819c9a2
+    m_ActionName: DominantArm_RightHanded/BrushSizeDown
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 23f67002-6426-4c07-945f-328a893494dc
+    m_ActionName: NonDominantArm_LeftHanded/Save
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2b92d426-6107-4ef6-a51e-c4b0fba3e1a0
+    m_ActionName: NonDominantArm_LeftHanded/Clear
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: DominantArm_RightHanded
@@ -426,8 +438,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PaintManager: {fileID: 0}
-  BrushUp: {fileID: 0}
-  BrushDown: {fileID: 0}
 --- !u!1001 &170879669
 PrefabInstance:
   m_ObjectHideFlags: 0
