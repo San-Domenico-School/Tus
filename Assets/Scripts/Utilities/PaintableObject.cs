@@ -17,16 +17,16 @@ public class PaintableObject : MonoBehaviour
         //InitPaintLayer(gameObject.GetComponent<MeshRenderer>().material.mainTexture as Texture2D);
     }
 
-    void InitPaintLayer(Texture2D texture)
-    {
-        paintRT = new RenderTexture(texture.width, texture.height, 0, RenderTextureFormat.ARGB32);
-        paintRT.Create();
+    // void InitPaintLayer(Texture2D texture)
+    // {
+    //     paintRT = new RenderTexture(texture.width, texture.height, 0, RenderTextureFormat.ARGB32);
+    //     paintRT.Create();
 
-        RenderTexture active = RenderTexture.active;
-        RenderTexture.active = paintRT;
-        GL.Clear(true, true, Color.gray);
-        RenderTexture.active = active;
+    //     RenderTexture active = RenderTexture.active;
+    //     RenderTexture.active = paintRT;
+    //     GL.Clear(true, true, Color.gray);
+    //     RenderTexture.active = active;
 
-        gameObject.GetComponent<MeshRenderer>().material.mainTexture = paintRT;
-    }
+    //     gameObject.GetComponent<MeshRenderer>().material.mainTexture = paintRT;
+    // }
 }
