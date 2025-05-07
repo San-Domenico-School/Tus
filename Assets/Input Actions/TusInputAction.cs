@@ -283,6 +283,17 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""2b8c610a-44d2-4c54-8af2-1f74eccc7b20"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BrushSizeUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""6474db46-8a41-45bd-a639-b827a8ac0611"",
                     ""path"": ""<OculusTouchController>{RightHand}/primaryButton"",
                     ""interactions"": """",

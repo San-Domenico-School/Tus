@@ -23,6 +23,8 @@ public class Painter : MonoBehaviour
     private GameObject fromObject;
     private TusInputAction paintAction;
     private bool isPainting;
+    private bool brushSizeUp;
+    private bool brushSizeDown;
 
 
     public Color GetPaintColor()
@@ -37,15 +39,6 @@ public class Painter : MonoBehaviour
     private void Awake()
     {
         paintAction = new TusInputAction();
-
-        // if (Instance == null)
-        // {
-        //     Instance = this;
-        // }
-        // else if (Instance != this)
-        // {
-        //     Destroy(this);
-        // }
     }
 
     private void OnEnable()
@@ -53,6 +46,14 @@ public class Painter : MonoBehaviour
         paintAction.Enable();
         paintAction.DominantArm_RightHanded.Paint.performed += ctx => isPainting = true; 
         paintAction.DominantArm_RightHanded.Paint.canceled += ctx => isPainting = false;
+        
+        paintAction.DominantArm_RightHanded.BrushSizeUp.performed += ctx => brushSizeUp = true;
+        paintAction.DominantArm_RightHanded.BrushSizeUp.canceled += ctx => brushSizeUp = false;
+
+        paintAction.DominantArm_RightHanded.BrushSizeDown.performed += ctx => brushSizeDown = true;
+        paintAction.DominantArm_RightHanded.BrushSizeDown.performed += ctx => brushSizeDown = false;
+
+
         fromObject = GameObject.Find("Right hand");
     }
 
@@ -63,6 +64,8 @@ public class Painter : MonoBehaviour
             PaintObject();
             paintRemaining -= Time.deltaTime; // every second lose one paint unit
         }
+        
+        BrushSizing();
         Debug.Log(brushSize);
     }
 
@@ -95,6 +98,18 @@ public class Painter : MonoBehaviour
         RenderTexture.ReleaseTemporary(temp);
     }
 
+    private void BrushSizing()
+    {
+        if (brushSizeUp && brushSize < 3)
+        {
+            brushSize += 0.01f;
+        }
+        if (brushSizeDown && brushSize > .5)
+        {
+            brushSize -= 0.01f;
+        }
+    }
+
     // does this do anything
     private void OnSceneLoaded()
     {
@@ -111,4 +126,5 @@ public class Painter : MonoBehaviour
             Debug.Log("Right Hand not found in the scene.");
         }
     }
+
 }
