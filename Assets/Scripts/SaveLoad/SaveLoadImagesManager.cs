@@ -180,7 +180,25 @@ public class SaveLoadImagesManager : MonoBehaviour
     {
         foreach (GameObject gameObject in PaintableObjects)
         {
-            gameObject.GetComponent<Renderer>().sharedMaterial.mainTexture = ObjectStatisticsUtility.CreateObjectTexture(gameObject, texelDensity);
+            Texture2D texture2D;
+
+            if (!ObjectStatisticsUtility.HasRender(gameObject))
+                return;
+            
+            // Creates a new texture
+            texture2D = ObjectStatisticsUtility.CreateObjectTexture(gameObject, texelDensity);
+
+            RenderTexture paintRT = new RenderTexture(texture2D.width, texture2D.height, 0, RenderTextureFormat.ARGB32);
+            paintRT.Create();
+
+            RenderTexture active = RenderTexture.active;
+            RenderTexture.active = paintRT;
+            GL.Clear(true, true, Color.gray);
+            Graphics.Blit(texture2D, paintRT);
+            RenderTexture.active = active;
+
+            gameObject.GetComponent<MeshRenderer>().material.mainTexture = paintRT;
+            gameObject.GetComponent<PaintableObject>().paintRT = paintRT;
         }
         SaveImages();
     }
