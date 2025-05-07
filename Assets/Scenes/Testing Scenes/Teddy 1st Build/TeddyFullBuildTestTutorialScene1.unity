@@ -230,6 +230,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 109588323}
+    - targetCorrespondingSourceObject: {fileID: 6124875480397551446, guid: 200da0d5814e8c14489e8b3d911079dc,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 109588328}
   m_SourcePrefab: {fileID: 100100000, guid: 200da0d5814e8c14489e8b3d911079dc, type: 3}
 --- !u!1 &109588309 stripped
 GameObject:
@@ -325,10 +329,9 @@ MonoBehaviour:
     m_ActionName: CameraControl_LeftHanded/CameraZoneMove
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5286635245418083262, guid: 7d704d028a7824af7903a64c77c0a4c8,
-          type: 3}
-        m_TargetAssemblyTypeName: SimonPuzzle, Assembly-CSharp
-        m_MethodName: OnPuzzleClick
+      - m_Target: {fileID: 109588328}
+        m_TargetAssemblyTypeName: UIDynamicMethods, Assembly-CSharp
+        m_MethodName: OnSimonPuzzleClick
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -438,6 +441,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PaintManager: {fileID: 0}
+--- !u!114 &109588328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109588309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b8273ef4030840d9af636d65373c578, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &170879669
 PrefabInstance:
   m_ObjectHideFlags: 0
