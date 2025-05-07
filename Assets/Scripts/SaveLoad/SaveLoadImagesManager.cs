@@ -88,45 +88,6 @@ public class SaveLoadImagesManager : MonoBehaviour
     }
     
 
-    // private void LoadImagesParallel()
-    // {
-    //     String[] names = new String[PaintableObjects.Length];
-    //     Texture[] textures = new Texture[PaintableObjects.Length];
-    //     Mesh[] meshes = new Mesh[PaintableObjects.Length];
-        
-    //     for (int i = 0; i < PaintableObjects.Length; i++)
-    //     {
-    //         names[i] = PaintableObjects[i].name;
-    //         meshes[i] = PaintableObjects[i].GetComponent<MeshFilter>().mesh;
-    //     }
-
-    //     Parallel.For(0, PaintableObjects.Length, i => 
-    //     {
-    //         if (File.Exists(Path.Combine(saveImagesPath, names[i] + ".png"))) // Check the game has already saved and the file exists
-    //         {
-    //             // Load the images for disk
-    //             byte[] imageData = File.ReadAllBytes(Path.Combine(saveImagesPath, names[i] + ".png"));
-
-    //             // Converts to a Texture2D
-    //             Texture2D objectTexture = new Texture2D(2,2);
-    //             ImageConversion.LoadImage(objectTexture, imageData);
-
-    //             textures[i] = objectTexture;
-
-    //         } 
-    //         else // The texture does not exist 
-    //         {
-    //             textures[i] = ObjectStatisticsUtility.CreateObjectTexture(meshes[i], texelDensity);
-    //         }
-    //     });
-
-    //     for (int i = 0; i < PaintableObjects.Length; i++)
-    //     {
-    //         PaintableObjects[i].GetComponent<Renderer>().sharedMaterial.mainTexture = textures[i];
-    //         Debug.Log(textures[i].dimension);
-    //     }
-    // }
-
     // TODO make async https://discussions.unity.com/t/save-rendertexture-or-texture2d-as-image-file-utility/891718/14 
     // Saves all the images on game object that can be painted (in array of object gotten from PrepareWorld)
     private void SaveImages()
