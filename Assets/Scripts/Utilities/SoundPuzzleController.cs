@@ -64,6 +64,7 @@ public class SoundPuzzleController : MonoBehaviour
                 }
             }
         }
+        bool wasMatched = isMatched;
         isMatched = true;
         for (int i = 0; i < 5; ++i)
         {
@@ -72,5 +73,9 @@ public class SoundPuzzleController : MonoBehaviour
                 isMatched = false;
             }
         }
+        if (isMatched && !wasMatched) {
+            gameObject.GetComponent<AudioSource>().Play();
+        }
     }
+
 }

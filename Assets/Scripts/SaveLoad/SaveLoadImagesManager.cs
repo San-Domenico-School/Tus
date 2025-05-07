@@ -32,6 +32,7 @@ public class SaveLoadImagesManager : MonoBehaviour
 
     private void Start() 
     {
+
         paintAction.Enable();
         paintAction.NonDominantArm_LeftHanded.Save.performed += ctx => SaveImages();
         paintAction.NonDominantArm_LeftHanded.Clear.performed += ctx => CreateNewBlankTexture();
@@ -41,8 +42,6 @@ public class SaveLoadImagesManager : MonoBehaviour
         saveImagesPath = Application.persistentDataPath;// use when building for Quest
         //saveImagesPath = "C:/Users/happy/OneDrive/Documents/School Projects/Tus/Unity/Tus/Assets/Scripts/SaveLoad/TestSave"; // use when testing with pc on Seamus computer 
 
-        
-        
         if (Application.isPlaying)
         {
             LoadImages();
@@ -58,9 +57,12 @@ public class SaveLoadImagesManager : MonoBehaviour
     // Load all the images from drive onto the paintableObjects 
     private void LoadImages()
     {
-        // Goes over all objects in PaintableObjects
+        if (PaintableObjects == null) 
+            return;
+
         foreach (GameObject gameObject in PaintableObjects)
         {
+            Texture2D texture2D;
 
             if (File.Exists(Path.Combine(saveImagesPath, GetObjectsImageFileName(gameObject.transform)))) // Check the game has already saved and the file exists
             {
@@ -71,10 +73,8 @@ public class SaveLoadImagesManager : MonoBehaviour
                 Texture2D objectTexture = new Texture2D(2,2);
                 ImageConversion.LoadImage(objectTexture, imageData);
 
-                // Sets the the loaded texture to the object's texture
-                gameObject.GetComponent<Renderer>().material.mainTexture = objectTexture;
+                texture2D = objectTexture;
                 //Debug.Log(Path.Combine(saveImagesPath, GetObjectsImageFileName(gameObject)));
-
             } 
             else // The texture does not exist 
             {
@@ -82,8 +82,21 @@ public class SaveLoadImagesManager : MonoBehaviour
                     return;
                 
                 // Creates a new texture
-                gameObject.GetComponent<Renderer>().material.mainTexture = ObjectStatisticsUtility.CreateObjectTexture(gameObject, texelDensity);
+                texture2D = ObjectStatisticsUtility.CreateObjectTexture(gameObject, texelDensity);
             }
+
+            RenderTexture paintRT = new RenderTexture(texture2D.width, texture2D.height, 0, RenderTextureFormat.ARGB32);
+            paintRT.Create();
+
+            RenderTexture active = RenderTexture.active;
+            RenderTexture.active = paintRT;
+            GL.Clear(true, true, Color.gray);
+            Graphics.Blit(texture2D, paintRT);
+            RenderTexture.active = active;
+
+            gameObject.GetComponent<MeshRenderer>().material.mainTexture = paintRT;
+            gameObject.GetComponent<PaintableObject>().paintRT = paintRT;
+            
         }
     }
     
@@ -92,6 +105,9 @@ public class SaveLoadImagesManager : MonoBehaviour
     // Saves all the images on game object that can be painted (in array of object gotten from PrepareWorld)
     private void SaveImages()
     {
+        if (PaintableObjects == null) 
+            return;
+            
         // Goes over all objects in paintableObjects
         foreach (GameObject gameObject in PaintableObjects)
         {
@@ -99,22 +115,25 @@ public class SaveLoadImagesManager : MonoBehaviour
                 return;
             
             // Saves the images to disk 
-            Texture2D image = (Texture2D) gameObject.GetComponent<Renderer>().sharedMaterial.mainTexture;
+            Texture2D image =  ToTexture2D((RenderTexture) gameObject.GetComponent<Renderer>().sharedMaterial.mainTexture);
             File.WriteAllBytes(Path.Combine(saveImagesPath, GetObjectsImageFileName(gameObject.transform)), image.EncodeToPNG());
         }
     }
 
-    // Gets all active GameObject that have Renderer component 
-    public GameObject[] AddToArrayAllPaintableObjects()
+    private Texture2D ToTexture2D(RenderTexture renderTexture)
     {
-        GameObject[] gameObjects;
+        Texture2D texture = new Texture2D(renderTexture.width, renderTexture.height, TextureFormat.RGB24, false);
+        // ReadPixels looks at the active RenderTexture.
+        RenderTexture.active = renderTexture;
+        texture.ReadPixels(new Rect(0, 0, renderTexture.width, renderTexture.height), 0, 0);
+        texture.Apply();
+        return texture;
+    }
 
-        gameObjects = GameObject.FindObjectsOfType<GameObject>()
-                                .Where(go => go.layer == 6).ToArray()
-                                .Where(go => ObjectStatisticsUtility.HasRender(go)).ToArray();
-
-        PaintableObjects = gameObjects;
-        return gameObjects;
+    // Gets all active GameObject that have Renderer component 
+    public void AddToArrayAllPaintableObjects()
+    {
+        PaintableObjects = GameObject.FindObjectsOfType<GameObject>().Where(go => ObjectStatisticsUtility.IsPaintable(go)).ToArray();
     }
 
     // This does not need explication 
@@ -128,9 +147,9 @@ public class SaveLoadImagesManager : MonoBehaviour
     }
 
 
-    public void SetPaintAbleObjectFields(GameObject[] gameObjects)
+    public void SetPaintAbleObjectFields()
     {
-        foreach (GameObject gameObject in gameObjects)
+        foreach (GameObject gameObject in PaintableObjects)
         {
             if (gameObject.GetComponent<PaintableObject>() == null)
                 continue;
@@ -151,7 +170,7 @@ public class SaveLoadImagesManager : MonoBehaviour
             transform = transform.parent;
         }
         name += ".png";
-        Debug.Log(Path.Combine(saveImagesPath, name));
+        // Debug.Log(Path.Combine(saveImagesPath, name));
 
         return name;
     }
@@ -169,9 +188,9 @@ class SerializedSaveLoadImagesManager : Editor
 
         if (GUILayout.Button("Calculate Paintable Fields"))
         {
-            GameObject[] gameObjects = SLIM.AddToArrayAllPaintableObjects();
+            SLIM.AddToArrayAllPaintableObjects();
 
-            SLIM.SetPaintAbleObjectFields(gameObjects);
+            SLIM.SetPaintAbleObjectFields();
         }
 
         if (GUILayout.Button("Reset Textures"))

@@ -9,7 +9,7 @@ public class PlayerSceneMove : MonoBehaviour
     private void OnEnable()
     {
         sceneTracker = GameObject.FindWithTag("SceneManager").GetComponent<SceneTracker>();
-        Debug.Log("onEnable Called");
+        //Debug.Log("onEnable Called");
     }
 
     private void OnTriggerEnter(Collider other)
