@@ -151,9 +151,9 @@ public class PaletteController : MonoBehaviour
         float yellow = (float)yellows / mixedColors * 255.0f;
         float blue = (float)blues / mixedColors * 255.0f;
 
-        Debug.Log(red);
-        Debug.Log(yellow);
-        Debug.Log(blue);
+        // Debug.Log(red);
+        // Debug.Log(yellow);
+        // Debug.Log(blue);
 
         currentColor = ConvertRYBtoUnityColor(red, yellow, blue);
 

@@ -390,6 +390,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 195406834298541427, guid: eb96ecfe2319b8b448fa2563ed3d30c3,
+        type: 3}
+      propertyPath: paintBlitMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 9d78b66c9531d4f86bbd77bbc8c904fd, type: 2}
     - target: {fileID: 5605939253535904705, guid: eb96ecfe2319b8b448fa2563ed3d30c3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1457,6 +1462,7 @@ MonoBehaviour:
   surfaceArea: 6
   uvRatio: 6
   textureSize: -1
+  paintRT: {fileID: 0}
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1001 &1829910701
 PrefabInstance:
