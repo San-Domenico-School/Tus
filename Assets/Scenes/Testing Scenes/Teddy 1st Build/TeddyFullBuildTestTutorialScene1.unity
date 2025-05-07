@@ -140,6 +140,16 @@ PrefabInstance:
       propertyPath: PaintManager
       value: 
       objectReference: {fileID: 1396328877}
+    - target: {fileID: 5757819442762607033, guid: 200da0d5814e8c14489e8b3d911079dc,
+        type: 3}
+      propertyPath: m_Drag
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5757819442762607033, guid: 200da0d5814e8c14489e8b3d911079dc,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 6124875480397551446, guid: 200da0d5814e8c14489e8b3d911079dc,
         type: 3}
       propertyPath: m_TagString
@@ -263,8 +273,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fef05ef75fe54b4d8126a07987436e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PaintManager: {fileID: 1957805335}
-  RedButton: {fileID: 841465420}
 --- !u!114 &109588322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1051,12 +1059,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -7196802604745430461, guid: c585e8116cc684e22bfd5601af3d511c, type: 3}
---- !u!1 &841465420 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5143061301442995351, guid: 200da0d5814e8c14489e8b3d911079dc,
-    type: 3}
-  m_PrefabInstance: {fileID: 109588308}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &845723165 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6507901977716847365, guid: c585e8116cc684e22bfd5601af3d511c,
@@ -1645,7 +1647,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 456915507}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1957805335}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d3e15533804d421f9e6af368d4f2025, type: 3}
@@ -2034,12 +2036,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1957805335 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6394752062362848651, guid: eb96ecfe2319b8b448fa2563ed3d30c3,
-    type: 3}
-  m_PrefabInstance: {fileID: 456915507}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2054530642 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8153468022190502949, guid: c585e8116cc684e22bfd5601af3d511c,
