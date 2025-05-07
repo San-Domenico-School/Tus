@@ -21,7 +21,8 @@ public class NPCInteraction : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Player") && this.gameObject.CompareTag("NPC(Painted)"))
+        Debug.Log("NPCInteracter_24: " + other.gameObject.tag);
+        if (other.gameObject.CompareTag("Player") && this.gameObject.CompareTag("NPC(Painted)"))
         {
             ActivateTextBox(true);
         }
@@ -29,6 +30,7 @@ public class NPCInteraction : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        Debug.Log("NPCInteracter_32: " + other.gameObject.tag);
         if (other.gameObject.CompareTag("Player"))
         {
             ActivateTextBox(false);

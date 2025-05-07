@@ -1,77 +1,80 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-/******************************************************
- * This script is attached to a UI Text assets and is 
- * used to trigger a typing effect
- * 
- * @author: Bruce Gustin
- * @version:  December 27, 2023
- ******************************************************/
-
-public class CaptionController : MonoBehaviour
+public class VRCaptionController : MonoBehaviour
 {
-    [SerializeField] private Image[] captionImage;         // CaptionImage that holds the text child
-    [SerializeField] private float typingSpeed;            // The speed of typing in seconds
-    [SerializeField] private bool keepPastCaptions;        // Keep all captions on screen 
-    private TextMeshProUGUI textComponent;                 // Text child of the Caption Image
-    private Coroutine typingCoroutine;                     // Reference to the typing coroutine
-    private string textToType;                             // The text to be typed
-    private int captionIndex;                              // Current caption being typed starting at zero
+    [SerializeField] private Image captionBackground;
+    [SerializeField] private TextMeshProUGUI captionText;
+    [SerializeField] private float typingSpeed = 30f; // characters per second
 
+    private Coroutine typeCoroutine;
+
+    void Start()
+    {
+        // Hide caption panel at start
+        captionBackground.gameObject.SetActive(false);
+        captionText.text = "";
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        // Start typing by pressing any key.
-        Debug.Log("29: In trigger");
-        if (other.gameObject.CompareTag("NPC") && typingCoroutine == null)
+        // Check if the player entered the trigger (player must be tagged "Player")
+        if (other.CompareTag("NPC"))
         {
-            Debug.Log("32: In trigger with Tag");
-            if (captionIndex < captionImage.Length)
-            {
-                typingCoroutine = StartCoroutine(TypeText());
-            }
-            else
-            {
-                SetCaptionInactive();
-            }
+            Debug.Log("trying to show");
+            ShowCaption("Hello, welcome to the VR world!");
         }
     }
 
-
-    private void SetCaptionInactive()
+    private void OnTriggerExit(Collider other)
     {
-        if (keepPastCaptions && captionIndex != 0)
+        // When player leaves, hide the caption
+        if (other.CompareTag("Player"))
         {
-            captionImage[captionIndex - 1].gameObject.SetActive(false);
+            HideCaption();
         }
     }
 
-    // Types caption into the image canvas in the scene
-    IEnumerator TypeText()
+    // Call this to show a new caption with typewriter effect
+    public void ShowCaption(string fullText)
     {
-        Debug.Log("56: Coroutine Started");
-        SetCaptionInactive();
-        captionImage[captionIndex].gameObject.SetActive(true);
-        textComponent = captionImage[captionIndex].GetComponentInChildren<TextMeshProUGUI>();
-        textToType = textComponent.text;
-        textComponent.text = "";               // Clear existing text
-        float typingSpeedThisCharacter = typingSpeed;
-        // Loop through each character in the textToType
-
-        for (int i = 0; i < textToType.Length; i++)
+        // Stop any ongoing typing
+        if (typeCoroutine != null)
         {
-            textComponent.text += textToType[i];  // Add the next character to the textComponent
-            if (textToType[i].Equals(",")) typingSpeedThisCharacter *= 1.5f;
-            if (textToType[i].Equals(".")) typingSpeedThisCharacter *= 2.0f;
-            yield return new WaitForSeconds(typingSpeedThisCharacter);  // Wait for typingSpeed seconds before typing the next character
+            Debug.Log("not null");
+            StopCoroutine(typeCoroutine);
         }
+        Debug.Log("ShowCaption Ran");
+        // Activate UI and reset text
+        captionBackground.gameObject.SetActive(true);
+        captionText.text = "";
+        // Start typing the new caption
+        typeCoroutine = StartCoroutine(TypeText(fullText));
+    }
 
-        // Move to next caption
-        captionIndex++;
-        typingCoroutine = null;
+    // Hide the caption panel and stop typing
+    public void HideCaption()
+    {
+        if (typeCoroutine != null)
+        {
+            StopCoroutine(typeCoroutine);
+            typeCoroutine = null;
+        }
+        captionBackground.gameObject.SetActive(false);
+    }
+
+    // Coroutine for the typewriter effect
+    private IEnumerator TypeText(string fullText)
+    {
+        string currentText = "";
+        foreach (char c in fullText)
+        {
+            currentText += c;
+            captionText.text = currentText;
+            // Wait a fraction of a second based on typing speed
+            yield return new WaitForSeconds(1f / typingSpeed);
+        }
     }
 }
