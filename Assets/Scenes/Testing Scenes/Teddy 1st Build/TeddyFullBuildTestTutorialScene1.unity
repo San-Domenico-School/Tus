@@ -230,6 +230,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 109588323}
+    - targetCorrespondingSourceObject: {fileID: 6124875480397551446, guid: 200da0d5814e8c14489e8b3d911079dc,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 109588328}
   m_SourcePrefab: {fileID: 100100000, guid: 200da0d5814e8c14489e8b3d911079dc, type: 3}
 --- !u!1 &109588309 stripped
 GameObject:
@@ -325,10 +329,9 @@ MonoBehaviour:
     m_ActionName: CameraControl_LeftHanded/CameraZoneMove
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5286635245418083262, guid: 7d704d028a7824af7903a64c77c0a4c8,
-          type: 3}
-        m_TargetAssemblyTypeName: SimonPuzzle, Assembly-CSharp
-        m_MethodName: OnPuzzleClick
+      - m_Target: {fileID: 109588328}
+        m_TargetAssemblyTypeName: UIDynamicMethods, Assembly-CSharp
+        m_MethodName: OnSimonPuzzleClick
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -348,10 +351,6 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 45632db3-bfcd-498c-8749-2ee90529cb72
     m_ActionName: DominantArm_RightHanded/GrabColor
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 96f2ba78-bb84-45a2-b0f9-b16efdb3ebd2
-    m_ActionName: DominantArm_RightHanded/Save
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: e9b1975f-ec20-491d-81f4-e78994d9dca9
@@ -408,6 +407,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 3a722f95-b42b-4421-aad1-d0eb2b685e47
     m_ActionName: Palette/LeftHandLocation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5371f215-3d2d-4907-a081-c6fde6638d67
+    m_ActionName: DominantArm_RightHanded/BrushSizeUp
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: cb2f4f5e-1f79-4246-bca9-78e60819c9a2
+    m_ActionName: DominantArm_RightHanded/BrushSizeDown
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 23f67002-6426-4c07-945f-328a893494dc
+    m_ActionName: NonDominantArm_LeftHanded/Save
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2b92d426-6107-4ef6-a51e-c4b0fba3e1a0
+    m_ActionName: NonDominantArm_LeftHanded/Clear
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: DominantArm_RightHanded
@@ -426,6 +441,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PaintManager: {fileID: 0}
+--- !u!114 &109588328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109588309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b8273ef4030840d9af636d65373c578, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &170879669
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2034,134 +2061,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1963673266
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1963673268}
-  - component: {fileID: 1963673267}
-  m_Layer: 0
-  m_Name: Music
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!82 &1963673267
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1963673266}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f174ccdceab4c4a06b91cfaf5151b1cb, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 0.75
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 1
-  BypassListenerEffects: 1
-  BypassReverbZones: 1
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!4 &1963673268
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1963673266}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 100, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2054530642 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8153468022190502949, guid: c585e8116cc684e22bfd5601af3d511c,
@@ -2989,4 +2888,3 @@ SceneRoots:
   - {fileID: 170879669}
   - {fileID: 8789216747248074205}
   - {fileID: 2126064428}
-  - {fileID: 1963673268}
