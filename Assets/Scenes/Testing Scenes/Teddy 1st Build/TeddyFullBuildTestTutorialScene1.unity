@@ -599,7 +599,9 @@ MonoBehaviour:
   surfaceArea: 601.06177
   uvRatio: 0.95360345
   textureSize: -1
+  fullTextureArea: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
+  paintRT: {fileID: 0}
 --- !u!64 &256286926
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -643,7 +645,9 @@ MonoBehaviour:
   surfaceArea: 601.06165
   uvRatio: 0.95360357
   textureSize: -1
+  fullTextureArea: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
+  paintRT: {fileID: 0}
 --- !u!64 &284541020
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -687,7 +691,9 @@ MonoBehaviour:
   surfaceArea: 675.3196
   uvRatio: 0.7285224
   textureSize: -1
+  fullTextureArea: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
+  paintRT: {fileID: 0}
 --- !u!64 &327390652
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -731,7 +737,9 @@ MonoBehaviour:
   surfaceArea: 794.906
   uvRatio: 0.85753036
   textureSize: -1
+  fullTextureArea: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
+  paintRT: {fileID: 0}
 --- !u!64 &345383750
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -775,7 +783,9 @@ MonoBehaviour:
   surfaceArea: 821.4591
   uvRatio: 0.8861755
   textureSize: -1
+  fullTextureArea: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
+  paintRT: {fileID: 0}
 --- !u!64 &409913161
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -912,7 +922,9 @@ MonoBehaviour:
   surfaceArea: 675.31946
   uvRatio: 0.7285224
   textureSize: -1
+  fullTextureArea: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
+  paintRT: {fileID: 0}
 --- !u!64 &661807930
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1061,7 +1073,9 @@ MonoBehaviour:
   surfaceArea: 601.06177
   uvRatio: 0.95360357
   textureSize: -1
+  fullTextureArea: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
+  paintRT: {fileID: 0}
 --- !u!64 &714046061
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1105,7 +1119,9 @@ MonoBehaviour:
   surfaceArea: 601.06177
   uvRatio: 0.95360345
   textureSize: -1
+  fullTextureArea: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
+  paintRT: {fileID: 0}
 --- !u!64 &845723170
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1149,7 +1165,9 @@ MonoBehaviour:
   surfaceArea: 675.31934
   uvRatio: 0.72852224
   textureSize: -1
+  fullTextureArea: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
+  paintRT: {fileID: 0}
 --- !u!64 &853023356
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1193,7 +1211,9 @@ MonoBehaviour:
   surfaceArea: 172.44275
   uvRatio: 0.56880784
   textureSize: -1
+  fullTextureArea: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
+  paintRT: {fileID: 0}
 --- !u!64 &929899759
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1237,7 +1257,9 @@ MonoBehaviour:
   surfaceArea: 794.90607
   uvRatio: 0.8575304
   textureSize: -1
+  fullTextureArea: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
+  paintRT: {fileID: 0}
 --- !u!64 &964250608
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1281,7 +1303,9 @@ MonoBehaviour:
   surfaceArea: 821.45886
   uvRatio: 0.88617504
   textureSize: -1
+  fullTextureArea: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
+  paintRT: {fileID: 0}
 --- !u!64 &1036481320
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1325,7 +1349,9 @@ MonoBehaviour:
   surfaceArea: 396.11713
   uvRatio: 0.53612894
   textureSize: -1
+  fullTextureArea: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
+  paintRT: {fileID: 0}
 --- !u!64 &1086497865
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1555,7 +1581,9 @@ MonoBehaviour:
   surfaceArea: 601.0619
   uvRatio: 0.9536034
   textureSize: -1
+  fullTextureArea: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
+  paintRT: {fileID: 0}
 --- !u!64 &1170978439
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1599,7 +1627,9 @@ MonoBehaviour:
   surfaceArea: 601.0615
   uvRatio: 0.9536035
   textureSize: -1
+  fullTextureArea: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
+  paintRT: {fileID: 0}
 --- !u!64 &1206233556
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1643,7 +1673,9 @@ MonoBehaviour:
   surfaceArea: 9.7354145
   uvRatio: 0.79068345
   textureSize: -1
+  fullTextureArea: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
+  paintRT: {fileID: 0}
 --- !u!64 &1337893134
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1699,7 +1731,9 @@ MonoBehaviour:
   surfaceArea: 675.3193
   uvRatio: 0.72852254
   textureSize: -1
+  fullTextureArea: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
+  paintRT: {fileID: 0}
 --- !u!64 &1445948845
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1743,7 +1777,9 @@ MonoBehaviour:
   surfaceArea: 601.0617
   uvRatio: 0.9536035
   textureSize: -1
+  fullTextureArea: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
+  paintRT: {fileID: 0}
 --- !u!64 &1479133779
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1766,6 +1802,134 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4579454407841743219, guid: c585e8116cc684e22bfd5601af3d511c, type: 3}
+--- !u!1 &1565021223
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1565021225}
+  - component: {fileID: 1565021224}
+  m_Layer: 0
+  m_Name: Music
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1565021224
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1565021223}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: f174ccdceab4c4a06b91cfaf5151b1cb, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.75
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 1
+  BypassListenerEffects: 1
+  BypassReverbZones: 1
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1565021225
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1565021223}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 100, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1568700121
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1861,7 +2025,9 @@ MonoBehaviour:
   surfaceArea: 675.31934
   uvRatio: 0.7285226
   textureSize: -1
+  fullTextureArea: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
+  paintRT: {fileID: 0}
 --- !u!64 &1718589451
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1905,7 +2071,9 @@ MonoBehaviour:
   surfaceArea: 601.0618
   uvRatio: 0.9536036
   textureSize: -1
+  fullTextureArea: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
+  paintRT: {fileID: 0}
 --- !u!64 &1725980265
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1949,7 +2117,9 @@ MonoBehaviour:
   surfaceArea: 675.31934
   uvRatio: 0.72852236
   textureSize: -1
+  fullTextureArea: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
+  paintRT: {fileID: 0}
 --- !u!64 &1807482832
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1993,7 +2163,9 @@ MonoBehaviour:
   surfaceArea: 120.09804
   uvRatio: 0.6723838
   textureSize: -1
+  fullTextureArea: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
+  paintRT: {fileID: 0}
 --- !u!64 &1825317559
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2082,7 +2254,9 @@ MonoBehaviour:
   surfaceArea: 601.06177
   uvRatio: 0.9536033
   textureSize: -1
+  fullTextureArea: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
+  paintRT: {fileID: 0}
 --- !u!64 &2054530647
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2126,7 +2300,9 @@ MonoBehaviour:
   surfaceArea: 8.433599
   uvRatio: 0.75744784
   textureSize: -1
+  fullTextureArea: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
+  paintRT: {fileID: 0}
 --- !u!64 &2078346896
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2170,7 +2346,9 @@ MonoBehaviour:
   surfaceArea: 0.32956955
   uvRatio: 0.43047744
   textureSize: -1
+  fullTextureArea: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
+  paintRT: {fileID: 0}
 --- !u!64 &2100896873
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2835,7 +3013,9 @@ MonoBehaviour:
   surfaceArea: 5.999999
   uvRatio: 0.5933306
   textureSize: -1
+  fullTextureArea: -1
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
+  paintRT: {fileID: 0}
 --- !u!64 &8277738429697844230
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2888,3 +3068,4 @@ SceneRoots:
   - {fileID: 170879669}
   - {fileID: 8789216747248074205}
   - {fileID: 2126064428}
+  - {fileID: 1565021225}
