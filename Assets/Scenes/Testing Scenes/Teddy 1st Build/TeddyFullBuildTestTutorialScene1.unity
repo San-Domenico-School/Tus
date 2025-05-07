@@ -6642,7 +6642,7 @@ PrefabInstance:
     - target: {fileID: 8906574365971023654, guid: 80624fb2f79f3e64e9bba6ee98f967c6,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 23.16
+      value: 21.72
       objectReference: {fileID: 0}
     - target: {fileID: 8906574365971023654, guid: 80624fb2f79f3e64e9bba6ee98f967c6,
         type: 3}
@@ -10825,10 +10825,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2054530858}
-    - targetCorrespondingSourceObject: {fileID: 8416272007918961125, guid: ba0b0512e73a298438cc7ceb2b1c527d,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2054530857}
     - targetCorrespondingSourceObject: {fileID: -1599826595754709761, guid: ba0b0512e73a298438cc7ceb2b1c527d,
         type: 3}
       insertIndex: -1
@@ -13842,24 +13838,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5786481157523847204, guid: ba0b0512e73a298438cc7ceb2b1c527d, type: 3}
---- !u!114 &2054530857
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2054530852}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8caca2cd5603dfc43ba98a37ff996cbf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  surfaceArea: 749.2639
-  uvRatio: 0.806887
-  textureSize: -1
-  fullTextureArea: -1
-  lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
-  paintRT: {fileID: 0}
 --- !u!64 &2054530858
 MeshCollider:
   m_ObjectHideFlags: 0
