@@ -101,7 +101,7 @@ public class SimonPuzzle : MonoBehaviour
     // Dynamic input action methods
     public void OnPuzzleClick(InputAction.CallbackContext ctx)
     {
-        objectRenderer.material = winColor;
+        //objectRenderer.material = winColor;
         if (ctx.performed) Interact();
     }
 
