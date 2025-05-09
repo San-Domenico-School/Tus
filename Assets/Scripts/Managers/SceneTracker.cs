@@ -64,6 +64,7 @@ public class SceneTracker : MonoBehaviour
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         TestBox(Color.white);
         Debug.Log("changeScene called");
+        Debug.Log(currentSceneIndex);
 
         if (currentSceneIndex == 0)
         {
