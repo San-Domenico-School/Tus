@@ -23,7 +23,7 @@ public static class ObjectStatisticsUtility
         int textureSize = (int) Math.Round(Math.Sqrt(fullTextureArea) * targetTexelDensity);
         textureSize = Mathf.Max(1, textureSize); // Ensure textureSize is at least 1
 
-        Debug.Log($"objectArea: {objectArea}, uvPercentage: {uvRatio}, fullTextureArea: {fullTextureArea}, textureSize: {textureSize}");
+        //Debug.Log($"objectArea: {objectArea}, uvPercentage: {uvRatio}, fullTextureArea: {fullTextureArea}, textureSize: {textureSize}");
 
         return new Texture2D(textureSize, textureSize);
     }
