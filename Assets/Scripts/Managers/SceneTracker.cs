@@ -35,6 +35,7 @@ public class SceneTracker : MonoBehaviour
     private void Start()
     {
         DontDestroyOnLoad(gameObject);
+        string saveImagesPath = Application.persistentDataPath;
     }
 
     // This is just to test the trigger in VR by change box color
@@ -123,6 +124,8 @@ public class SceneTracker : MonoBehaviour
 
     private void OnSceneUnloaded(Scene scene)
     {
-        Debug.Log("called");
+        Camera topDownCamera = GameObject.FindGameObjectWithTag("TopDownCamera").GetComponent<Camera>();
+        RenderTexture renderTexture = new RenderTexture(1024, 1024, 32);
+        // do more stuff or just give up and finish Celeste finally
     }
 }
