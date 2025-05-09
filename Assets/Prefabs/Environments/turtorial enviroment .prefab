@@ -122,7 +122,7 @@ MonoBehaviour:
   surfaceArea: 32.237144
   uvRatio: 0.4530178
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 49.87029
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &19513215674638796
@@ -247,7 +247,7 @@ MonoBehaviour:
   surfaceArea: 16.40877
   uvRatio: 0.40470618
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 26.17681
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &34541739286644706
@@ -372,7 +372,7 @@ MonoBehaviour:
   surfaceArea: 333.10355
   uvRatio: 0.40743724
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 530.4883
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &40840389927372581
@@ -497,7 +497,7 @@ MonoBehaviour:
   surfaceArea: 57.032272
   uvRatio: 0.43905398
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 89.0243
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &119803855769357173
@@ -728,7 +728,7 @@ MonoBehaviour:
   surfaceArea: 128.97307
   uvRatio: 0.49670976
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 193.88396
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &308662550099954427
@@ -853,7 +853,7 @@ MonoBehaviour:
   surfaceArea: 349.09805
   uvRatio: 0.44771495
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 541.89966
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &313990283908489420
@@ -978,7 +978,7 @@ MonoBehaviour:
   surfaceArea: 89.115685
   uvRatio: 0.39460167
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 143.06618
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &356673619328746035
@@ -1103,7 +1103,7 @@ MonoBehaviour:
   surfaceArea: 89.23822
   uvRatio: 0.38093108
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 144.48283
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &408217783796342297
@@ -1228,7 +1228,7 @@ MonoBehaviour:
   surfaceArea: 285.69843
   uvRatio: 0.55782187
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 412.028
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &491581736266231460
@@ -1353,7 +1353,7 @@ MonoBehaviour:
   surfaceArea: 41.059845
   uvRatio: 0.4563277
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 63.382946
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &504873240966067403
@@ -1478,7 +1478,7 @@ MonoBehaviour:
   surfaceArea: 87.84472
   uvRatio: 0.36465788
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 143.65617
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &532875712373017600
@@ -1603,7 +1603,7 @@ MonoBehaviour:
   surfaceArea: 282.77975
   uvRatio: 0.494048
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 425.85272
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &595181203388890553
@@ -1728,7 +1728,7 @@ MonoBehaviour:
   surfaceArea: 165.6576
   uvRatio: 0.428606
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 260.31335
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &607384761301506060
@@ -1853,7 +1853,7 @@ MonoBehaviour:
   surfaceArea: 343.78613
   uvRatio: 0.39013344
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 553.4498
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &648080005755352755
@@ -1978,7 +1978,7 @@ MonoBehaviour:
   surfaceArea: 22.477674
   uvRatio: 0.43616652
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 35.15134
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &653268915209379861
@@ -2103,7 +2103,7 @@ MonoBehaviour:
   surfaceArea: 297.51987
   uvRatio: 0.47240254
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 454.4906
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &754353396600625147
@@ -2228,7 +2228,7 @@ MonoBehaviour:
   surfaceArea: 53.406353
   uvRatio: 0.42001548
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 84.38121
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &839524440565600442
@@ -2353,7 +2353,7 @@ MonoBehaviour:
   surfaceArea: 82.12796
   uvRatio: 0.47359893
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 125.36021
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &872383293371387682
@@ -2478,7 +2478,7 @@ MonoBehaviour:
   surfaceArea: 53.406353
   uvRatio: 0.42001548
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 84.38121
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &886653937064528249
@@ -2603,7 +2603,7 @@ MonoBehaviour:
   surfaceArea: 258.6977
   uvRatio: 0.5523228
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 374.51074
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &909506721744053457
@@ -2728,7 +2728,7 @@ MonoBehaviour:
   surfaceArea: 29.05832
   uvRatio: 0.490611
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 43.860306
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &937620753517911943
@@ -2853,7 +2853,7 @@ MonoBehaviour:
   surfaceArea: 252.2616
   uvRatio: 0.5599214
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 363.27652
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &945866880048009567
@@ -2978,7 +2978,7 @@ MonoBehaviour:
   surfaceArea: 311.46307
   uvRatio: 0.38833857
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 501.97302
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &992089328713986833
@@ -3103,7 +3103,7 @@ MonoBehaviour:
   surfaceArea: 57.03226
   uvRatio: 0.439054
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 89.02428
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &1064564735699256026
@@ -3228,7 +3228,7 @@ MonoBehaviour:
   surfaceArea: 103.403404
   uvRatio: 0.40430987
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 164.99979
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &1116197038637785466
@@ -3353,7 +3353,7 @@ MonoBehaviour:
   surfaceArea: 34.178375
   uvRatio: 0.48683697
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 51.717453
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &1254504089040380651
@@ -3478,7 +3478,7 @@ MonoBehaviour:
   surfaceArea: 273.5289
   uvRatio: 0.47774088
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 416.38187
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &1264295478379672425
@@ -3603,7 +3603,7 @@ MonoBehaviour:
   surfaceArea: 307.84695
   uvRatio: 0.53655356
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 450.51752
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &1289235089323245032
@@ -3728,7 +3728,7 @@ MonoBehaviour:
   surfaceArea: 274.28687
   uvRatio: 0.57230157
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 391.59894
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &1390966458526343702
@@ -3853,7 +3853,7 @@ MonoBehaviour:
   surfaceArea: 87.97007
   uvRatio: 0.3847034
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 142.09775
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &1395193105607910500
@@ -3978,7 +3978,7 @@ MonoBehaviour:
   surfaceArea: 37.549835
   uvRatio: 0.5362229
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 54.96459
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &1441170845707665541
@@ -4103,7 +4103,7 @@ MonoBehaviour:
   surfaceArea: 103.41833
   uvRatio: 0.42180336
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 163.21446
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &1663343059629040769
@@ -4228,7 +4228,7 @@ MonoBehaviour:
   surfaceArea: 82.81527
   uvRatio: 0.38864994
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 133.4444
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &1747852726785333295
@@ -4353,7 +4353,7 @@ MonoBehaviour:
   surfaceArea: 79.918785
   uvRatio: 0.408623
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 127.180916
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &1839937600615489071
@@ -4478,7 +4478,7 @@ MonoBehaviour:
   surfaceArea: 80.834305
   uvRatio: 0.38669467
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 130.41042
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &1929021901890660729
@@ -4603,7 +4603,7 @@ MonoBehaviour:
   surfaceArea: 79.321
   uvRatio: 0.40718496
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 126.34368
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &1967773089845722473
@@ -4728,7 +4728,7 @@ MonoBehaviour:
   surfaceArea: 109.07163
   uvRatio: 0.45554516
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 168.4562
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &1990129961493736577
@@ -4853,7 +4853,7 @@ MonoBehaviour:
   surfaceArea: 39.206287
   uvRatio: 0.40122467
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 62.682045
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &2008233391042135077
@@ -4978,7 +4978,7 @@ MonoBehaviour:
   surfaceArea: 90.00956
   uvRatio: 0.36692196
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 146.99263
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &2046291937067706012
@@ -5103,7 +5103,7 @@ MonoBehaviour:
   surfaceArea: 66.49737
   uvRatio: 0.49200583
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 100.27764
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &2065318363375691375
@@ -5228,7 +5228,7 @@ MonoBehaviour:
   surfaceArea: 41.77996
   uvRatio: 0.25661415
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 72.83859
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &2090590610485572711
@@ -5353,7 +5353,7 @@ MonoBehaviour:
   surfaceArea: 7.753869
   uvRatio: 0.42344826
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 12.224376
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &2128660049560873957
@@ -5478,7 +5478,7 @@ MonoBehaviour:
   surfaceArea: 165.65761
   uvRatio: 0.42860594
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 260.3134
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &2150364129061870443
@@ -5603,7 +5603,7 @@ MonoBehaviour:
   surfaceArea: 350.6388
   uvRatio: 0.44503394
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 545.23145
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &2161383859709803425
@@ -5728,7 +5728,7 @@ MonoBehaviour:
   surfaceArea: 5.649181
   uvRatio: 0.42858797
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 8.877191
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &2224221747190638282
@@ -5853,7 +5853,7 @@ MonoBehaviour:
   surfaceArea: 382.89603
   uvRatio: 0.5485701
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 555.74677
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &2227143889158671127
@@ -5978,7 +5978,7 @@ MonoBehaviour:
   surfaceArea: 361.15836
   uvRatio: 0.48944023
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 545.5513
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &2227448082826720086
@@ -6103,7 +6103,7 @@ MonoBehaviour:
   surfaceArea: 131.03711
   uvRatio: 0.45383406
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 202.60512
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &2288207495898958580
@@ -6228,7 +6228,7 @@ MonoBehaviour:
   surfaceArea: 85.588684
   uvRatio: 0.40513209
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 136.50264
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &2325712341487313329
@@ -6353,7 +6353,7 @@ MonoBehaviour:
   surfaceArea: 97.30912
   uvRatio: 0.37311113
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 158.31113
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &2334806711495304255
@@ -6478,7 +6478,7 @@ MonoBehaviour:
   surfaceArea: 65.289314
   uvRatio: 0.42189276
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 103.03354
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &2482470356505700239
@@ -6603,7 +6603,7 @@ MonoBehaviour:
   surfaceArea: 358.87683
   uvRatio: 0.5022337
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 537.5136
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &2510097190999308770
@@ -6728,7 +6728,7 @@ MonoBehaviour:
   surfaceArea: 65.28931
   uvRatio: 0.42189264
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 103.03354
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &2513113657113888982
@@ -6853,7 +6853,7 @@ MonoBehaviour:
   surfaceArea: 76.70423
   uvRatio: 0.4938768
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 115.526024
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &2788617551367260018
@@ -6978,7 +6978,7 @@ MonoBehaviour:
   surfaceArea: 191.91522
   uvRatio: 0.4988914
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 288.0856
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &2823331160996760624
@@ -7103,7 +7103,7 @@ MonoBehaviour:
   surfaceArea: 36.782104
   uvRatio: 0.3460197
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 60.836876
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &2830833327518299896
@@ -7228,7 +7228,7 @@ MonoBehaviour:
   surfaceArea: 119.9562
   uvRatio: 0.4962648
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 180.38235
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &3006470657782771590
@@ -7353,7 +7353,7 @@ MonoBehaviour:
   surfaceArea: 116.949646
   uvRatio: 0.37487477
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 190.05782
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &3015126313519267479
@@ -7478,7 +7478,7 @@ MonoBehaviour:
   surfaceArea: 36.465267
   uvRatio: 0.4000651
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 58.342052
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &3099925114988679667
@@ -7603,7 +7603,7 @@ MonoBehaviour:
   surfaceArea: 88.25504
   uvRatio: 0.31704035
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 148.52968
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &3189074862083002698
@@ -7728,7 +7728,7 @@ MonoBehaviour:
   surfaceArea: 88.44997
   uvRatio: 0.38981825
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 142.42052
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &3285627330639529363
@@ -7853,7 +7853,7 @@ MonoBehaviour:
   surfaceArea: 96.562935
   uvRatio: 0.47145313
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 147.60097
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &3303539369645377518
@@ -7978,7 +7978,7 @@ MonoBehaviour:
   surfaceArea: 7.75387
   uvRatio: 0.4234481
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 12.224379
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &3332870288883600988
@@ -8103,7 +8103,7 @@ MonoBehaviour:
   surfaceArea: 81.34076
   uvRatio: 0.42122325
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 128.4189
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &3365445575899019686
@@ -8228,7 +8228,7 @@ MonoBehaviour:
   surfaceArea: 273.66034
   uvRatio: 0.49434358
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 412.03845
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &3395127655730694996
@@ -8353,7 +8353,7 @@ MonoBehaviour:
   surfaceArea: 133.16971
   uvRatio: 0.41651136
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 210.87273
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &3401779481820002709
@@ -8478,7 +8478,7 @@ MonoBehaviour:
   surfaceArea: 13287.45
   uvRatio: 0.9918348
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 13395.944
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &3402210636731747684
@@ -8603,7 +8603,7 @@ MonoBehaviour:
   surfaceArea: 18.386625
   uvRatio: 0.43535197
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 28.768597
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &3426208934347122541
@@ -8728,7 +8728,7 @@ MonoBehaviour:
   surfaceArea: 58.339916
   uvRatio: 0.40695992
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 92.93783
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &3499665777820533366
@@ -8853,7 +8853,7 @@ MonoBehaviour:
   surfaceArea: 39.265915
   uvRatio: 0.3943616
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 63.04686
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &3592898604118668610
@@ -8978,7 +8978,7 @@ MonoBehaviour:
   surfaceArea: 76.83526
   uvRatio: 0.45508143
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 118.704216
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &3678184823885325983
@@ -9103,7 +9103,7 @@ MonoBehaviour:
   surfaceArea: 306.95312
   uvRatio: 0.60267144
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 428.91437
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &3694531695189892778
@@ -9228,7 +9228,7 @@ MonoBehaviour:
   surfaceArea: 105.26461
   uvRatio: 0.40643007
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 167.74652
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &3738987212845217317
@@ -9353,7 +9353,7 @@ MonoBehaviour:
   surfaceArea: 333.76495
   uvRatio: 0.44480893
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 519.0683
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &3793155834735495235
@@ -9478,7 +9478,7 @@ MonoBehaviour:
   surfaceArea: 389.10706
   uvRatio: 0.48407236
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 589.85815
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &3888755023798604427
@@ -9603,7 +9603,7 @@ MonoBehaviour:
   surfaceArea: 110.23071
   uvRatio: 0.35745195
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 181.05925
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &3899495833880809942
@@ -9634,7 +9634,7 @@ Transform:
   m_GameObject: {fileID: 3899495833880809942}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -6.0359297, y: -5.1639514, z: 7.125616}
+  m_LocalPosition: {x: -5.56, y: -5.1639514, z: 7.125616}
   m_LocalScale: {x: 489.05588, y: 489.05588, z: 46.736008}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9834,7 +9834,7 @@ MonoBehaviour:
   surfaceArea: 88.439644
   uvRatio: 0.43059495
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 138.79762
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &3984576670827960611
@@ -9959,7 +9959,7 @@ MonoBehaviour:
   surfaceArea: 32.868877
   uvRatio: 0.55097204
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 47.627922
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &4001687212891868143
@@ -10084,7 +10084,7 @@ MonoBehaviour:
   surfaceArea: 41.950787
   uvRatio: 0.45523882
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 64.80395
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &4008640199304366596
@@ -10209,7 +10209,7 @@ MonoBehaviour:
   surfaceArea: 89.72339
   uvRatio: 0.37128443
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 146.13388
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &4014240065549525116
@@ -10334,7 +10334,7 @@ MonoBehaviour:
   surfaceArea: 78.63633
   uvRatio: 0.38989747
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 126.61256
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &4022946409522547395
@@ -10459,7 +10459,7 @@ MonoBehaviour:
   surfaceArea: 57.03226
   uvRatio: 0.439054
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 89.02428
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &4079979544340447011
@@ -10584,7 +10584,7 @@ MonoBehaviour:
   surfaceArea: 254.66968
   uvRatio: 0.57056177
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 364.03458
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &4115197874847785832
@@ -10709,7 +10709,7 @@ MonoBehaviour:
   surfaceArea: 290.34317
   uvRatio: 0.49102604
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 438.12027
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &4121014795843329393
@@ -10834,7 +10834,7 @@ MonoBehaviour:
   surfaceArea: 30.9017
   uvRatio: 0.48759425
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 46.73591
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &4145271436572017584
@@ -10959,7 +10959,7 @@ MonoBehaviour:
   surfaceArea: 191.91519
   uvRatio: 0.4988916
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 288.0855
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &4173765024681962160
@@ -11084,7 +11084,7 @@ MonoBehaviour:
   surfaceArea: 20.214405
   uvRatio: 0.3915664
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 32.513527
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &4363563107014229273
@@ -11209,7 +11209,7 @@ MonoBehaviour:
   surfaceArea: 87.56454
   uvRatio: 0.4189542
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 138.44354
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &4369864065833028368
@@ -11334,7 +11334,7 @@ MonoBehaviour:
   surfaceArea: 240.14328
   uvRatio: 0.54070765
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 350.43924
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &4382715767801499868
@@ -11459,7 +11459,7 @@ MonoBehaviour:
   surfaceArea: 312.82715
   uvRatio: 0.46861595
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 479.0585
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &4458293970142051186
@@ -11584,7 +11584,7 @@ MonoBehaviour:
   surfaceArea: 35.78963
   uvRatio: 0.32414562
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 59.97821
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &4465755059691826432
@@ -11709,7 +11709,7 @@ MonoBehaviour:
   surfaceArea: 120.56785
   uvRatio: 0.38625994
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 194.56517
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &4553014294429252175
@@ -11834,7 +11834,7 @@ MonoBehaviour:
   surfaceArea: 53.40636
   uvRatio: 0.42001557
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 84.38122
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &4583846126004089895
@@ -11959,7 +11959,7 @@ MonoBehaviour:
   surfaceArea: 272.1511
   uvRatio: 0.51190096
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 404.9878
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &4591691753957604033
@@ -12084,7 +12084,7 @@ MonoBehaviour:
   surfaceArea: 31.108934
   uvRatio: 0.4330231
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 48.746983
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &4623997504555426119
@@ -12209,7 +12209,7 @@ MonoBehaviour:
   surfaceArea: 94.401215
   uvRatio: 0.4328858
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 147.93748
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &4651520776709750617
@@ -12334,7 +12334,7 @@ MonoBehaviour:
   surfaceArea: 362.7426
   uvRatio: 0.4890122
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 548.0997
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &4666694949722861470
@@ -12459,7 +12459,7 @@ MonoBehaviour:
   surfaceArea: 284.74286
   uvRatio: 0.47508895
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 434.20752
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &4669949542271953742
@@ -12584,7 +12584,7 @@ MonoBehaviour:
   surfaceArea: 249.1983
   uvRatio: 0.46211213
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 383.23904
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &4684498893529058576
@@ -12709,7 +12709,7 @@ MonoBehaviour:
   surfaceArea: 97.042145
   uvRatio: 0.40499344
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 154.78285
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &4732827302048961220
@@ -12834,7 +12834,7 @@ MonoBehaviour:
   surfaceArea: 22.477676
   uvRatio: 0.43616638
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 35.151344
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &4747954085424444768
@@ -12959,7 +12959,7 @@ MonoBehaviour:
   surfaceArea: 20.214409
   uvRatio: 0.39156616
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 32.51354
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &4750805425680380745
@@ -13084,7 +13084,7 @@ MonoBehaviour:
   surfaceArea: 40.78649
   uvRatio: 0.49474663
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 61.394005
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &4758841898689680900
@@ -13209,7 +13209,7 @@ MonoBehaviour:
   surfaceArea: 66.49737
   uvRatio: 0.49200577
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 100.27765
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &4768766385321754489
@@ -13334,7 +13334,7 @@ MonoBehaviour:
   surfaceArea: 70.733086
   uvRatio: 0.37255973
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 115.11387
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &4797890449788122847
@@ -13459,7 +13459,7 @@ MonoBehaviour:
   surfaceArea: 300.42682
   uvRatio: 0.51134455
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 447.23203
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &4858396483527149985
@@ -13584,7 +13584,7 @@ MonoBehaviour:
   surfaceArea: 106.41284
   uvRatio: 0.32907966
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 177.80739
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &4997268022764887233
@@ -13709,7 +13709,7 @@ MonoBehaviour:
   surfaceArea: 22.378101
   uvRatio: 0.43456128
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 35.031548
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &5017079719587083977
@@ -13834,7 +13834,7 @@ MonoBehaviour:
   surfaceArea: 71.18312
   uvRatio: 0.46141893
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 109.521
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &5039498359567461857
@@ -13959,7 +13959,7 @@ MonoBehaviour:
   surfaceArea: 347.64758
   uvRatio: 0.455874
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 536.81165
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &5104657845626356150
@@ -14084,7 +14084,7 @@ MonoBehaviour:
   surfaceArea: 22.477673
   uvRatio: 0.43616655
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 35.151337
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &5107321839110752720
@@ -14209,7 +14209,7 @@ MonoBehaviour:
   surfaceArea: 53.40636
   uvRatio: 0.42001557
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 84.38122
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &5122893679468999898
@@ -14334,7 +14334,7 @@ MonoBehaviour:
   surfaceArea: 243.00572
   uvRatio: 0.44704738
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 377.37637
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &5172274016637560533
@@ -14459,7 +14459,7 @@ MonoBehaviour:
   surfaceArea: 18.386623
   uvRatio: 0.43535203
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 28.768593
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &5251786074147201630
@@ -14584,7 +14584,7 @@ MonoBehaviour:
   surfaceArea: 67.028595
   uvRatio: 0.4275947
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 105.39612
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &5263328825129762758
@@ -14709,7 +14709,7 @@ MonoBehaviour:
   surfaceArea: 189.81578
   uvRatio: 0.39100528
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 305.4126
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &5282678714907968534
@@ -14834,7 +14834,7 @@ MonoBehaviour:
   surfaceArea: 31.87817
   uvRatio: 0.44565043
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 49.54982
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &5294372795465841849
@@ -14959,7 +14959,7 @@ MonoBehaviour:
   surfaceArea: 106.14577
   uvRatio: 0.4607971
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 163.37987
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &5344581761990998852
@@ -15084,7 +15084,7 @@ MonoBehaviour:
   surfaceArea: 31.69614
   uvRatio: 0.47658643
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 48.28633
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &5434851494684364746
@@ -15209,7 +15209,7 @@ MonoBehaviour:
   surfaceArea: 41.314926
   uvRatio: 0.46701172
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 63.335297
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &5455256811088222557
@@ -15334,7 +15334,7 @@ MonoBehaviour:
   surfaceArea: 239.6113
   uvRatio: 0.47931167
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 364.3741
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &5464506349010031328
@@ -15492,7 +15492,7 @@ MonoBehaviour:
   surfaceArea: 267.4665
   uvRatio: 0.4730278
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 408.4139
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &5521103215558187155
@@ -15617,7 +15617,7 @@ MonoBehaviour:
   surfaceArea: 18.386623
   uvRatio: 0.43535203
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 28.768593
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &5556174891160235336
@@ -15742,7 +15742,7 @@ MonoBehaviour:
   surfaceArea: 96.69116
   uvRatio: 0.4349406
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 151.32741
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &5636827363207095894
@@ -15867,7 +15867,7 @@ MonoBehaviour:
   surfaceArea: 34.544285
   uvRatio: 0.4438616
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 53.755688
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &5695804929521110743
@@ -15992,7 +15992,7 @@ MonoBehaviour:
   surfaceArea: 263.489
   uvRatio: 0.48762214
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 398.49496
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &5705305443410514008
@@ -16117,7 +16117,7 @@ MonoBehaviour:
   surfaceArea: 128.97305
   uvRatio: 0.4967097
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 193.88394
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &5752801564767573022
@@ -16242,7 +16242,7 @@ MonoBehaviour:
   surfaceArea: 308.87637
   uvRatio: 0.50970757
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 460.31613
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &5754115197769171714
@@ -16367,7 +16367,7 @@ MonoBehaviour:
   surfaceArea: 238.25992
   uvRatio: 0.5399841
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 347.86328
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &5755705226171251820
@@ -16492,7 +16492,7 @@ MonoBehaviour:
   surfaceArea: 15.038799
   uvRatio: 0.43101856
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 23.595596
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &5781264298784244949
@@ -16617,7 +16617,7 @@ MonoBehaviour:
   surfaceArea: 281.78458
   uvRatio: 0.38921976
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 453.89304
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &5781443701936227904
@@ -16742,7 +16742,7 @@ MonoBehaviour:
   surfaceArea: 299.0984
   uvRatio: 0.45169815
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 463.09457
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &5834647082303323914
@@ -16867,7 +16867,7 @@ MonoBehaviour:
   surfaceArea: 65.28932
   uvRatio: 0.4218927
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 103.033554
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &5934194782933553050
@@ -16992,7 +16992,7 @@ MonoBehaviour:
   surfaceArea: 22.378103
   uvRatio: 0.4345614
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 35.031548
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &5936179292560213292
@@ -17117,7 +17117,7 @@ MonoBehaviour:
   surfaceArea: 82.35707
   uvRatio: 0.4891146
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 124.4321
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &5937308209414340862
@@ -17242,7 +17242,7 @@ MonoBehaviour:
   surfaceArea: 165.6576
   uvRatio: 0.428606
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 260.31335
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &6027228663418793043
@@ -17367,7 +17367,7 @@ MonoBehaviour:
   surfaceArea: 239.06758
   uvRatio: 0.5319662
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 350.9593
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &6081376524694926887
@@ -17492,7 +17492,7 @@ MonoBehaviour:
   surfaceArea: 110.39159
   uvRatio: 0.41771138
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 174.67136
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &6110351677757010579
@@ -17617,7 +17617,7 @@ MonoBehaviour:
   surfaceArea: 326.41443
   uvRatio: 0.5708069
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 466.50925
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &6111927654373855622
@@ -17742,7 +17742,7 @@ MonoBehaviour:
   surfaceArea: 83.744606
   uvRatio: 0.3463364
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 138.48541
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &6140364994960758406
@@ -17867,7 +17867,7 @@ MonoBehaviour:
   surfaceArea: 295.683
   uvRatio: 0.4466917
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 459.2869
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &6154201789675794869
@@ -17992,7 +17992,7 @@ MonoBehaviour:
   surfaceArea: 76.82852
   uvRatio: 0.3738341
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 124.93592
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &6184371453453347254
@@ -18117,7 +18117,7 @@ MonoBehaviour:
   surfaceArea: 31.892916
   uvRatio: 0.52906525
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 46.9124
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &6186668845071202031
@@ -18242,7 +18242,7 @@ MonoBehaviour:
   surfaceArea: 42.062054
   uvRatio: 0.44239187
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 65.5162
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &6205530505040629659
@@ -18367,7 +18367,7 @@ MonoBehaviour:
   surfaceArea: 29.261799
   uvRatio: 0.48975614
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 44.19245
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &6234949960822970023
@@ -18492,7 +18492,7 @@ MonoBehaviour:
   surfaceArea: 108.117966
   uvRatio: 0.36990526
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 176.24252
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &6321819189512089840
@@ -18617,7 +18617,7 @@ MonoBehaviour:
   surfaceArea: 109.63847
   uvRatio: 0.32696396
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 183.42912
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &6331326142399862393
@@ -18742,7 +18742,7 @@ MonoBehaviour:
   surfaceArea: 276.7921
   uvRatio: 0.40595967
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 441.2178
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &6373639938295431150
@@ -18867,7 +18867,7 @@ MonoBehaviour:
   surfaceArea: 286.65335
   uvRatio: 0.44855303
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 444.72748
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &6377700683027145225
@@ -18992,7 +18992,7 @@ MonoBehaviour:
   surfaceArea: 357.44766
   uvRatio: 0.40592903
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 569.79694
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &6401453627884532662
@@ -19117,7 +19117,7 @@ MonoBehaviour:
   surfaceArea: 99.05106
   uvRatio: 0.37466294
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 160.99136
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &6577221483042205299
@@ -19242,7 +19242,7 @@ MonoBehaviour:
   surfaceArea: 338.20026
   uvRatio: 0.5758759
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 481.63913
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &6597016460702963215
@@ -19367,7 +19367,7 @@ MonoBehaviour:
   surfaceArea: 95.95756
   uvRatio: 0.4181502
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 151.79045
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &6615363412990277884
@@ -19492,7 +19492,7 @@ MonoBehaviour:
   surfaceArea: 91.889915
   uvRatio: 0.29673883
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 156.51253
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &6636323329252064854
@@ -19617,7 +19617,7 @@ MonoBehaviour:
   surfaceArea: 34.905964
   uvRatio: 0.4719898
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 53.33667
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &6700670342817869220
@@ -19742,7 +19742,7 @@ MonoBehaviour:
   surfaceArea: 103.73087
   uvRatio: 0.38124776
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 167.91458
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &6718483521977561567
@@ -19867,7 +19867,7 @@ MonoBehaviour:
   surfaceArea: 94.91368
   uvRatio: 0.47242418
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 144.98784
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &6776242810070484276
@@ -19992,7 +19992,7 @@ MonoBehaviour:
   surfaceArea: 34.495472
   uvRatio: 0.48930055
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 52.11229
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &6784053460238027064
@@ -20117,7 +20117,7 @@ MonoBehaviour:
   surfaceArea: 273.10623
   uvRatio: 0.45825148
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 421.06113
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &6793111301795141944
@@ -20242,7 +20242,7 @@ MonoBehaviour:
   surfaceArea: 33.31842
   uvRatio: 0.44310156
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 51.873398
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &6840891451754231802
@@ -20367,7 +20367,7 @@ MonoBehaviour:
   surfaceArea: 259.62482
   uvRatio: 0.4636132
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 398.88412
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &6915266865551342151
@@ -20492,7 +20492,7 @@ MonoBehaviour:
   surfaceArea: 105.033585
   uvRatio: 0.39197817
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 168.8963
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &6960912604082677298
@@ -20617,7 +20617,7 @@ MonoBehaviour:
   surfaceArea: 30.70179
   uvRatio: 0.44009072
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 47.892006
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &7076735241969521975
@@ -20742,7 +20742,7 @@ MonoBehaviour:
   surfaceArea: 83.84421
   uvRatio: 0.39118332
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 134.88995
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &7154259147328255439
@@ -20867,7 +20867,7 @@ MonoBehaviour:
   surfaceArea: 127.57579
   uvRatio: 0.40386528
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 203.62814
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &7171334752269729938
@@ -20992,7 +20992,7 @@ MonoBehaviour:
   surfaceArea: 28.136358
   uvRatio: 0.4668208
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 43.13808
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &7172396895460672535
@@ -21117,7 +21117,7 @@ MonoBehaviour:
   surfaceArea: 18.386625
   uvRatio: 0.43535197
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 28.768597
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &7182311298256410359
@@ -21242,7 +21242,7 @@ MonoBehaviour:
   surfaceArea: 344.7331
   uvRatio: 0.45172226
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 533.74255
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &7263435149641245118
@@ -21367,7 +21367,7 @@ MonoBehaviour:
   surfaceArea: 114.34047
   uvRatio: 0.5106734
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 170.2903
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &7289525111174498170
@@ -21492,7 +21492,7 @@ MonoBehaviour:
   surfaceArea: 13.98739
   uvRatio: 0.43029857
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 21.956026
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &7330079890665188269
@@ -21617,7 +21617,7 @@ MonoBehaviour:
   surfaceArea: 81.129906
   uvRatio: 0.40453416
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 129.43999
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &7365662176951377239
@@ -21742,7 +21742,7 @@ MonoBehaviour:
   surfaceArea: 277.1912
   uvRatio: 0.50756896
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 413.68875
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &7377024135062428357
@@ -21867,7 +21867,7 @@ MonoBehaviour:
   surfaceArea: 33.008144
   uvRatio: 0.36220858
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 54.060455
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &7399786788455484692
@@ -21992,7 +21992,7 @@ MonoBehaviour:
   surfaceArea: 110.75486
   uvRatio: 0.38470367
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 178.90192
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &7418674010882668047
@@ -22117,7 +22117,7 @@ MonoBehaviour:
   surfaceArea: 278.80273
   uvRatio: 0.44636774
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 433.15692
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &7447399422081533998
@@ -22242,7 +22242,7 @@ MonoBehaviour:
   surfaceArea: 358.44315
   uvRatio: 0.5358122
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 524.82806
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &7462891518102557554
@@ -22367,7 +22367,7 @@ MonoBehaviour:
   surfaceArea: 79.60967
   uvRatio: 0.32936648
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 132.99858
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &7483495680953242563
@@ -22492,7 +22492,7 @@ MonoBehaviour:
   surfaceArea: 33.907368
   uvRatio: 0.5155816
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 50.33272
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &7578047807191361585
@@ -22617,7 +22617,7 @@ MonoBehaviour:
   surfaceArea: 58.339928
   uvRatio: 0.4069599
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 92.93784
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &7618763501151334927
@@ -22742,7 +22742,7 @@ MonoBehaviour:
   surfaceArea: 87.95147
   uvRatio: 0.4114763
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 139.713
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &7750861784906684504
@@ -22867,7 +22867,7 @@ MonoBehaviour:
   surfaceArea: 36.42574
   uvRatio: 0.464356
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 55.936966
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &7818026575360943387
@@ -22992,7 +22992,7 @@ MonoBehaviour:
   surfaceArea: 33.51795
   uvRatio: 0.41587055
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 53.096767
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &7881832572136247429
@@ -23117,7 +23117,7 @@ MonoBehaviour:
   surfaceArea: 31.938583
   uvRatio: 0.4918479
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 48.168243
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &7923019158784325177
@@ -23242,7 +23242,7 @@ MonoBehaviour:
   surfaceArea: 31.918451
   uvRatio: 0.5068285
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 47.65972
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &7969694948839319775
@@ -23367,7 +23367,7 @@ MonoBehaviour:
   surfaceArea: 38.84912
   uvRatio: 0.4261823
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 61.141434
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &8007013376436329171
@@ -23492,7 +23492,7 @@ MonoBehaviour:
   surfaceArea: 318.488
   uvRatio: 0.40988705
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 506.43192
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &8167780611898626088
@@ -23617,7 +23617,7 @@ MonoBehaviour:
   surfaceArea: 7.7538686
   uvRatio: 0.42344826
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 12.224375
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &8168704237908902866
@@ -23742,7 +23742,7 @@ MonoBehaviour:
   surfaceArea: 367.02353
   uvRatio: 0.55775875
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 529.3365
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &8289720814416211834
@@ -23867,7 +23867,7 @@ MonoBehaviour:
   surfaceArea: 335.74634
   uvRatio: 0.4645325
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 515.5276
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &8321412609210442399
@@ -23992,7 +23992,7 @@ MonoBehaviour:
   surfaceArea: 273.75278
   uvRatio: 0.5032171
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 409.74847
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &8409235771800825625
@@ -24117,7 +24117,7 @@ MonoBehaviour:
   surfaceArea: 20.214407
   uvRatio: 0.39156634
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 32.513535
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &8466980625954767893
@@ -24242,7 +24242,7 @@ MonoBehaviour:
   surfaceArea: 66.49738
   uvRatio: 0.49200585
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 100.277664
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &8489684869952154046
@@ -24367,7 +24367,7 @@ MonoBehaviour:
   surfaceArea: 104.83912
   uvRatio: 0.4173734
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 165.92117
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &8517749671997689443
@@ -24492,7 +24492,7 @@ MonoBehaviour:
   surfaceArea: 45.112778
   uvRatio: 0.5919738
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 63.519974
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &8518254110974818233
@@ -24617,7 +24617,7 @@ MonoBehaviour:
   surfaceArea: 31.92693
   uvRatio: 0.50673485
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 47.675373
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &8559057045385815092
@@ -24742,7 +24742,7 @@ MonoBehaviour:
   surfaceArea: 284.8892
   uvRatio: 0.40005225
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 455.80783
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &8584413773377453076
@@ -24867,7 +24867,7 @@ MonoBehaviour:
   surfaceArea: 380.93353
   uvRatio: 0.4731815
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 581.6164
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &8628487323438743965
@@ -24992,7 +24992,7 @@ MonoBehaviour:
   surfaceArea: 329.91525
   uvRatio: 0.57476246
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 470.2076
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &8696549928129895774
@@ -25117,7 +25117,7 @@ MonoBehaviour:
   surfaceArea: 116.57871
   uvRatio: 0.42231804
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 183.92413
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &8712722285823720403
@@ -25242,7 +25242,7 @@ MonoBehaviour:
   surfaceArea: 42.16309
   uvRatio: 0.44529852
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 65.55102
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &8742746841847715503
@@ -25367,7 +25367,7 @@ MonoBehaviour:
   surfaceArea: 37.87996
   uvRatio: 0.4981124
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 56.89144
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &8765223021956118465
@@ -25733,7 +25733,7 @@ MonoBehaviour:
   surfaceArea: 77.657585
   uvRatio: 0.41213048
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 123.31011
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &8819451804721141442
@@ -25858,7 +25858,7 @@ MonoBehaviour:
   surfaceArea: 204.94333
   uvRatio: 0.40135422
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 327.63177
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &8916047801572131147
@@ -25983,7 +25983,7 @@ MonoBehaviour:
   surfaceArea: 321.84064
   uvRatio: 0.48216805
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 488.5
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &8952703529068834174
@@ -26108,7 +26108,7 @@ MonoBehaviour:
   surfaceArea: 125.38003
   uvRatio: 0.41633347
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 198.56015
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &9018289096870615766
@@ -26233,7 +26233,7 @@ MonoBehaviour:
   surfaceArea: 288.63446
   uvRatio: 0.3703193
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 470.38202
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &9058747514358015511
@@ -26358,7 +26358,7 @@ MonoBehaviour:
   surfaceArea: 39.206276
   uvRatio: 0.40122432
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 62.68204
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &9104238824209110388
@@ -26483,7 +26483,7 @@ MonoBehaviour:
   surfaceArea: 116.8928
   uvRatio: 0.44744405
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 181.4826
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
 --- !u!1 &9215487932025403468
@@ -26608,6 +26608,6 @@ MonoBehaviour:
   surfaceArea: 240.16948
   uvRatio: 0.47052854
   textureSize: -1
-  fullTextureArea: -1
+  fullTextureArea: 367.33237
   lastPaintedColor: {r: 0, g: 0, b: 0, a: 0}
   paintRT: {fileID: 0}
