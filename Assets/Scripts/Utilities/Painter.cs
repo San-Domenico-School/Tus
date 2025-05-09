@@ -15,7 +15,7 @@ public class Painter : MonoBehaviour
     //public static Painter Instance;
     public float paintRemaining = 500;
     public Color paintColor = Color.white;
-    public static float brushSize = 1f;
+    [SerializeField] public float brushSize = 1f;
     [SerializeField] float rayMaxDistance = 30f;
     [SerializeField] private Material paintBlitMaterial;
 
@@ -51,7 +51,7 @@ public class Painter : MonoBehaviour
         paintAction.DominantArm_RightHanded.BrushSizeUp.canceled += ctx => brushSizeUp = false;
 
         paintAction.DominantArm_RightHanded.BrushSizeDown.performed += ctx => brushSizeDown = true;
-        paintAction.DominantArm_RightHanded.BrushSizeDown.performed += ctx => brushSizeDown = false;
+        paintAction.DominantArm_RightHanded.BrushSizeDown.canceled += ctx => brushSizeDown = false;
 
 
         fromObject = GameObject.Find("Right hand");
@@ -66,7 +66,6 @@ public class Painter : MonoBehaviour
         }
         
         BrushSizing();
-        Debug.Log(brushSize);
     }
 
     private void PaintObject()
@@ -88,7 +87,7 @@ public class Painter : MonoBehaviour
         RenderTexture renderTexture = paintable.paintRT;
 
         paintBlitMaterial.SetVector("_PaintUV", new Vector2(uv.x, uv.y));
-        paintBlitMaterial.SetFloat("_Radius", 1f);
+        paintBlitMaterial.SetFloat("_Radius", brushSize);
         paintBlitMaterial.SetColor("_PaintColor", paintColor);
         paintBlitMaterial.SetFloat("_ObjectArea", Mathf.Sqrt(paintable.fullTextureArea));
 
@@ -100,13 +99,13 @@ public class Painter : MonoBehaviour
 
     private void BrushSizing()
     {
-        if (brushSizeUp && brushSize < 3)
+        if (brushSizeUp && brushSize < 2.5)
         {
-            brushSize += 0.01f;
+            brushSize += 0.02f;
         }
-        if (brushSizeDown && brushSize > .5)
+        if (brushSizeDown && brushSize > 0.5f)
         {
-            brushSize -= 0.01f;
+            brushSize -= 0.02f;
         }
     }
 
