@@ -90,7 +90,8 @@ public class SceneTracker : MonoBehaviour
             SceneManager.LoadScene(sceneIndex);
             
             // Move player to the correct spawn location
-            SceneManager.sceneLoaded += OnSceneLoaded; 
+            SceneManager.sceneLoaded += OnSceneLoaded;
+            SceneManager.sceneUnloaded += OnSceneUnloaded;
         }
         else
         {
@@ -124,8 +125,12 @@ public class SceneTracker : MonoBehaviour
 
     private void OnSceneUnloaded(Scene scene)
     {
-        Camera topDownCamera = GameObject.FindGameObjectWithTag("TopDownCamera").GetComponent<Camera>();
-        RenderTexture renderTexture = new RenderTexture(1024, 1024, 32);
-        // do more stuff or just give up and finish Celeste finally
+        SceneCameraController[] controllers = FindObjectsOfType<SceneCameraController>();
+        foreach (SceneCameraController controller in controllers)
+        {
+            controller.save();
+        }
+
+        SceneManager.sceneUnloaded -= OnSceneUnloaded;
     }
 }
