@@ -35,6 +35,7 @@ public static class ObjectStatisticsUtility
         Texture2D objectTexture = CreateObjectTexture(uvRatio, objectArea, targetTexelDensity);
         gameObject.GetComponent<PaintableObject>().textureSize = objectTexture.width;
         gameObject.GetComponent<PaintableObject>().fullTextureArea = objectArea + ((1 - uvRatio) * objectArea);
+            Debug.Log(gameObject.GetComponent<PaintableObject>().fullTextureArea);
 
         return objectTexture;
 
