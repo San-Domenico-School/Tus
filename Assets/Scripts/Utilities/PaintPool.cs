@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 /**************************************************
@@ -9,18 +7,20 @@ using UnityEngine;
  * Version: 1.0
  *************************************************/
 
+
 public class PaintPool : MonoBehaviour
 {
     [SerializeField] GameObject paintManager;
-    [SerializeField] float addingPaintMultiplier;
+    [SerializeField] float MaxPaintingSeconds = 60;
     
-    
-    private void OnTriggerStay(Collider other) {
+
+    private void OnCollisionStay(Collision other)
+    {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (paintManager.GetComponent<Painter>().paintRemaining < 100f)
+            if (paintManager.GetComponent<Painter>().paintRemaining < MaxPaintingSeconds)
             {
-                paintManager.GetComponent<Painter>().paintRemaining += addingPaintMultiplier * Time.deltaTime;
+                paintManager.GetComponent<Painter>().paintRemaining += Time.deltaTime * 15;
             }
 
             Debug.Log(paintManager.GetComponent<Painter>().paintRemaining);
