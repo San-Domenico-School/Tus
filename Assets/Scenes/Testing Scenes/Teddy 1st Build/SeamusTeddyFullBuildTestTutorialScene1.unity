@@ -260,6 +260,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 195406834298541427, guid: eb96ecfe2319b8b448fa2563ed3d30c3,
         type: 3}
+      propertyPath: paintRemaining
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 195406834298541427, guid: eb96ecfe2319b8b448fa2563ed3d30c3,
+        type: 3}
       propertyPath: paintBlitMaterial
       value: 
       objectReference: {fileID: 2100000, guid: 9d78b66c9531d4f86bbd77bbc8c904fd, type: 2}
@@ -515,7 +520,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 456915507}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1795046514}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d3e15533804d421f9e6af368d4f2025, type: 3}
@@ -599,6 +604,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80624fb2f79f3e64e9bba6ee98f967c6, type: 3}
+--- !u!1 &1795046514 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6394752062362848651, guid: eb96ecfe2319b8b448fa2563ed3d30c3,
+    type: 3}
+  m_PrefabInstance: {fileID: 456915507}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1860408872
 GameObject:
   m_ObjectHideFlags: 0
@@ -644,6 +655,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2054530642 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3899495833880809942, guid: ca4d0c1bd0a87f44e8be226b208a9bd3,
+    type: 3}
+  m_PrefabInstance: {fileID: 3859294684181818993}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2054530647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2054530642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd5019f7928e6ef4aa7921dbef875320, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  paintManager: {fileID: 1795046514}
+  MaxPaintingSeconds: 60
 --- !u!4 &255773810547689351
 Transform:
   m_ObjectHideFlags: 0
@@ -800,7 +831,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3899495833880809942, guid: ca4d0c1bd0a87f44e8be226b208a9bd3,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2054530647}
   m_SourcePrefab: {fileID: 100100000, guid: ca4d0c1bd0a87f44e8be226b208a9bd3, type: 3}
 --- !u!23 &3882683126116516572
 MeshRenderer:
