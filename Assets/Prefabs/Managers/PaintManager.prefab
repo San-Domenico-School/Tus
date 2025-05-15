@@ -44,9 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d3e15533804d421f9e6af368d4f2025, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fromObject: {fileID: 0}
-  brush: {fileID: 2800000, guid: 7d5c502cfdc6c324983b6535a20f9e33, type: 3}
-  brushSize: 0.5
-  paintColor: {r: 0, g: 0.892854, b: 1, a: 1}
-  rayMaxDistance: 10000
   paintRemaining: 5000
+  paintColor: {r: 0, g: 0.892854, b: 1, a: 1}
+  brushSize: 0.5
+  rayMaxDistance: 10000
+  paintBlitMaterial: {fileID: 2100000, guid: 9d78b66c9531d4f86bbd77bbc8c904fd, type: 2}
