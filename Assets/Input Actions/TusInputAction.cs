@@ -460,7 +460,7 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""cbbc328b-12e9-47a8-a050-afe53cb4b3eb"",
                     ""path"": ""<OculusTouchController>{LeftHand}/secondaryButton"",
-                    ""interactions"": """",
+                    ""interactions"": ""Hold"",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Clear"",
