@@ -4,7 +4,10 @@ using UnityEngine;
 using System.IO;
 
 /*
+ * Nathaniel de Marcellus
+ * Version 1
  * 
+ * Saves photo to texture with name PictureName on scene creation and exit
  */
 public class SceneCameraController : MonoBehaviour
 {
@@ -12,7 +15,8 @@ public class SceneCameraController : MonoBehaviour
     string savepath;
 
     void Start() {
-        string savepath = Application.persistentDataPath;
+        savepath = Application.persistentDataPath;
+        save();
     }
 
     public void save()
@@ -27,6 +31,6 @@ public class SceneCameraController : MonoBehaviour
         tex.ReadPixels(new Rect(0, 0, renderTexture.width, renderTexture.height), 0, 0);
         rendercamera.targetTexture = null;
         RenderTexture.active = active;
-        File.WriteAllBytes(Path.Combine(savepath, PictureName), tex.EncodeToPNG());
+        File.WriteAllBytes(Path.Combine(savepath, (PictureName + ".png")), tex.EncodeToPNG());
     }
 }

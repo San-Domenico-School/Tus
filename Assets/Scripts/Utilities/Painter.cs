@@ -63,7 +63,6 @@ public class Painter : MonoBehaviour
             PaintObject();
             paintRemaining -= Time.deltaTime; // every second lose one paint unit
         }
-        Debug.Log(brushSize);
     }
 
     private void PaintObject()
