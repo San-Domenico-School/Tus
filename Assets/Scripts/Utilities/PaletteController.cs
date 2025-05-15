@@ -18,6 +18,7 @@ public class PaletteController : MonoBehaviour
     [SerializeField] Camera camera;
 
     private GameObject selectedColorDisplay;
+    private GameObject tip;
     private GameObject redButton;
     private GameObject yellowButton;
     private GameObject blueButton;
@@ -129,6 +130,7 @@ public class PaletteController : MonoBehaviour
         currentColor = new Color(0, 0, 0);
 
         selectedColorDisplay.GetComponent<MeshRenderer>().material.color = currentColor;
+        tip.GetComponent<MeshRenderer>().material.color = currentColor;
     }
 
     // setters and getters for current set color
@@ -158,6 +160,7 @@ public class PaletteController : MonoBehaviour
         currentColor = ConvertRYBtoUnityColor(red, yellow, blue);
 
         selectedColorDisplay.GetComponent<MeshRenderer>().material.color = currentColor;
+        tip.GetComponent<MeshRenderer>().material.color = currentColor;
     }
 
     // convert from ryb to rgb, return unity color object
