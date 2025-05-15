@@ -169,11 +169,16 @@ public class SaveLoadImagesManager : MonoBehaviour
     {
         foreach (GameObject gameObject in PaintableObjects)
         {
-            if (gameObject.GetComponent<PaintableObject>() == null)
+            if (!ObjectStatisticsUtility.IsPaintable(gameObject))
                 continue;
                 
-            gameObject.GetComponent<PaintableObject>().surfaceArea = ObjectStatisticsUtility.CalculateObjectArea(gameObject);
-            gameObject.GetComponent<PaintableObject>().uvRatio = ObjectStatisticsUtility.CalculateObjectUVAreaRatio(gameObject);
+            float objectArea = ObjectStatisticsUtility.CalculateObjectArea(gameObject);
+            float uvRatio = ObjectStatisticsUtility.CalculateObjectUVAreaRatio(gameObject);
+
+            gameObject.GetComponent<PaintableObject>().surfaceArea = objectArea;
+            gameObject.GetComponent<PaintableObject>().uvRatio = uvRatio;
+            gameObject.GetComponent<PaintableObject>().fullTextureArea = objectArea + ((1 - uvRatio) * objectArea);
+            Debug.Log(gameObject.GetComponent<PaintableObject>().fullTextureArea);
 
         }
     }
@@ -209,6 +214,8 @@ class SerializedSaveLoadImagesManager : Editor
             SLIM.AddToArrayAllPaintableObjects();
 
             SLIM.SetPaintAbleObjectFields();
+
+
         }
 
         if (GUILayout.Button("Reset Textures"))
