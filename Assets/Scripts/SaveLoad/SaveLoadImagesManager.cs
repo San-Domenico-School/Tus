@@ -180,7 +180,25 @@ public class SaveLoadImagesManager : MonoBehaviour
     {
         foreach (GameObject gameObject in PaintableObjects)
         {
-            gameObject.GetComponent<Renderer>().sharedMaterial.mainTexture = ObjectStatisticsUtility.CreateObjectTexture(gameObject, texelDensity);
+            Texture2D texture2D;
+
+            if (!ObjectStatisticsUtility.HasRender(gameObject))
+                return;
+            
+            // Creates a new texture
+            texture2D = ObjectStatisticsUtility.CreateObjectTexture(gameObject, texelDensity);
+
+            RenderTexture paintRT = new RenderTexture(texture2D.width, texture2D.height, 0, RenderTextureFormat.ARGB32);
+            paintRT.Create();
+
+            RenderTexture active = RenderTexture.active;
+            RenderTexture.active = paintRT;
+            GL.Clear(true, true, Color.gray);
+            Graphics.Blit(texture2D, paintRT);
+            RenderTexture.active = active;
+
+            gameObject.GetComponent<MeshRenderer>().material.mainTexture = paintRT;
+            gameObject.GetComponent<PaintableObject>().paintRT = paintRT;
         }
         SaveImages();
     }
@@ -190,11 +208,16 @@ public class SaveLoadImagesManager : MonoBehaviour
     {
         foreach (GameObject gameObject in PaintableObjects)
         {
-            if (gameObject.GetComponent<PaintableObject>() == null)
+            if (!ObjectStatisticsUtility.IsPaintable(gameObject))
                 continue;
                 
-            gameObject.GetComponent<PaintableObject>().surfaceArea = ObjectStatisticsUtility.CalculateObjectArea(gameObject);
-            gameObject.GetComponent<PaintableObject>().uvRatio = ObjectStatisticsUtility.CalculateObjectUVAreaRatio(gameObject);
+            float objectArea = ObjectStatisticsUtility.CalculateObjectArea(gameObject);
+            float uvRatio = ObjectStatisticsUtility.CalculateObjectUVAreaRatio(gameObject);
+
+            gameObject.GetComponent<PaintableObject>().surfaceArea = objectArea;
+            gameObject.GetComponent<PaintableObject>().uvRatio = uvRatio;
+            gameObject.GetComponent<PaintableObject>().fullTextureArea = objectArea + ((1 - uvRatio) * objectArea);
+            Debug.Log(gameObject.GetComponent<PaintableObject>().fullTextureArea);
 
         }
     }
@@ -230,6 +253,8 @@ class SerializedSaveLoadImagesManager : Editor
             SLIM.AddToArrayAllPaintableObjects();
 
             SLIM.SetPaintAbleObjectFields();
+
+
         }
 
         if (GUILayout.Button("Reset Textures"))
