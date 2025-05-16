@@ -2000,13 +2000,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Holy Moly\u2014it\u2019s really you! I can\u2019t believe I\u2019m finally
-    meeting the Messenger! It\u2019s been... so long. I thought maybe... maybe you\u2019d
-    never come. This place, it used to be... so different. Full of color and life\u2014everyone
-    could feel it. But, well, people just stopped caring, and the world, it just...
-    withered away.\nBut now, you\u2019re here, and they say you can bring it all
-    back! When you\u2019ve finished painting, the paintbrush has to return to the
-    god. Still... you\u2019re actually here! I knew it would happen someday!"
+  m_text: "Oh, hello, Messenger! It\u2019s been a very long time since I was last
+    awake. This place wasn\u2019t always so dim; it used to be filled with energy
+    and color, with people who cared so deeply about their world. Somewhere along
+    the way, they lost that spark, but you\u2014you\u2019ve started to bring it all
+    back. Maybe... maybe it\u2019s not too late for this place after all. Keep going,
+    Messenger. We\u2019ll find solace in your efforts."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2069,7 +2068,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: -49.65786, z: -64.13827, w: 0}
+  m_margin: {x: 0, y: -49.65786, z: -36.697838, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
