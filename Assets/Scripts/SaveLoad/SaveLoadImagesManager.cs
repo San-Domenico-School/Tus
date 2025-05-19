@@ -116,7 +116,7 @@ public class SaveLoadImagesManager : MonoBehaviour
             
             // Saves the images to disk 
             Texture2D image =  ToTexture2D((RenderTexture) gameObject.GetComponent<Renderer>().sharedMaterial.mainTexture);
-            File.WriteAllBytes(Path.Combine(saveImagesPath, GetObjectsImageFileName(gameObject.transform)), image.EncodeToPNG());
+            File.WriteAllBytes(System.IO.Path.Combine(saveImagesPath, GetObjectsImageFileName(gameObject.transform)), image.EncodeToPNG());
         }
     }
 
