@@ -249,12 +249,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 109588308}
   m_PrefabAsset: {fileID: 0}
---- !u!20 &109588313 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 4096474945264373854, guid: 200da0d5814e8c14489e8b3d911079dc,
-    type: 3}
-  m_PrefabInstance: {fileID: 109588308}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &109588321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -619,19 +613,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HandBrush
       objectReference: {fileID: 0}
-    - target: {fileID: 7576392832565271772, guid: cf61e84412f6a4a598b74fd6535545ae,
-        type: 3}
-      propertyPath: m_Name
-      value: tip
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7576392832565271772, guid: cf61e84412f6a4a598b74fd6535545ae,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1341283517}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf61e84412f6a4a598b74fd6535545ae, type: 3}
 --- !u!4 &1341283515 stripped
 Transform:
@@ -639,25 +624,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1341283514}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1341283516 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7576392832565271772, guid: cf61e84412f6a4a598b74fd6535545ae,
-    type: 3}
-  m_PrefabInstance: {fileID: 1341283514}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1341283517
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1341283516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 835172c280c2444e3b3e3beeef485ed6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camera: {fileID: 109588313}
 --- !u!114 &1396328877 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 195406834298541427, guid: eb96ecfe2319b8b448fa2563ed3d30c3,
