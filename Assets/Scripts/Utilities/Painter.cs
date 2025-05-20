@@ -102,14 +102,11 @@ public class Painter : MonoBehaviour
         if (brushSizeUp && brushSize < 2.5)
         {
             brushSize += 0.02f;
-            Debug.Log("brush up");
         }
         if (brushSizeDown && brushSize > 0.5f)
         {
             brushSize -= 0.02f;
-            Debug.Log("brush down");
         }
-        Debug.Log(brushSize);
     }
 
     // does this do anything
