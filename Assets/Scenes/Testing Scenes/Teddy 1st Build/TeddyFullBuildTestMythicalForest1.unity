@@ -696,11 +696,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 195406834298541427, guid: eb96ecfe2319b8b448fa2563ed3d30c3,
-        type: 3}
-      propertyPath: brushSize
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5605939253535904705, guid: eb96ecfe2319b8b448fa2563ed3d30c3,
         type: 3}
       propertyPath: m_LocalPosition.x
