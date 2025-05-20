@@ -221,7 +221,7 @@ public partial class @TusInputAction: IInputActionCollection2, IDisposable
                     ""id"": ""cb2f4f5e-1f79-4246-bca9-78e60819c9a2"",
                     ""expectedControlType"": """",
                     ""processors"": """",
-                    ""interactions"": ""Hold"",
+                    ""interactions"": """",
                     ""initialStateCheck"": false
                 }
             ],
