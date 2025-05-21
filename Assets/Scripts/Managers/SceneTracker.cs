@@ -1,7 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Linq;
+
 
 public class SceneTracker : MonoBehaviour
 {
@@ -62,6 +65,8 @@ public class SceneTracker : MonoBehaviour
     // Load the appropriate scene based on the current scene index.
     public void ChangeScene()
     {
+        TakePhotos();
+
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         TestBox(Color.white);
         //Debug.Log("changeScene called");
@@ -92,7 +97,6 @@ public class SceneTracker : MonoBehaviour
             
             // Move player to the correct spawn location
             SceneManager.sceneLoaded += OnSceneLoaded;
-            SceneManager.sceneUnloaded += OnSceneUnloaded;
         }
         else
         {
@@ -124,14 +128,13 @@ public class SceneTracker : MonoBehaviour
     }
 
 
-    private void OnSceneUnloaded(Scene scene)
+    private void TakePhotos()
     {
-        SceneCameraController[] controllers = FindObjectsOfType<SceneCameraController>();
-        foreach (SceneCameraController controller in controllers)
+        //SceneCameraController[] controllers = FindObjectsOfType<SceneCamera>();
+        GameObject[] controllers = GameObject.FindObjectsOfType<GameObject>().Where(go => go.GetComponent<SceneCameraController>() != null).ToArray();
+        foreach (GameObject controller in controllers)
         {
-            controller.save();
+            controller.GetComponent<SceneCameraController>().save();
         }
-
-        SceneManager.sceneUnloaded -= OnSceneUnloaded;
     }
 }
