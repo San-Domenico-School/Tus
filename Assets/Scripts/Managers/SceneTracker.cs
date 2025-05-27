@@ -61,6 +61,8 @@ public class SceneTracker : MonoBehaviour
     // Load the appropriate scene based on the current scene index.
     public void ChangeScene()
     {
+        OnSceneLoaded();
+
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         TestBox(Color.white);
         //Debug.Log("changeScene called");
@@ -96,8 +98,12 @@ public class SceneTracker : MonoBehaviour
         {
             Debug.LogWarning($"Scene {sceneIndex} is not available or out of range.");
         }
-    } 
+    }
 
+    private void OnSceneLoaded()
+    {
+        SaveLoadImagesManager.SaveImages();
+    }
 
     // Callback to position the player after a scene is loaded.
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
