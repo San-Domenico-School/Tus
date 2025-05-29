@@ -19,11 +19,6 @@ public class SceneCameraController : MonoBehaviour
         save();
     }
 
-    private void Update()
-    {
-        save();
-    }
-
     public void save()
     {
         Camera rendercamera = gameObject.GetComponent<Camera>();

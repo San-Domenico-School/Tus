@@ -138,9 +138,9 @@ public class SceneTracker : MonoBehaviour
     {
         //SceneCameraController[] controllers = FindObjectsOfType<SceneCamera>();
         GameObject[] controllers = GameObject.FindObjectsOfType<GameObject>().Where(go => go.GetComponent<SceneCameraController>() != null).ToArray();
-        //foreach (GameObject controller in controllers)
-        //{
-        //    controller.GetComponent<SceneCameraController>().save();
-        //}
+        foreach (GameObject controller in controllers)
+        {
+            controller.GetComponent<SceneCameraController>().save();
+        }
     }
 }

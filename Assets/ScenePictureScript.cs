@@ -15,20 +15,13 @@ public class ScenePictureScript : MonoBehaviour
         Texture2D texture;
 
         path = Path.Combine(Application.persistentDataPath, (PictureName + ".png"));
-        try
+        if (File.Exists(path))
         {
-            if (File.Exists(path))
-            {
-                byte[] fileData = File.ReadAllBytes(path);
-                texture = new Texture2D(2, 2);
-                texture.LoadImage(fileData);
-            }
-            else
-            {
-                texture = defaulttex;
-            }
+            byte[] fileData = File.ReadAllBytes(path);
+            texture = new Texture2D(2, 2);
+            texture.LoadImage(fileData);
         }
-        catch
+        else
         {
             texture = defaulttex;
         }
