@@ -1,7 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Linq;
+
 
 public class SceneTracker : MonoBehaviour
 {
@@ -35,6 +38,7 @@ public class SceneTracker : MonoBehaviour
     private void Start()
     {
         DontDestroyOnLoad(gameObject);
+        string saveImagesPath = Application.persistentDataPath;
     }
 
     // This is just to test the trigger in VR by change box color
@@ -61,7 +65,7 @@ public class SceneTracker : MonoBehaviour
     // Load the appropriate scene based on the current scene index.
     public void ChangeScene()
     {
-        OnSceneLoaded();
+        OnSceneUnloaded();
 
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         TestBox(Color.white);
@@ -92,7 +96,7 @@ public class SceneTracker : MonoBehaviour
             SceneManager.LoadScene(sceneIndex);
             
             // Move player to the correct spawn location
-            SceneManager.sceneLoaded += OnSceneLoaded; 
+            SceneManager.sceneLoaded += OnSceneLoaded;
         }
         else
         {
@@ -100,7 +104,7 @@ public class SceneTracker : MonoBehaviour
         }
     }
 
-    private void OnSceneLoaded()
+    private void OnSceneUnloaded()
     {
         SaveLoadImagesManager.SaveImages();
     }
@@ -125,5 +129,18 @@ public class SceneTracker : MonoBehaviour
         }
 
         SceneManager.sceneLoaded -= OnSceneLoaded; // Remove event listener to prevent duplication.
+
+        //TakePhotos();
+    }
+
+
+    private void TakePhotos()
+    {
+        //SceneCameraController[] controllers = FindObjectsOfType<SceneCamera>();
+        GameObject[] controllers = GameObject.FindObjectsOfType<GameObject>().Where(go => go.GetComponent<SceneCameraController>() != null).ToArray();
+        //foreach (GameObject controller in controllers)
+        //{
+        //    controller.GetComponent<SceneCameraController>().save();
+        //}
     }
 }
