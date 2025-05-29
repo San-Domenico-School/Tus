@@ -130,7 +130,7 @@ public class SceneTracker : MonoBehaviour
 
         SceneManager.sceneLoaded -= OnSceneLoaded; // Remove event listener to prevent duplication.
 
-        TakePhotos();
+        //TakePhotos();
     }
 
 
