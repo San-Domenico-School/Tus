@@ -18,7 +18,7 @@ using UnityEditor;
 [ExecuteInEditMode]
 public class SaveLoadImagesManager : MonoBehaviour
 {
-    String saveImagesPath;     
+    public static String saveImagesPath;     
     private TusInputAction paintAction;
     public static float texelDensity = 10;
     public static GameObject[] PaintableObjects { get; private set; }
@@ -103,7 +103,7 @@ public class SaveLoadImagesManager : MonoBehaviour
 
     // TODO make async https://discussions.unity.com/t/save-rendertexture-or-texture2d-as-image-file-utility/891718/14 
     // Saves all the images on game object that can be painted (in array of object gotten from PrepareWorld)
-    private void SaveImages()
+    public static void SaveImages()
     {
         if (PaintableObjects == null) 
             return;
@@ -120,7 +120,7 @@ public class SaveLoadImagesManager : MonoBehaviour
         }
     }
 
-    private Texture2D ToTexture2D(RenderTexture renderTexture)
+    public static Texture2D ToTexture2D(RenderTexture renderTexture)
     {
         Texture2D texture = new Texture2D(renderTexture.width, renderTexture.height, TextureFormat.RGB24, false);
         // ReadPixels looks at the active RenderTexture.
@@ -183,7 +183,7 @@ public class SaveLoadImagesManager : MonoBehaviour
         }
     }
 
-    private string GetObjectsImageFileName(Transform transform)
+    public static string GetObjectsImageFileName(Transform transform)
     {
         string name = SceneManager.GetActiveScene().name;
 

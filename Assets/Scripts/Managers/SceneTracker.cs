@@ -65,7 +65,7 @@ public class SceneTracker : MonoBehaviour
     // Load the appropriate scene based on the current scene index.
     public void ChangeScene()
     {
-        TakePhotos();
+        OnSceneUnloaded();
 
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         TestBox(Color.white);
@@ -102,8 +102,12 @@ public class SceneTracker : MonoBehaviour
         {
             Debug.LogWarning($"Scene {sceneIndex} is not available or out of range.");
         }
-    } 
+    }
 
+    private void OnSceneUnloaded()
+    {
+        SaveLoadImagesManager.SaveImages();
+    }
 
     // Callback to position the player after a scene is loaded.
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -125,6 +129,8 @@ public class SceneTracker : MonoBehaviour
         }
 
         SceneManager.sceneLoaded -= OnSceneLoaded; // Remove event listener to prevent duplication.
+
+        TakePhotos();
     }
 
 
@@ -132,9 +138,9 @@ public class SceneTracker : MonoBehaviour
     {
         //SceneCameraController[] controllers = FindObjectsOfType<SceneCamera>();
         GameObject[] controllers = GameObject.FindObjectsOfType<GameObject>().Where(go => go.GetComponent<SceneCameraController>() != null).ToArray();
-        foreach (GameObject controller in controllers)
-        {
-            controller.GetComponent<SceneCameraController>().save();
-        }
+        //foreach (GameObject controller in controllers)
+        //{
+        //    controller.GetComponent<SceneCameraController>().save();
+        //}
     }
 }
