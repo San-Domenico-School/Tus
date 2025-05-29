@@ -5,13 +5,27 @@ using UnityEngine.SceneManagement;
 
 /**************************************************
  * Attached to: paint brush
- * Purpose: switch the color of the paint and the paintbrush
- * Author: Logan 
+ * Purpose: switch the color of the paint and the paintbrush;
+ * also turns off paintbrush model when game is over.
+ * Author: Logan and teddy
  * Version: 1.0
  *************************************************/
 public class PaletteInteractor : MonoBehaviour
 {
     private Painter paintManager;
+
+    public bool GameIsOver = false;
+    [SerializeField] private GameObject paintbrushmodel;
+    [SerializeField] private GameObject lazer;
+
+    private void Update()
+    {
+        if (GameIsOver == true)
+        {
+            paintbrushmodel.SetActive(false);
+            lazer.SetActive(false);
+        }
+    }
 
     private void OnEnable()
     {
@@ -58,5 +72,4 @@ public class PaletteInteractor : MonoBehaviour
             paintManager.GetComponent<Painter>().SetPaintColor(PaletteController.Instance.GetCurrentColor());
         }
     }
-
 }

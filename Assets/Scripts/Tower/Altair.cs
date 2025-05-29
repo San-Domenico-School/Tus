@@ -54,14 +54,14 @@ public class Altair : MonoBehaviour
         {
             barrier.SetActive(true);
         }
-    }
 
-    // private void OnTriggerExit(Collider other)
-    // {
-    //     if(other.tag == "Player")
-    //     {
-    //         inProx = false;
-    //         Debug.Log("ouch");
-    //     }
-    // }
+        PaletteInteractor pi = FindObjectOfType<PaletteInteractor>();
+        if (pi == null)
+        {
+            Debug.LogError("PaletteInteractor not found in scene!");
+            return;
+        }
+
+        pi.GameIsOver = true;
+    }
 }
