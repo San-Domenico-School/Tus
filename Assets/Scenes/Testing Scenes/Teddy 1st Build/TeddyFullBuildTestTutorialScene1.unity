@@ -1323,6 +1323,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fef05ef75fe54b4d8126a07987436e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameIsOver: 0
+  paintbrushmodel: {fileID: 679398018}
 --- !u!114 &109588322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9983,6 +9985,12 @@ RenderTexture:
   m_Dimension: 2
   m_VolumeDepth: 1
   m_ShadowSamplingMode: 2
+--- !u!1 &679398018 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: cf61e84412f6a4a598b74fd6535545ae,
+    type: 3}
+  m_PrefabInstance: {fileID: 1887673098}
+  m_PrefabAsset: {fileID: 0}
 --- !u!84 &681340326
 RenderTexture:
   m_ObjectHideFlags: 0
