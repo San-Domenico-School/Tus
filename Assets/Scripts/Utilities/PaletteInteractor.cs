@@ -16,12 +16,14 @@ public class PaletteInteractor : MonoBehaviour
 
     public bool GameIsOver = false;
     [SerializeField] private GameObject paintbrushmodel;
+    [SerializeField] private GameObject lazer;
 
     private void Update()
     {
         if (GameIsOver == true)
         {
             paintbrushmodel.SetActive(false);
+            lazer.SetActive(false);
         }
     }
 

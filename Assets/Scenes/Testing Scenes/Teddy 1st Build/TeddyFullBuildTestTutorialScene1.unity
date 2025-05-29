@@ -1325,6 +1325,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameIsOver: 0
   paintbrushmodel: {fileID: 679398018}
+  lazer: {fileID: 1471782712}
 --- !u!114 &109588322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25285,6 +25286,12 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
+--- !u!1 &1471782712 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7625505191714043919, guid: 200da0d5814e8c14489e8b3d911079dc,
+    type: 3}
+  m_PrefabInstance: {fileID: 109588308}
+  m_PrefabAsset: {fileID: 0}
 --- !u!84 &1474217960
 RenderTexture:
   m_ObjectHideFlags: 0
